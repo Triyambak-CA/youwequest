@@ -1,1 +1,240 @@
-<!-- coming soon -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Regulatory Updates — YouWe Quest LLP</title>
+<meta name="description" content="Weekly regulatory updates covering GST, Direct Tax, MCA, SEBI and ICAI — compiled by YouWe Quest LLP.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8963E;--gold-l:#D4AE5A;--gold-glow:rgba(184,150,62,0.15);
+  --glass:rgba(255,255,255,0.04);--glass-b:rgba(255,255,255,0.08);
+  --glass-h:rgba(255,255,255,0.07);
+  --txt:rgba(255,255,255,0.90);--txt2:rgba(255,255,255,0.52);--txt3:rgba(255,255,255,0.30);
+  --bg:#070c12;--bg2:#0b1018;
+  --gst:#D4AE5A;--dt:#7EB8F7;--mca:#C49FE6;--sebi:#F7916A;--icai:#6ECFBE;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.65}
+
+/* orbs */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.14;animation:drift 20s ease-in-out infinite}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,#B8963E,transparent);top:-200px;left:-150px;animation-delay:0s}
+.orb2{width:550px;height:550px;background:radial-gradient(circle,#0f2a4a,transparent);bottom:-100px;right:-100px;animation-delay:-7s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,#1a0a00,transparent);top:45%;left:55%;animation-delay:-14s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-18px) scale(1.04)}66%{transform:translate(-18px,25px) scale(0.96)}}
+
+/* nav */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,12,18,0.82);
+  backdrop-filter:blur(28px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:0 24px;
+}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;gap:16px}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--txt2);letter-spacing:0.02em;white-space:nowrap;text-decoration:none}
+.nav-brand span{color:var(--gold)}
+.nav-back{
+  font-size:12px;color:var(--txt3);letter-spacing:0.05em;
+  text-decoration:none;display:flex;align-items:center;gap:6px;
+  transition:color 0.2s;
+}
+.nav-back:hover{color:var(--txt2)}
+.nav-back svg{width:14px;height:14px;opacity:0.6}
+
+/* wrap */
+.wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:56px 24px 100px}
+
+/* header */
+.pg-header{margin-bottom:48px;opacity:0;animation:fadeUp 0.6s ease forwards}
+.pg-eyebrow{
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;font-weight:500;
+}
+.pg-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,5vw,42px);font-weight:400;
+  line-height:1.18;letter-spacing:0.01em;
+  color:var(--txt);margin-bottom:12px;
+}
+.pg-sub{font-size:14px;color:var(--txt2);max-width:520px;line-height:1.7}
+
+/* domain legend */
+.legend{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:40px;
+  opacity:0;animation:fadeUp 0.6s ease forwards 0.1s;
+}
+.badge{
+  font-size:10.5px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px;
+}
+.b-gst {background:rgba(212,174,90,0.12);color:var(--gst);border:1px solid rgba(212,174,90,0.22)}
+.b-dt  {background:rgba(126,184,247,0.10);color:var(--dt) ;border:1px solid rgba(126,184,247,0.20)}
+.b-mca {background:rgba(196,159,230,0.10);color:var(--mca);border:1px solid rgba(196,159,230,0.20)}
+.b-sebi{background:rgba(247,145,106,0.10);color:var(--sebi);border:1px solid rgba(247,145,106,0.20)}
+.b-icai{background:rgba(110,207,190,0.10);color:var(--icai);border:1px solid rgba(110,207,190,0.20)}
+
+/* update list */
+.update-list{display:flex;flex-direction:column;gap:12px}
+
+.update-card{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;
+  padding:20px 24px;
+  text-decoration:none;
+  color:inherit;
+  transition:background 0.2s,border-color 0.2s,transform 0.2s;
+  overflow:hidden;
+  opacity:0;animation:fadeUp 0.5s ease forwards;
+}
+.update-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(184,150,62,0.06),transparent 60%);
+  opacity:0;transition:opacity 0.2s;border-radius:inherit;
+}
+.update-card:hover{
+  background:var(--glass-h);
+  border-color:rgba(184,150,62,0.28);
+  transform:translateY(-1px);
+}
+.update-card:hover::before{opacity:1}
+
+.card-left{flex:1;min-width:0}
+.card-date{
+  font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:6px;
+}
+.card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-weight:400;letter-spacing:0.01em;
+  color:var(--txt);margin-bottom:8px;line-height:1.3;
+}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+.card-arrow{
+  flex-shrink:0;width:32px;height:32px;
+  border:1px solid rgba(255,255,255,0.10);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--txt3);transition:all 0.2s;
+}
+.update-card:hover .card-arrow{
+  border-color:rgba(184,150,62,0.4);
+  color:var(--gold-l);
+  background:rgba(184,150,62,0.08);
+}
+
+/* latest chip */
+.latest-chip{
+  position:absolute;top:14px;right:60px;
+  font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;
+  background:rgba(184,150,62,0.15);color:var(--gold-l);
+  border:1px solid rgba(184,150,62,0.30);
+  border-radius:20px;padding:2px 9px;
+}
+
+/* year divider */
+.divider{
+  display:flex;align-items:center;gap:12px;
+  margin:32px 0 20px;
+  opacity:0;animation:fadeUp 0.5s ease forwards;
+}
+.divider-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);white-space:nowrap}
+.divider-line{flex:1;height:1px;background:rgba(255,255,255,0.06)}
+
+/* footer */
+.footer{
+  position:relative;z-index:1;
+  text-align:center;padding:32px 24px 48px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  margin-top:64px;
+}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--txt2);letter-spacing:0.03em}
+.ft-firm{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.ft-note{font-size:11px;color:var(--txt3);margin-top:10px;line-height:1.6}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html">YouWe <span>Quest</span> LLP</a>
+    <a class="nav-back" href="../index.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M10 3L5 8l5 5"/>
+      </svg>
+      Back to home
+    </a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="pg-header">
+    <div class="pg-eyebrow">YouWe Quest LLP</div>
+    <h1 class="pg-title">Weekly Regulatory Updates</h1>
+    <p class="pg-sub">Curated compliance intelligence covering GST, Direct Tax, MCA, SEBI and ICAI — published weekly for CA professionals.</p>
+  </div>
+
+  <div class="legend">
+    <span class="badge b-gst">GST</span>
+    <span class="badge b-dt">Direct Tax</span>
+    <span class="badge b-mca">MCA</span>
+    <span class="badge b-sebi">SEBI</span>
+    <span class="badge b-icai">ICAI</span>
+  </div>
+
+  <div class="update-list">
+
+    <div class="divider" style="animation-delay:0.15s">
+      <span class="divider-label">2026</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <a class="update-card" href="WeeklyUpdate_Web_v2_13Mar2026.html" style="animation-delay:0.20s">
+      <span class="latest-chip">Latest</span>
+      <div class="card-left">
+        <div class="card-date">13 March 2026</div>
+        <div class="card-title">Weekly Regulatory Update — 13 Mar 2026</div>
+        <div class="card-tags">
+          <span class="badge b-gst">GST</span>
+          <span class="badge b-dt">Direct Tax</span>
+          <span class="badge b-mca">MCA</span>
+          <span class="badge b-sebi">SEBI</span>
+          <span class="badge b-icai">ICAI</span>
+        </div>
+      </div>
+      <div class="card-arrow">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </div>
+    </a>
+
+  </div>
+
+</div><!-- /wrap -->
+
+<footer class="footer">
+  <div class="ft-name">S. Triyambaka Patro, CA</div>
+  <div class="ft-firm">YouWe Quest LLP</div>
+  <div class="ft-note">For informational purposes only — does not constitute legal or tax advice.</div>
+</footer>
+
+</body>
+</html>
