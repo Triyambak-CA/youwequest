@@ -1,95 +1,894 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to YouWeQuest</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Libre Baskerville', serif;
-      background: linear-gradient(to bottom, #071c2f, #0e2c3d);
-      color: #f1f1f1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      height: 100vh;
-      padding: 20px;
-    }
-    .logo {
-      max-width: 280px;
-      margin-bottom: 30px;
-    }
-    h1 {
-      font-size: 3rem;
-      color: #d4af37;
-      margin-bottom: 0.5rem;
-      font-weight: normal;
-    }
-    p {
-      font-size: 1.1rem;
-      color: #cccccc;
-      max-width: 700px;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      font-weight: normal;
-    }
-    .btn {
-      text-decoration: none;
-      padding: 12px 30px;
-      background-color: #d4af37;
-      color: #0e2c3d;
-      border-radius: 6px;
-      font-family: 'Libre Baskerville', serif;
-      transition: background-color 0.3s ease;
-      font-weight: normal;
-    }
-    .btn:hover {
-      background-color: #f2c94c;
-    }
-    nav {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      padding: 1rem 2rem;
-      box-sizing: border-box;
-    }
-    nav a {
-      color: #d4af37;
-      text-decoration: none;
-      font-size: 0.95rem;
-      margin-left: 1.5rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #f2c94c;
-    }
-    footer {
-      position: absolute;
-      bottom: 1rem;
-      font-size: 0.85rem;
-      color: #888;
-      font-weight: normal;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouWe Quest LLP — Chartered Accountants</title>
+<meta name="description" content="YouWe Quest LLP — Leading Chartered Accountants specialising in Taxation, Audit, International Tax, and Business Advisory. Offices in Delhi, Bhubaneswar and Berhampur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8963E;--gold-l:#D4AE5A;--gold-d:#8A6E2A;
+  --gold-glow:rgba(184,150,62,0.15);
+  --glass:rgba(255,255,255,0.04);
+  --glass-b:rgba(255,255,255,0.08);
+  --glass-h:rgba(255,255,255,0.07);
+  --txt:rgba(255,255,255,0.92);
+  --txt2:rgba(255,255,255,0.55);
+  --txt3:rgba(255,255,255,0.30);
+  --bg:#070c12;--bg2:#0b1018;--bg3:#0e1420;
+  --nav-h:60px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.65}
+
+/* ── ORBS ── */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(110px);animation:drift 22s ease-in-out infinite}
+.orb1{width:800px;height:800px;background:radial-gradient(circle,rgba(184,150,62,0.18),transparent);top:-250px;left:-180px;animation-delay:0s}
+.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(10,30,60,0.6),transparent);bottom:-150px;right:-120px;animation-delay:-8s}
+.orb3{width:450px;height:450px;background:radial-gradient(circle,rgba(30,15,5,0.5),transparent);top:50%;left:60%;animation-delay:-16s}
+.orb4{width:300px;height:300px;background:radial-gradient(circle,rgba(184,150,62,0.08),transparent);bottom:30%;left:10%;animation-delay:-4s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,35px) scale(0.95)}}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:var(--nav-h);
+  background:rgba(7,12,18,0.75);
+  backdrop-filter:blur(32px) saturate(1.4);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  transition:background 0.3s;
+}
+.nav-inner{
+  max-width:1100px;margin:0 auto;
+  height:100%;padding:0 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:500;
+  letter-spacing:0.04em;
+  color:var(--txt);
+  text-decoration:none;
+  display:flex;align-items:center;gap:10px;
+  flex-shrink:0;
+}
+
+.nav-logo span{color:var(--gold-l)}
+.logo-img{width:34px;height:34px;object-fit:contain;flex-shrink:0;transition:opacity 0.2s;opacity:0.95}
+.nav-logo:hover .logo-img{opacity:1}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{
+  font-size:12.5px;font-weight:400;
+  color:var(--txt2);letter-spacing:0.04em;
+  text-decoration:none;padding:6px 12px;border-radius:7px;
+  transition:color 0.2s,background 0.2s;
+}
+.nav-links a:hover{color:var(--txt);background:rgba(255,255,255,0.05)}
+.nav-links a.active{color:var(--gold-l)}
+.nav-cta{
+  font-size:12px;font-weight:500;letter-spacing:0.06em;
+  padding:8px 18px;border-radius:8px;
+  border:1px solid rgba(184,150,62,0.45);
+  color:var(--gold-l);text-decoration:none;
+  background:rgba(184,150,62,0.07);
+  transition:all 0.2s;flex-shrink:0;
+}
+.nav-cta:hover{background:rgba(184,150,62,0.15);border-color:var(--gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:22px;height:1.5px;background:var(--txt2);display:block;transition:all 0.3s;border-radius:2px}
+.mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;z-index:999;background:rgba(7,12,18,0.97);backdrop-filter:blur(32px);padding:20px 28px 28px;border-bottom:1px solid rgba(255,255,255,0.06);flex-direction:column;gap:4px}
+.mob-menu a{font-size:15px;color:var(--txt2);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:block}
+.mob-menu a:last-child{border-bottom:none;color:var(--gold-l);margin-top:8px}
+.mob-menu.open{display:flex}
+
+/* ── LAYOUT ── */
+.wrap{position:relative;z-index:1}
+section{padding:100px 28px;max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:10.5px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold);opacity:0.6}
+.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,50px);font-weight:300;line-height:1.1;letter-spacing:-0.01em;margin-bottom:20px}
+.section-heading em{color:var(--gold-l);font-style:normal}
+.section-sub{font-size:15px;color:var(--txt2);max-width:580px;line-height:1.75}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0%,rgba(184,150,62,0.12) 70%,transparent 100%);margin:14px 0 44px}
+
+/* glass card */
+.gc{background:var(--glass);border:1px solid var(--glass-b);border-radius:18px;padding:28px 30px;backdrop-filter:blur(24px);transition:background 0.25s,border-color 0.25s,transform 0.25s}
+.gc:hover{background:var(--glass-h);border-color:rgba(255,255,255,0.14);transform:translateY(-3px)}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:0.1s}.reveal-d2{transition-delay:0.2s}.reveal-d3{transition-delay:0.3s}.reveal-d4{transition-delay:0.4s}.reveal-d5{transition-delay:0.5s}.reveal-d6{transition-delay:0.6s}
+
+/* ═══════════════════════════
+   HERO
+═══════════════════════════ */
+#hero{
+  min-height:100vh;padding:0 28px;
+  display:flex;align-items:center;
+  max-width:none;
+  position:relative;overflow:hidden;
+}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;padding:120px 0 80px}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+  border:1px solid rgba(184,150,62,0.3);border-radius:100px;
+  padding:6px 14px;margin-bottom:32px;
+  background:rgba(184,150,62,0.06);
+}
+.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,8vw,90px);
+  font-weight:300;line-height:1.0;
+  letter-spacing:-0.02em;
+  margin-bottom:28px;
+}
+.hero-title .line1{display:block;color:var(--txt)}
+.hero-title .line2{display:block;color:var(--gold-l);font-style:italic;font-weight:300}
+.hero-tagline{
+  font-size:clamp(15px,2vw,18px);
+  color:var(--txt2);max-width:520px;
+  line-height:1.75;margin-bottom:44px;font-weight:300;
+}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-primary{
+  font-size:13px;font-weight:500;letter-spacing:0.07em;
+  padding:13px 28px;border-radius:10px;
+  background:linear-gradient(135deg,var(--gold-d),var(--gold-l));
+  color:#070c12;text-decoration:none;
+  transition:all 0.25s;border:none;cursor:pointer;
+  box-shadow:0 4px 24px rgba(184,150,62,0.25);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,150,62,0.35)}
+.btn-ghost{
+  font-size:13px;font-weight:400;letter-spacing:0.06em;
+  padding:12px 26px;border-radius:10px;
+  border:1px solid rgba(255,255,255,0.14);
+  color:var(--txt2);text-decoration:none;
+  transition:all 0.25s;background:rgba(255,255,255,0.03);
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.25);color:var(--txt);background:rgba(255,255,255,0.06)}
+.hero-stats{
+  display:flex;gap:40px;margin-top:64px;
+  padding-top:40px;border-top:1px solid rgba(255,255,255,0.07);
+  flex-wrap:wrap;
+}
+.hero-stat-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold-l);line-height:1}
+.hero-stat-l{font-size:12px;color:var(--txt3);margin-top:5px;letter-spacing:0.06em}
+
+
+
+/* ═══════════════════════════
+   ABOUT
+═══════════════════════════ */
+#about .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+#about .about-text p{font-size:15px;color:var(--txt2);line-height:1.85;margin-bottom:16px}
+#about .about-text p strong{color:var(--txt);font-weight:500}
+.offices{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.office-item{
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;color:var(--txt2);padding:10px 14px;
+  background:var(--glass);border:1px solid var(--glass-b);
+  border-radius:9px;backdrop-filter:blur(16px);
+}
+.office-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.office-city{color:var(--txt);font-weight:500;min-width:100px}
+.about-right{display:flex;flex-direction:column;gap:16px}
+.about-card{padding:22px 24px}
+.about-card-icon{font-size:22px;margin-bottom:12px}
+.about-card h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--txt);margin-bottom:8px}
+.about-card p{font-size:13.5px;color:var(--txt2);line-height:1.7}
+
+/* ═══════════════════════════
+   PROMISE
+═══════════════════════════ */
+#promise{background:linear-gradient(180deg,transparent,rgba(184,150,62,0.03) 50%,transparent)}
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+.promise-card{padding:26px 24px;text-align:left;position:relative;overflow:hidden}
+.promise-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:linear-gradient(180deg,var(--gold),transparent);opacity:0.5}
+.promise-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);opacity:0.5;margin-bottom:14px;letter-spacing:0.1em}
+.promise-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--txt);margin-bottom:8px;line-height:1.3}
+.promise-desc{font-size:13px;color:var(--txt2);line-height:1.65}
+
+/* ═══════════════════════════
+   SERVICES
+═══════════════════════════ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+.svc-card{padding:26px 24px;cursor:default;position:relative}
+.svc-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--gold-glow);border:1px solid rgba(184,150,62,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;margin-bottom:18px;
+  transition:background 0.2s;
+}
+.svc-card:hover .svc-icon{background:rgba(184,150,62,0.15)}
+.svc-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--txt);margin-bottom:14px;line-height:1.2}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.svc-list li{font-size:12.5px;color:var(--txt2);display:flex;align-items:start;gap:8px;line-height:1.5}
+.svc-list li::before{content:'›';color:var(--gold);flex-shrink:0;margin-top:1px;opacity:0.8}
+.svc-badge{
+  display:inline-block;font-size:9.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  padding:2px 8px;border-radius:4px;border:1px solid rgba(184,150,62,0.3);
+  color:var(--gold);background:rgba(184,150,62,0.06);margin-bottom:10px;
+}
+
+/* ═══════════════════════════
+   PARTNERS
+═══════════════════════════ */
+.partners-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:12px}
+.partner-card{padding:32px;position:relative;overflow:hidden}
+.partner-card::after{
+  content:'';position:absolute;bottom:0;right:0;
+  width:120px;height:120px;
+  background:radial-gradient(circle,rgba(184,150,62,0.06),transparent);
+  border-radius:50%;
+}
+.partner-photo{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(184,150,62,0.2),rgba(184,150,62,0.05));
+  border:1px solid rgba(184,150,62,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;
+  color:var(--gold-l);margin-bottom:20px;
+}
+.partner-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--txt);margin-bottom:6px}
+.partner-title{font-size:12px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px}
+.partner-certs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.cert-tag{
+  font-size:10px;color:var(--txt2);
+  padding:3px 9px;border-radius:5px;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);
+}
+.partner-bio{font-size:13px;color:var(--txt2);line-height:1.7;margin-bottom:20px}
+.partner-clients-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--txt3);margin-bottom:8px}
+.partner-clients{font-size:12.5px;color:var(--txt2);line-height:1.65}
+.partner-contact{
+  display:flex;flex-direction:column;gap:7px;
+  margin-top:20px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.partner-contact a{
+  font-size:12.5px;color:var(--txt2);text-decoration:none;
+  display:flex;align-items:center;gap:8px;transition:color 0.2s;
+}
+.partner-contact a:hover{color:var(--gold-l)}
+.contact-icon{width:16px;height:16px;opacity:0.5;flex-shrink:0}
+
+/* ═══════════════════════════
+   CLIENTS
+═══════════════════════════ */
+.clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+.client-card{padding:20px 18px;text-align:center}
+.client-initial{
+  width:44px;height:44px;border-radius:10px;
+  background:rgba(184,150,62,0.07);border:1px solid rgba(184,150,62,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-l);
+  margin:0 auto 12px;
+}
+.client-name{font-size:13px;color:var(--txt);font-weight:500;margin-bottom:4px;line-height:1.3}
+.client-sector{font-size:11px;color:var(--txt3);letter-spacing:0.06em}
+
+/* ═══════════════════════════
+   WEEKLY UPDATES SECTION
+═══════════════════════════ */
+#updates-section{
+  background:linear-gradient(135deg,rgba(184,150,62,0.04),rgba(184,150,62,0.01));
+}
+.updates-inner{
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+  background:var(--glass);border:1px solid var(--glass-b);border-radius:20px;
+  padding:44px 48px;backdrop-filter:blur(24px);position:relative;overflow:hidden;
+}
+.updates-inner::before{
+  content:'';position:absolute;right:-40px;top:-40px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(184,150,62,0.08),transparent);
+  pointer-events:none;
+}
+.updates-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(184,150,62,0.25);
+  border-radius:100px;padding:4px 12px;margin-bottom:16px;
+  background:rgba(184,150,62,0.05);
+}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite}
+.updates-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--txt);margin-bottom:12px;line-height:1.15}
+.updates-desc{font-size:14px;color:var(--txt2);line-height:1.75;max-width:440px}
+.updates-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.utag{font-size:10.5px;padding:4px 10px;border-radius:6px;border:1px solid;font-weight:500;letter-spacing:0.06em}
+.utag-gst{color:#D4AE5A;border-color:rgba(212,174,90,0.3);background:rgba(212,174,90,0.07)}
+.utag-dt{color:#7EB8F7;border-color:rgba(126,184,247,0.3);background:rgba(126,184,247,0.07)}
+.utag-mca{color:#C49FE6;border-color:rgba(196,159,230,0.3);background:rgba(196,159,230,0.07)}
+.utag-sebi{color:#F7916A;border-color:rgba(247,145,106,0.3);background:rgba(247,145,106,0.07)}
+.utag-icai{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+
+/* ═══════════════════════════
+   CONTACT
+═══════════════════════════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px}
+.contact-card{padding:30px}
+.contact-role{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.contact-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--txt);margin-bottom:18px}
+.contact-links{display:flex;flex-direction:column;gap:10px}
+.contact-link{
+  display:flex;align-items:center;gap:12px;
+  font-size:14px;color:var(--txt2);text-decoration:none;
+  padding:10px 14px;border-radius:9px;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);
+  transition:all 0.2s;
+}
+.contact-link:hover{background:rgba(184,150,62,0.07);border-color:rgba(184,150,62,0.25);color:var(--gold-l)}
+.contact-link-icon{font-size:15px;opacity:0.7;width:20px;text-align:center}
+
+/* ═══════════════════════════
+   FOOTER
+═══════════════════════════ */
+footer{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:40px 28px;
+  position:relative;z-index:1;
+}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--txt);display:flex;align-items:center;gap:10px}
+.footer-brand span{color:var(--gold-l)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:12.5px;color:var(--txt3);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--txt2)}
+.footer-copy{font-size:11.5px;color:var(--txt3);text-align:right}
+
+/* ═══════════════════════════
+   DIVIDER
+═══════════════════════════ */
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05) 30%,rgba(255,255,255,0.05) 70%,transparent);max-width:1100px;margin:0 auto}
+
+/* ═══════════════════════════
+   RESPONSIVE
+═══════════════════════════ */
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  #about .about-grid{grid-template-columns:1fr}
+  .promise-grid{grid-template-columns:1fr 1fr}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .partners-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:repeat(2,1fr)}
+  .updates-inner{grid-template-columns:1fr;padding:32px 28px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:580px){
+  section{padding:70px 20px}
+  .promise-grid,.services-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{gap:24px}
+}
+
+/* ── scrollbar ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(184,150,62,0.2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(184,150,62,0.4)}
+
+/* ── selection ── */
+::selection{background:rgba(184,150,62,0.25);color:var(--txt)}
+</style>
 </head>
 <body>
-  <nav>
-    <a href="/updates/">Updates</a>
-  </nav>
-  <main>
-    <img src="YouWe Inverted Color 2400x1800.png" alt="YouWeQuest Logo" class="logo">
-    <h1>Welcome to YouWeQuest</h1>
-    <p>An initiative born to inspire, inform, and ignite the spark of curiosity. Our journey has just begun — stay with us as we unfold stories, insights, and quests that matter.</p>
-    <a href="#" class="btn">Coming Soon</a>
-  </main>
-  <footer>
-    &copy; 2025 YouWeQuest. Designed with purpose.
-  </footer>
+
+<!-- orbs -->
+<div class="orbs">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="orb orb3"></div><div class="orb orb4"></div>
+</div>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="data:image/png;base64,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" alt="YouWe Quest LLP" class="logo-img">
+      YouWe Quest <span>LLP</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#partners">Partners</a>
+      <a href="#clients">Clients</a>
+      <a href="#updates-section">Updates</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<div class="mob-menu" id="mob-menu">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#partners" onclick="closeMob()">Partners</a>
+  <a href="#clients" onclick="closeMob()">Clients</a>
+  <a href="#updates-section" onclick="closeMob()">Weekly Updates</a>
+  <a href="#contact" onclick="closeMob()">Get in Touch →</a>
+</div>
+
+<div class="wrap">
+
+<!-- ════════════════════════════
+     HERO
+════════════════════════════ -->
+<div id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag reveal"><span class="hero-tag-dot"></span>Chartered Accountants · Est. 2021</div>
+    <h1 class="hero-title">
+      <span class="line1 reveal reveal-d1">Mastering</span>
+      <span class="line2 reveal reveal-d2">Numbers,</span>
+      <span class="line1 reveal reveal-d3" style="color:var(--txt2);font-size:0.72em;font-style:normal;letter-spacing:-0.01em">Elevating Businesses.</span>
+    </h1>
+    <p class="hero-tagline reveal reveal-d4">A full-service Chartered Accountancy firm providing Taxation, Audit, International Tax Advisory, and Business Advisory services across India.</p>
+    <div class="hero-actions reveal reveal-d5">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-ghost">Talk to a Partner</a>
+    </div>
+    <div class="hero-stats reveal reveal-d6">
+      <div>
+        <div class="hero-stat-n">2</div>
+        <div class="hero-stat-l">Founding Partners</div>
+      </div>
+      <div>
+        <div class="hero-stat-n">7+</div>
+        <div class="hero-stat-l">Service Verticals</div>
+      </div>
+      <div>
+        <div class="hero-stat-n">3</div>
+        <div class="hero-stat-l">Office Locations</div>
+      </div>
+      <div>
+        <div class="hero-stat-n">50+</div>
+        <div class="hero-stat-l">Clients Served</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════
+     ABOUT
+════════════════════════════ -->
+<section id="about">
+  <div class="section-eyebrow reveal">About the Firm</div>
+  <h2 class="section-heading reveal">Built by practitioners,<br><em>driven by purpose.</em></h2>
+  <div class="rule reveal"></div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p><strong>YouWe Quest LLP</strong> is one of the leading providers of financial and business advisory services, established in 2021 in Delhi. We bring together deep technical expertise in statutory audit, tax advisory, debt syndication, subsidy liaison, and international taxation under one roof.</p>
+      <p>The firm was set up by a group of energetic, highly skilled professionals who have gained experience from top consulting companies. We combine the rigour of a large firm with the agility and personalised attention of a boutique practice.</p>
+      <p>Our work spans domestic and international clients — from early-stage startups seeking valuation advisory, to established corporates navigating complex tax litigation and cross-border compliance.</p>
+      <div class="offices">
+        <div class="office-item"><span class="office-dot"></span><span class="office-city">Delhi</span><span>Head Office</span></div>
+        <div class="office-item"><span class="office-dot"></span><span class="office-city">Bhubaneswar</span><span>Eastern Office</span></div>
+        <div class="office-item"><span class="office-dot"></span><span class="office-city">Berhampur</span><span>Branch Office</span></div>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="gc about-card reveal reveal-d1">
+        <div class="about-card-icon">⚖️</div>
+        <h3>Regulatory Expertise</h3>
+        <p>Deep experience across CGST, Income Tax Act, Companies Act, FEMA, and SEBI — keeping you compliant and defensible.</p>
+      </div>
+      <div class="gc about-card reveal reveal-d2">
+        <div class="about-card-icon">🌐</div>
+        <h3>International Reach</h3>
+        <p>DTAA advisory, NRI taxation, foreign tax credit, and cross-border structuring for clients across the US, Singapore, UAE, and beyond.</p>
+      </div>
+      <div class="gc about-card reveal reveal-d3">
+        <div class="about-card-icon">📊</div>
+        <h3>Business Orientation</h3>
+        <p>We advise from a commercial perspective — not just compliance. Our partners bring strategic insight alongside technical precision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════
+     PROMISE
+════════════════════════════ -->
+<section id="promise">
+  <div class="section-eyebrow reveal">Our Commitment</div>
+  <h2 class="section-heading reveal">The promise we<br><em>make to every client.</em></h2>
+  <div class="rule reveal"></div>
+  <div class="promise-grid">
+    <div class="gc promise-card reveal reveal-d1">
+      <div class="promise-num">01</div>
+      <div class="promise-title">Quality Deliverables</div>
+      <div class="promise-desc">Every report, return, or opinion we deliver is reviewed for accuracy, completeness, and commercial utility before it reaches you.</div>
+    </div>
+    <div class="gc promise-card reveal reveal-d2">
+      <div class="promise-num">02</div>
+      <div class="promise-title">Truthfulness</div>
+      <div class="promise-desc">We give you honest advice — even when it is uncomfortable. Our value lies in telling you what you need to hear, not what you want to hear.</div>
+    </div>
+    <div class="gc promise-card reveal reveal-d3">
+      <div class="promise-num">03</div>
+      <div class="promise-title">Passion for Hard Problems</div>
+      <div class="promise-desc">Complex litigation, international structuring, distressed valuations — we are most energised when the problem is genuinely difficult.</div>
+    </div>
+    <div class="gc promise-card reveal reveal-d4">
+      <div class="promise-num">04</div>
+      <div class="promise-title">Innovative Thinking</div>
+      <div class="promise-desc">We bring fresh perspectives to old problems. Our team actively explores emerging regulatory developments and applies them to your advantage.</div>
+    </div>
+    <div class="gc promise-card reveal reveal-d5">
+      <div class="promise-num">05</div>
+      <div class="promise-title">Strict Confidentiality</div>
+      <div class="promise-desc">Your financial information, business plans, and legal matters are held in the strictest confidence. Always. Without exception.</div>
+    </div>
+    <div class="gc promise-card reveal reveal-d6">
+      <div class="promise-num">06</div>
+      <div class="promise-title">Partner-Level Proficiency</div>
+      <div class="promise-desc">We invest continuously in our own development so you are always served by people at the leading edge of their field.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════
+     SERVICES
+════════════════════════════ -->
+<section id="services">
+  <div class="section-eyebrow reveal">What We Do</div>
+  <h2 class="section-heading reveal">Service offerings<br><em>across every dimension.</em></h2>
+  <p class="section-sub reveal">From day-to-day compliance to high-stakes litigation and cross-border structuring — we cover the full spectrum.</p>
+  <div class="rule reveal"></div>
+  <div class="services-grid">
+
+    <div class="gc svc-card reveal reveal-d1">
+      <div class="svc-icon">🔍</div>
+      <div class="svc-badge">Audit</div>
+      <div class="svc-title">Audit &amp; Assurance</div>
+      <ul class="svc-list">
+        <li>Statutory Audits</li>
+        <li>Tax Audits</li>
+        <li>Internal Audits</li>
+        <li>Reviews, Compilations &amp; Attestation</li>
+        <li>Internal Control Systems</li>
+        <li>Standard Operating Procedures</li>
+      </ul>
+    </div>
+
+    <div class="gc svc-card reveal reveal-d2">
+      <div class="svc-icon">⚖️</div>
+      <div class="svc-badge">Tax &amp; Litigation</div>
+      <div class="svc-title">Tax &amp; Litigation</div>
+      <ul class="svc-list">
+        <li>Domestic Tax Planning &amp; Advisory</li>
+        <li>Tax Return Submissions</li>
+        <li>Assessment Proceedings</li>
+        <li>Search, Seizure &amp; Survey</li>
+        <li>Income Tax Appellate &amp; ITAT</li>
+      </ul>
+    </div>
+
+    <div class="gc svc-card reveal reveal-d3">
+      <div class="svc-icon">🌐</div>
+      <div class="svc-badge">International</div>
+      <div class="svc-title">International Tax</div>
+      <ul class="svc-list">
+        <li>International Tax Planning</li>
+        <li>DTAA Consultancy</li>
+        <li>NRI Taxation (US, Singapore, UAE)</li>
+        <li>ESOP / ESPP / RSU Advisory</li>
+        <li>Foreign Tax Credit (Form 67)</li>
+      </ul>
+    </div>
+
+    <div class="gc svc-card reveal reveal-d4">
+      <div class="svc-icon">💹</div>
+      <div class="svc-badge">Advisory</div>
+      <div class="svc-title">Corporate Financing &amp; Subsidy</div>
+      <ul class="svc-list">
+        <li>Debt &amp; Subsidy Documentation</li>
+        <li>Business Plans &amp; Projections</li>
+        <li>Debt &amp; Equity Provider Access</li>
+        <li>Tax-Integrated Structuring</li>
+        <li>Project Finance</li>
+      </ul>
+    </div>
+
+    <div class="gc svc-card reveal reveal-d5">
+      <div class="svc-icon">📈</div>
+      <div class="svc-badge">Valuation</div>
+      <div class="svc-title">Valuation &amp; Financial Modelling</div>
+      <ul class="svc-list">
+        <li>Startup Fund-Raising Valuation</li>
+        <li>Regulatory Valuation</li>
+        <li>Financial Modelling</li>
+        <li>Project Report Preparation</li>
+      </ul>
+    </div>
+
+    <div class="gc svc-card reveal reveal-d6">
+      <div class="svc-icon">🏛️</div>
+      <div class="svc-badge">Compliance</div>
+      <div class="svc-title">Corporate &amp; Indirect Tax</div>
+      <ul class="svc-list">
+        <li>Company &amp; LLP Incorporation</li>
+        <li>Statutory Due Diligence</li>
+        <li>FEMA &amp; RBI / FDI Compliance</li>
+        <li>GST Advisory &amp; Compliance</li>
+        <li>Customs Advisory</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════
+     PARTNERS
+════════════════════════════ -->
+<section id="partners">
+  <div class="section-eyebrow reveal">Leadership</div>
+  <h2 class="section-heading reveal">Meet the partners<br><em>behind the practice.</em></h2>
+  <div class="rule reveal"></div>
+  <div class="partners-grid">
+
+    <div class="gc partner-card reveal reveal-d1">
+      <div class="partner-photo">PP</div>
+      <div class="partner-name">Padarabinda Pradhan</div>
+      <div class="partner-title">Chartered Accountant · Co-Founding Partner</div>
+      <div class="partner-certs">
+        <span class="cert-tag">CA · ICAI</span>
+        <span class="cert-tag">Valuation · NYU (Prof. Damodaran)</span>
+        <span class="cert-tag">NISM Series V-A</span>
+      </div>
+      <div class="partner-bio">Padarabinda brings extensive experience in financial modelling, startup valuation, and project financing. Formerly at a prominent consulting firm in Gurgaon, he holds a Valuation Certification from New York University under the guidance of Professor Aswath Damodaran — one of the foremost authorities on corporate finance globally. He is also an active investor and NISM-certified mutual fund advisor.</div>
+      <div class="partner-clients-label">Select Client Experience</div>
+      <div class="partner-clients">Vatika · Ireo · Lemon Tree Hotels · Novotel (Triguna Hotels) · Bharat Hotels · Amway India</div>
+      <div class="partner-contact">
+        <a href="mailto:pb@youwequest.com">
+          <svg class="contact-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2"/></svg>
+          pb@youwequest.com
+        </a>
+        <a href="tel:+918470991453">
+          <svg class="contact-icon" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5a9 9 0 003 3L10 8.5l4 1.5v3a2 2 0 01-2 1C5 14 2 8.5 2 4a2 2 0 011-2z" stroke="currentColor" stroke-width="1.2"/></svg>
+          +91 84709 91453
+        </a>
+      </div>
+    </div>
+
+    <div class="gc partner-card reveal reveal-d2">
+      <div class="partner-photo">ST</div>
+      <div class="partner-name">S. Triyambaka Patro</div>
+      <div class="partner-title">Chartered Accountant · Co-Founding Partner</div>
+      <div class="partner-certs">
+        <span class="cert-tag">CA · ICAI</span>
+        <span class="cert-tag">Diploma · International Taxation</span>
+        <span class="cert-tag">US Market · Overseas Outsourcing</span>
+        <span class="cert-tag">Forensic Accounting · ICAI</span>
+        <span class="cert-tag">Labour Laws · ICAI</span>
+      </div>
+      <div class="partner-bio">Triyambaka is a litigation-focused CA with deep expertise in direct and indirect tax, international taxation, and audit. He scored exemptions in 7 of 8 papers in his CA Final — a rare academic distinction. His advisory approach is distinctly commercial: he advises clients from a business perspective, not merely a numbers one. He specialises in NRI taxation, ESOP/RSU advisory, and complex tax disputes.</div>
+      <div class="partner-clients-label">Select Client Experience</div>
+      <div class="partner-clients">Crocs · Medtronic · Ritco Logistics · Ninex Real Estate · iBooks</div>
+      <div class="partner-contact">
+        <a href="mailto:tp@youwequest.com">
+          <svg class="contact-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.2"/></svg>
+          tp@youwequest.com
+        </a>
+        <a href="tel:+918587065603">
+          <svg class="contact-icon" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5a9 9 0 003 3L10 8.5l4 1.5v3a2 2 0 01-2 1C5 14 2 8.5 2 4a2 2 0 011-2z" stroke="currentColor" stroke-width="1.2"/></svg>
+          +91 85870 65603
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════
+     CLIENTS
+════════════════════════════ -->
+<section id="clients">
+  <div class="section-eyebrow reveal">Track Record</div>
+  <h2 class="section-heading reveal">Trusted by businesses<br><em>across industries.</em></h2>
+  <div class="rule reveal"></div>
+  <div class="clients-grid">
+    <div class="gc client-card reveal reveal-d1">
+      <div class="client-initial">U</div>
+      <div class="client-name">Utkal Enterprise Private Limited</div>
+      <div class="client-sector">Manufacturing</div>
+    </div>
+    <div class="gc client-card reveal reveal-d2">
+      <div class="client-initial">T</div>
+      <div class="client-name">Tapzen Pharmaceuticals Pvt Ltd</div>
+      <div class="client-sector">Pharma · Manufacturing</div>
+    </div>
+    <div class="gc client-card reveal reveal-d3">
+      <div class="client-initial">M</div>
+      <div class="client-name">Max Health Private Limited</div>
+      <div class="client-sector">Pharmacy · Healthcare</div>
+    </div>
+    <div class="gc client-card reveal reveal-d4">
+      <div class="client-initial">S</div>
+      <div class="client-name">Stallions</div>
+      <div class="client-sector">AdTech</div>
+    </div>
+    <div class="gc client-card reveal reveal-d1">
+      <div class="client-initial">M</div>
+      <div class="client-name">Manor Private Limited</div>
+      <div class="client-sector">Real Estate</div>
+    </div>
+    <div class="gc client-card reveal reveal-d2">
+      <div class="client-initial">S</div>
+      <div class="client-name">Storyvane Café</div>
+      <div class="client-sector">F&amp;B · Restaurant</div>
+    </div>
+    <div class="gc client-card reveal reveal-d3">
+      <div class="client-initial">V</div>
+      <div class="client-name">Vignan Institute of Technology &amp; Management</div>
+      <div class="client-sector">Education</div>
+    </div>
+    <div class="gc client-card reveal reveal-d4" style="display:flex;align-items:center;justify-content:center;flex-direction:column;border-style:dashed;border-color:rgba(184,150,62,0.2)">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold-l);opacity:0.5">+</div>
+      <div style="font-size:12px;color:var(--txt3);margin-top:6px">Many more</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════
+     WEEKLY UPDATES
+════════════════════════════ -->
+<section id="updates-section" style="padding-top:80px;padding-bottom:80px">
+  <div class="updates-inner reveal">
+    <div>
+      <div class="updates-badge"><span class="live-dot"></span>Published Every Friday</div>
+      <div class="updates-title">Weekly Tax &amp;<br>Regulatory Digest</div>
+      <div class="updates-desc">Stay ahead of every GST circular, income tax notification, MCA update, SEBI development, and ICAI advisory — curated and analysed by our team every Friday evening.</div>
+      <div class="updates-tags">
+        <span class="utag utag-gst">GST</span>
+        <span class="utag utag-dt">Direct Tax</span>
+        <span class="utag utag-mca">MCA</span>
+        <span class="utag utag-sebi">SEBI</span>
+        <span class="utag utag-icai">ICAI</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-end">
+      <a href="/updates/" class="btn-primary" style="white-space:nowrap">Read Latest Update →</a>
+      <a href="/updates/" class="btn-ghost" style="white-space:nowrap;font-size:12px">Browse Archive</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════════════
+     CONTACT
+════════════════════════════ -->
+<section id="contact">
+  <div class="section-eyebrow reveal">Reach Out</div>
+  <h2 class="section-heading reveal">Let's start a<br><em>conversation.</em></h2>
+  <p class="section-sub reveal">Reach either of our partners directly. We respond personally — not through a junior.</p>
+  <div class="rule reveal"></div>
+  <div class="contact-grid">
+    <div class="gc contact-card reveal reveal-d1">
+      <div class="contact-role">Co-Founding Partner</div>
+      <div class="contact-name">Padarabinda Pradhan</div>
+      <div class="contact-links">
+        <a href="mailto:pb@youwequest.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>pb@youwequest.com
+        </a>
+        <a href="tel:+918470991453" class="contact-link">
+          <span class="contact-link-icon">☎</span>+91 84709 91453
+        </a>
+      </div>
+    </div>
+    <div class="gc contact-card reveal reveal-d2">
+      <div class="contact-role">Co-Founding Partner</div>
+      <div class="contact-name">S. Triyambaka Patro</div>
+      <div class="contact-links">
+        <a href="mailto:tp@youwequest.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>tp@youwequest.com
+        </a>
+        <a href="tel:+918587065603" class="contact-link">
+          <span class="contact-link-icon">☎</span>+91 85870 65603
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     FOOTER
+════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="data:image/png;base64,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" alt="YWQ" style="width:26px;height:26px;object-fit:contain;opacity:0.92;">
+      YouWe Quest <span>LLP</span>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#partners">Partners</a>
+      <a href="#clients">Clients</a>
+      <a href="/updates/">Weekly Updates</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 YouWe Quest LLP<br>All rights reserved.</div>
+  </div>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+// ── Scroll reveal ──
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => obs.observe(el));
+
+// ── Active nav link ──
+const sections = document.querySelectorAll('section[id], #hero');
+const navLinks = document.querySelectorAll('.nav-links a');
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if(active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.35 });
+sections.forEach(s => navObs.observe(s));
+
+// ── Mobile menu ──
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mob-menu');
+ham.addEventListener('click', () => {
+  mob.classList.toggle('open');
+  const spans = ham.querySelectorAll('span');
+  if(mob.classList.contains('open')){
+    spans[0].style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(4.5px,-4.5px)';
+  } else {
+    spans.forEach(s => { s.style.transform=''; s.style.opacity=''; });
+  }
+});
+function closeMob(){
+  mob.classList.remove('open');
+  const spans = ham.querySelectorAll('span');
+  spans.forEach(s => { s.style.transform=''; s.style.opacity=''; });
+}
+
+// ── Trigger hero reveals on load ──
+window.addEventListener('load', () => {
+  document.querySelectorAll('#hero .reveal').forEach(el => {
+    setTimeout(() => el.classList.add('visible'), 100);
+  });
+});
+</script>
 </body>
 </html>
