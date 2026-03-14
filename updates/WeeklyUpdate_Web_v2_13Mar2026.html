@@ -112,7 +112,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 /* chips */
 .chips{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;opacity:0;animation:fadeUp 0.7s ease forwards 0.22s}
 @media(max-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
-.chip{background:var(--glass);border:1px solid var(--glass-b);border-radius:12px;padding:14px 12px;backdrop-filter:blur(20px);transition:all 0.2s;cursor:default}
+.chip{background:var(--glass);border:1px solid var(--glass-b);border-radius:12px;padding:14px 12px;backdrop-filter:blur(20px);transition:all 0.2s;cursor:pointer}
 .chip:hover{background:var(--glass-h);border-color:rgba(184,150,62,0.28);transform:translateY(-2px)}
 .chip-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;line-height:1;margin-bottom:3px}
 .chip-l{font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:var(--txt2)}
@@ -296,16 +296,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 <div id="view-summary" class="view active">
 
   <div class="chips">
-    <div class="chip"><div class="chip-n" style="color:var(--gst)">7</div><div class="chip-l">GST</div></div>
-    <div class="chip"><div class="chip-n" style="color:var(--dt)">8</div><div class="chip-l">Direct Tax</div></div>
-    <div class="chip"><div class="chip-n" style="color:var(--mca)">3</div><div class="chip-l">MCA</div></div>
-    <div class="chip"><div class="chip-n" style="color:var(--sebi)">4</div><div class="chip-l">SEBI</div></div>
-    <div class="chip"><div class="chip-n" style="color:var(--icai)">4</div><div class="chip-l">ICAI</div></div>
-    <div class="chip"><div class="chip-n" style="color:var(--gold)">18</div><div class="chip-l">Actions</div></div>
+    <div class="chip" onclick="scrollToSection('sec-gst')"><div class="chip-n" style="color:var(--gst)">7</div><div class="chip-l">GST</div></div>
+    <div class="chip" onclick="scrollToSection('sec-dt')"><div class="chip-n" style="color:var(--dt)">8</div><div class="chip-l">Direct Tax</div></div>
+    <div class="chip" onclick="scrollToSection('sec-mca')"><div class="chip-n" style="color:var(--mca)">3</div><div class="chip-l">MCA</div></div>
+    <div class="chip" onclick="scrollToSection('sec-sebi')"><div class="chip-n" style="color:var(--sebi)">4</div><div class="chip-l">SEBI</div></div>
+    <div class="chip" onclick="scrollToSection('sec-icai')"><div class="chip-n" style="color:var(--icai)">4</div><div class="chip-l">ICAI</div></div>
+    <div class="chip" onclick="switchTab('actions', document.querySelector('.tab:nth-child(3)'))"><div class="chip-n" style="color:var(--gold)">18</div><div class="chip-l">Actions</div></div>
   </div>
 
   <!-- GST Summary -->
-  <div class="sec s1">
+  <div id="sec-gst" class="sec s1">
     <div class="sec-hd"><span class="dpill p-gst">GST</span><h2 class="sec-title">Goods &amp; Services Tax</h2></div>
     <div class="gc"><div class="entries">
       <div class="entry"><span class="tag t-court">Court</span><div class="et"><strong>Bombay HC — s.67(2) CGST does not authorise cash seizure.</strong> <em>Smurti Waghdhare v. DGGI (2026:BHC-OS:6209-DB)</em> — ejusdem generis applied; ₹1 crore returned with interest.</div></div>
@@ -317,7 +317,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
   </div>
 
   <!-- DT Summary -->
-  <div class="sec s2">
+  <div id="sec-dt" class="sec s2">
     <div class="sec-hd"><span class="dpill p-dt">Direct Tax</span><h2 class="sec-title">Income Tax &amp; Finance Bill</h2></div>
     <div class="gc"><div class="entries">
       <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>15 Mar 2026</strong> — 4th advance tax instalment (100% of FY 2025–26). s.234B/234C interest on shortfall.</div></div>
@@ -329,7 +329,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
   </div>
 
   <!-- MCA Summary -->
-  <div class="sec s3">
+  <div id="sec-mca" class="sec s3">
     <div class="sec-hd"><span class="dpill p-mca">MCA</span><h2 class="sec-title">Corporate Affairs</h2></div>
     <div class="gc"><div class="entries">
       <div class="entry"><span class="tag t-new">Scheme</span><div class="et"><strong>MCA Compliance Facilitation Scheme 2026</strong> — Window <em>15 Apr – 15 Jul 2026</em>. AOC-4/MGT-7 at 10% additional fee; MSC-1 at 50%; STK-2 concessional.</div></div>
@@ -339,7 +339,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
   </div>
 
   <!-- SEBI Summary -->
-  <div class="sec s4">
+  <div id="sec-sebi" class="sec s4">
     <div class="sec-hd"><span class="dpill p-sebi">SEBI</span><h2 class="sec-title">Capital Markets</h2></div>
     <div class="gc"><div class="entries">
       <div class="entry"><span class="tag t-live">Live</span><div class="et"><strong>MFD Incentive Framework</strong> from 01 Mar 2026. ₹2,000 per new B-30/women investor from 2bp IEPF corpus. 1-year minimum holding.</div></div>
@@ -350,7 +350,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
   </div>
 
   <!-- ICAI Summary -->
-  <div class="sec s5">
+  <div id="sec-icai" class="sec s5">
     <div class="sec-hd"><span class="dpill p-icai">ICAI</span><h2 class="sec-title">Professional Standards</h2></div>
     <div class="gc"><div class="entries">
       <div class="entry"><span class="tag t-icai">Standards</span><div class="et"><strong>ICAI Handbook</strong> on Key Compliances for Private Limited Companies released. EAC opinions on ITA 2025 transition expected from Direct Taxes Committee.</div></div>
@@ -820,6 +820,13 @@ function switchTab(id, btn) {
   document.getElementById('view-' + id).classList.add('active');
   btn.classList.add('active');
   window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var navH = document.querySelector('.nav').offsetHeight;
+  var top = el.getBoundingClientRect().top + window.scrollY - navH - 16;
+  window.scrollTo({top: top, behavior: 'smooth'});
 }
 function toggleSub(hd) {
   var sub = hd.parentElement;
