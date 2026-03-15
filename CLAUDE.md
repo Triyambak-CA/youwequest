@@ -231,13 +231,17 @@ You must rewrite it as a standalone site page matching the YouWe Quest design sy
       transition: color 0.2s, border-color 0.2s;
     }
     .nav-back:hover { color: var(--macro); border-color: var(--macro-border); }
-    .theme-btn {
-      background: none; border: 1px solid var(--border);
-      color: var(--text2); cursor: pointer;
-      padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.8rem;
-      transition: all 0.2s;
+    .theme-toggle {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      border: 1px solid var(--border); background: transparent;
+      cursor: pointer; color: var(--text2); transition: all 0.2s;
+      flex-shrink: 0; padding: 0;
     }
-    .theme-btn:hover { border-color: var(--macro-border); color: var(--macro); }
+    .theme-toggle:hover { border-color: var(--macro-border); color: var(--macro); background: var(--macro-dim); }
+    .theme-toggle svg { width: 15px; height: 15px; }
+    [data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.14); }
+    [data-theme="light"] .theme-toggle:hover { border-color: rgba(30,122,80,0.45); color: var(--macro); background: var(--macro-dim); }
 
     /* === Page wrapper === */
     .page { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
@@ -474,7 +478,10 @@ You must rewrite it as a standalone site page matching the YouWe Quest design sy
   <a href="../index.html" class="nav-brand">YouWe Quest<span>.</span></a>
   <div class="nav-right">
     <a href="index.html" class="nav-back">← All macro reports</a>
-    <button class="theme-btn" onclick="toggleTheme()">theme</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
   </div>
 </nav>
 
@@ -521,11 +528,23 @@ You must rewrite it as a standalone site page matching the YouWe Quest design sy
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-function toggleTheme(){
-  var t=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
-  document.documentElement.setAttribute('data-theme',t);
-  localStorage.setItem('theme',t);
-}
+(function(){
+  var html=document.documentElement;
+  var btn=document.getElementById('theme-toggle');
+  var sun=document.getElementById('icon-sun');
+  var moon=document.getElementById('icon-moon');
+  function applyTheme(t){
+    html.setAttribute('data-theme',t);
+    sun.style.display=t==='dark'?'':'none';
+    moon.style.display=t==='light'?'':'none';
+  }
+  applyTheme(localStorage.getItem('theme')||'dark');
+  btn.addEventListener('click',function(){
+    var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    localStorage.setItem('theme',next);
+    applyTheme(next);
+  });
+})();
 
 const ch={};
 function sw(id,btn){
