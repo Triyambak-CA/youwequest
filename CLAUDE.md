@@ -615,10 +615,20 @@ Fill `card-desc` with a 1–2 sentence summary of the month's key macro theme fr
 
 ---
 
-### Step 5 — Commit and push
+### Step 5 — Update the home page CTA
+
+In `index.html`, update the "Read Latest Report →" button `href` to point to the new file:
+
+```html
+<a href="/macro/MacroReport_<DD><Mon><YYYY>.html" class="btn-primary" ...>Read Latest Report →</a>
+```
+
+---
+
+### Step 6 — Commit and push
 
 ```bash
-git add macro/MacroReport_<DD><Mon><YYYY>.html macro/index.html
+git add macro/MacroReport_<DD><Mon><YYYY>.html macro/index.html index.html
 git commit -m "macro: add [Month] [Year] macro intelligence report"
 git push origin main
 ```
@@ -638,4 +648,5 @@ GitHub Pages auto-deploys on push. The report will be live at:
 - [ ] Triggered tabs present with dashed border (if any this month)
 - [ ] Cover badges match which sections are triggered
 - [ ] `macro/index.html` card added at top, `latest-chip` moved
+- [ ] `index.html` "Read Latest Report →" href updated to new file
 - [ ] `CNAME` file untouched
