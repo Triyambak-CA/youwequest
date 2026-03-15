@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macro &amp; Market Reports — YouWe Quest LLP</title>
+<meta name="description" content="In-depth macro and market event reports — published by YouWe Quest LLP.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8963E;--gold-l:#D4AE5A;--gold-glow:rgba(184,150,62,0.15);
+  --macro:#5EBF8C;--macro-l:#7ED4A8;
+  --glass:rgba(255,255,255,0.04);--glass-b:rgba(255,255,255,0.08);
+  --glass-h:rgba(255,255,255,0.07);
+  --txt:rgba(255,255,255,0.90);--txt2:rgba(255,255,255,0.52);--txt3:rgba(255,255,255,0.30);
+  --bg:#070c12;--bg2:#0b1018;
+}
+[data-theme="light"]{
+  --glass:rgba(0,0,0,0.04);
+  --glass-b:rgba(0,0,0,0.08);
+  --glass-h:rgba(0,0,0,0.06);
+  --txt:rgba(15,12,5,0.94);
+  --txt2:rgba(15,12,5,0.70);
+  --txt3:rgba(15,12,5,0.54);
+  --bg:#f4f1eb;--bg2:#ece9e0;
+  --gold:#8C6D1A;--gold-l:#AA8420;--gold-glow:rgba(140,109,26,0.14);
+  --macro:#1E7A50;--macro-l:#2A9660;
+}
+[data-theme="light"] .nav{background:rgba(244,241,235,0.85);border-bottom-color:rgba(0,0,0,0.08)}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(94,191,140,0.10),transparent)}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(200,190,170,0.25),transparent)}
+[data-theme="light"] .orb3{background:radial-gradient(circle,rgba(220,210,190,0.18),transparent)}
+[data-theme="light"] .divider-line{background:rgba(0,0,0,0.07)}
+[data-theme="light"] .footer{border-top-color:rgba(0,0,0,0.08)}
+[data-theme="light"] .b-macro{background:rgba(30,122,80,0.09);border-color:rgba(30,122,80,0.28)}
+[data-theme="light"] .update-card{border-color:rgba(0,0,0,0.10)}
+[data-theme="light"] .card-arrow{border-color:rgba(0,0,0,0.12)}
+[data-theme="light"] .update-card:hover{border-color:rgba(30,122,80,0.35)}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.65}
+
+/* orbs */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.14;animation:drift 20s ease-in-out infinite}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,#5EBF8C,transparent);top:-200px;left:-150px;animation-delay:0s}
+.orb2{width:550px;height:550px;background:radial-gradient(circle,#0f2a4a,transparent);bottom:-100px;right:-100px;animation-delay:-7s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,#0a1a0f,transparent);top:45%;left:55%;animation-delay:-14s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-18px) scale(1.04)}66%{transform:translate(-18px,25px) scale(0.96)}}
+
+/* nav */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,12,18,0.82);
+  backdrop-filter:blur(28px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:0 24px;
+}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;gap:16px}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--txt2);letter-spacing:0.02em;white-space:nowrap;text-decoration:none}
+.nav-brand span{color:var(--gold)}
+.nav-back{
+  font-size:12px;color:var(--txt3);letter-spacing:0.05em;
+  text-decoration:none;display:flex;align-items:center;gap:6px;
+  transition:color 0.2s;
+}
+.nav-back:hover{color:var(--txt2)}
+.nav-back svg{width:14px;height:14px;opacity:0.6}
+
+/* wrap */
+.wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:56px 24px 100px}
+
+/* header */
+.pg-header{margin-bottom:48px;opacity:0;animation:fadeUp 0.6s ease forwards}
+.pg-eyebrow{
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--macro);margin-bottom:12px;font-weight:500;
+}
+.pg-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,5vw,42px);font-weight:400;
+  line-height:1.18;letter-spacing:0.01em;
+  color:var(--txt);margin-bottom:12px;
+}
+.pg-sub{font-size:14px;color:var(--txt2);max-width:520px;line-height:1.7}
+
+/* domain legend */
+.legend{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:40px;
+  opacity:0;animation:fadeUp 0.6s ease forwards 0.1s;
+}
+.badge{
+  font-size:10.5px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px;
+}
+.b-macro{background:rgba(94,191,140,0.10);color:var(--macro);border:1px solid rgba(94,191,140,0.22)}
+
+/* update list */
+.update-list{display:flex;flex-direction:column;gap:12px}
+
+.update-card{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;
+  padding:20px 24px;
+  text-decoration:none;
+  color:inherit;
+  transition:background 0.2s,border-color 0.2s,transform 0.2s;
+  overflow:hidden;
+  opacity:0;animation:fadeUp 0.5s ease forwards;
+}
+.update-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(94,191,140,0.06),transparent 60%);
+  opacity:0;transition:opacity 0.2s;border-radius:inherit;
+}
+.update-card:hover{
+  background:var(--glass-h);
+  border-color:rgba(94,191,140,0.28);
+  transform:translateY(-1px);
+}
+.update-card:hover::before{opacity:1}
+
+.card-left{flex:1;min-width:0}
+.card-date{
+  font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--macro);font-weight:500;margin-bottom:6px;
+}
+.card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-weight:400;letter-spacing:0.01em;
+  color:var(--txt);margin-bottom:8px;line-height:1.3;
+}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+.card-arrow{
+  flex-shrink:0;width:32px;height:32px;
+  border:1px solid rgba(255,255,255,0.10);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--txt3);transition:all 0.2s;
+}
+.update-card:hover .card-arrow{
+  border-color:rgba(94,191,140,0.4);
+  color:var(--macro-l);
+  background:rgba(94,191,140,0.08);
+}
+
+/* latest chip */
+.latest-chip{
+  position:absolute;top:14px;right:60px;
+  font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;
+  background:rgba(94,191,140,0.15);color:var(--macro-l);
+  border:1px solid rgba(94,191,140,0.30);
+  border-radius:20px;padding:2px 9px;
+}
+
+/* year divider */
+.divider{
+  display:flex;align-items:center;gap:12px;
+  margin:32px 0 20px;
+  opacity:0;animation:fadeUp 0.5s ease forwards;
+}
+.divider-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);white-space:nowrap}
+.divider-line{flex:1;height:1px;background:rgba(255,255,255,0.06)}
+
+/* empty state */
+.empty-state{
+  text-align:center;padding:64px 24px;
+  opacity:0;animation:fadeUp 0.6s ease forwards 0.2s;
+}
+.empty-icon{
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(94,191,140,0.08);border:1px solid rgba(94,191,140,0.18);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;color:var(--macro);
+}
+.empty-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--txt);margin-bottom:8px}
+.empty-sub{font-size:13px;color:var(--txt3);line-height:1.7;max-width:320px;margin:0 auto}
+
+/* footer */
+.footer{
+  position:relative;z-index:1;
+  text-align:center;padding:32px 24px 48px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  margin-top:64px;
+}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--txt2);letter-spacing:0.03em}
+.ft-firm{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--macro);margin-top:4px}
+.ft-note{font-size:11px;color:var(--txt3);margin-top:10px;line-height:1.6}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── theme toggle ── */
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.10);background:transparent;cursor:pointer;color:var(--txt2);transition:all 0.2s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:rgba(94,191,140,0.45);color:var(--macro-l);background:rgba(94,191,140,0.06)}
+.theme-toggle svg{width:15px;height:15px}
+[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.12)}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html">YouWe <span>Quest</span> LLP</a>
+    <a class="nav-back" href="../index.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M10 3L5 8l5 5"/>
+      </svg>
+      Back to home
+    </a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="pg-header">
+    <div class="pg-eyebrow">YouWe Quest LLP</div>
+    <h1 class="pg-title">Macro &amp; Market Reports</h1>
+    <p class="pg-sub">In-depth analysis of macroeconomic events, market developments, and policy shifts — published as significant events warrant.</p>
+  </div>
+
+  <div class="legend">
+    <span class="badge b-macro">Macro Economy</span>
+    <span class="badge b-macro">Markets</span>
+    <span class="badge b-macro">Policy</span>
+    <span class="badge b-macro">India</span>
+    <span class="badge b-macro">Global</span>
+  </div>
+
+  <div class="update-list">
+
+    <!-- ── Add new report cards above this comment ── -->
+
+    <div class="empty-state">
+      <div class="empty-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      </div>
+      <div class="empty-title">First report coming soon</div>
+      <div class="empty-sub">We'll publish macro and market analysis here as significant events unfold.</div>
+    </div>
+
+  </div>
+
+</div><!-- /wrap -->
+
+<footer class="footer">
+  <div class="ft-name">S. Triyambaka Patro, CA</div>
+  <div class="ft-firm">YouWe Quest LLP</div>
+  <div class="ft-note">For informational purposes only — does not constitute investment or financial advice.</div>
+</footer>
+
+<script>
+(function(){
+  const html = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const sun = document.getElementById('icon-sun');
+  const moon = document.getElementById('icon-moon');
+  function applyTheme(t){
+    html.setAttribute('data-theme', t);
+    sun.style.display = t === 'dark' ? '' : 'none';
+    moon.style.display = t === 'light' ? '' : 'none';
+  }
+  applyTheme(localStorage.getItem('theme') || 'dark');
+  btn.addEventListener('click', function(){
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+})();
+</script>
+</body>
+</html>
