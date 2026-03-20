@@ -133,7 +133,7 @@ Card template:
     <span class="card-date">${FRI_DATE_DISPLAY}</span>
     <span class="card-tag">Regulatory</span>
   </div>
-  <h3 class="card-title">Weekly Regulatory Update — ${WEEK_ID}</h3>
+  <h3 class="card-title">Weekly Regulatory Update — ${FRI_DATE}</h3>
   <p class="card-desc">
     [1–2 sentence summary of the week's most important development.]
   </p>
