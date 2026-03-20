@@ -85,37 +85,77 @@ carries forward automatically.
 **Filename:** `WeeklyUpdate_Merged_${WEEK_ID}_${FILE_DATE}.docx`
 **Note:** This file is gitignored — it stays on the local Mac only.
 
-Generate a merged Word document using `docx` npm package with three parts:
+Generate a merged Word document using a **Python raw-XML script** (not the `docx` npm package).
+Write a Python script and run it with `python3`. Match the W11 reference exactly:
+`/Users/triyambak/Downloads/WeeklyUpdate_Merged_13Mar2026.docx`
+
+**Design — Light theme (NOT dark):**
+- Background: white/off-white (`FFFFFF` / `F7F8FA`) — NEVER dark backgrounds in body text
+- Body text: dark navy `0D1B2A`
+- Page size: A4 (`w:w="11906" w:h="16838"`)
+- Margins: top/bottom `1080` DXA, left/right `1200` DXA
+- Font: Arial throughout; Courier New for statutory citations only
+
+**Header (every page):**
+- 2-column table (5500 + 4006 DXA), gold bottom border (`B8963E`, sz=5)
+- Left cell: `YouWe Quest LLP` bold dark (`0D1B2A`) sz=20
+- Right cell: `Regulatory Update  |  ${FRI_DATE_DISPLAY}` grey (`888888`) sz=18 right-aligned
+
+**Footer (every page):**
+- Gold top border (`B8963E`, sz=3)
+- Centred disclaimer in grey (`AAAAAA`) sz=16
 
 **Part 1 — Summary**
-- Page heading: "Weekly Regulatory Update — W[##]-[YEAR]"
-- Subheading: "Dear Clients, · [SAT DATE] to [FRI DATE]"
-- Five domain sub-sections, each with colour-coded tag rows
-- Tags: COURT · DEADLINE · PORTAL · BUDGET · NEW LAW · SCHEME · URGENT
+- Title: "Weekly Regulatory Update" centred bold dark sz=44
+- Subtitle: "PART 1 OF 2 — SUMMARY" (gold) + "Week of ${SAT_DATE} to ${FRI_DATE}" (grey) centred sz=19
+- Gold rule (pBdr bottom B8963E sz=6)
+- "Dear Clients," + one-paragraph intro
+- Five domain sections, each:
+  - Header: emoji + domain name, bold dark sz=24, with gold pBdr bottom sz=3
+  - 2-column table (1500 + 8006 DXA): tag badge (left) + content (right)
+  - Tag badge cell: coloured bg (see below), white bold text sz=17, centred, vAlign center
+  - Content cell: dark text `0D1B2A` sz=20, alternating `F7F8FA`/`FFFFFF` fill
+- Tags and badge colours: COURT `C0392B` · DEADLINE `B8963E` · PORTAL `1A5276` · NEW LAW `7A349E` · BUDGET `1E8449` · CIRCULAR `B8963E` · MARKETS `E67E22` · ICAI `1A9080` · DATA `555555` · LIVE `1E8449`
+- Sign-off after last section
 
-**Divider Page**
-- Full-width gold horizontal rules
-- Large centred text: "TECHNICAL REFERENCE"
-- Week reference below
-- Page break before and after
+**Divider Page (between Part 1 and Part 2):**
+- Gold rule lines centred
+- "TECHNICAL REFERENCE" bold gold sz=36 centred
+- "PART 2 OF 2 · ${WEEK_ID} · ${SAT_DATE}–${FRI_DATE}" grey centred
 
 **Part 2 — Technical Reference**
 - Five sections: I. GST · II. Direct Tax · III. MCA · IV. SEBI · V. ICAI
-- Dark background (`#0D1B2A`) section headers with gold text
-- Sub-sections with coloured headings
-- Bullet points with statutory citations in Courier New
-- Practice notes in indented italic text
+- Section header bar: dark bg `0D1B2A`, roman numeral gold Courier New sz=22, domain name white Arial sz=24
+- Sub-headings (A, B, C): coloured bold Arial sz=20 (colour matches domain theme)
+- Bullets: ListParagraph style, dark text `0D1B2A` sz=20, num bullet
+- Practice notes: light gold bg `FDF8EE`, indented, italic grey `555555` sz=19, bold gold `B8963E` label
 
 **Part 3 — Action Items**
-- Three-column table: Domain (colour-coded) · Deadline (red) · Action
-- Sorted chronologically, domain tiebreaker within same date
-- Alternating row shading
+- "ACTION ITEMS" title centred bold sz=36
+- Gold rule
+- 3-column table (1200 + 1500 + 6806 DXA):
+  - Domain col: coloured bg badge, white bold text sz=17, centred
+  - Deadline col: `F7F8FA`/`FFFFFF` alternating, red `C0392B` for dates, grey `888888` for Ongoing
+  - Action col: `F7F8FA`/`FFFFFF` alternating, dark text `0D1B2A` sz=19
+- Table border: gold `B8963E` sz=3
+- Sign-off after table
 
-**Branding:**
-- Firm: YouWe Quest LLP
-- Greeting: Dear Clients,
-- Sign-off: Warm regards, / S. Triyambaka Patro, CA / YouWe Quest LLP
-- Colours: DARK=#0D1B2A · GOLD=#B8963E · fonts: Arial body, Courier New citations
+**Sign-off:**
+- Italic grey closing note centred sz=19
+- "Warm regards," dark `0D1B2A` sz=20
+- "S. Triyambaka Patro, CA" bold dark `0D1B2A` sz=20
+- "YouWe Quest LLP" grey `555555` sz=20
+
+**Validate after generating:**
+```python
+python3 -c "
+import zipfile, xml.etree.ElementTree as ET
+z = zipfile.ZipFile('WeeklyUpdate_Merged_${WEEK_ID}_${FILE_DATE}.docx')
+for f in ['word/document.xml','word/header1.xml','word/footer1.xml']:
+    ET.fromstring(z.read(f))
+print('Valid -', len(z.namelist()), 'files')
+"
+```
 
 ---
 
