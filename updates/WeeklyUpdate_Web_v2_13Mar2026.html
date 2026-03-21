@@ -150,6 +150,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 .t-budget{color:#D4AE5A;border-color:rgba(212,174,90,0.3);background:rgba(212,174,90,0.07)}
 .t-new{color:#C49FE6;border-color:rgba(196,159,230,0.3);background:rgba(196,159,230,0.07)}
 .t-icai{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+.t-udin{color:#F5A04A;border-color:rgba(245,160,74,0.3);background:rgba(245,160,74,0.07)}
+.t-peer{color:#64C4E8;border-color:rgba(100,196,232,0.3);background:rgba(100,196,232,0.07)}
+.t-pub{color:#A89FD8;border-color:rgba(168,159,216,0.3);background:rgba(168,159,216,0.07)}
 .t-live{color:#A8E890;border-color:rgba(168,232,144,0.3);background:rgba(168,232,144,0.07)}
 .et{font-size:13.5px;color:rgba(255,255,255,0.78);line-height:1.6}
 .et strong{color:var(--txt);font-weight:500}
@@ -354,8 +357,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
     <div class="sec-hd"><span class="dpill p-icai">ICAI</span><h2 class="sec-title">Professional Standards</h2></div>
     <div class="gc"><div class="entries">
       <div class="entry"><span class="tag t-icai">Standards</span><div class="et"><strong>ICAI Handbook</strong> on Key Compliances for Private Limited Companies released. EAC opinions on ITA 2025 transition expected from Direct Taxes Committee.</div></div>
-      <div class="entry"><span class="tag t-icai">Peer Review</span><div class="et"><strong>Mandatory peer review</strong> extends to statutory audit firms with client turnover &gt; <em>₹10 crore</em>. Initiate empanelment if not covered.</div></div>
-      <div class="entry"><span class="tag t-icai">UDIN</span><div class="et"><strong>60-day revocation window</strong> closes for January 2026 certificates. UDIN mandatory at time of signing — not post-dated.</div></div>
+      <div class="entry"><span class="tag t-peer">Peer Review</span><div class="et"><strong>Mandatory peer review</strong> extends to statutory audit firms with client turnover &gt; <em>₹10 crore</em>. Initiate empanelment if not covered.</div></div>
+      <div class="entry"><span class="tag t-udin">UDIN</span><div class="et"><strong>60-day revocation window</strong> closes for January 2026 certificates. UDIN mandatory at time of signing — not post-dated.</div></div>
       <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>31 Mar 2026</strong> — 20 structured CPE hours for FY 2025–26. May 2026 exam schedule released.</div></div>
     </div></div>
   </div>
@@ -835,10 +838,8 @@ function toggleSub(hd) {
 (function sortEntries(){
   var order={
     't-dead':0,'t-new':1,'t-court':2,'t-portal':3,
-    't-budget':4,'t-live':5,'t-icai':6
-  };
-  var textOrder={
-    'udin':0,'peer review':1,'standards':2,'publication':3,'circular':4,'markets':5,'data':6,'live':7
+    't-budget':4,'t-live':5,
+    't-udin':6,'t-peer':7,'t-icai':8,'t-pub':9
   };
   document.querySelectorAll('.entries').forEach(function(container){
     var entries=Array.from(container.querySelectorAll(':scope>.entry'));
@@ -846,11 +847,7 @@ function toggleSub(hd) {
       var ta=a.querySelector('.tag')||{},tb=b.querySelector('.tag')||{};
       var ca=[].find.call(ta.classList||[],function(c){return c in order});
       var cb=[].find.call(tb.classList||[],function(c){return c in order});
-      var pa=(order[ca]??99),pb=(order[cb]??99);
-      if(pa!==pb) return pa-pb;
-      var ta2=(ta.textContent||'').trim().toLowerCase();
-      var tb2=(tb.textContent||'').trim().toLowerCase();
-      return (textOrder[ta2]??50)-(textOrder[tb2]??50);
+      return (order[ca]??99)-(order[cb]??99);
     });
     entries.forEach(function(e){container.appendChild(e);});
   });
