@@ -154,6 +154,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 .et{font-size:13.5px;color:rgba(255,255,255,0.78);line-height:1.6}
 .et strong{color:var(--txt);font-weight:500}
 .et em{color:var(--gold-l);font-style:normal}
+.src-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--gold-l);text-decoration:none;opacity:0.75;margin-left:6px;white-space:nowrap;transition:opacity 0.15s}
+.src-link:hover{opacity:1;text-decoration:underline}
+.src-link::after{content:'↗';font-size:10px}
+[data-theme="light"] .src-link{color:var(--gold)}
 
 /* action table */
 .atbl{width:100%;border-collapse:collapse}

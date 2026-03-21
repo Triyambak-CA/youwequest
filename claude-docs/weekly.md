@@ -64,7 +64,7 @@ After pulling from all 10 sources above, scan these handles for the week period.
 | `@FinMinIndia` | Ministry of Finance — cross-domain MoF announcements |
 
 Compile findings into five domain buckets: GST · Direct Tax · MCA · SEBI · ICAI.
-For each item identify: type tag (COURT / DEADLINE / PORTAL / BUDGET / NEW LAW / LIVE), statutory reference, plain-language summary, and practice implication.
+For each item identify: type tag (COURT / DEADLINE / PORTAL / BUDGET / NEW LAW / LIVE), statutory reference, plain-language summary, practice implication, and **direct URL** to the source document (circular PDF, notification page, press release, court order, or publication download link). The URL is required — if a direct link is not available, use the department's relevant section page as the fallback.
 
 ---
 
@@ -77,8 +77,9 @@ For each item identify: type tag (COURT / DEADLINE / PORTAL / BUDGET / NEW LAW /
 **Summary tab**
 - Six clickable chips at top (GST / Direct Tax / MCA / SEBI / ICAI / Actions) — each calls `scrollToSection('sec-<domain>')`, Actions chip calls `switchTab('actions', ...)`
 - Each domain section `<div>` carries matching `id`: `sec-gst`, `sec-dt`, `sec-mca`, `sec-sebi`, `sec-icai`
-- Glass cards with entries: each entry has a colour-coded tag + text
+- Glass cards with entries: each entry has a colour-coded tag + text + source link
 - Tag types: `t-court` · `t-dead` · `t-portal` · `t-budget` · `t-new` · `t-live` · `t-icai`
+- Each entry must end with a source link: `<a href="DIRECT_URL" target="_blank" class="src-link">Source</a>` — opens in new tab. Use the direct PDF/notification link where available; fall back to the department's relevant section page.
 
 **Technical Reference tab**
 - Accordion sections (one per domain, labelled I–V)
