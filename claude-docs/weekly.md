@@ -20,16 +20,22 @@ Follow all five steps below exactly, in order.
 
 ### Step 1 — Research
 
-Search all six sources for developments published during the week period:
+Search all ten sources for developments published during the week period:
 
-| Source | Coverage |
-|---|---|
-| `cbic-gst.gov.in` | GST circulars, notifications, portal updates |
-| `incometax.gov.in` | IT notifications, press releases, CBDT orders |
-| `mca.gov.in` | Company law circulars, scheme notifications |
-| `sebi.gov.in` | Circulars, press releases, consultation papers |
-| `taxmann.com` | Court rulings, tribunal orders, analysis |
-| `icai.org` | Standards, peer review, UDIN, CPE advisories |
+| Source | Domain | Coverage |
+|---|---|---|
+| `cbic-gst.gov.in` | GST | Circulars, Notifications (CT/IT/UT/IGST/Compensation Cess), Instructions |
+| `gst.gov.in/home/advmsg` | GST | GSTN portal/technical advisories — separate from CBIC; HSN changes, e-invoice updates, API changes |
+| `gstcouncil.gov.in/gst-council-meetings` | GST | Post-Council meeting press notes (issued before formal CBIC notification — 1–2 week advance notice) |
+| `incometax.gov.in` | Direct Tax | Notifications, Circulars, Press releases, CBDT orders |
+| `tdscpc.gov.in` | Direct Tax | TRACES advisories — TDS/TCS form schema changes, utility releases, validation rule updates |
+| `mca.gov.in` | MCA | Circulars, GSRs, V3 portal announcements |
+| `sebi.gov.in` | SEBI | Circulars, press releases, consultation papers |
+| `rbi.org.in` | RBI / FEMA | Notifications, Press releases, Master Direction amendments — FEMA rules, ECB guidelines, LRS limits, NRO/NRE account regulations, forex rules |
+| `taxmann.com` | Cross-domain | Court rulings, tribunal orders, analysis |
+| `icai.org` | ICAI | Standards, peer review, UDIN, CPE advisories |
+
+**Note on RBI/FEMA:** Include in the **Direct Tax** domain bucket if the item relates to NRI taxation or foreign income (FEMA + income tax overlap). Create a standalone **RBI/FEMA** entry in the summary only if the item is purely regulatory (no direct tax angle) — e.g., a change to LRS limits or NRO repatriation rules.
 
 **ICAI Publications — check these 5 committee pages every week (newest first on each page):**
 
