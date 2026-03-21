@@ -126,18 +126,46 @@ carries forward automatically.
 
 **Sign-off:** S. Triyambaka Patro, CA · YouWe Quest LLP
 
+**Entry sort order — always include this script** (add just before `</script>` at bottom of JS block):
+```js
+(function sortEntries(){
+  var order={
+    't-dead':0,'t-new':1,'t-court':2,'t-portal':3,
+    't-budget':4,'t-live':5,'t-icai':6
+  };
+  document.querySelectorAll('.entries').forEach(function(container){
+    var entries=Array.from(container.querySelectorAll(':scope>.entry'));
+    entries.sort(function(a,b){
+      var ta=a.querySelector('.tag')||{},tb=b.querySelector('.tag')||{};
+      var ca=[].find.call(ta.classList||[],function(c){return c in order});
+      var cb=[].find.call(tb.classList||[],function(c){return c in order});
+      return (order[ca]??99)-(order[cb]??99);
+    });
+    entries.forEach(function(e){container.appendChild(e);});
+  });
+})();
+```
+This groups entries within each domain section by tag type: DEADLINE → NEW LAW → COURT → PORTAL → BUDGET → LIVE → ICAI. Entries within the same tag type retain their original order.
+
 ---
 
 ### Step 2B — Generate DOCX File
 
-**Filename:** `WeeklyUpdate_${FILE_DATE}.docx`
-**Output folder:** `~/youwequest/Professional update - weekly/`
-**Full path:** `~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx`
-**Note:** This file is gitignored — it stays on the local Mac only.
+**Folder:** `~/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/`
+**Files in folder:**
+- `WeeklyUpdate_${FILE_DATE}.docx`
+- `WeeklyUpdate_${FILE_DATE}.pdf`
+- `WeeklyUpdate_${FILE_DATE}_Messages.txt`
+
+Create the week folder before generating. All three files are gitignored — they stay on the local Mac only.
 
 Generate a merged Word document using a **Python raw-XML script** (not the `docx` npm package).
-Write a Python script and run it with `python3`. Match the W11 reference exactly:
-`/Users/triyambak/Downloads/WeeklyUpdate_13Mar2026.docx`
+Write a Python script and run it with `python3`. Use the W12 TOC reference as the template:
+`/Users/triyambak/youwequest/Professional update - weekly/W12_20Mar2026/WeeklyUpdate_20Mar2026.docx`
+
+The reference script is `/tmp/gen_w12_docx_toc_test.py` — reuse its helper functions verbatim
+(`p()`, `rn()`, `tech_section_header()`, `tech_subheading()`, `toc_entry_link()`, `toc_sub_link()`,
+`toc_part_link()`, `toc_group_label()`, `_hl_run()`, `_tab_run()`, `_pageref_run()`).
 
 **Design — Light theme (NOT dark):**
 - Background: white/off-white (`FFFFFF` / `F7F8FA`) — NEVER dark backgrounds in body text
@@ -145,6 +173,7 @@ Write a Python script and run it with `python3`. Match the W11 reference exactly
 - Page size: A4 (`w:w="11906" w:h="16838"`)
 - Margins: top/bottom `1080` DXA, left/right `1200` DXA
 - Font: Arial throughout; Courier New for statutory citations only
+- **No em-dashes (—)** anywhere in content — use hyphen (-) instead
 
 **Header (every page):**
 - 2-column table (5500 + 4006 DXA), gold bottom border (`B8963E`, sz=5)
@@ -156,9 +185,17 @@ Write a Python script and run it with `python3`. Match the W11 reference exactly
 - Centred disclaimer in grey (`AAAAAA`) sz=16
 
 **Part 1 — Summary**
-- Title: "Weekly Regulatory Update" centred bold dark sz=44
+- Title: "Weekly Regulatory Update" centred bold dark sz=44 — add bookmark `bk_p1`
 - Subtitle: "PART 1 OF 2 — SUMMARY" (gold) + "Week of ${SAT_DATE} to ${FRI_DATE}" (grey) centred sz=19
 - Gold rule (pBdr bottom B8963E sz=6)
+- **Table of Contents** (inserted here, before "Dear Clients,"):
+  - Heading: "TABLE OF CONTENTS" centred bold sz=24
+  - Thin gold separator line (pBdr bottom B8963E)
+  - Three parts using `toc_part_link()`: PART 1 · PART 2 · PART 3
+  - Domain entries using `toc_entry_link()` with domain colour (gold/blue/purple/orange/teal)
+  - Subsection entries using `toc_sub_link()` (one per subheading A–Z)
+  - ICAI group dividers (non-clickable) using `toc_group_label()`
+  - Followed by thin gold separator + page break
 - "Dear Clients," + one-paragraph intro
 - Five domain sections, each:
   - Header: emoji + domain name, bold dark sz=24, with gold pBdr bottom sz=3
@@ -176,12 +213,17 @@ Write a Python script and run it with `python3`. Match the W11 reference exactly
 **Part 2 — Technical Reference**
 - Five sections: I. GST · II. Direct Tax · III. MCA · IV. SEBI · V. ICAI
 - Section header bar: dark bg `0D1B2A`, roman numeral gold Courier New sz=22, domain name white Arial sz=24
-- Sub-headings (A, B, C): coloured bold Arial sz=20 (colour matches domain theme)
+  — add bookmarks: `bk_s1` (GST) · `bk_s2` (DT) · `bk_s3` (MCA) · `bk_s4` (SEBI) · `bk_s5` (ICAI)
+  — use `tech_section_header(numeral, name, color, bk='bk_sN')`
+- "TECHNICAL REFERENCE" divider heading — add bookmark `bk_p2`
+- Sub-headings (A, B, C…): coloured bold Arial sz=20 — add bookmark per subheading `bk_sNa`, `bk_sNb`…
+  — use `tech_subheading(letter, title, color, bk='bk_sNx')`
+- ICAI group divider labels — add bookmarks `bk_s5_comp` and `bk_s5_pubs`
 - Bullets: ListParagraph style, dark text `0D1B2A` sz=20, num bullet
 - Practice notes: light gold bg `FDF8EE`, indented, italic grey `555555` sz=19, bold gold `B8963E` label
 
 **Part 3 — Action Items**
-- "ACTION ITEMS" title centred bold sz=36
+- "ACTION ITEMS" title centred bold sz=36 — add bookmark `bk_p3`
 - Gold rule
 - 3-column table (1200 + 1500 + 6806 DXA):
   - Domain col: coloured bg badge, white bold text sz=17, centred
@@ -196,16 +238,38 @@ Write a Python script and run it with `python3`. Match the W11 reference exactly
 - "S. Triyambaka Patro, CA" bold dark `0D1B2A` sz=20
 - "YouWe Quest LLP" grey `555555` sz=20
 
+**settings.xml must include `updateFields`** so Word auto-calculates page numbers on open:
+```xml
+<w:updateFields w:val="true"/>
+```
+When the reader opens the file, Word prompts to update fields — they click **Yes** and all `?` placeholders become real page numbers.
+
 **Validate after generating:**
 ```python
 python3 -c "
-import zipfile, xml.etree.ElementTree as ET
-z = zipfile.ZipFile(os.path.expanduser('~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx'))
+import zipfile, os, xml.etree.ElementTree as ET
+z = zipfile.ZipFile(os.path.expanduser('~/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx'))
 for f in ['word/document.xml','word/header1.xml','word/footer1.xml']:
     ET.fromstring(z.read(f))
 print('Valid -', len(z.namelist()), 'files')
 "
 ```
+
+**Generate PDF from DOCX using Word (AppleScript):**
+```bash
+osascript <<'EOF'
+set docxPath to "/Users/triyambak/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx"
+set pdfPath to "/Users/triyambak/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf"
+tell application "Microsoft Word"
+    open docxPath
+    delay 3
+    set theDoc to active document
+    save as theDoc file name pdfPath file format format PDF
+    close theDoc saving no
+end tell
+EOF
+```
+Word opens the file (updating all PAGEREF fields automatically), exports to PDF with clickable links preserved, then closes. The PDF is also gitignored and stays local.
 
 ---
 
@@ -274,8 +338,16 @@ Using the Gmail API, send directly (not as a draft):
   S. Triyambaka Patro, CA
   YouWe Quest LLP
   ```
-- **Attachment:** `~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx`
+- **Attachment:** `~/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx`
   Read the file, base64-encode it, attach via Gmail API multipart send.
+
+**Client distribution (separate from internal email):**
+Using the template at `@claude-docs/weekly_client_email.md`, generate a messages file:
+`~/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}_Messages.txt`
+
+The file contains two ready-to-send sections — EMAIL and WHATSAPP — fully populated
+with that week's dates, highlights, and web link. Gitignored, stays local.
+Attach `WeeklyUpdate_${FILE_DATE}.pdf` when sending.
 
 ---
 
@@ -287,7 +359,12 @@ Using the Gmail API, send directly (not as a draft):
 - [ ] Section `id` attributes present: `sec-gst`, `sec-dt`, `sec-mca`, `sec-sebi`, `sec-icai`
 - [ ] Style block copied verbatim from previous week (not regenerated)
 - [ ] Theme toggle works (dark/light, persists on reload)
-- [ ] DOCX file generated at `~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx` (not in git)
+- [ ] DOCX file generated at `~/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx` (not in git)
+- [ ] DOCX has clickable TOC: all entries use `toc_entry_link` / `toc_sub_link` with `w:hyperlink w:anchor`
+- [ ] DOCX TOC has page numbers: PAGEREF fields with dot leaders; `settings.xml` has `updateFields`
+- [ ] All section headers carry `bk_sN` bookmarks; all subheadings carry `bk_sNx` bookmarks
+- [ ] PDF generated at `~/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf` via AppleScript (not in git)
+- [ ] Messages file generated: `WeeklyUpdate_${FILE_DATE}_Messages.txt` with EMAIL + WHATSAPP sections populated
 - [ ] `updates/index.html` card added at top, `latest-chip` moved
 - [ ] `updates/UPDATES_LOG.json` updated
 - [ ] `CNAME` file untouched
