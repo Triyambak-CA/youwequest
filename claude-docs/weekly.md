@@ -89,6 +89,21 @@ For each item identify: type tag (COURT / DEADLINE / PORTAL / BUDGET / NEW LAW /
 - Deadline dates in red `.date`
 - Practice notes in gold callout box `.tnote`
 - Click-to-expand: `onclick="toggleSub(this)"` on each `.tsub-hd`
+- Group dividers using `<div class="tsubsub">` — plain uppercase label, no letter
+
+**Section V (ICAI) — fixed structure, always follow this layout:**
+
+Two groups separated by `.tsubsub` dividers:
+
+*Group 1 — Compliance & Deadlines* (items requiring firm action by a date):
+- One subsection per item — e.g. UDIN mandate, PRB Phase III, CPE deadline
+- Only include if there is a near-term deadline or mandatory compliance change
+
+*Group 2 — New Publications* (final publications released this week or since last covered):
+- One subsection per publication — never bundle two publications under one letter
+- Subsection title format: `Publication Title · Committee · Date`
+- Order: audit standards first (AASB), then domain-specific guides (Direct Tax, GST, MCA, Intl Tax), then corporate/other
+- If no new publications this week, omit Group 2 entirely — do not add placeholder subsections
 
 **Action Items tab**
 - Table sorted chronologically, domain as tiebreaker within same date
