@@ -121,7 +121,7 @@ Write a Python script and run it with `python3`. Match the W11 reference exactly
 **Divider Page (between Part 1 and Part 2):**
 - Gold rule lines centred
 - "TECHNICAL REFERENCE" bold gold sz=36 centred
-- "PART 2 OF 2 · ${WEEK_ID} · ${SAT_DATE}–${FRI_DATE}" grey centred
+- "PART 2 OF 2 · ${FRI_DATE} · ${SAT_DATE}–${FRI_DATE}" grey centred
 
 **Part 2 — Technical Reference**
 - Five sections: I. GST · II. Direct Tax · III. MCA · IV. SEBI · V. ICAI
