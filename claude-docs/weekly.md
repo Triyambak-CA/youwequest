@@ -49,6 +49,20 @@ Search all ten sources for developments published during the week period:
 
 **Rule:** Include **final publications only** — Technical Guides, Guidance Notes (final), Handbooks, Standards. **Exclude** exposure drafts, consultation papers, background materials for courses, and CPE webinar announcements.
 
+**Cross-verification — X (Twitter) handles:**
+After pulling from all 10 sources above, scan these handles for the week period. If a tweet references something not already in your findings, investigate and add it.
+
+| Handle | Department |
+|---|---|
+| `@cbic_india` | CBIC — GST circulars, notifications |
+| `@askGST_GoI` | GSTN — portal advisories, system updates |
+| `@IncomeTaxIndia` | Income Tax Department — CBDT notifications, portal updates |
+| `@MCA21India` | MCA — circulars, V3 portal announcements |
+| `@SEBI_India` | SEBI — circulars, orders, press releases |
+| `@RBI` | RBI — notifications, FEMA, press releases |
+| `@theICAI` | ICAI — publications, standards, announcements |
+| `@FinMinIndia` | Ministry of Finance — cross-domain MoF announcements |
+
 Compile findings into five domain buckets: GST · Direct Tax · MCA · SEBI · ICAI.
 For each item identify: type tag (COURT / DEADLINE / PORTAL / BUDGET / NEW LAW / LIVE), statutory reference, plain-language summary, and practice implication.
 
