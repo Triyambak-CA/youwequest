@@ -82,12 +82,12 @@ carries forward automatically.
 
 ### Step 2B — Generate DOCX File
 
-**Filename:** `WeeklyUpdate_Merged_${FILE_DATE}.docx`
+**Filename:** `WeeklyUpdate_${FILE_DATE}.docx`
 **Note:** This file is gitignored — it stays on the local Mac only.
 
 Generate a merged Word document using a **Python raw-XML script** (not the `docx` npm package).
 Write a Python script and run it with `python3`. Match the W11 reference exactly:
-`/Users/triyambak/Downloads/WeeklyUpdate_Merged_13Mar2026.docx`
+`/Users/triyambak/Downloads/WeeklyUpdate_13Mar2026.docx`
 
 **Design — Light theme (NOT dark):**
 - Background: white/off-white (`FFFFFF` / `F7F8FA`) — NEVER dark backgrounds in body text
@@ -150,7 +150,7 @@ Write a Python script and run it with `python3`. Match the W11 reference exactly
 ```python
 python3 -c "
 import zipfile, xml.etree.ElementTree as ET
-z = zipfile.ZipFile('WeeklyUpdate_Merged_${FILE_DATE}.docx')
+z = zipfile.ZipFile('WeeklyUpdate_${FILE_DATE}.docx')
 for f in ['word/document.xml','word/header1.xml','word/footer1.xml']:
     ET.fromstring(z.read(f))
 print('Valid -', len(z.namelist()), 'files')
@@ -224,7 +224,7 @@ Using the Gmail API, send directly (not as a draft):
   S. Triyambaka Patro, CA
   YouWe Quest LLP
   ```
-- **Attachment:** `WeeklyUpdate_Merged_${FILE_DATE}.docx`
+- **Attachment:** `WeeklyUpdate_${FILE_DATE}.docx`
   Read the file, base64-encode it, attach via Gmail API multipart send.
 
 ---
