@@ -140,7 +140,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 
 /* summary entries */
 .entries{display:flex;flex-direction:column}
-.entry{padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:grid;grid-template-columns:70px 1fr;gap:12px;align-items:start}
+.entry{padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:grid;grid-template-columns:max-content 1fr;gap:12px;align-items:start}
 .entry:last-child{border-bottom:none;padding-bottom:0}
 .entry:first-child{padding-top:0}
 .tag{font-size:9.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:3px 7px;border-radius:5px;border:1px solid;margin-top:2px;white-space:nowrap;display:inline-block}
@@ -1194,13 +1194,20 @@ function toggleSub(hd) {
     't-dead':0,'t-new':1,'t-court':2,'t-portal':3,
     't-budget':4,'t-live':5,'t-icai':6
   };
+  var textOrder={
+    'udin':0,'peer review':1,'standards':2,'publication':3,'circular':4,'markets':5,'data':6,'live':7
+  };
   document.querySelectorAll('.entries').forEach(function(container){
     var entries=Array.from(container.querySelectorAll(':scope>.entry'));
     entries.sort(function(a,b){
       var ta=a.querySelector('.tag')||{},tb=b.querySelector('.tag')||{};
       var ca=[].find.call(ta.classList||[],function(c){return c in order});
       var cb=[].find.call(tb.classList||[],function(c){return c in order});
-      return (order[ca]??99)-(order[cb]??99);
+      var pa=(order[ca]??99),pb=(order[cb]??99);
+      if(pa!==pb) return pa-pb;
+      var ta2=(ta.textContent||'').trim().toLowerCase();
+      var tb2=(tb.textContent||'').trim().toLowerCase();
+      return (textOrder[ta2]??50)-(textOrder[tb2]??50);
     });
     entries.forEach(function(e){container.appendChild(e);});
   });
