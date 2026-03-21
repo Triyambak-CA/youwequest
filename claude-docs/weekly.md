@@ -131,8 +131,8 @@ carries forward automatically.
 ### Step 2B — Generate DOCX File
 
 **Filename:** `WeeklyUpdate_${FILE_DATE}.docx`
-**Output folder:** `~/Documents/Professional update - weekly/`
-**Full path:** `~/Documents/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx`
+**Output folder:** `~/youwequest/Professional update - weekly/`
+**Full path:** `~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx`
 **Note:** This file is gitignored — it stays on the local Mac only.
 
 Generate a merged Word document using a **Python raw-XML script** (not the `docx` npm package).
@@ -200,7 +200,7 @@ Write a Python script and run it with `python3`. Match the W11 reference exactly
 ```python
 python3 -c "
 import zipfile, xml.etree.ElementTree as ET
-z = zipfile.ZipFile(os.path.expanduser('~/Documents/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx'))
+z = zipfile.ZipFile(os.path.expanduser('~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx'))
 for f in ['word/document.xml','word/header1.xml','word/footer1.xml']:
     ET.fromstring(z.read(f))
 print('Valid -', len(z.namelist()), 'files')
@@ -274,7 +274,7 @@ Using the Gmail API, send directly (not as a draft):
   S. Triyambaka Patro, CA
   YouWe Quest LLP
   ```
-- **Attachment:** `~/Documents/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx`
+- **Attachment:** `~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx`
   Read the file, base64-encode it, attach via Gmail API multipart send.
 
 ---
@@ -287,7 +287,7 @@ Using the Gmail API, send directly (not as a draft):
 - [ ] Section `id` attributes present: `sec-gst`, `sec-dt`, `sec-mca`, `sec-sebi`, `sec-icai`
 - [ ] Style block copied verbatim from previous week (not regenerated)
 - [ ] Theme toggle works (dark/light, persists on reload)
-- [ ] DOCX file generated at `~/Documents/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx` (not in git)
+- [ ] DOCX file generated at `~/youwequest/Professional update - weekly/WeeklyUpdate_${FILE_DATE}.docx` (not in git)
 - [ ] `updates/index.html` card added at top, `latest-chip` moved
 - [ ] `updates/UPDATES_LOG.json` updated
 - [ ] `CNAME` file untouched
