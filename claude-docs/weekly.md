@@ -31,6 +31,18 @@ Search all six sources for developments published during the week period:
 | `taxmann.com` | Court rulings, tribunal orders, analysis |
 | `icai.org` | Standards, peer review, UDIN, CPE advisories |
 
+**ICAI Publications — check these 5 committee pages every week (newest first on each page):**
+
+| Committee page | Coverage |
+|---|---|
+| `icai.org/post/icai-publications-auditing-assurance-standards-board` | Technical Guides, Guidance Notes, Practitioner's Guides (shows dates — easy to scan) |
+| `icai.org/post/icai-publications-direct-taxes-committee` | Technical Guides, Handbooks on income tax |
+| `idtc.icai.org/publications.php` | GST/Customs handbooks, case law compilations |
+| `icai.org/post/icai-publications-corporate-laws-corporate-governance-committee` | Company law, LLP, SEBI/LODR handbooks |
+| `icai.org/post/icai-publications-committee-on-international-taxation` | Transfer pricing, DTAA, PE, expatriate tax guides |
+
+**Rule:** Include **final publications only** — Technical Guides, Guidance Notes (final), Handbooks, Standards. **Exclude** exposure drafts, consultation papers, background materials for courses, and CPE webinar announcements.
+
 Compile findings into five domain buckets: GST · Direct Tax · MCA · SEBI · ICAI.
 For each item identify: type tag (COURT / DEADLINE / PORTAL / BUDGET / NEW LAW / LIVE), statutory reference, plain-language summary, and practice implication.
 
