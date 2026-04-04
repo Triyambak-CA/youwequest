@@ -79,6 +79,8 @@ These are a safety net to catch circulars/notifications that portal landing page
 | **SEBI** | `"SEBI circular" ${WEEK_PERIOD} site:sebi.gov.in` |
 | **RBI** | `"RBI notification" OR "RBI circular" ${WEEK_PERIOD} site:rbi.org.in` |
 
+**Distinct notifications rule:** When multiple government actions relate to the same topic within a week (e.g., two separate CBDT notifications both concerning ITR forms, or two SEBI circulars on MF regulations), treat each as a distinct entry with its own tag, statutory reference, and source link. Do not merge them into one summary entry — practitioners need to know the specific notification number, date, and scope of each action separately. Example: W14-2026 had both AY 2026-27 ITR forms (old Act, notified 30–31 Mar) and Tax Year 2026-27 ITR forms (new Act, Notification 22/2026 on 1 Apr) — these are two separate entries, not one.
+
 Compile findings into five domain buckets: GST · Direct Tax · MCA · SEBI · ICAI.
 For each item identify: type tag (COURT / DEADLINE / PORTAL / BUDGET / NEW LAW / LIVE), statutory reference, plain-language summary, practice implication, and **direct URL** to the source document (circular PDF, notification page, press release, court order, or publication download link). The URL is required — if a direct link is not available, use the department's relevant section page as the fallback.
 
