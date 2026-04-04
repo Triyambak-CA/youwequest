@@ -5,3 +5,8 @@
 !README.md
 Professional update - weekly/
 .DS_Store
+scripts/
+claude-docs/
+*.py
+*.pyc
+__pycache__/
