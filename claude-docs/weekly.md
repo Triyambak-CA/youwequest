@@ -20,15 +20,16 @@ Follow all five steps below exactly, in order.
 
 ### Step 1 — Research
 
-Search all ten sources for developments published during the week period:
+Search all twelve sources for developments published during the week period:
 
 | Source | Domain | Coverage |
 |---|---|---|
 | `cbic-gst.gov.in` | GST | Circulars, Notifications (CT/IT/UT/IGST/Compensation Cess), Instructions |
 | `gst.gov.in/home/advmsg` | GST | GSTN portal/technical advisories — separate from CBIC; HSN changes, e-invoice updates, API changes |
 | `gstcouncil.gov.in/gst-council-meetings` | GST | Post-Council meeting press notes (issued before formal CBIC notification — 1–2 week advance notice) |
-| `incometax.gov.in` | Direct Tax | Notifications, Circulars, Press releases, CBDT orders |
+| `incometax.gov.in/iec/foportal/help/circ-notf` | Direct Tax | **Direct fetch** — CBDT circulars and notifications index. Fetch this page every week; scan for entries dated within the week period. More reliable than search for catching individual circulars (e.g., Circular 4/2026 on DIN was missed via search but would appear here). |
 | `tdscpc.gov.in` | Direct Tax | TRACES advisories — TDS/TCS form schema changes, utility releases, validation rule updates |
+| `pib.gov.in` | Cross-domain | **Direct fetch** — Press Information Bureau. All CBDT, MCA, SEBI, and RBI press releases are published here before PTI/media picks them up. Search: `site:pib.gov.in "Ministry of Finance" OR "CBDT" OR "MCA" OR "SEBI" ${WEEK_PERIOD}`. Catches press releases (e.g., ITR forms notification, ITA 2025 commencement) that aggregators index with a lag. |
 | `mca.gov.in` | MCA | Circulars, GSRs, V3 portal announcements |
 | `sebi.gov.in` | SEBI | Circulars, press releases, consultation papers |
 | `rbi.org.in` | RBI / FEMA | Notifications, Press releases, Master Direction amendments — FEMA rules, ECB guidelines, LRS limits, NRO/NRE account regulations, forex rules |
