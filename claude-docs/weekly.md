@@ -203,11 +203,12 @@ Write a Python script and run it with `python3`. Use only Python's standard libr
 **Reference DOCX** (gold standard — extract and study its XML before writing the script):
 `/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/W12_20Mar2026/WeeklyUpdate_20Mar2026.docx`
 
-**Reference generation script** (if it still exists in /tmp — check first):
-`/tmp/gen_w14_docx_v2.py` (W14 raw-XML script, created April 2026) — reuse its helper functions verbatim
-(`p()`, `rn()`, `_pageref_run()`, `_tab_run()`, `_hl_run()`, `toc_entry()`, `toc_sub()`, `toc_part()`, `toc_group_label()`, `section_header()`, `subheading()`).
+**Reference generation script** (permanent copy — always available):
+`/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/gen_weekly_docx_reference.py`
+This is the W14-2026 raw-XML script (April 2026). Reuse its helper functions verbatim:
+`rpr()`, `rn()`, `p()`, `page_break()`, `gold_rule()`, `bookmark_wrap()`, `bm_para()`, `pageref_field()`, `tab_run()`, `toc_entry_link()`, `toc_sub_link()`, `toc_part_link()`, `toc_group_label()`, `toc_section_link()`, `toc_subheading_link()`, `domain_section_header()`, `entry_row()`, `domain_table()`, `tech_section_header()`, `tech_subheading()`, `tech_group_label()`, `bullet()`, `cite()`, `practice_note()`, `body_para()`, `action_row()`, `action_table()`.
 
-If the /tmp script is gone: extract the W12 DOCX XML files using zipfile, read word/document.xml to understand the exact XML patterns for p(), rn(), PAGEREF fields, bookmarks, and hyperlinks, then replicate that approach.
+Read the reference script first, then write a new week's script by updating only the content (entries, dates, action items). The XML infrastructure is identical every week.
 
 **The output DOCX must have (validate before proceeding to PDF):**
 - `PAGEREF fields > 20` — every TOC entry has a PAGEREF field with dot leader
@@ -296,32 +297,64 @@ If the /tmp script is gone: extract the W12 DOCX XML files using zipfile, read w
 ```
 When the reader opens the file, Word prompts to update fields — they click **Yes** and all `?` placeholders become real page numbers.
 
-**Validate after generating:**
+**Validate after generating (run this — all checks must pass before generating PDF):**
 ```python
 python3 -c "
-import zipfile, os, xml.etree.ElementTree as ET
-z = zipfile.ZipFile(os.path.expanduser('/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx'))
+import zipfile, re, xml.etree.ElementTree as ET
+path = '/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx'
+z = zipfile.ZipFile(path)
+doc = z.read('word/document.xml').decode()
+# XML validity
 for f in ['word/document.xml','word/header1.xml','word/footer1.xml']:
     ET.fromstring(z.read(f))
-print('Valid -', len(z.namelist()), 'files')
+# Structural thresholds
+pageref = doc.count('PAGEREF')
+hyperlinks = doc.count('<w:hyperlink')
+# Count actual bookmarkStart definitions (not string matches in PAGEREF/anchor refs)
+bookmarks = len(re.findall(r'<w:bookmarkStart[^>]+>', doc))
+files = len(z.namelist())
+settings = z.read('word/settings.xml').decode()
+update_fields = 'updateFields' in settings
+# Verify section bookmarks are AFTER page breaks (not before them)
+pb_positions = [m.start() for m in re.finditer(r'<w:br w:type=\"page\"', doc)]
+bk_positions = {m.group(1): m.start() for m in re.finditer(r'<w:bookmarkStart[^>]+w:name=\"(bk_s[1-5]|bk_p[23])\"', doc)}
+bookmark_placement_ok = all(pos > pb_positions[1] for pos in bk_positions.values()) if len(pb_positions) >= 2 else False
+print(f'ZIP files: {files} (expect 8) — {\"OK\" if files==8 else \"FAIL\"}')
+print(f'PAGEREF fields: {pageref} (expect >20) — {\"OK\" if pageref>20 else \"FAIL\"}')
+print(f'Hyperlinks: {hyperlinks} (expect >40) — {\"OK\" if hyperlinks>40 else \"FAIL\"}')
+print(f'BookmarkStart: {bookmarks} (expect >25) — {\"OK\" if bookmarks>25 else \"FAIL\"}')
+print(f'updateFields: {update_fields} — {\"OK\" if update_fields else \"FAIL\"}')
+print(f'Bookmark placement (after page breaks): {bookmark_placement_ok} — {\"OK\" if bookmark_placement_ok else \"FAIL — bookmarks before page breaks\"}')
 "
 ```
+All six checks must show OK before proceeding to PDF generation.
 
 **Generate PDF from DOCX using Word (AppleScript):**
 ```bash
-osascript <<'EOF'
-set docxPath to "/Users/triyambak/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx"
-set pdfPath to "/Users/triyambak/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf"
+DOCX_PATH="/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx"
+PDF_PATH="/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf"
+osascript << EOF
+set docxPath to "${DOCX_PATH}"
+set pdfPath to "${PDF_PATH}"
 tell application "Microsoft Word"
     open docxPath
-    delay 3
-    set theDoc to active document
+    delay 8
+    set theDoc to document "WeeklyUpdate_${FILE_DATE}.docx"
     save as theDoc file name pdfPath file format format PDF
+    delay 3
     close theDoc saving no
 end tell
 EOF
 ```
-Word opens the file (updating all PAGEREF fields automatically), exports to PDF with clickable links preserved, then closes. The PDF is also gitignored and stays local.
+Word opens the file — `updateFields=true` in settings.xml causes Word to auto-update all PAGEREF fields on open before the `save as` runs. The PDF will have correct page numbers and clickable TOC links. The PDF stays local (gitignored).
+
+**PDF sanity check — run after generating:**
+```bash
+PDF_SIZE=$(stat -f%z "/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf")
+echo "PDF size: ${PDF_SIZE} bytes"
+if [ "$PDF_SIZE" -lt 150000 ]; then echo "WARNING: PDF too small — likely fields not updated. Regenerate."; else echo "OK"; fi
+```
+A correct weekly update PDF is typically 200–400KB. If under 150KB, Word did not render all pages correctly — close the document in Word and re-run the AppleScript.
 
 ---
 
@@ -420,7 +453,9 @@ Attach `WeeklyUpdate_${FILE_DATE}.pdf` when sending.
 - [ ] DOCX has clickable TOC: all entries use `toc_entry_link` / `toc_sub_link` with `w:hyperlink w:anchor`
 - [ ] DOCX TOC has page numbers: PAGEREF fields with dot leaders; `settings.xml` has `updateFields`
 - [ ] All section headers carry `bk_sN` bookmarks; all subheadings carry `bk_sNx` bookmarks
-- [ ] PDF generated at `/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf` via AppleScript (not in git)
+- [ ] **All 6 DOCX validation checks pass** (ZIP files=8, PAGEREF>20, hyperlinks>40, bookmarks>25, updateFields=true, bookmark placement after page breaks)
+- [ ] PDF generated via AppleScript — **size ≥ 150KB** (run PDF sanity check; if below, regenerate)
+- [ ] PDF is at `/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf` (not in git)
 - [ ] Messages file generated: `WeeklyUpdate_${FILE_DATE}_Messages.txt` with EMAIL + WHATSAPP + LINKEDIN sections populated
 - [ ] `updates/index.html` card added at top, `latest-chip` moved
 - [ ] `updates/UPDATES_LOG.json` updated
