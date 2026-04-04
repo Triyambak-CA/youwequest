@@ -187,7 +187,7 @@ Sort order: DEADLINE → NEW LAW → COURT → PORTAL → BUDGET → LIVE → UD
 
 ### Step 2B — Generate DOCX File
 
-**Folder:** `~/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/`
+**Folder:** `/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/`
 **Files in folder:**
 - `WeeklyUpdate_${FILE_DATE}.docx`
 - `WeeklyUpdate_${FILE_DATE}.pdf`
@@ -195,13 +195,26 @@ Sort order: DEADLINE → NEW LAW → COURT → PORTAL → BUDGET → LIVE → UD
 
 Create the week folder before generating. All three files are gitignored — they stay on the local Mac only.
 
-Generate a merged Word document using a **Python raw-XML script** (not the `docx` npm package).
-Write a Python script and run it with `python3`. Use the W12 TOC reference as the template:
-`/Users/triyambak/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/W12_20Mar2026/WeeklyUpdate_20Mar2026.docx`
+Generate a merged Word document using a **Python raw-XML script** (not python-docx or the `docx` npm package).
+Write a Python script and run it with `python3`. Use only Python's standard library (`zipfile`, `xml`).
 
-The reference script is `/tmp/gen_w12_docx_toc_test.py` — reuse its helper functions verbatim
-(`p()`, `rn()`, `tech_section_header()`, `tech_subheading()`, `toc_entry_link()`, `toc_sub_link()`,
-`toc_part_link()`, `toc_group_label()`, `_hl_run()`, `_tab_run()`, `_pageref_run()`).
+**CRITICAL — raw XML approach only.** The W14-2026 DOCX was mistakenly generated with python-docx which cannot produce PAGEREF fields or clickable TOC hyperlinks. Always use the raw OOXML approach.
+
+**Reference DOCX** (gold standard — extract and study its XML before writing the script):
+`/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/W12_20Mar2026/WeeklyUpdate_20Mar2026.docx`
+
+**Reference generation script** (if it still exists in /tmp — check first):
+`/tmp/gen_w14_docx_v2.py` (W14 raw-XML script, created April 2026) — reuse its helper functions verbatim
+(`p()`, `rn()`, `_pageref_run()`, `_tab_run()`, `_hl_run()`, `toc_entry()`, `toc_sub()`, `toc_part()`, `toc_group_label()`, `section_header()`, `subheading()`).
+
+If the /tmp script is gone: extract the W12 DOCX XML files using zipfile, read word/document.xml to understand the exact XML patterns for p(), rn(), PAGEREF fields, bookmarks, and hyperlinks, then replicate that approach.
+
+**The output DOCX must have (validate before proceeding to PDF):**
+- `PAGEREF fields > 20` — every TOC entry has a PAGEREF field with dot leader
+- `w:hyperlink > 40` — every TOC entry text is a clickable anchor link
+- `w:bookmarkStart > 25` — all section headers and subheadings carry bookmarks
+- `updateFields = True` in settings.xml — Word auto-updates page numbers on open
+- `files in zip = 8` — minimal structure: document.xml, header1.xml, footer1.xml, settings.xml, styles.xml, _rels, Content_Types.xml, .rels only
 
 **Design — Light theme (NOT dark):**
 - Background: white/off-white (`FFFFFF` / `F7F8FA`) — NEVER dark backgrounds in body text
@@ -287,7 +300,7 @@ When the reader opens the file, Word prompts to update fields — they click **Y
 ```python
 python3 -c "
 import zipfile, os, xml.etree.ElementTree as ET
-z = zipfile.ZipFile(os.path.expanduser('~/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx'))
+z = zipfile.ZipFile(os.path.expanduser('/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx'))
 for f in ['word/document.xml','word/header1.xml','word/footer1.xml']:
     ET.fromstring(z.read(f))
 print('Valid -', len(z.namelist()), 'files')
@@ -377,12 +390,12 @@ Using the Gmail API, send directly (not as a draft):
   S. Triyambaka Patro, CA
   YouWe Quest LLP
   ```
-- **Attachment:** `~/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx`
+- **Attachment:** `/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx`
   Read the file, base64-encode it, attach via Gmail API multipart send.
 
 **Client distribution (separate from internal email):**
 Using the template at `@claude-docs/weekly_client_email.md`, generate a messages file:
-`~/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}_Messages.txt`
+`/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}_Messages.txt`
 
 The file contains three ready-to-send sections — EMAIL, WHATSAPP, and LINKEDIN — fully populated
 with that week's dates, highlights, and web link. Gitignored, stays local.
@@ -403,11 +416,11 @@ Attach `WeeklyUpdate_${FILE_DATE}.pdf` when sending.
 - [ ] Section `id` attributes present: `sec-gst`, `sec-dt`, `sec-mca`, `sec-sebi`, `sec-icai`
 - [ ] Style block copied verbatim from previous week (not regenerated)
 - [ ] Theme toggle works (dark/light, persists on reload)
-- [ ] DOCX file generated at `~/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx` (not in git)
+- [ ] DOCX file generated at `/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.docx` (not in git)
 - [ ] DOCX has clickable TOC: all entries use `toc_entry_link` / `toc_sub_link` with `w:hyperlink w:anchor`
 - [ ] DOCX TOC has page numbers: PAGEREF fields with dot leaders; `settings.xml` has `updateFields`
 - [ ] All section headers carry `bk_sN` bookmarks; all subheadings carry `bk_sNx` bookmarks
-- [ ] PDF generated at `~/Library/CloudStorage/OneDrive-Personal/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf` via AppleScript (not in git)
+- [ ] PDF generated at `/Users/triyambak/Documents/1_Claude_AI/GitHub-Repos/youwequest/Professional update - weekly/${WEEK_ID}_${FILE_DATE}/WeeklyUpdate_${FILE_DATE}.pdf` via AppleScript (not in git)
 - [ ] Messages file generated: `WeeklyUpdate_${FILE_DATE}_Messages.txt` with EMAIL + WHATSAPP + LINKEDIN sections populated
 - [ ] `updates/index.html` card added at top, `latest-chip` moved
 - [ ] `updates/UPDATES_LOG.json` updated
