@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>India Macro Report — April 2026 | YouWe Quest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",t);})()</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+--bg:#070c12;--bg2:#0d1520;--bg3:#111d2b;
+--text:#e8dfc8;--text2:#9aabb8;--text3:#5c7080;
+--border:rgba(184,150,62,0.15);
+--gold:#B8963E;
+--macro:#5EBF8C;--macro-dim:rgba(94,191,140,0.12);--macro-border:rgba(94,191,140,0.25);
+}
+[data-theme="light"]{
+--bg:#f4f1eb;--bg2:#ede9e0;--bg3:#e6e1d6;
+--text:#1a1410;--text2:#4a4030;--text3:#8a7a60;
+--border:rgba(140,109,26,0.15);
+--gold:#8C6D1A;
+--macro:#1E7A50;--macro-dim:rgba(30,122,80,0.08);--macro-border:rgba(30,122,80,0.2);
+}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;font-size:15px;line-height:1.65;min-height:100vh;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.18;z-index:0;pointer-events:none}
+.orb1{width:600px;height:600px;background:var(--macro);top:-200px;right:-100px}
+.orb2{width:400px;height:400px;background:var(--gold);bottom:10%;left:-150px;opacity:.10}
+.orb3{width:300px;height:300px;background:var(--macro);top:50%;left:40%;opacity:.08}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.75rem 2rem;background:rgba(7,12,18,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+[data-theme="light"] nav{background:rgba(244,241,235,.88)}
+.nav-brand{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-brand span{color:var(--macro)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-back{font-size:.8rem;color:var(--text2);text-decoration:none;border:1px solid var(--border);padding:.3rem .75rem;border-radius:20px;transition:color .2s,border-color .2s}
+.nav-back:hover{color:var(--macro);border-color:var(--macro-border)}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--text2);transition:all .2s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:var(--macro-border);color:var(--macro);background:var(--macro-dim)}
+.theme-toggle svg{width:15px;height:15px}
+[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.14)}
+[data-theme="light"] .theme-toggle:hover{border-color:rgba(30,122,80,0.45);color:var(--macro);background:var(--macro-dim)}
+.page{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.cover{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.cover-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--macro);margin-bottom:.5rem}
+.cover-title{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:500;line-height:1.2;color:var(--text);margin-bottom:.4rem}
+.cover-sub{font-size:.85rem;color:var(--text2);margin-bottom:1rem}
+.cover-badges{display:flex;flex-wrap:wrap;gap:.5rem}
+.badge{font-size:.7rem;font-weight:500;padding:.2rem .65rem;border-radius:20px;border:1px solid var(--border);color:var(--text3)}
+.badge-trig{border-color:var(--macro-border);background:var(--macro-dim);color:var(--macro)}
+.alert-banner{display:flex;align-items:flex-start;gap:.6rem;padding:.625rem .875rem;border-radius:8px;border:1px solid rgba(212,80,80,.3);background:rgba(212,80,80,.07);font-size:.82rem;color:#d45050;margin-bottom:1.25rem;line-height:1.5}
+.tabs-wrap{margin-bottom:1.75rem}
+.tab-group{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-bottom:.4rem}
+.tab-grp-label{font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);min-width:52px;padding-top:4px}
+.tab{padding:.25rem .85rem;border-radius:20px;font-size:.75rem;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text2);font-family:"DM Sans",sans-serif;transition:all .15s}
+.tab:hover{border-color:var(--macro-border);color:var(--macro)}
+.tab.on{background:var(--bg3);color:var(--text);border-color:rgba(184,150,62,.3);font-weight:500}
+.tab.india{border-color:var(--macro-border);color:var(--macro)}
+.tab.india.on{background:var(--macro-dim);color:var(--macro);border-color:var(--macro)}
+.tab.trig{border-style:dashed}
+.sec{display:none;animation:fadeUp .3s ease both}
+.sec.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.sh{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.4rem}
+.sn{font-size:.7rem;color:var(--text3)}
+.stitle{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:500;color:var(--text);margin:0}
+.pill{font-size:.7rem;font-weight:500;padding:.15rem .6rem;border-radius:10px}
+.p-amber{background:rgba(184,150,62,.12);border:1px solid rgba(184,150,62,.3);color:var(--gold)}
+.p-green{background:var(--macro-dim);border:1px solid var(--macro-border);color:var(--macro)}
+.p-red{background:rgba(212,80,80,.08);border:1px solid rgba(212,80,80,.25);color:#d45050}
+.p-blue{background:rgba(55,138,221,.08);border:1px solid rgba(55,138,221,.25);color:#378ADD}
+.sdesc{font-size:.82rem;color:var(--text2);line-height:1.6;margin:.5rem 0 .875rem}
+.mc3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:.875rem 0}
+.mc4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:.875rem 0}
+.mc2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:.875rem 0}
+.m{background:var(--bg2);border-radius:8px;padding:.875rem;border:1px solid var(--border)}
+.ml{font-size:.7rem;color:var(--text2);margin-bottom:3px}
+.mv{font-size:1.15rem;font-weight:500;color:var(--text)}
+.ms{font-size:.7rem;color:var(--text3);margin-top:2px}
+.mv-r{color:#d45050}.mv-g{color:var(--macro)}.mv-a{color:var(--gold)}
+.blist{list-style:none;padding:0;margin:.5rem 0 .875rem}
+.blist li{display:flex;gap:7px;align-items:flex-start;padding:5px 0;border-bottom:1px solid var(--border);font-size:.82rem;color:var(--text2);line-height:1.5}
+.blist li:last-child{border-bottom:none}
+.dot{width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.dr{background:#d45050}.dg{background:var(--macro)}.da{background:var(--gold)}
+.lg{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:5px}
+.lgd{display:flex;align-items:center;gap:4px;font-size:.7rem;color:var(--text2)}
+.lgd i{display:inline-block;width:14px;height:2px;border-radius:1px}
+.india-box{border-left:3px solid var(--macro);border-radius:0 8px 8px 0;background:var(--macro-dim);border-top:1px solid var(--macro-border);border-bottom:1px solid var(--macro-border);border-right:1px solid var(--macro-border);padding:.75rem 1rem;margin:.875rem 0}
+.india-lbl{font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--macro);margin-bottom:6px}
+.iline{display:flex;gap:6px;align-items:flex-start;margin-bottom:4px;font-size:.8rem;color:var(--text);line-height:1.45}
+.iline:last-child{margin-bottom:0}
+.idot{width:4px;height:4px;border-radius:50%;background:var(--macro);margin-top:5px;flex-shrink:0}
+.trig-banner{display:flex;align-items:center;gap:8px;padding:.4rem .75rem;border-radius:6px;border:1px dashed var(--gold);background:rgba(184,150,62,.06);font-size:.75rem;color:var(--gold);margin-bottom:.875rem}
+.pulse-tbl{width:100%;border-collapse:collapse;font-size:.82rem;margin:.875rem 0}
+.pulse-tbl th{text-align:left;padding:6px 10px;font-size:.7rem;font-weight:500;color:var(--text3);border-bottom:1px solid var(--border);background:var(--bg2)}
+.pulse-tbl td{padding:7px 10px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
+.pulse-tbl tr:last-child td{border-bottom:none}
+.scen{border-radius:10px;overflow:hidden;margin-bottom:10px}
+.sh2{padding:8px 13px;display:flex;justify-content:space-between;align-items:center}
+.sb{padding:10px 13px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:7px 0}
+.sc-l{font-size:.68rem;color:var(--text3);margin-bottom:2px}
+.sc-v{font-size:.8rem;font-weight:500}
+.spos{font-size:.78rem;color:var(--text2);margin-top:4px;padding-top:6px}
+.scen-g{border:1px solid var(--macro-border)}.scen-g .sh2{background:var(--macro-dim)}.scen-g .sht{color:var(--macro);font-size:.85rem;font-weight:500}.scen-g .sc-v{color:var(--macro)}.scen-g .spos{border-top:1px solid var(--macro-border)}
+.scen-a{border:1px solid rgba(184,150,62,.3)}.scen-a .sh2{background:rgba(184,150,62,.07)}.scen-a .sht{color:var(--gold);font-size:.85rem;font-weight:500}.scen-a .sc-v{color:var(--gold)}.scen-a .spos{border-top:1px solid rgba(184,150,62,.2)}
+.scen-r{border:1px solid rgba(212,80,80,.3)}.scen-r .sh2{background:rgba(212,80,80,.07)}.scen-r .sht{color:#d45050;font-size:.85rem;font-weight:500}.scen-r .sc-v{color:#d45050}.scen-r .spos{border-top:1px solid rgba(212,80,80,.2)}
+.chip{font-size:.65rem;font-weight:500;padding:2px 6px;border-radius:6px;white-space:nowrap;display:inline-block}
+.cg{background:var(--macro-dim);color:var(--macro);border:1px solid var(--macro-border)}
+.ca{background:rgba(184,150,62,.1);color:var(--gold);border:1px solid rgba(184,150,62,.25)}
+.cr{background:rgba(212,80,80,.08);color:#d45050;border:1px solid rgba(212,80,80,.2)}
+.stbl{width:100%;max-width:100%;border-collapse:collapse;font-size:.78rem;margin:.75rem 0;table-layout:fixed}
+.stbl th{padding:6px 8px;text-align:left;font-size:.7rem;font-weight:500;color:var(--text3);border-bottom:1px solid var(--border);background:var(--bg2);white-space:nowrap}
+.stbl td{padding:7px 8px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.4}
+.stbl tr:last-child td{border-bottom:none}
+.anchor-box{background:var(--macro-dim);border:1px solid var(--macro-border);border-radius:8px;padding:.875rem 1rem;font-size:.82rem;color:var(--text);line-height:1.55;margin-top:1rem}
+.footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.72rem;color:var(--text3);line-height:1.6}
+@media(max-width:600px){.mc3,.mc4{grid-template-columns:repeat(2,1fr)}.sgrid{grid-template-columns:repeat(2,1fr)}.cover-title{font-size:1.5rem}nav{padding:.6rem 1rem}.page{padding:1.25rem 1rem 3rem}}
+</style>
+</head>
+<body>
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+<nav>
+  <a href="../index.html" class="nav-brand">YouWe Quest<span>.</span></a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">&#8592; All macro reports</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="page">
+
+<div class="cover">
+  <div class="cover-eyebrow">India macro intelligence report</div>
+  <h1 class="cover-title">Monthly macro tracker &mdash; April 2026</h1>
+  <div class="cover-sub">Data as of 6 April 2026 &middot; Sources: Federal Reserve &middot; RBI &middot; BLS &middot; MOSPI &middot; IEA &middot; CME FedWatch &middot; AMFI &middot; NSDL &middot; YouWe Quest LLP</div>
+  <div class="cover-badges">
+    <span class="badge">7 always-on sections</span>
+    <span class="badge badge-trig">+ Oil deep-dive &middot; triggered</span>
+    <span class="badge">8 sections total</span>
+  </div>
+</div>
+
+<div class="alert-banner">&#9888; Dominant shock: US-Iran military conflict (since Mar 2026) &middot; Strait of Hormuz effectively closed (21% of global oil supply) &middot; Brent at $109/bbl &middot; INR at &#8377;93.21 (4-year low) &middot; RBI April 8 MPC decision pending &mdash; consensus: hold at 5.25%</div>
+
+<div class="tabs-wrap">
+  <div class="tab-group">
+    <span class="tab-grp-label">Global</span>
+    <button class="tab on" onclick="sw('pol',this)">1. Policy rates</button>
+    <button class="tab" onclick="sw('yld',this)">2. Bond yields</button>
+    <button class="tab" onclick="sw('dxy',this)">3. DXY</button>
+    <button class="tab" onclick="sw('infl',this)">4. Inflation</button>
+    <button class="tab" onclick="sw('liq',this)">5. Liquidity</button>
+  </div>
+  <div class="tab-group">
+    <span class="tab-grp-label">India</span>
+    <button class="tab india" onclick="sw('pulse',this)">Markets pulse</button>
+    <button class="tab india" onclick="sw('scen',this)">Scenarios</button>
+    <button class="tab india trig" onclick="sw('oil',this)">Oil deep-dive &#9888;</button>
+  </div>
+</div>
+
+<!-- ═══ 1. POLICY RATES ═══ -->
+<div class="sec on" id="s-pol">
+  <div class="sh"><span class="sn">01</span><h2 class="stitle">Central bank policy rates</h2><span class="pill p-amber">both on hold</span></div>
+  <p class="sdesc">Fed unchanged at 3.50&ndash;3.75% since December 2025 &mdash; four consecutive holds through April 2026. RBI at 5.25% since December 2025. RBI April 8 MPC decision is universally expected to be a hold: 69 of 71 economists forecast no change. The Iran war has eliminated any dovish optionality for FY27. CME FedWatch prices 2 cuts for H2 2026, with May meeting at 83% probability hold.</p>
+  <div class="mc3">
+    <div class="m"><div class="ml">Fed Funds Rate</div><div class="mv">3.50&ndash;3.75%</div><div class="ms">On hold &middot; since Dec 2025</div></div>
+    <div class="m"><div class="ml">RBI Repo Rate</div><div class="mv">5.25%</div><div class="ms">Hold expected Apr 8</div></div>
+    <div class="m"><div class="ml">RBI &minus; Fed Spread</div><div class="mv mv-a">+1.60%</div><div class="ms">Narrowed from +2.25% in Mar 2025</div></div>
+  </div>
+  <ul class="blist">
+    <li><span class="dot dr"></span>RBI April 8: overwhelming consensus hold. Iran war + Brent $109 kills any dovish move &mdash; even the sole Feb 2026 dissenter (for Accommodative) likely shifts to Hold. FY27 rate cut window has formally closed for now.</li>
+    <li><span class="dot dr"></span>Fed May 6&ndash;7 meeting: 83% probability hold per CME FedWatch. Two H2 cuts priced for 2026. If US CPI breaches 3.0% from oil pass-through, even these cuts are eliminated &mdash; stagflation risk is the tail scenario.</li>
+    <li><span class="dot da"></span>RBI&ndash;Fed spread at +1.60% and narrowing. Below +1.25%, rupee pressure intensifies and RBI must sell more USD &mdash; tightening domestic liquidity as a side effect of defending the exchange rate.</li>
+  </ul>
+  <div class="lg"><span class="lgd"><i style="background:#B8963E"></i>Fed Funds (mid)</span><span class="lgd"><i style="background:#378ADD"></i>RBI Repo</span></div>
+  <div style="position:relative;width:100%;height:190px"><canvas id="c-pol"></canvas></div>
+  <div class="india-box">
+    <div class="india-lbl">India impact</div>
+    <div class="iline"><span class="idot"></span>April 8 MPC hold is fully priced &mdash; no market-moving surprise expected. The real watch: RBI&rsquo;s forward guidance. Any softening toward &ldquo;open to cuts if oil eases&rdquo; would be the first dovish signal since December 2025 and could re-rate rate-sensitive sectors.</div>
+    <div class="iline"><span class="idot"></span>125bp of RBI cuts since Feb 2025 are still transmitting &mdash; weighted average lending rate on new loans down 105bp. The stimulus is in the system, frozen from adding more by the oil shock.</div>
+    <div class="iline"><span class="idot"></span>Watch: RBI MPC resolution language on April 8 for any change in tone. If the word &ldquo;Accommodative&rdquo; re-enters, bond markets will rally sharply on forward rate cut expectations.</div>
+  </div>
+</div>
+
+<!-- ═══ 2. BOND YIELDS ═══ -->
+<div class="sec" id="s-yld">
+  <div class="sh"><span class="sn">02</span><h2 class="stitle">Bond market yields</h2><span class="pill p-red">bear steepening &middot; India at 16-mo high</span></div>
+  <p class="sdesc">US 2Y&ndash;10Y spread at +52bp &mdash; yield curve remains positively sloped, a structural recovery signal from the 2023&ndash;24 inversion. But current steepening is &ldquo;bear steepening&rdquo; (10Y rising on inflation fears, not growth). India 10Y G-Sec at 6.90% &mdash; highest since July 2024 &mdash; surging on oil-driven inflation expectations, fiscal concerns, and Bloomberg bond index inclusion delays.</p>
+  <div class="mc3">
+    <div class="m"><div class="ml">US 10Y Yield</div><div class="mv mv-a">4.31%</div><div class="ms">As of 2 Apr 2026</div></div>
+    <div class="m"><div class="ml">India 10Y G-Sec</div><div class="mv mv-r">6.90%</div><div class="ms">Highest since Jul 2024</div></div>
+    <div class="m"><div class="ml">2Y&ndash;10Y Spread (US)</div><div class="mv mv-g">+52bp</div><div class="ms">Positive &middot; bear steepening</div></div>
+  </div>
+  <ul class="blist">
+    <li><span class="dot da"></span>US yield curve at +52bp &mdash; structurally positive (un-inverted from 2024 trough). Historically precedes EM equity re-rating by 6&ndash;12 months. But bear steepening (US 10Y rising from inflation premium) limits equity P/E expansion.</li>
+    <li><span class="dot dr"></span>India 10Y real rate: 6.90% &minus; 3.21% CPI = +3.69% &mdash; historically high. Compelling long-duration entry if oil shock is transient. But India March CPI print (April 13) is the risk event: 4.5%+ reading pushes G-Sec toward 7.0&ndash;7.25%.</li>
+    <li><span class="dot dg"></span>RBI OMOs (&#8377;3.5L crore in FY26) actively fighting the yield rise. OMO support expected through Q1 FY27. RBI owns the yield curve &mdash; disorderly spike above 7.25% will be met with intervention.</li>
+  </ul>
+  <div class="lg"><span class="lgd"><i style="background:#B8963E"></i>US 10Y</span><span class="lgd"><i style="background:#378ADD"></i>India 10Y G-Sec</span></div>
+  <div style="position:relative;width:100%;height:190px"><canvas id="c-yld"></canvas></div>
+  <div class="india-box">
+    <div class="india-lbl">India impact &mdash; G-Sec</div>
+    <div class="iline"><span class="idot"></span>Real rate +3.69% (6.90% &minus; 3.21%) is among India&rsquo;s highest in the past decade. Structurally attractive entry for long-duration FPI debt flows &mdash; but oil and INR risk are keeping foreign buyers on the sidelines.</div>
+    <div class="iline"><span class="idot"></span>FY27 market borrowing of &#8377;17.2T creates supply overhang. If April 13 CPI print surprises high, G-Sec yields spike through 7% with no actual RBI hike &mdash; tightening via expectations alone.</div>
+    <div class="iline"><span class="idot"></span>Bloomberg bond index inclusion: India added to EM bond index (Jun 2024), attracting passive flows. But Iran risk has stalled active participation &mdash; foreign ownership of G-Secs remains 3.5% vs 6%+ in Indonesia and Malaysia.</div>
+  </div>
+</div>
+
+<!-- ═══ 3. DXY ═══ -->
+<div class="sec" id="s-dxy">
+  <div class="sh"><span class="sn">03</span><h2 class="stitle">Dollar Index (DXY)</h2><span class="pill p-amber">100.1 &middot; at the hinge</span></div>
+  <p class="sdesc">DXY at 100.1 (Apr 6) &mdash; structurally weak dollar but back above 100 on strong March NFP (178k jobs). India paradox: USD/INR at &#8377;93.21 despite a weak dollar &mdash; FPI outflows ($3.2B first week of April) and surging oil import bill driving rupee depreciation entirely independent of DXY dynamics. Forex reserves down $40B from February peak to $688.1B, still providing ~11 months import cover.</p>
+  <div class="mc3">
+    <div class="m"><div class="ml">DXY Level</div><div class="mv mv-a">100.1</div><div class="ms">Down 3.0% YoY &middot; 6 Apr 2026</div></div>
+    <div class="m"><div class="ml">USD / INR</div><div class="mv mv-r">&#8377;93.21</div><div class="ms">RBI Ref Rate &middot; 2 Apr 2026</div></div>
+    <div class="m"><div class="ml">India Forex Reserves</div><div class="mv mv-a">$688.1B</div><div class="ms">&#8595; $40B from Feb peak</div></div>
+  </div>
+  <ul class="blist">
+    <li><span class="dot dr"></span>INR at &#8377;93.21 &mdash; 4-year low. March 2026 saw record FPI equity outflow of &#8377;1,17,775 crore. First week of April already &#8377;23,801 crore outflow. RBI selling USD to defend the rupee, bringing reserves from $728.5B (Feb peak) to $688.1B in 6 weeks.</li>
+    <li><span class="dot dg"></span>Structural DXY weakness (Fed -175bp since Sep 2024, US fiscal expansion, de-dollarisation) is an EM tailwind medium-term. DXY below 98 = strong positive for INR and EM flows into India.</li>
+    <li><span class="dot da"></span>DXY at 100 is the hinge: below 98 = dollar bear confirmed, INR recovers toward &#8377;88&ndash;90; rebound above 102 = reversal signal, compounding INR weakness. May Fed decision is the catalyst.</li>
+  </ul>
+  <div class="lg"><span class="lgd"><i style="background:#B8963E"></i>DXY</span></div>
+  <div style="position:relative;width:100%;height:190px"><canvas id="c-dxy"></canvas></div>
+  <div class="india-box">
+    <div class="india-lbl">India impact &mdash; INR</div>
+    <div class="iline"><span class="idot"></span>INR at &#8377;93.21: every &#8377;1 depreciation adds ~15&ndash;20bp to imported inflation, tightens RBI&rsquo;s hands, and deters FII debt flows simultaneously. The compound effect is a monetary tightening independent of the repo rate.</div>
+    <div class="iline"><span class="idot"></span>$688B reserves = ~11 months import cover. Comfortable by global standards. RBI can defend &#8377;93&ndash;94 without depleting reserves to dangerous levels, but active intervention costs ~$5&ndash;8B/month at current pace.</div>
+    <div class="iline"><span class="idot"></span>Scenarios: Bull (Iran deal) &#8377;85&ndash;88 &middot; Base (oil $95&ndash;105) &#8377;90&ndash;94 &middot; Bear (escalation) &#8377;95&ndash;98+.</div>
+  </div>
+</div>
+
+<!-- ═══ 4. INFLATION ═══ -->
+<div class="sec" id="s-infl">
+  <div class="sh"><span class="sn">04</span><h2 class="stitle">Inflation</h2><span class="pill p-amber">US Mar at 2.8% &middot; India Apr 13 critical</span></div>
+  <p class="sdesc">US CPI March 2026 confirmed at 2.8% YoY &mdash; the first print to capture the oil shock (energy +8.2% MoM). India CPI February 2026 at 3.21% (new base year 2024=100) &mdash; benign pre-war data. India March CPI is due April 13 and will be the first print to show the full oil and INR pass-through. Nomura estimates 4.0&ndash;4.5% if oil sustains $100+.</p>
+  <div class="mc4">
+    <div class="m"><div class="ml">US CPI (Mar YoY)</div><div class="mv mv-a">2.8%</div><div class="ms">Up from 2.4% in Feb</div></div>
+    <div class="m"><div class="ml">India CPI (Feb YoY)</div><div class="mv mv-g">3.21%</div><div class="ms">New 2024 base &middot; benign</div></div>
+    <div class="m"><div class="ml">US forward risk</div><div class="mv mv-r">3.2&ndash;3.5%</div><div class="ms">J.P. Morgan if oil holds</div></div>
+    <div class="m"><div class="ml">India Apr 13 risk</div><div class="mv mv-r">4.0&ndash;4.5%</div><div class="ms">Nomura if oil $100+</div></div>
+  </div>
+  <ul class="blist">
+    <li><span class="dot dr"></span>US CPI 2.8% includes energy +8.2% MoM and core 2.5% &mdash; oil shock is hitting services through transportation costs. J.P. Morgan: CPI 3.5%+ by year-end if Brent sustains $100+. The Fed&rsquo;s 2% target is receding, not approaching.</li>
+    <li><span class="dot da"></span>India CPI April 13 print is the most important near-term data event. At $109 oil vs $70 pre-war baseline, implied India CPI add is +1.6&ndash;2.4% through the energy and transport channel. A 4%+ print formally closes the RBI cut window for FY27.</li>
+    <li><span class="dot dg"></span>India food inflation at 3.47% (Feb 2026) remains the structural offset. Benign food prices have held overall CPI well inside the RBI band. If food stays low, it partially absorbs the oil shock &mdash; the critical variable to watch alongside CPI.</li>
+  </ul>
+  <div class="lg"><span class="lgd"><i style="background:#B8963E"></i>US CPI YoY%</span><span class="lgd"><i style="background:#378ADD"></i>India CPI YoY%</span></div>
+  <div style="position:relative;width:100%;height:190px"><canvas id="c-infl"></canvas></div>
+  <div class="india-box">
+    <div class="india-lbl">India impact</div>
+    <div class="iline"><span class="idot"></span>Per $10/bbl oil rise from $70 baseline: India CPI +40&ndash;60bp, CAD +30&ndash;40bp of GDP. At $109 (current), the implied CPI add is +1.6&ndash;2.4% &mdash; pushing from 3.21% toward 4.8&ndash;5.6% over 1&ndash;2 quarters if sustained.</div>
+    <div class="iline"><span class="idot"></span>March India CPI (April 13): if it prints above 4%, all rate cut expectations for FY27 are eliminated in one data release. Cross 5% and RBI must consider emergency measures.</div>
+    <div class="iline"><span class="idot"></span>Fiscal buffer: Centre can cut petrol/diesel excise by &#8377;10&ndash;15/litre to cushion pass-through. This costs ~&#8377;1.5&ndash;2T revenue &mdash; a trade-off between CPI and fiscal deficit. Watch Union Cabinet decisions in April.</div>
+  </div>
+</div>
+
+<!-- ═══ 5. LIQUIDITY ═══ -->
+<div class="sec" id="s-liq">
+  <div class="sh"><span class="sn">05</span><h2 class="stitle">Global liquidity</h2><span class="pill p-green">QT paused &middot; OMOs continuing</span></div>
+  <p class="sdesc">Fed balance sheet at $6.7T (Apr 2 H.4.1 release) &mdash; QT has effectively paused; no active balance sheet reduction. 175bp of Fed cuts since Sep 2024 have materially loosened global monetary conditions. RBI domestic system surplus ~&#8377;75,000 Cr/day, below the &#8377;2L Cr (1% NDTL) comfort zone but direction is right. Global liquidity structural tailwind is building; the Iran shock is a temporary dam, not a drought.</p>
+  <div class="mc3">
+    <div class="m"><div class="ml">Fed Balance Sheet</div><div class="mv">$6.7T</div><div class="ms">Stable &middot; QT paused &middot; 2 Apr 2026</div></div>
+    <div class="m"><div class="ml">RBI System Surplus</div><div class="mv mv-g">~&#8377;75K Cr</div><div class="ms">Daily avg &middot; below comfort</div></div>
+    <div class="m"><div class="ml">G4 CB Stance</div><div class="mv mv-a">Neutral</div><div class="ms">Turning from tightening</div></div>
+  </div>
+  <ul class="blist">
+    <li><span class="dot dg"></span>Fed QT paused at $6.7T &mdash; no active balance sheet reduction. Combined with 175bp of cuts since Sep 2024, global monetary conditions are meaningfully looser than 12 months ago. The structural tide toward risk-on is intact.</li>
+    <li><span class="dot dr"></span>Iran shock creates a &ldquo;liquidity trap&rdquo; for India: global easing should attract FII debt flows via carry trade, but oil-driven INR weakness and CPI risk are overwhelming the carry argument. FIIs selling India despite improving global liquidity backdrop.</li>
+    <li><span class="dot dg"></span>RBI OMOs through Q1 FY27: each &#8377;50,000 Cr OMO purchase adds ~20bp to system liquidity. RBI has both the tools and intent to prevent domestic liquidity crunch. Expect &#8377;1&ndash;2L Cr OMOs in April&ndash;May 2026.</li>
+  </ul>
+  <div class="lg"><span class="lgd"><i style="background:#B8963E"></i>Fed Balance Sheet ($T)</span></div>
+  <div style="position:relative;width:100%;height:190px"><canvas id="c-liq"></canvas></div>
+  <div class="india-box">
+    <div class="india-lbl">India impact</div>
+    <div class="iline"><span class="idot"></span>RBI system liquidity at &#8377;75,000 Cr/day &mdash; below the 1% NDTL comfort zone (&#8377;2L Cr) but trending in the right direction via OMOs. Transmission of the 125bp cut cycle is 70&ndash;80% complete in the banking system.</div>
+    <div class="iline"><span class="idot"></span>Global liquidity expansion = structural FII equity and debt inflows into India &mdash; this tailwind is building and will assert itself once the Iran binary resolves. The liquidity dam breaks when Hormuz reopens.</div>
+  </div>
+</div>
+
+<!-- ═══ INDIA PULSE ═══ -->
+<div class="sec" id="s-pulse">
+  <div class="sh"><h2 class="stitle">India markets pulse</h2><span class="pill p-amber">April 2026 &middot; early month</span></div>
+  <div class="mc4" style="margin-bottom:.75rem">
+    <div class="m"><div class="ml">Nifty 50</div><div class="mv mv-a">22,609</div><div class="ms">MTD +1.2% &middot; 6 Apr 2026</div></div>
+    <div class="m"><div class="ml">FII Equity (MTD)</div><div class="mv mv-r">&minus;&#8377;23,801 Cr</div><div class="ms">Apr 1&ndash;3 &middot; 3 trading days</div></div>
+    <div class="m"><div class="ml">DII Equity (MTD)</div><div class="mv mv-g">+&#8377;21,000 Cr</div><div class="ms">Absorbing FPI selling</div></div>
+    <div class="m"><div class="ml">Monthly SIP Inflows</div><div class="mv mv-g">&#8377;29,845 Cr</div><div class="ms">Feb 2026 &middot; AMFI &middot; +15% YoY</div></div>
+  </div>
+  <table class="pulse-tbl">
+    <thead><tr><th>Segment</th><th>Current read</th><th>Change vs last month</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Large caps (Nifty 50)</strong></td><td style="color:var(--gold)">22,609 &middot; MTD +1.2%</td><td>Mild recovery after FY26 closed at 22,331 &mdash; DII SIP flows providing floor</td></tr>
+      <tr><td><strong>Mid caps (Nifty Midcap 150)</strong></td><td style="color:var(--gold)">19,805 &middot; MTD &minus;0.5%</td><td>Underperforming large caps &mdash; FPI outflows hitting mid-caps more severely</td></tr>
+      <tr><td><strong>Small caps (Nifty Smallcap 250)</strong></td><td style="color:#d45050">14,688 &middot; MTD &minus;1.5%</td><td>Risk-off environment; 52-wk low 13,315 &mdash; elevated sell pressure</td></tr>
+      <tr><td><strong>India VIX</strong></td><td style="color:#d45050">25.52 (+6.0 MoM)</td><td>Elevated geopolitical fear premium; intraday high 26.60</td></tr>
+      <tr><td><strong>Gold (INR)</strong></td><td style="color:var(--macro)">&#8377;1,50,920/10g (+3.5%)</td><td>Global safe-haven demand + weak rupee amplifying MCX move</td></tr>
+      <tr><td><strong>India 10Y G-Sec</strong></td><td style="color:#d45050">6.90% &middot; 16-month high</td><td>Surged on oil inflation expectations; RBI OMO support limiting further spike</td></tr>
+    </tbody>
+  </table>
+  <div class="anchor-box"><strong>One-line read:</strong> FY26 closed at Nifty 22,331 &mdash; the weakest fiscal year since FY20. April has seen modest large-cap recovery (+1.2%) as DII SIP flows (&#8377;29,845 Cr/month structural floor) absorb FPI selling. Mid and small caps remain under pressure. Markets are pricing the Iran binary: a deal re-rates India sharply higher toward 25,000+; no deal sustains &#8377;21,500&ndash;24,000 rangebound with defensive posture.</div>
+</div>
+
+<!-- ═══ INDIA SCENARIOS ═══ -->
+<div class="sec" id="s-scen">
+  <div class="sh"><h2 class="stitle">India scenarios</h2><span class="pill p-blue">April 2026 &middot; Iran binary</span></div>
+  <p class="sdesc">Three scenarios. One key binary &mdash; Iran deal or no deal. Structural India fundamentals (7%+ GDP, &#8377;29,845 Cr SIP, &#8377;17.2T capex, benign food inflation) are intact in all three. The Iran shock has now persisted five weeks at $100+. Every week of sustained $100+ oil shifts probability toward Scenario C.</p>
+  <div class="scen scen-g">
+    <div class="sh2"><span class="sht">A &mdash; Iran deal &middot; Hormuz reopens</span><span class="chip cg">Probability: 25&ndash;30%</span></div>
+    <div class="sb">
+      <p style="font-size:.78rem;color:var(--text2);margin-bottom:7px"><strong>Trigger:</strong> Diplomatic deal within 4&ndash;6 weeks. Hormuz fully reopened. Brent falls to $70&ndash;80/bbl.</p>
+      <div class="sgrid">
+        <div><div class="sc-l">Nifty (6&ndash;9mo)</div><div class="sc-v">25,000&ndash;27,000</div></div>
+        <div><div class="sc-l">USD/INR</div><div class="sc-v">&#8377;85&ndash;88</div></div>
+        <div><div class="sc-l">10Y G-Sec</div><div class="sc-v">6.3&ndash;6.5%</div></div>
+        <div><div class="sc-l">RBI</div><div class="sc-v">2 cuts in FY27</div></div>
+      </div>
+      <div class="spos"><strong>Position:</strong> Aggressively long banking, real estate, infra, auto, NBFCs. Reduce IT and defensives. INR-linked plays outperform strongly. Gold to underperform on safe-haven unwind.</div>
+    </div>
+  </div>
+  <div class="scen scen-a">
+    <div class="sh2"><span class="sht">B &mdash; Stalemate &middot; Oil $95&ndash;105</span><span class="chip ca">Probability: 50&ndash;55%</span></div>
+    <div class="sb">
+      <p style="font-size:.78rem;color:var(--text2);margin-bottom:7px"><strong>Trigger:</strong> No escalation, no resolution. Oil stabilises $95&ndash;105. Diplomatic talks ongoing but inconclusive.</p>
+      <div class="sgrid">
+        <div><div class="sc-l">Nifty range</div><div class="sc-v">21,500&ndash;24,000</div></div>
+        <div><div class="sc-l">USD/INR</div><div class="sc-v">&#8377;90&ndash;94</div></div>
+        <div><div class="sc-l">10Y G-Sec</div><div class="sc-v">6.8&ndash;7.0%</div></div>
+        <div><div class="sc-l">RBI</div><div class="sc-v">On hold FY27</div></div>
+      </div>
+      <div class="spos"><strong>Position:</strong> Quality large caps (low debt, domestic demand). IT and pharma as defensive USD earners. Gold as portfolio hedge. Avoid high-leverage and rate-sensitive names until clarity.</div>
+    </div>
+  </div>
+  <div class="scen scen-r">
+    <div class="sh2"><span class="sht">C &mdash; Escalation &middot; Oil $110+ &middot; stagflation</span><span class="chip cr">Probability: 15&ndash;20%</span></div>
+    <div class="sb">
+      <p style="font-size:.78rem;color:var(--text2);margin-bottom:7px"><strong>Trigger:</strong> Conflict expands. Full Hormuz blockade 3+ months. US CPI breaks 3.5%. Fed signals pause on cuts.</p>
+      <div class="sgrid">
+        <div><div class="sc-l">Nifty downside</div><div class="sc-v">19,000&ndash;21,000</div></div>
+        <div><div class="sc-l">USD/INR</div><div class="sc-v">&#8377;95&ndash;98+</div></div>
+        <div><div class="sc-l">10Y G-Sec</div><div class="sc-v">7.0&ndash;7.5%</div></div>
+        <div><div class="sc-l">RBI</div><div class="sc-v">Emergency action</div></div>
+      </div>
+      <div class="spos"><strong>Position:</strong> ONGC/OIL India upstream, gold, pharma exports only. Avoid aviation, FMCG, auto, real estate. Short duration bonds. Build cash and wait for resolution.</div>
+    </div>
+  </div>
+  <div class="anchor-box" style="margin-top:1rem"><strong>Structural anchor:</strong> India&rsquo;s 7%+ GDP growth trajectory, &#8377;29,845 Cr/month SIP flows (FY26 record pace), &#8377;17.2T govt capex pipeline, and near-decade-low structural food inflation are intact in all three scenarios. The Iran shock is a duration risk &mdash; not a structural derailment. The question for FY27 is not whether India grows, but at what cost: rate cuts foregone, INR lower, and fiscal space thinner. Every day of Brent at $100+ is a day India spends its macro tailwinds.</div>
+</div>
+
+<!-- ═══ TRIGGERED: OIL ═══ -->
+<div class="sec" id="s-oil">
+  <div class="trig-banner">Triggered section &middot; active while Brent sustained above $90/bbl or major supply disruption event</div>
+  <div class="sh"><h2 class="stitle">Oil deep-dive</h2><span class="pill p-red">Iran war &middot; Hormuz near-halt</span></div>
+  <p class="sdesc">US-Iran military conflict (began March 2026) has effectively closed the Strait of Hormuz &mdash; through which 21% of global oil supply (~20mb/d) transits. Brent surged from $63 (Dec 2025 low) to $119.50 peak (Mar 2, 2026). April 2026 data: open $104.86 on April 1, currently $109.00 (April 4&ndash;6). WTI above $111. IEA: biggest supply disruption since 1973. Iran backchannel talks continuing; Trump called discussions &ldquo;very good&rdquo; (Mar 9); Iran approved Indian LPG tankers (Apr 2).</p>
+  <div class="mc3">
+    <div class="m"><div class="ml">Brent (4&ndash;6 Apr)</div><div class="mv mv-r">$109/bbl</div><div class="ms">&#8593; from $70 pre-war baseline</div></div>
+    <div class="m"><div class="ml">April MTD Change</div><div class="mv mv-a">+3.95%</div><div class="ms">$104.86 open &#8594; $109.00</div></div>
+    <div class="m"><div class="ml">India extra import cost</div><div class="mv mv-r">+$4&ndash;5B/mo</div><div class="ms">vs $70/bbl pre-war baseline</div></div>
+  </div>
+  <ul class="blist">
+    <li><span class="dot dr"></span>Strait of Hormuz: near-halt, not full closure. IEA confirms 12&ndash;15mb/d disrupted (US exports, Saudi routing changes partially compensating). Full formal closure pushes Brent to $130+. OPEC+ Saudi/UAE have 2&ndash;3mb/d spare capacity but no commitment to emergency increase yet.</li>
+    <li><span class="dot dr"></span>India triple-hit: (1) CAD at risk of widening 1.0&ndash;1.5% of GDP at $109 vs $70 baseline, (2) CPI +40&ndash;60bp per $10/bbl rise = +1.6&ndash;2.4% cumulative add, (3) fiscal pressure if Centre cuts petrol/diesel excise to control retail prices (&#8377;1.5&ndash;2T revenue cost).</li>
+    <li><span class="dot dg"></span>Watch: Iran backchannel signals. US SPR release (0.6mb/d capacity) and IEA coordinated release could cap near-term spike. Any ceasefire announcement = $20&ndash;30/bbl immediate relief and a sharp India market re-rating.</li>
+    <li><span class="dot da"></span>Historical comparison: 1973 embargo lasted 5 months; 1979 Iranian revolution disruption lasted 12 months. Current disruption at week 5 &mdash; if it persists beyond week 8&ndash;10, structural demand destruction and global recession risk increase materially.</li>
+  </ul>
+  <div class="lg"><span class="lgd"><i style="background:#B8963E"></i>Brent $/bbl</span><span class="lgd"><i style="background:#5c7080;background:repeating-linear-gradient(90deg,#5c7080 0,#5c7080 4px,transparent 4px,transparent 7px)"></i>Pre-war baseline (~$70)</span></div>
+  <div style="position:relative;width:100%;height:190px"><canvas id="c-oil"></canvas></div>
+  <div class="india-box">
+    <div class="india-lbl">India watch levels</div>
+    <div class="iline"><span class="idot"></span><strong>Below $85:</strong> CAD fears ease, INR recovers toward &#8377;87&ndash;90, RBI cut back on table &mdash; broad-based relief rally; banking, real estate, auto lead.</div>
+    <div class="iline"><span class="idot"></span><strong>$85&ndash;105:</strong> Current base. Managed pain. RBI on hold. Rupee &#8377;90&ndash;94. Markets rangebound &#8377;21,500&ndash;24,000. Defensive large-cap positioning.</div>
+    <div class="iline"><span class="idot"></span><strong>Above $110+:</strong> India CPI &#8594; 5%+. RBI emergency liquidity measures. Rupee &#8377;95&ndash;98+. Avoid all risk assets. Build cash and gold exposure only.</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>India Macro Intelligence Report &mdash; April 2026 &middot; YouWe Quest LLP &middot; For informational purposes only. Not investment advice.</p>
+  <p style="margin-top:.4rem">Sources: Federal Reserve (H.4.1, FOMC), CME FedWatch, RBI MPC minutes, US Bureau of Labor Statistics, MOSPI, IEA Oil Market Report, TradingView, AMFI, NSDL FPI Data. Data as of 6 April 2026.</p>
+</div>
+
+</div><!-- .page -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  var html=document.documentElement;
+  var btn=document.getElementById('theme-toggle');
+  var sun=document.getElementById('icon-sun');
+  var moon=document.getElementById('icon-moon');
+  function applyTheme(t){
+    html.setAttribute('data-theme',t);
+    sun.style.display=t==='dark'?'':'none';
+    moon.style.display=t==='light'?'':'none';
+  }
+  applyTheme(localStorage.getItem('theme')||'dark');
+  btn.addEventListener('click',function(){
+    var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    localStorage.setItem('theme',next);
+    applyTheme(next);
+  });
+})();
+const ch={};
+const co={
+  responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{mode:"index",intersect:false,titleFont:{size:11},bodyFont:{size:11}}},
+  scales:{
+    x:{grid:{color:"rgba(94,191,140,0.08)"},ticks:{color:"rgba(154,171,184,0.7)",font:{size:10},maxRotation:0,autoSkip:true,maxTicksLimit:6},border:{display:false}},
+    y:{grid:{color:"rgba(94,191,140,0.08)"},ticks:{color:"rgba(154,171,184,0.7)",font:{size:10}},border:{display:false}}
+  }
+};
+const LB=["May-25","Jun-25","Jul-25","Aug-25","Sep-25","Oct-25","Nov-25","Dec-25","Jan-26","Feb-26","Mar-26","Apr-26"];
+const D={
+  pol:{lb:LB,ds:[{lb:"Fed Funds (mid)",c:"#B8963E",d:[4.25,4.25,4.25,4.25,4.00,4.00,3.75,3.50,3.50,3.50,3.50,3.50]},{lb:"RBI Repo",c:"#378ADD",d:[6.00,5.50,5.50,5.50,5.50,5.50,5.50,5.25,5.25,5.25,5.25,5.25]}]},
+  yld:{lb:LB,ds:[{lb:"US 10Y",c:"#B8963E",d:[4.45,4.35,4.20,3.90,3.80,4.05,4.25,4.15,4.55,4.45,4.50,4.31]},{lb:"India 10Y G-Sec",c:"#378ADD",d:[6.80,6.70,6.65,6.55,6.55,6.50,6.45,6.48,6.55,6.65,6.88,6.90]}]},
+  dxy:{lb:LB,ds:[{lb:"DXY",c:"#B8963E",fill:true,d:[101.5,99.8,98.5,97.2,97.5,97.7,98.8,100.0,101.5,100.8,102.0,100.1]}]},
+  infl:{lb:LB,ds:[{lb:"US CPI YoY%",c:"#B8963E",d:[2.3,2.6,2.9,2.4,2.2,2.4,2.6,2.7,3.0,2.4,2.8,2.8]},{lb:"India CPI YoY%",c:"#378ADD",d:[4.80,5.08,3.54,3.65,3.65,3.94,4.87,5.22,2.75,3.21,3.50,3.21]}]},
+  liq:{lb:LB,ds:[{lb:"Fed B/S ($T)",c:"#B8963E",fill:true,d:[7.00,6.95,6.90,6.85,6.80,6.78,6.75,6.72,6.70,6.70,6.70,6.70]}]},
+  oil:{lb:LB,ds:[{lb:"Brent $/bbl",c:"#B8963E",d:[70.0,68.0,72.0,71.0,68.0,73.0,69.0,63.0,65.0,73.0,102.0,109.0]},{lb:"Pre-war baseline",c:"#5c7080",dash:true,d:[70.0,68.0,72.0,71.0,68.0,73.0,69.0,63.0,65.0,73.0,70.0,70.0]}]}
+};
+function mkChart(id){
+  const d=D[id],cv=document.getElementById("c-"+id);
+  if(!d||!cv||ch[id])return;
+  ch[id]=new Chart(cv,{type:"line",data:{labels:d.lb,datasets:d.ds.map(s=>({label:s.lb,data:s.d,borderColor:s.c,backgroundColor:s.fill?"rgba(184,150,62,0.07)":"transparent",fill:!!s.fill,borderDash:s.dash?[4,3]:[],tension:0.35,pointRadius:2,pointHoverRadius:4,borderWidth:1.8,spanGaps:true}))},options:co});
+}
+const cm={pol:1,yld:1,dxy:1,infl:1,liq:1,oil:1};
+function sw(id,btn){
+  document.querySelectorAll(".sec").forEach(s=>s.classList.remove("on"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("on"));
+  document.getElementById("s-"+id).classList.add("on");
+  btn.classList.add("on");
+  if(cm[id])setTimeout(()=>mkChart(id),60);
+}
+setTimeout(()=>mkChart("pol"),300);
+</script>
+</body>
+</html>
