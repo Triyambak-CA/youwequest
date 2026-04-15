@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Regulatory Update — YouWe Quest LLP</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8963E;--gold-l:#D4AE5A;--gold-glow:rgba(184,150,62,0.15);
+  --glass:rgba(255,255,255,0.04);--glass-b:rgba(255,255,255,0.08);
+  --glass-h:rgba(255,255,255,0.07);
+  --txt:rgba(255,255,255,0.90);--txt2:rgba(255,255,255,0.52);--txt3:rgba(255,255,255,0.30);
+  --bg:#070c12;--bg2:#0b1018;
+  --gst:#D4AE5A;--dt:#7EB8F7;--mca:#C49FE6;--sebi:#F7916A;--icai:#6ECFBE;
+  --red:#F87171;
+}
+[data-theme="light"]{
+  --glass:rgba(0,0,0,0.04);
+  --glass-b:rgba(0,0,0,0.08);
+  --glass-h:rgba(0,0,0,0.06);
+  --txt:rgba(15,12,5,0.94);
+  --txt2:rgba(15,12,5,0.68);
+  --txt3:rgba(15,12,5,0.52);
+  --bg:#f4f1eb;--bg2:#ece9e0;
+  --gold:#8C6D1A;--gold-l:#AA8420;--gold-glow:rgba(140,109,26,0.14);
+  --gst:#8C6D1A;--dt:#2A72C0;--mca:#7A4FAE;--sebi:#C05020;--icai:#1A9080;
+  --red:#C03030;
+}
+[data-theme="light"] .nav{background:rgba(244,241,235,0.90);border-bottom-color:rgba(0,0,0,0.10)}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(184,150,62,0.12),transparent)}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(200,190,170,0.22),transparent)}
+[data-theme="light"] .orb3{background:radial-gradient(circle,rgba(220,210,190,0.15),transparent)}
+[data-theme="light"] .tabs{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.10)}
+[data-theme="light"] .tab:hover{color:var(--txt)}
+[data-theme="light"] .tab.active{background:rgba(140,109,26,0.15);color:var(--gold-l);border-color:rgba(140,109,26,0.30)}
+[data-theme="light"] .rule{background:linear-gradient(90deg,var(--gold) 0%,rgba(140,109,26,0.15) 65%,transparent 100%)}
+[data-theme="light"] .entry{border-bottom-color:rgba(0,0,0,0.07)}
+[data-theme="light"] .et{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .et strong{color:var(--txt)}
+[data-theme="light"] .et em{color:var(--gold-l)}
+[data-theme="light"] .ttext{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .ttext strong{color:var(--txt)}
+[data-theme="light"] .ttext em{color:var(--gold-l)}
+[data-theme="light"] .ttext .cite{color:rgba(20,110,95,0.9);background:rgba(20,110,95,0.08);border-color:rgba(20,110,95,0.18)}
+[data-theme="light"] .ttext .stat{color:rgba(120,90,20,0.9);background:rgba(120,90,20,0.08);border-color:rgba(120,90,20,0.18)}
+[data-theme="light"] .ttext .date{color:var(--red)}
+[data-theme="light"] .tsub{border-bottom-color:rgba(0,0,0,0.07)}
+[data-theme="light"] .tsub-hd:hover{background:rgba(0,0,0,0.03)}
+[data-theme="light"] .tsub-letter{color:var(--txt3)}
+[data-theme="light"] .tsub-chevron{color:var(--txt3)}
+[data-theme="light"] .tsubsub{color:var(--txt3)}
+[data-theme="light"] .tnote{background:rgba(140,109,26,0.07);border-color:rgba(140,109,26,0.22);color:rgba(15,12,5,0.74)}
+[data-theme="light"] .tnote strong{color:var(--gold-l)}
+[data-theme="light"] .tdiv-line{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+[data-theme="light"] .atbl thead tr{border-bottom-color:rgba(140,109,26,0.30)}
+[data-theme="light"] .atbl tbody tr{border-bottom-color:rgba(0,0,0,0.06)}
+[data-theme="light"] .atbl tbody tr:hover{background:rgba(0,0,0,0.025)}
+[data-theme="light"] .atbl td{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .p-act{color:rgba(15,12,5,0.68);border-color:rgba(0,0,0,0.14);background:rgba(0,0,0,0.04)}
+[data-theme="light"] .footer{border-top-color:rgba(0,0,0,0.08)}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.65}
+
+/* orbs */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.14;animation:drift 20s ease-in-out infinite}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,#B8963E,transparent);top:-200px;left:-150px;animation-delay:0s}
+.orb2{width:550px;height:550px;background:radial-gradient(circle,#0f2a4a,transparent);bottom:-100px;right:-100px;animation-delay:-7s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,#1a0a00,transparent);top:45%;left:55%;animation-delay:-14s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-18px) scale(1.04)}66%{transform:translate(-18px,25px) scale(0.96)}}
+
+/* sticky nav */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,12,18,0.82);
+  backdrop-filter:blur(28px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:0 24px;
+}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--txt2);letter-spacing:0.02em;white-space:nowrap;flex-shrink:0}
+.nav-brand span{color:var(--gold)}
+.tabs{display:flex;gap:4px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:3px;flex-shrink:1;min-width:0}
+.tab{font-size:12px;font-weight:500;letter-spacing:0.06em;padding:5px 16px;border-radius:7px;cursor:pointer;color:var(--txt2);border:none;background:transparent;transition:all 0.2s;white-space:nowrap}
+.tab:hover{color:var(--txt)}
+.tab.active{background:rgba(184,150,62,0.18);color:var(--gold-l);border:1px solid rgba(184,150,62,0.25)}
+.nav-meta{font-size:11px;color:var(--txt3);white-space:nowrap;letter-spacing:0.05em}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+@media(max-width:680px){.nav-meta{display:none}}
+
+/* wrap */
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:52px 24px 100px}
+
+/* view panels */
+.view{display:none}.view.active{display:block}
+
+/* masthead */
+.masthead{margin-bottom:48px;opacity:0;animation:fadeUp 0.7s ease forwards 0.1s}
+.mast-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.mast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,54px);font-weight:300;line-height:1.08;letter-spacing:-0.01em}
+.mast-title em{color:var(--gold-l);font-style:normal}
+.mast-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:14px}
+.mast-pill{font-size:11px;color:var(--txt2);display:flex;align-items:center;gap:6px}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:0.5;flex-shrink:0}
+
+/* rule */
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0%,rgba(184,150,62,0.15) 65%,transparent 100%);margin:22px 0 36px}
+
+/* chips */
+.chips{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;opacity:0;animation:fadeUp 0.7s ease forwards 0.22s}
+@media(max-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
+.chip{background:var(--glass);border:1px solid var(--glass-b);border-radius:12px;padding:14px 12px;backdrop-filter:blur(20px);transition:all 0.2s;cursor:pointer}
+.chip:hover{background:var(--glass-h);border-color:rgba(184,150,62,0.28);transform:translateY(-2px)}
+.chip-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;line-height:1;margin-bottom:3px}
+.chip-l{font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:var(--txt2)}
+
+/* section */
+.sec{margin-bottom:28px;opacity:0;animation:fadeUp 0.7s ease forwards}
+.s1{animation-delay:0.32s}.s2{animation-delay:0.42s}.s3{animation-delay:0.52s}
+.s4{animation-delay:0.62s}.s5{animation-delay:0.72s}.s6{animation-delay:0.82s}
+.s7{animation-delay:0.92s}
+
+.sec-hd{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+.dpill{font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;padding:3px 10px;border-radius:100px;border:1px solid;flex-shrink:0}
+.p-gst{color:var(--gst);border-color:rgba(212,174,90,0.35);background:rgba(212,174,90,0.07)}
+.p-dt{color:var(--dt);border-color:rgba(126,184,247,0.35);background:rgba(126,184,247,0.07)}
+.p-mca{color:var(--mca);border-color:rgba(196,159,230,0.35);background:rgba(196,159,230,0.07)}
+.p-sebi{color:var(--sebi);border-color:rgba(247,145,106,0.35);background:rgba(247,145,106,0.07)}
+.p-icai{color:var(--icai);border-color:rgba(110,207,190,0.35);background:rgba(110,207,190,0.07)}
+.p-act{color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.13);background:rgba(255,255,255,0.04)}
+
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em}
+
+/* glass card */
+.gc{background:var(--glass);border:1px solid var(--glass-b);border-radius:16px;padding:22px 26px;backdrop-filter:blur(24px);transition:all 0.2s}
+.gc:hover{background:var(--glass-h);border-color:rgba(255,255,255,0.13)}
+
+/* summary entries */
+.entries{display:flex;flex-direction:column}
+.entry{padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start}
+.entry:last-child{border-bottom:none;padding-bottom:0}
+.entry:first-child{padding-top:0}
+.tag{font-size:9.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:3px 7px;border-radius:5px;border:1px solid;margin-top:2px;white-space:nowrap;display:block;text-align:center}
+.t-court{color:#7EB8F7;border-color:rgba(126,184,247,0.3);background:rgba(126,184,247,0.07)}
+.t-dead{color:#F87171;border-color:rgba(248,113,113,0.3);background:rgba(248,113,113,0.07)}
+.t-portal{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+.t-budget{color:#D4AE5A;border-color:rgba(212,174,90,0.3);background:rgba(212,174,90,0.07)}
+.t-new{color:#C49FE6;border-color:rgba(196,159,230,0.3);background:rgba(196,159,230,0.07)}
+.t-icai{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+.t-udin{color:#F5A04A;border-color:rgba(245,160,74,0.3);background:rgba(245,160,74,0.07)}
+.t-peer{color:#64C4E8;border-color:rgba(100,196,232,0.3);background:rgba(100,196,232,0.07)}
+.t-pub{color:#A89FD8;border-color:rgba(168,159,216,0.3);background:rgba(168,159,216,0.07)}
+.t-live{color:#A8E890;border-color:rgba(168,232,144,0.3);background:rgba(168,232,144,0.07)}
+.et{font-size:13.5px;color:rgba(255,255,255,0.78);line-height:1.6}
+.et strong{color:var(--txt);font-weight:500}
+.et em{color:var(--gold-l);font-style:normal}
+.src-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--gold-l);text-decoration:none;opacity:0.75;margin-left:6px;white-space:nowrap;transition:opacity 0.15s}
+.src-link:hover{opacity:1;text-decoration:underline}
+.src-link::after{content:'↗';font-size:10px}
+[data-theme="light"] .src-link{color:var(--gold)}
+
+/* action table */
+.atbl{width:100%;border-collapse:collapse}
+.atbl thead tr{border-bottom:1px solid rgba(184,150,62,0.28)}
+.atbl th{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;padding:0 12px 11px 0;text-align:left}
+.atbl tbody tr{border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.15s}
+.atbl tbody tr:hover{background:rgba(255,255,255,0.025)}
+.atbl tbody tr:last-child{border-bottom:none}
+.atbl td{padding:11px 12px 11px 0;font-size:13px;color:rgba(255,255,255,0.76);vertical-align:top}
+.atbl td:first-child{width:86px}.atbl td:nth-child(2){width:96px}
+.dred{color:var(--red);font-weight:500;font-size:12px}
+.dgray{color:var(--txt2)}
+.dbadge{font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid;display:inline-block}
+
+/* ── TECHNICAL SECTION STYLES ── */
+.tech-divider{
+  margin:48px 0 44px;
+  display:flex;align-items:center;gap:20px;
+  opacity:0;animation:fadeUp 0.7s ease forwards 0.15s;
+}
+.tdiv-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.tdiv-text{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+
+/* tech section */
+.tsec{margin-bottom:36px;opacity:0;animation:fadeUp 0.7s ease forwards}
+
+/* roman numeral header */
+.tsec-hd{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.tsec-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;min-width:28px;margin-top:2px}
+.tsec-meta{display:flex;flex-direction:column;gap:5px}
+.tsec-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:-0.01em;line-height:1.1}
+
+/* subsections inside tech card */
+.tgc{background:var(--glass);border:1px solid var(--glass-b);border-radius:16px;overflow:hidden;backdrop-filter:blur(24px)}
+.tsub{border-bottom:1px solid rgba(255,255,255,0.05)}
+.tsub:last-child{border-bottom:none}
+.tsub-hd{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 24px 12px;
+  border-left:2px solid;
+  cursor:pointer;
+  user-select:none;
+  transition:background 0.15s;
+}
+.tsub-hd:hover{background:rgba(255,255,255,0.03)}
+.tsub-letter{font-family:'DM Mono',monospace;font-size:11px;color:var(--txt3);flex-shrink:0;min-width:18px}
+.tsub-title{font-size:13.5px;font-weight:500;flex:1}
+.tsub-chevron{font-size:11px;color:var(--txt3);transition:transform 0.25s;margin-left:auto}
+.tsub.open .tsub-chevron{transform:rotate(180deg)}
+.tsub-body{display:none;padding:0 24px 18px 54px}
+.tsub.open .tsub-body{display:block}
+
+/* border colors */
+.b-gst{border-color:var(--gst)}.b-dt{border-color:var(--dt)}.b-mca{border-color:var(--mca)}.b-sebi{border-color:var(--sebi)}.b-icai{border-color:var(--icai)}
+
+/* technical content */
+.titem{display:flex;gap:10px;margin-bottom:12px;align-items:start}
+.titem:last-child{margin-bottom:0}
+.tbullet{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.5;flex-shrink:0;margin-top:8px}
+.ttext{font-size:13px;color:rgba(255,255,255,0.76);line-height:1.68}
+.ttext strong{color:var(--txt);font-weight:500}
+.ttext em{color:var(--gold-l);font-style:normal}
+.ttext .cite{font-family:'DM Mono',monospace;font-size:11.5px;color:rgba(110,207,190,0.8);background:rgba(110,207,190,0.07);border:1px solid rgba(110,207,190,0.15);border-radius:4px;padding:1px 5px;white-space:nowrap}
+.ttext .stat{font-family:'DM Mono',monospace;font-size:11.5px;color:rgba(212,174,90,0.85);background:rgba(212,174,90,0.07);border:1px solid rgba(212,174,90,0.18);border-radius:4px;padding:1px 5px;white-space:nowrap}
+.ttext .date{color:var(--red);font-weight:500}
+
+/* sub-sub heading */
+.tsubsub{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--txt3);margin:14px 0 8px;font-weight:500}
+
+/* note box */
+.tnote{background:rgba(184,150,62,0.07);border:1px solid rgba(184,150,62,0.2);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:12px;color:rgba(255,255,255,0.6);line-height:1.55}
+.tnote strong{color:var(--gold-l)}
+
+/* footer */
+.footer{margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;opacity:0;animation:fadeUp 0.7s ease forwards 1.1s}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400}
+.ft-firm{font-size:12px;color:var(--gold);letter-spacing:0.09em;margin-top:3px}
+.ft-note{font-size:11px;color:var(--txt3);max-width:300px;text-align:right;line-height:1.5}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── theme toggle ── */
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.10);background:transparent;cursor:pointer;color:var(--txt2);transition:all 0.2s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:rgba(184,150,62,0.45);color:var(--gold-l);background:rgba(184,150,62,0.06)}
+.theme-toggle svg{width:15px;height:15px}
+[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.14)}
+[data-theme="light"] .theme-toggle:hover{border-color:rgba(140,109,26,0.45);color:var(--gold-l);background:rgba(140,109,26,0.08)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(184,150,62,0.2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(184,150,62,0.4)}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+</div>
+
+<!-- sticky nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html" style="text-decoration:none">YouWe Quest <span>LLP</span></a>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('summary',this)">Summary</button>
+      <button class="tab" onclick="switchTab('technical',this)">Technical Reference</button>
+      <button class="tab" onclick="switchTab('actions',this)">Action Items</button>
+    </div>
+    <div class="nav-right">
+      <div class="nav-meta">W15 · Apr 2026</div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ════════════════════════════════
+     MASTHEAD
+════════════════════════════════ -->
+<div class="masthead">
+  <div class="mast-eyebrow">Weekly Regulatory Update &nbsp;·&nbsp; W15-2026</div>
+  <h1 class="mast-title">Tax &amp; Regulatory<br><em>Digest</em></h1>
+  <div class="mast-row">
+    <div class="mast-pill"><span class="dot"></span>5 April – 11 April 2026</div>
+    <div class="mast-pill"><span class="dot"></span>GST · Direct Tax · MCA · SEBI · ICAI</div>
+    <div class="mast-pill"><span class="dot"></span>Dear Clients,</div>
+  </div>
+</div>
+<div class="rule"></div>
+
+<!-- ════════════════════════════════
+     TAB 1 — SUMMARY
+════════════════════════════════ -->
+<div id="view-summary" class="view active">
+
+  <div class="chips">
+    <div class="chip" onclick="scrollToSection('sec-gst')"><div class="chip-n" style="color:var(--gst)">4</div><div class="chip-l">GST</div></div>
+    <div class="chip" onclick="scrollToSection('sec-dt')"><div class="chip-n" style="color:var(--dt)">0</div><div class="chip-l">Direct Tax</div></div>
+    <div class="chip" onclick="scrollToSection('sec-mca')"><div class="chip-n" style="color:var(--mca)">2</div><div class="chip-l">MCA</div></div>
+    <div class="chip" onclick="scrollToSection('sec-sebi')"><div class="chip-n" style="color:var(--sebi)">2</div><div class="chip-l">RBI / FEMA</div></div>
+    <div class="chip" onclick="scrollToSection('sec-icai')"><div class="chip-n" style="color:var(--icai)">3</div><div class="chip-l">ICAI</div></div>
+    <div class="chip" onclick="switchTab('actions', document.querySelector('.tab:nth-child(3)'))"><div class="chip-n" style="color:var(--gold)">6</div><div class="chip-l">Actions</div></div>
+  </div>
+
+  <!-- GST Summary -->
+  <div id="sec-gst" class="sec s1">
+    <div class="sec-hd"><span class="dpill p-gst">GST</span><h2 class="sec-title">Goods &amp; Services Tax — March Filing &amp; Portal Updates</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>GSTN Advisory (10 April 2026) — Pre-deposit field in Form APL-01 now editable w.e.f. 6 April 2026.</strong> While filing an appeal in Form APL-01, the pre-deposit percentage was previously auto-populated as 10% under <em>s.107(6) CGST Act, 2017</em> and was non-editable. GSTN has now made this field editable, allowing taxpayers to modify the pre-deposit percentage as applicable to their specific case. Applies where: (a) pre-deposit has already been made through other means (cash/credit ledger outside APL-01), or (b) the demand amount is incorrectly reflected under the appropriate head. The Appellate Authority will verify the correctness of the amount and mode of payment during adjudication. Effective from 6 April 2026 on the GST portal. <a href="https://www.gst.gov.in/home/advmsg" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>GSTR-3B for March 2026 — filing window active, due 20/22/25 April.</strong> With GSTR-1 for March 2026 filed by 11 April, the GSTR-3B window is now live. Monthly filers with turnover above ₹5 crore: due <em>20 April</em>. QRMP filers: Category I states due <em>22 April</em>, Category II states due <em>25 April</em>. This is the last GSTR-3B of FY 2025-26 — any ITC not claimed by the September 2026 GSTR-3B (or the date of filing the annual return, whichever is earlier) will permanently lapse. Use this March GSTR-3B to capture all year-end ITC adjustments. <a href="https://www.gst.gov.in/" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>FY 2025-26 GSTR-9 / GSTR-9C reconciliation season — start month-by-month matching now.</strong> The annual GST reconciliation for FY 2025-26 (GSTR-9 and, where applicable, GSTR-9C) will be due 31 December 2026. Best practice: begin reconciling GSTR-1 vs GSTR-3B vs books vs GSTR-2B every month from April onwards. April is the ideal time to set up a reconciliation tracker for FY 2025-26 — discrepancies identified now can still be corrected via September 2026 GSTR-3B, avoiding penalties at year-end. The first CGST Amendment Act 2025 changes (credit notes, IDS refunds) will need to be correctly mapped in GSTR-9. <a href="https://www.gst.gov.in/" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>Rule 42 / Rule 43 — FY 2025-26 annual ITC reversal true-up due in March GSTR-3B.</strong> Where ITC relates to inputs/input services (Rule 42) or capital goods (Rule 43) used partly for exempt or non-business purposes, provisional monthly reversals must be reconciled with the final annual computation for FY 2025-26. Any excess provisional reversal can be reclaimed; any shortfall must be paid with interest. The annual true-up should ideally be completed in the March 2026 GSTR-3B — correcting later (in April–September GSTR-3Bs or in GSTR-9 Tables 7 and 12) is possible but adds reconciliation complexity. Commonly applicable to: real estate developers, financial intermediaries, holding companies, and entities with mixed-use assets. <a href="https://www.gst.gov.in/" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- Direct Tax Summary -->
+  <div id="sec-dt" class="sec s2">
+    <div class="sec-hd"><span class="dpill p-dt">Direct Tax</span><h2 class="sec-title">Income Tax — No New CBDT Notifications This Week</h2></div>
+    <div class="gc"><div class="entries">
+      <p style="color:var(--txt2);font-size:13px;padding:10px 4px;">No new CBDT circulars, notifications, or significant direct tax developments in the period 5–11 April 2026. Key upcoming deadlines — Q4 TDS returns (31 May 2026) and Form 16/16A issuance (15 June 2026) — are listed in the Action Items tab.</p>
+    </div></div>
+  </div>
+
+  <!-- MCA Summary -->
+  <div id="sec-mca" class="sec s3">
+    <div class="sec-hd"><span class="dpill p-mca">MCA</span><h2 class="sec-title">Corporate Affairs — Incorporation Rules Consultation Open</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>Draft Companies (Incorporation) Amendment Rules, 2026 — public consultation open, comments due 9 May 2026.</strong> MCA issued a public notice and explanatory note dated <em>8 April 2026</em> proposing amendments to the Companies (Incorporation) Rules, 2014 under the title <em>Companies (Incorporation) Amendment Rules, 2026</em>. The proposed amendments aim to streamline the company incorporation process, reduce compliance burden, and strengthen the Ease of Doing Business framework. The draft has been placed on mca.gov.in. Stakeholders — including CA firms — may submit suggestions and comments with brief justification through the <em>e-Consultation Module on mca.gov.in by 9 May 2026</em>. <a href="https://www.mca.gov.in/bin/dms/getdoc" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>Form MSME-1 for H2 FY 2025-26 — filing due 30 April 2026.</strong> Every company with outstanding dues to MSME-registered suppliers beyond 45 days must file Form MSME-1 with MCA for H2 FY 2025-26 (October 2025 to March 2026) by <em>30 April 2026</em>. A nil return is also mandatory where the company had MSME-registered suppliers but no overdue amounts at the half-year end. Obtain Udyam Registration Numbers of all MSME suppliers, confirm outstanding position as of 31 March 2026, and file via the MCA21 V3 portal with authorised signatory DSC. Non-compliance attracts penalties under the Companies Act, 2013; delayed MSME payments also attract deemed interest under MSMED Act, 2006. <a href="https://www.mca.gov.in/" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- RBI / FEMA Summary -->
+  <div id="sec-sebi" class="sec s4">
+    <div class="sec-hd"><span class="dpill p-sebi">RBI / FEMA</span><h2 class="sec-title">RBI / FEMA — Non-Deliverable Derivative Prohibition</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>RBI A.P.(DIR Series) Circular No. 03 — INR non-deliverable derivatives prohibited for Authorised Dealers (1 April 2026).</strong> RBI issued A.P.(DIR Series) Circular No. 03 dated 1 April 2026 under <em>s.10(4), 11(1) &amp; 11(2) FEMA 1999</em>: Authorised Dealers (Category I and II banks) are prohibited from offering Non-Deliverable Derivative (NDD) contracts involving INR to residents or non-residents. Deliverable forex derivative contracts remain permitted. Rebooking of cancelled INR forex derivative contracts is also prohibited under this circular. Market impact: INR saw its sharpest single-day appreciation in over 12 years immediately following this notification. This circular was not covered in last week's update. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">Advisory</span><div class="et"><strong>INR appreciation — impact on NRI / international client tax computations for FY 2025-26.</strong> INR appreciated sharply from ~₹95.22 to ₹93.10/USD on 1 April 2026 following Circular No. 03. For NRI clients, FY 2025-26 foreign income (salary, dividends, capital gains) must be converted to INR at <em>CBDT-notified telegraphic transfer buying rates (TTBR)</em> on the relevant transaction dates. For capital gains on foreign-currency assets, gains are computed in foreign currency first and then converted — INR appreciation reduces INR-equivalent gains; factor this into AY 2026-27 ITR computations. For NRI clients planning remittances or FEMA repatriation, use deliverable forwards through AD banks; NDD-based hedges are now prohibited. Update FY 2025-26 income computations for all US and Singapore NRI clients to reflect correct March 2026 exchange rates. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- ICAI Summary -->
+  <div id="sec-icai" class="sec s5">
+    <div class="sec-hd"><span class="dpill p-icai">ICAI</span><h2 class="sec-title">Professional Standards — CPE Year, Publications &amp; e-Journal</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-pub">Advisory</span><div class="et"><strong>New CPE year 2026-27 commenced 1 April 2026 — begin accumulating hours now.</strong> The Continuing Professional Education year for ICAI members runs <em>April 2026 – March 2027</em>. The ICAI CPE portal (cpeonline.icai.org) has been updated for the new cycle. CoP holders must complete <em>30 CPE hours per year</em> (20 structured + 10 unstructured). The 3-year rolling requirement is 120 CPE hours (April 2024–March 2027), of which at least 60 must be structured. Members who accumulated hours in FY 2025-26 should ensure they are logged and verified on the portal before the cycle closes. Structured CPE events already attended in April 2026 will count toward the 2026-27 year. <a href="https://cpeonline.icai.org" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-pub">Publication</span><div class="et"><strong>Handbook on Returns and Payments under GST — GST &amp; Indirect Taxes Committee, March 2026 Edition.</strong> ICAI's GST &amp; Indirect Taxes Committee (IDTC) has released the March 2026 edition of the Handbook on Returns and Payments under GST. The handbook covers the complete GST return framework — GSTR-1, GSTR-3B, GSTR-9/9C, CMP-08 — along with payment mechanics, ITC reconciliation, and practical guidance on appeal-related provisions. Useful reference for practitioners handling GSTR-9 season for FY 2025-26. Available for download at idtc.icai.org. <a href="https://idtc.icai.org/publications.php" target="_blank" class="src-link">Source</a></div></div>
+<div class="entry"><span class="tag t-pub">Publication</span><div class="et"><strong>ICAI e-Journal — April 2026 edition released.</strong> The ICAI e-Journal (April 2026) published by the Corporate Laws &amp; Corporate Governance Committee is now available. Key articles in this edition cover: ITA 2025 transition impact on corporate compliance, NCE/LLP Guidance Note Phase I implementation guidance for FY 2025-26, SEBI (MF) Regulations 2026 — implications for fund managers and distributors, and an update on CCFS-2026 scheme. Members should download from icai.org. Note: the new CPE year (April 2026 – March 2027) has commenced — begin accumulating structured and unstructured CPE hours. ICAI's CPE portal has been updated for the 2026-27 cycle. <a href="https://www.icai.org/post/icai-publications-corporate-laws-corporate-governance-committee" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+</div><!-- /view-summary -->
+
+
+<!-- ════════════════════════════════
+     TAB 2 — TECHNICAL REFERENCE
+════════════════════════════════ -->
+<div id="view-technical" class="view">
+
+  <div class="tech-divider">
+    <div class="tdiv-line"></div>
+    <div class="tdiv-text">Technical Reference</div>
+    <div class="tdiv-line"></div>
+  </div>
+
+  <!-- I. GST Technical -->
+  <div class="tsec s1">
+    <div class="tsec-hd">
+      <div class="tsec-num">I.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-gst" style="display:inline-flex;width:fit-content">GST</span>
+        <div class="tsec-name">Goods &amp; Services Tax</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">GSTR-3B March 2026 — Year-End Filing Priorities and ITC Reclaim Window</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Due date and category-wise deadlines:</strong> GSTR-3B for March 2026 (last return of FY 2025-26) is due <span class="date">20 April 2026</span> for monthly filers with aggregate turnover above ₹5 crore. QRMP filers in Category I states (Chhattisgarh, MP, Gujarat, Maharashtra, Karnataka, Goa, Kerala, Tamil Nadu, Telangana, AP, Andhra Pradesh, Union Territories of Daman &amp; Diu, Dadra &amp; Nagar Haveli, Puducherry, Andaman &amp; Nicobar Islands, Lakshadweep): due <span class="date">22 April 2026</span>. Category II states: due <span class="date">25 April 2026</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Year-end ITC reclaim — critical window:</strong> Under <span class="stat">s.16(4) CGST Act</span> (as amended), ITC for FY 2025-26 invoices can be availed up to the earlier of: (a) the due date of the GSTR-3B for September 2026 (i.e., 20 October 2026); or (b) the date of filing the annual return (GSTR-9) for FY 2025-26. Run a complete GSTR-2B vs books reconciliation for the full year — any eligible ITC not yet claimed should be availed in the March 2026 GSTR-3B or in April-September 2026 returns. After that window closes, missed ITC is permanently lost.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Rule 42/43 annual true-up:</strong> If a partial ITC reversal under <span class="stat">Rule 42</span> (inputs/input services) or <span class="stat">Rule 43</span> (capital goods) applies to your client, the final annual reversal computation for FY 2025-26 should ideally be completed in the March GSTR-3B. Any difference between provisional monthly reversals and the final annual figure must be adjusted before March GSTR-3B is filed. Reversal in any month after March also works but flagging in March avoids year-end reconciliation complexity.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Tax Liability Breakup confirmation:</strong> As per GSTN Advisory (17 March 2026), before filing GSTR-3B, the "Tax Liability Breakup, As Applicable" tab must be opened, verified, and saved (EVC/DSC). Especially relevant for March 2026 where year-end adjustments may generate auto-populated interest. Confirm the system-computed interest against your own calculation before confirming.
+          </div></div>
+          <div class="tnote"><strong>Checklist before filing March GSTR-3B:</strong> (a) Reconcile GSTR-2B with purchase register — claim any missed FY 2025-26 ITC. (b) Complete Rule 42/43 annual true-up. (c) Include any year-end credit notes and debit notes. (d) Confirm Tax Liability Breakup tab is opened, reviewed, and saved. (e) Discharge all outstanding GST liabilities, including interest on late payments. (f) Confirm correct bank account is linked for auto-debit (QRMP). March GSTR-3B is the single most important GST return of the year — treat it accordingly.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">GSTR-9 / GSTR-9C for FY 2025-26 — Reconciliation Framework to Begin Now</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Due date — 31 December 2026:</strong> The annual return (GSTR-9) for FY 2025-26 is typically due 31 December 2026 (CBDT/GSTN to confirm via notification). GSTR-9C (reconciliation statement, now mandatory CA certification for applicable turnover) follows the same timeline. The window appears long, but annual reconciliation is complex — starting now, month by month, prevents a year-end crunch and avoids inadvertent penalties for ITC discrepancies.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>CGST Amendment Act 2025 impacts on GSTR-9:</strong> The three CGST Act changes that became operative April 1, 2026 — post-sale discount credit notes (no pre-existing agreement needed), intermediary service exporter LUT zero-rating, and IDS sector provisional refund — will need to be correctly mapped in GSTR-9 for any transactions from 1 April 2026. However, FY 2025-26 GSTR-9 covers April 2025 to March 2026 (pre-amendment period), so these changes are prospective. The FY 2025-26 GSTR-9 will use the old rules — but any provisional refund applications under the old IDS provisions must be correctly reconciled.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Month-by-month reconciliation framework:</strong> Set up a monthly tracker comparing (a) GSTR-1 reported vs books revenue (by HSN/party); (b) GSTR-3B tax payment vs GSTR-1 liability; (c) GSTR-2B auto-credit vs purchase register ITC claimed; (d) GSTR-2B vs GSTR-3B claimed ITC. Discrepancies identified in April can be rectified in subsequent GSTR-3Bs of FY 2025-26 (April to September) without penalty.
+          </div></div>
+          <div class="tnote"><strong>GSTR-9C certification scope:</strong> GSTR-9C remains mandatory for registered persons with aggregate annual turnover above ₹5 crore for FY 2025-26. As per the Council's earlier reinstatement decision, CA certification of GSTR-9C is mandatory for FY 2025-26 filings. Audit firms must plan their GST audit calendar accordingly — GSTR-9C engagements are typically intensive and should not be deferred to the November-December rush.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">GSTN Advisory — Pre-Deposit Field in Form APL-01 Now Editable (w.e.f. 6 April 2026)</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Background — s.107(6) CGST Act, 2017:</strong> When a taxpayer files an appeal before the Appellate Authority in Form APL-01, a mandatory pre-deposit of 10% of the disputed tax demand (in addition to the undisputed amount) is required under <span class="stat">s.107(6) CGST Act</span>. Previously, the GST portal auto-populated this field as 10% and it was non-editable — taxpayers could not reduce the figure even where the pre-deposit had already been paid through other means or where the demand amount under a particular head was incorrectly reflected.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>GSTN advisory dated 10 April 2026 — editable field from 6 April:</strong> GSTN has made the pre-deposit percentage field editable at the time of filing Form APL-01. Taxpayers can now modify the pre-deposit percentage to reflect the actual amount applicable to their specific case, and calculate and pay the required amount accordingly before submitting the appeal. The Appellate Authority will verify the correctness of the amount and mode of payment during adjudication of the appeal. This change is effective from 6 April 2026.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Practical scenarios where this matters:</strong> (a) <em>Pre-deposit already paid outside APL-01</em> — where the taxpayer paid the pre-deposit amount via DRC-03 or directly before filing the appeal, the portal was still demanding the full 10% again. Now the field can be adjusted to reflect the amount already paid. (b) <em>Demand amount incorrectly split across heads</em> — where the demand was incorrectly reflected under CGST/SGST/IGST heads (e.g., IGST demand shown as CGST), the 10% on each head resulted in excess pre-deposit. The editable field allows correct computation. (c) <em>Demand partly undisputed</em> — where a portion of the demand is accepted, the pre-deposit can be recalibrated.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> For clients with pending appeals or fresh demands where an appeal is being contemplated, review the pre-deposit amount before filing APL-01. The Appellate Authority retains verification power — document the basis for any modification of the 10% pre-deposit clearly in the appeal submission to avoid adverse inference. Source: GSTN Advisory, 10 April 2026, available at gst.gov.in/home/advmsg.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">D</span>
+          <span class="tsub-title">Rule 42 / Rule 43 — FY 2025-26 Annual ITC Reversal True-Up Obligation</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Rule 42 (inputs and input services):</strong> Where ITC relates to supplies used partly for exempt or non-business purposes, provisional monthly reversals must be reconciled with final annual computation. The final annual reversal for FY 2025-26 should be completed in the <span class="date">March 2026 GSTR-3B</span>. Any difference between provisional monthly reversals and the final annual figure must be adjusted — excess reversal can be reclaimed; shortfall must be paid with interest.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Rule 43 (capital goods):</strong> Where capital goods are used partly for exempt supplies, ITC reversal is computed annually. The FY 2025-26 annual computation (<span class="stat">1/60th of ineligible ITC per month</span> for 60-month useful life) is due for final true-up in March GSTR-3B. Rule 43(1)(d) applies to CGST; mirror provisions apply under respective SGST Acts.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Late correction option:</strong> If March GSTR-3B has already been filed without the true-up, the reversal can be made in April or subsequent GSTR-3Bs of FY 2025-26 without penalty — but correcting in March avoids year-end reconciliation complexity in GSTR-9. Correcting in GSTR-9 itself (Tables 7 and 12) is the last resort.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Identify all clients subject to Rule 42/43 — typically those with exempt supplies (financial intermediaries, real estate developers, holding companies with investment portfolios, entities with personal use of business assets). Compute final annual reversal, compare with total provisional reversals made in Apr 2025 to Feb 2026 GSTR-3Bs, and factor the net adjustment into March GSTR-3B. Partial exemption clients: ensure the aggregate turnover and exempt turnover figures used in Rule 42 are from audited/finalised accounts.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- II. MCA Technical -->
+  <div class="tsec s2">
+    <div class="tsec-hd">
+      <div class="tsec-num">II.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-mca" style="display:inline-flex;width:fit-content">MCA</span>
+        <div class="tsec-name">Corporate Affairs — Incorporation Rules Consultation</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-mca" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">Draft Companies (Incorporation) Amendment Rules, 2026 — Public Consultation, Comments by 9 May 2026</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>MCA public notice dated 8 April 2026:</strong> The Ministry of Corporate Affairs issued a public notice and explanatory note proposing a draft notification titled "Companies (Incorporation) Amendment Rules, 2026" — amending the Companies (Incorporation) Rules, 2014. The stated objectives are: (a) streamlining the company incorporation process; (b) reducing compliance burden on stakeholders; and (c) strengthening the Ease of Doing Business framework. The draft and explanatory note are available at mca.gov.in.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Consultation process:</strong> Stakeholders are invited to submit suggestions and comments with brief justification through the <span class="stat">e-Consultation Module on mca.gov.in</span> by <span class="date">9 May 2026</span>. This is a pre-notification consultation — the rules are not yet final. CA firms advising on company formations, SPICe+ filings, and incorporation compliance should review the draft and consider submitting comments if the proposed changes affect current practice workflows.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Practice relevance:</strong> Amendments to the Incorporation Rules directly affect: (a) SPICe+ Part A and Part B form structure and supporting document requirements; (b) registered office address proof and verification norms; (c) subscriber and director declaration formats; (d) name reservation and availability criteria. Any simplification in these areas reduces the turnaround for new company formation mandates — stay updated as the final rules are expected within 30–60 days of the consultation closing.
+          </div></div>
+          <div class="tnote"><strong>Action for CA firms:</strong> Download the draft notification from mca.gov.in/bin/dms/getdoc and review the proposed changes. If your firm handles significant volume of incorporations, consider submitting comments through the e-Consultation Module by 9 May 2026. This is an opportunity to flag practical issues with the current Incorporation Rules before they become law.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-mca" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">MSME-1 for H2 FY 2025-26 — Filing Window Closes 30 April 2026</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Filing requirement:</strong> Every company that has outstanding dues to MSME-registered suppliers exceeding <span class="stat">45 days</span> must file Form MSME-1 with MCA for each half-year. H2 FY 2025-26 (October 2025 to March 2026) filing is due <span class="date">30 April 2026</span>. A nil return is also required if the company had MSME-registered suppliers but no dues outstanding beyond 45 days at the half-year end.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Filing on MCA V3 portal:</strong> Log in to MCA21 V3 portal (mca.gov.in), navigate to Forms / MCA Services, and file Form MSME-1. Authorised signatory DSC required. The form requires details of each MSME supplier to whom payment is outstanding for more than 45 days as of <span class="date">31 March 2026</span> (the half-year end date). Obtain Udyam Registration Numbers of all MSME suppliers before filing.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Non-compliance consequences:</strong> Failure to file Form MSME-1 by the due date may result in penalties under the Companies Act, 2013 for the company and officers in default. Additionally, delayed payments to MSMEs (beyond 45 days for registered MSMEs) attract deemed interest under the MSMED Act, 2006 — a significant cash-flow and audit risk for large buyers relying on MSME vendors.
+          </div></div>
+          <div class="tnote"><strong>Action for CA firms:</strong> Send MSME-1 filing reminders to company clients immediately. Ask them to confirm: (a) list of all suppliers with MSME registration (Udyam certificate); (b) payments outstanding as of 31 March 2026 that are overdue beyond 45 days. Nil-return clients also need to confirm zero outstanding position in writing. File by <span class="date">30 April 2026</span>.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- III. RBI / FEMA Technical -->
+  <div class="tsec s3">
+    <div class="tsec-hd">
+      <div class="tsec-num">III.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-sebi" style="display:inline-flex;width:fit-content">RBI / FEMA</span>
+        <div class="tsec-name">RBI / FEMA — Non-Deliverable Derivative Prohibition</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-sebi" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">RBI A.P.(DIR Series) Circular No. 03 — INR Non-Deliverable Derivatives Prohibited</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What are Non-Deliverable Derivatives (NDD)?</strong> NDD contracts are forex derivative contracts settled in a currency other than the underlying currency (typically INR NDFs settle in USD offshore). They allow parties to take positions on INR exchange rate movements without physical exchange of INR. NDFs have historically traded in offshore markets (Singapore, London) beyond RBI's direct regulatory reach. "Non-Deliverable" in the Indian context specifically refers to contracts that do not result in physical delivery of INR — they net-settle in foreign currency.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Circular No. 03 dated 1 April 2026 — prohibition scope:</strong> Authorised Dealers (AD Category I banks — those with full FEMA foreign exchange dealing authority) are prohibited from: (a) offering NDD contracts involving INR to any resident or non-resident; (b) entering into NDD contracts involving INR with any counterparty; (c) rebooking cancelled INR foreign exchange derivative contracts as NDDs. The prohibition is effective from 1 April 2026. Deliverable forwards, swaps, cross-currency swaps, and standard IRS remain permitted. Issued under <span class="stat">s.10(4), 11(1) and 11(2) FEMA 1999</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Market impact and rationale:</strong> Following the circular, INR registered its sharpest single-day appreciation in over 12 years (approximately Rs. 95.22 to Rs. 93.10 per dollar). RBI's rationale: large AD banks were building arbitrage positions between onshore and offshore NDF markets, amplifying INR volatility. By prohibiting ADs from the NDD segment, RBI aimed to reduce speculative pressure on the INR and bring onshore and offshore rates into closer alignment.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Implications for NRI and international clients:</strong> NRI clients who use NDF structures for hedging India income/remittance risk must transition to deliverable forward contracts or permitted onshore derivatives. Corporate treasuries using offshore NDF hedges must restructure. Under FEMA, NRI remittance hedging using permitted instruments (deliverable forwards, FCY options) remains available — NDD-based hedges must be unwound and replaced.
+          </div></div>
+          <div class="tnote"><strong>Practice note for international tax clients:</strong> NRI and OCI clients with forex exposure should review any existing NDD arrangements with their banks immediately. AD Category I banks will already be in contact about restructuring. For tax practitioners: the INR appreciation resulting from this circular directly impacts the INR equivalent of foreign income, foreign-currency assets, and overseas remittances for clients — factor this into FY 2025-26 income computations (for March income) and Tax Year 2026-27 advance tax estimates.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-sebi" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">INR Appreciation — Impact on NRI / International Client Computations (FY 2025-26)</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Tax computation impact:</strong> INR appreciated sharply from approximately <span class="stat">₹95.22</span> to <span class="stat">₹93.10</span> per USD on 1 April 2026 following RBI Circular No. 03. For NRI clients with foreign income (salary, dividends, capital gains in foreign currency), the INR equivalent of March 2026 income is affected. FY 2025-26 income must be converted at <strong>CBDT-notified telegraphic transfer buying rates (TTBR)</strong> on the relevant dates.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Capital gains on foreign assets:</strong> NRI clients holding foreign-currency assets (USD, SGD, etc.) at 31 March 2026 will see their INR-denominated asset value change due to the appreciation. Long-term capital gains on foreign assets held in foreign currency are computed in the foreign currency first, then converted to INR at TTBR rates. INR appreciation reduces the INR-equivalent gains — factor this into AY 2026-27 ITR computations and TDS on sale consideration.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Remittance planning for TY 2026-27:</strong> For NRI clients planning remittances to India (NRO/NRE accounts, FEMA repatriation), the stronger INR means fewer rupees per dollar remitted. Plan timing and use FEMA-permitted hedging instruments: deliverable forwards through AD banks, FCY options, cross-currency swaps. NDD-based hedges are prohibited under Circular No. 03.
+          </div></div>
+          <div class="tnote"><strong>Practice note for NRI / international tax practitioners:</strong> Update FY 2025-26 income computations for NRI clients to reflect correct INR exchange rates for March 2026 transactions. CBDT notifies foreign currency exchange rates periodically via gazette. For Singapore-based NRI clients (USD and SGD income), check rates for both 1 April and 31 March 2026. TY 2026-27 advance tax estimates should use conservative (stronger INR) assumptions given the current appreciation trend.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IV. ICAI Technical -->
+  <div class="tsec s4">
+    <div class="tsec-hd">
+      <div class="tsec-num">IV.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-icai" style="display:inline-flex;width:fit-content">ICAI</span>
+        <div class="tsec-name">Professional Standards &amp; Publications</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsubsub">COMPLIANCE &amp; DEADLINES</div>
+
+      <div class="tsub open">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">New CPE Year 2026-27 — Structured and Unstructured Hours Requirements</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>CPE year 2026-27 commenced 1 April 2026:</strong> The new Continuing Professional Education year for ICAI members runs <span class="stat">April 2026 – March 2027</span>. The ICAI CPE portal (<span class="cite">cpeonline.icai.org</span>) has been updated for the 2026-27 cycle. All structured and unstructured CPE activities from 1 April 2026 onwards accumulate towards the 2026-27 annual requirement.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Annual CPE requirement for CoP holders:</strong> Members holding Certificate of Practice must complete <span class="stat">30 CPE hours</span> per year — 20 structured hours (organised programmes, seminars, webcasts) and 10 unstructured hours (self-reading, articles, e-learning). Minimum 30 hours per year must be met to avoid a CPE non-compliance notice from ICAI.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Three-year rolling CPE:</strong> ICAI mandates <span class="stat">120 CPE hours</span> over a rolling 3-year period (April 2024 – March 2027), of which at least 60 must be structured CPE hours. Members who have accumulated hours in FY 2024-25 and 2025-26 should check their rolling balance on the CPE portal to plan any shortfall for 2026-27.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Log in to <span class="cite">cpeonline.icai.org</span> and review your CPE status for the 2026-27 year. Plan structured CPE programmes early — residential programmes, regional conferences, and national seminars get booked quickly. ICAI webcast programmes count as structured CPE and can be completed from office. Unstructured CPE (self-reading) requires self-certification on the portal.</div>
+        </div>
+      </div>
+
+      <div class="tsubsub">NEW PUBLICATIONS</div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">Handbook on Returns and Payments under GST · GST &amp; Indirect Taxes Committee · March 2026</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Publication scope:</strong> The handbook covers the complete GST return ecosystem — GSTR-1 (outward supplies), GSTR-3B (summary return and tax payment), GSTR-9 (annual return), GSTR-9C (reconciliation statement), and CMP-08 (composition dealers). It addresses payment mechanics including Electronic Cash Ledger, Electronic Credit Ledger, and ITC utilisation order. The March 2026 edition incorporates amendments up to the CGST Amendment Act 2025 and is a useful desk reference for the upcoming FY 2025-26 GSTR-9 season.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Practical utility for the GSTR-9/9C season:</strong> The handbook's reconciliation chapters are particularly relevant given the FY 2025-26 annual return preparation now beginning. Key areas: ITC reversal mapping under Rule 42/43, treatment of credit notes in GSTR-9, reconciliation of GSTR-2B vs GSTR-3B claimed ITC, and the GSTR-9C Table 14/15 turnover reconciliation. Practitioners handling multiple client GSTR-9C engagements should download and retain as a reference document.
+          </div></div>
+          <div class="tnote"><strong>Download:</strong> Available free at <span class="cite">idtc.icai.org/publications.php</span> under the GST &amp; Indirect Taxes Committee publications section. Login with ICAI membership credentials for direct download.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">ICAI e-Journal — April 2026 Edition (Corporate Laws &amp; Corporate Governance Committee)</span>
+          <span class="tsub-chevron">▾</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Publication:</strong> The ICAI e-Journal for April 2026 has been released by the Corporate Laws &amp; Corporate Governance Committee of ICAI. Available free at <span class="cite">icai.org</span> for all members. This edition is particularly relevant given the ITA 2025 commencement from 1 April 2026.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Key articles in this edition:</strong> (a) ITA 2025 transition impact on corporate compliance — section number changes, new Forms, and TDS certificate formats from TY 2026-27; (b) NCE/LLP Guidance Note Phase I implementation guidance for FY 2025-26 financial statement preparation; (c) SEBI (MF) Regulations 2026 — implications for fund managers and distributors; (d) CCFS-2026 scheme overview — eligible forms, immunity provisions, filing window; (e) CPE year 2026-27 commencement and structured programme calendar preview.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>CPE credit:</strong> Reading the e-Journal and submitting the attached MCQ-based quiz via the CPE portal qualifies for <strong>unstructured CPE credit</strong>. Check the e-Journal issue for specific credit details and quiz submission deadline.
+          </div></div>
+          <div class="tnote"><strong>Download:</strong> Available at <span class="cite">icai.org/publications</span> under the Corporate Laws &amp; Corporate Governance Committee section. Particularly useful for corporate law practitioners to understand the CCFS-2026 scheme (closes 30 June 2026) and for team members updating their knowledge on the ITA 2025 transition.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /view-technical -->
+
+
+<!-- ════════════════════════════════
+     TAB 3 — ACTION ITEMS
+════════════════════════════════ -->
+<div id="view-actions" class="view">
+
+  <div class="tech-divider">
+    <div class="tdiv-line"></div>
+    <div class="tdiv-text">Action Items</div>
+    <div class="tdiv-line"></div>
+  </div>
+
+  <div class="sec s1">
+    <div class="gc" style="padding:20px 24px">
+      <table class="atbl">
+        <thead>
+          <tr>
+            <th>Due Date</th>
+            <th>Domain</th>
+            <th>Action Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dred">20 Apr</span></td><td><span class="dbadge p-gst">GST</span></td><td>GSTR-3B for March 2026 — monthly filers (turnover &gt;₹5 crore). Final GSTR-3B of FY 2025-26. Complete Rule 42/43 true-up, claim any missed FY 2025-26 ITC, confirm Tax Liability Breakup tab before filing. QRMP filers: Cat I states 22 Apr / Cat II states 25 Apr.</td></tr>
+          <tr><td><span class="dred">9 May</span></td><td><span class="dbadge p-mca">MCA</span></td><td>Draft Companies (Incorporation) Amendment Rules, 2026 — consultation closes 9 May 2026. Download draft from mca.gov.in, review proposed changes to SPICe+ and incorporation process. Submit comments with justification via e-Consultation Module on mca.gov.in if your firm handles incorporation mandates.</td></tr>
+          <tr><td><span class="dgray">Ongoing</span></td><td><span class="dbadge p-sebi">RBI/FEMA</span></td><td>RBI NDD prohibition (A.P. DIR Circular No. 03, 1 Apr 2026): Authorised Dealers must immediately cease all INR non-deliverable derivative activity. Corporate and NRI clients with existing NDD hedges: contact AD bank to restructure into permitted deliverable forwards. Factor INR appreciation impact on March income computations and advance tax estimates.</td></tr>
+          <tr><td><span class="dgray">Ongoing</span></td><td><span class="dbadge p-gst">GST</span></td><td>FY 2025-26 GSTR-9 / GSTR-9C preparation: set up month-by-month reconciliation tracker (GSTR-1 vs GSTR-3B vs 2B vs books). Identify discrepancies now while the correction window (April–September 2026 GSTR-3Bs) is still open. Plan GSTR-9C audit engagements — confirm mandatory CA certification applies for turnover &gt;₹5 crore.</td></tr>
+          <tr><td><span class="dred">31 May</span></td><td><span class="dbadge p-dt">Direct Tax</span></td><td>Q4 FY 2025-26 TDS returns — Forms 24Q (salary), 26Q (non-salary domestic), 27Q (non-residents), 27EQ (TCS) due 31 May 2026. Final TDS returns for FY 2025-26 under ITA 1961. Compile Q4 deduction and deposit data, verify PAN-TAN linkages and TRACES challan reconciliation, apply Form 13 lower-deduction certificates. Late filing: s.234E fee of ₹200/day applies.</td></tr>
+          <tr><td><span class="dred">15 Jun</span></td><td><span class="dbadge p-dt">Direct Tax</span></td><td>Form 16 / Form 16A issuance deadline — 15 June 2026. Form 16 (salary TDS, AY 2026-27) issuable only after Form 24Q Q4 return accepted on TRACES. Form 16A (non-salary) issuable after Form 26Q acceptance. Begin Form 16 Part B (salary computation) preparation in parallel with TRACES processing (5–7 working days post-filing) to meet the 15 June deadline.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /view-actions -->
+
+<!-- footer -->
+<div class="footer">
+  <div>
+    <div class="ft-name">S. Triyambaka Patro, CA</div>
+    <div class="ft-firm">YouWe Quest LLP</div>
+  </div>
+  <div class="ft-note">Compiled 11 April 2026. For informational purposes only — does not constitute legal or tax advice.</div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+(function(){
+  var html = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  var sun = document.getElementById('icon-sun');
+  var moon = document.getElementById('icon-moon');
+  function applyTheme(t){
+    html.setAttribute('data-theme', t);
+    sun.style.display = t === 'dark' ? '' : 'none';
+    moon.style.display = t === 'light' ? '' : 'none';
+  }
+  applyTheme(localStorage.getItem('theme') || 'dark');
+  btn.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+})();
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var navH = document.querySelector('.nav').offsetHeight;
+  var top = el.getBoundingClientRect().top + window.scrollY - navH - 16;
+  window.scrollTo({top: top, behavior: 'smooth'});
+}
+function toggleSub(hd) {
+  var sub = hd.parentElement;
+  sub.classList.toggle('open');
+}
+(function sortEntries(){
+  var order={
+    't-dead':0,'t-new':1,'t-court':2,'t-portal':3,
+    't-budget':4,'t-live':5,
+    't-udin':6,'t-peer':7,'t-icai':8,'t-pub':9
+  };
+  document.querySelectorAll('.entries').forEach(function(container){
+    var entries=Array.from(container.querySelectorAll(':scope>.entry'));
+    entries.sort(function(a,b){
+      var ta=a.querySelector('.tag')||{},tb=b.querySelector('.tag')||{};
+      var ca=[].find.call(ta.classList||[],function(c){return c in order});
+      var cb=[].find.call(tb.classList||[],function(c){return c in order});
+      return (order[ca]??99)-(order[cb]??99);
+    });
+    entries.forEach(function(e){container.appendChild(e);});
+  });
+})();
+</script>
+</body>
+</html>

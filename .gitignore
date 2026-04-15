@@ -4,6 +4,7 @@
 *.md
 !README.md
 Professional update - weekly/
+_outputs/
 .DS_Store
 scripts/
 claude-docs/
