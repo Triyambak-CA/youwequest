@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Regulatory Update — YouWe Quest LLP</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8963E;--gold-l:#D4AE5A;--gold-glow:rgba(184,150,62,0.15);
+  --glass:rgba(255,255,255,0.04);--glass-b:rgba(255,255,255,0.08);
+  --glass-h:rgba(255,255,255,0.07);
+  --txt:rgba(255,255,255,0.90);--txt2:rgba(255,255,255,0.52);--txt3:rgba(255,255,255,0.30);
+  --bg:#070c12;--bg2:#0b1018;
+  --gst:#D4AE5A;--dt:#7EB8F7;--mca:#C49FE6;--sebi:#F7916A;--icai:#6ECFBE;
+  --red:#F87171;
+}
+[data-theme="light"]{
+  --glass:rgba(0,0,0,0.04);
+  --glass-b:rgba(0,0,0,0.08);
+  --glass-h:rgba(0,0,0,0.06);
+  --txt:rgba(15,12,5,0.94);
+  --txt2:rgba(15,12,5,0.68);
+  --txt3:rgba(15,12,5,0.52);
+  --bg:#f4f1eb;--bg2:#ece9e0;
+  --gold:#8C6D1A;--gold-l:#AA8420;--gold-glow:rgba(140,109,26,0.14);
+  --gst:#8C6D1A;--dt:#2A72C0;--mca:#7A4FAE;--sebi:#C05020;--icai:#1A9080;
+  --red:#C03030;
+}
+[data-theme="light"] .nav{background:rgba(244,241,235,0.90);border-bottom-color:rgba(0,0,0,0.10)}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(184,150,62,0.12),transparent)}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(200,190,170,0.22),transparent)}
+[data-theme="light"] .orb3{background:radial-gradient(circle,rgba(220,210,190,0.15),transparent)}
+[data-theme="light"] .tabs{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.10)}
+[data-theme="light"] .tab:hover{color:var(--txt)}
+[data-theme="light"] .tab.active{background:rgba(140,109,26,0.15);color:var(--gold-l);border-color:rgba(140,109,26,0.30)}
+[data-theme="light"] .rule{background:linear-gradient(90deg,var(--gold) 0%,rgba(140,109,26,0.15) 65%,transparent 100%)}
+[data-theme="light"] .entry{border-bottom-color:rgba(0,0,0,0.07)}
+[data-theme="light"] .et{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .et strong{color:var(--txt)}
+[data-theme="light"] .et em{color:var(--gold-l)}
+[data-theme="light"] .ttext{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .ttext strong{color:var(--txt)}
+[data-theme="light"] .ttext em{color:var(--gold-l)}
+[data-theme="light"] .ttext .cite{color:rgba(20,110,95,0.9);background:rgba(20,110,95,0.08);border-color:rgba(20,110,95,0.18)}
+[data-theme="light"] .ttext .stat{color:rgba(120,90,20,0.9);background:rgba(120,90,20,0.08);border-color:rgba(120,90,20,0.18)}
+[data-theme="light"] .ttext .date{color:var(--red)}
+[data-theme="light"] .tsub{border-bottom-color:rgba(0,0,0,0.07)}
+[data-theme="light"] .tsub-hd:hover{background:rgba(0,0,0,0.03)}
+[data-theme="light"] .tsub-letter{color:var(--txt3)}
+[data-theme="light"] .tsub-chevron{color:var(--txt3)}
+[data-theme="light"] .tsubsub{color:var(--txt3)}
+[data-theme="light"] .tnote{background:rgba(140,109,26,0.07);border-color:rgba(140,109,26,0.22);color:rgba(15,12,5,0.74)}
+[data-theme="light"] .tnote strong{color:var(--gold-l)}
+[data-theme="light"] .tdiv-line{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+[data-theme="light"] .atbl thead tr{border-bottom-color:rgba(140,109,26,0.30)}
+[data-theme="light"] .atbl tbody tr{border-bottom-color:rgba(0,0,0,0.06)}
+[data-theme="light"] .atbl tbody tr:hover{background:rgba(0,0,0,0.025)}
+[data-theme="light"] .atbl td{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .p-act{color:rgba(15,12,5,0.68);border-color:rgba(0,0,0,0.14);background:rgba(0,0,0,0.04)}
+[data-theme="light"] .footer{border-top-color:rgba(0,0,0,0.08)}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.65}
+
+/* orbs */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.14;animation:drift 20s ease-in-out infinite}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,#B8963E,transparent);top:-200px;left:-150px;animation-delay:0s}
+.orb2{width:550px;height:550px;background:radial-gradient(circle,#0f2a4a,transparent);bottom:-100px;right:-100px;animation-delay:-7s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,#1a0a00,transparent);top:45%;left:55%;animation-delay:-14s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-18px) scale(1.04)}66%{transform:translate(-18px,25px) scale(0.96)}}
+
+/* sticky nav */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,12,18,0.82);
+  backdrop-filter:blur(28px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:0 24px;
+}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--txt2);letter-spacing:0.02em;white-space:nowrap;flex-shrink:0}
+.nav-brand span{color:var(--gold)}
+.tabs{display:flex;gap:4px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:3px;flex-shrink:1;min-width:0}
+.tab{font-size:12px;font-weight:500;letter-spacing:0.06em;padding:5px 16px;border-radius:7px;cursor:pointer;color:var(--txt2);border:none;background:transparent;transition:all 0.2s;white-space:nowrap}
+.tab:hover{color:var(--txt)}
+.tab.active{background:rgba(184,150,62,0.18);color:var(--gold-l);border:1px solid rgba(184,150,62,0.25)}
+.nav-meta{font-size:11px;color:var(--txt3);white-space:nowrap;letter-spacing:0.05em}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+@media(max-width:680px){.nav-meta{display:none}}
+
+/* wrap */
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:52px 24px 100px}
+
+/* view panels */
+.view{display:none}.view.active{display:block}
+
+/* masthead */
+.masthead{margin-bottom:48px;opacity:0;animation:fadeUp 0.7s ease forwards 0.1s}
+.mast-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.mast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,54px);font-weight:300;line-height:1.08;letter-spacing:-0.01em}
+.mast-title em{color:var(--gold-l);font-style:normal}
+.mast-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:14px}
+.mast-pill{font-size:11px;color:var(--txt2);display:flex;align-items:center;gap:6px}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:0.5;flex-shrink:0}
+
+/* rule */
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0%,rgba(184,150,62,0.15) 65%,transparent 100%);margin:22px 0 36px}
+
+/* chips */
+.chips{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;opacity:0;animation:fadeUp 0.7s ease forwards 0.22s}
+@media(max-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
+.chip{background:var(--glass);border:1px solid var(--glass-b);border-radius:12px;padding:14px 12px;backdrop-filter:blur(20px);transition:all 0.2s;cursor:pointer}
+.chip:hover{background:var(--glass-h);border-color:rgba(184,150,62,0.28);transform:translateY(-2px)}
+.chip-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;line-height:1;margin-bottom:3px}
+.chip-l{font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:var(--txt2)}
+
+/* section */
+.sec{margin-bottom:28px;opacity:0;animation:fadeUp 0.7s ease forwards}
+.s1{animation-delay:0.32s}.s2{animation-delay:0.42s}.s3{animation-delay:0.52s}
+.s4{animation-delay:0.62s}.s5{animation-delay:0.72s}.s6{animation-delay:0.82s}
+.s7{animation-delay:0.92s}
+
+.sec-hd{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+.dpill{font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;padding:3px 10px;border-radius:100px;border:1px solid;flex-shrink:0}
+.p-gst{color:var(--gst);border-color:rgba(212,174,90,0.35);background:rgba(212,174,90,0.07)}
+.p-dt{color:var(--dt);border-color:rgba(126,184,247,0.35);background:rgba(126,184,247,0.07)}
+.p-mca{color:var(--mca);border-color:rgba(196,159,230,0.35);background:rgba(196,159,230,0.07)}
+.p-sebi{color:var(--sebi);border-color:rgba(247,145,106,0.35);background:rgba(247,145,106,0.07)}
+.p-icai{color:var(--icai);border-color:rgba(110,207,190,0.35);background:rgba(110,207,190,0.07)}
+.p-act{color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.13);background:rgba(255,255,255,0.04)}
+
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em}
+
+/* glass card */
+.gc{background:var(--glass);border:1px solid var(--glass-b);border-radius:16px;padding:22px 26px;backdrop-filter:blur(24px);transition:all 0.2s}
+.gc:hover{background:var(--glass-h);border-color:rgba(255,255,255,0.13)}
+
+/* summary entries */
+.entries{display:flex;flex-direction:column}
+.entry{padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start}
+.entry:last-child{border-bottom:none;padding-bottom:0}
+.entry:first-child{padding-top:0}
+.tag{font-size:9.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:3px 7px;border-radius:5px;border:1px solid;margin-top:2px;white-space:nowrap;display:block;text-align:center}
+.t-court{color:#7EB8F7;border-color:rgba(126,184,247,0.3);background:rgba(126,184,247,0.07)}
+.t-dead{color:#F87171;border-color:rgba(248,113,113,0.3);background:rgba(248,113,113,0.07)}
+.t-portal{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+.t-budget{color:#D4AE5A;border-color:rgba(212,174,90,0.3);background:rgba(212,174,90,0.07)}
+.t-new{color:#C49FE6;border-color:rgba(196,159,230,0.3);background:rgba(196,159,230,0.07)}
+.t-icai{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+.t-udin{color:#F5A04A;border-color:rgba(245,160,74,0.3);background:rgba(245,160,74,0.07)}
+.t-peer{color:#64C4E8;border-color:rgba(100,196,232,0.3);background:rgba(100,196,232,0.07)}
+.t-pub{color:#A89FD8;border-color:rgba(168,159,216,0.3);background:rgba(168,159,216,0.07)}
+.t-live{color:#A8E890;border-color:rgba(168,232,144,0.3);background:rgba(168,232,144,0.07)}
+.et{font-size:13.5px;color:rgba(255,255,255,0.78);line-height:1.6}
+.et strong{color:var(--txt);font-weight:500}
+.et em{color:var(--gold-l);font-style:normal}
+.no-entries{font-size:13.5px;color:var(--txt3);line-height:1.6;font-style:italic;padding:4px 0;margin:0}
+.src-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--gold-l);text-decoration:none;opacity:0.75;margin-left:6px;white-space:nowrap;transition:opacity 0.15s}
+.src-link:hover{opacity:1;text-decoration:underline}
+.src-link::after{content:'↗';font-size:10px}
+[data-theme="light"] .src-link{color:var(--gold)}
+
+/* action table */
+.atbl{width:100%;border-collapse:collapse}
+.atbl thead tr{border-bottom:1px solid rgba(184,150,62,0.28)}
+.atbl th{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;padding:0 12px 11px 0;text-align:left}
+.atbl tbody tr{border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.15s}
+.atbl tbody tr:hover{background:rgba(255,255,255,0.025)}
+.atbl tbody tr:last-child{border-bottom:none}
+.atbl td{padding:11px 12px 11px 0;font-size:13px;color:rgba(255,255,255,0.76);vertical-align:top}
+.atbl td:first-child{width:86px}.atbl td:nth-child(2){width:96px}
+.dred{color:var(--red);font-weight:500;font-size:12px}
+.dgray{color:var(--txt2)}
+.dbadge{font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid;display:inline-block}
+
+/* ── TECHNICAL SECTION STYLES ── */
+.tech-divider{
+  margin:48px 0 44px;
+  display:flex;align-items:center;gap:20px;
+  opacity:0;animation:fadeUp 0.7s ease forwards 0.15s;
+}
+.tdiv-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.tdiv-text{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+
+/* tech section */
+.tsec{margin-bottom:36px;opacity:0;animation:fadeUp 0.7s ease forwards}
+
+/* roman numeral header */
+.tsec-hd{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.tsec-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;min-width:28px;margin-top:2px}
+.tsec-meta{display:flex;flex-direction:column;gap:5px}
+.tsec-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:-0.01em;line-height:1.1}
+
+/* subsections inside tech card */
+.tgc{background:var(--glass);border:1px solid var(--glass-b);border-radius:16px;overflow:hidden;backdrop-filter:blur(24px)}
+.tsub{border-bottom:1px solid rgba(255,255,255,0.05)}
+.tsub:last-child{border-bottom:none}
+.tsub-hd{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 24px 12px;
+  border-left:2px solid;
+  cursor:pointer;
+  user-select:none;
+  transition:background 0.15s;
+}
+.tsub-hd:hover{background:rgba(255,255,255,0.03)}
+.tsub-letter{font-family:'DM Mono',monospace;font-size:11px;color:var(--txt3);flex-shrink:0;min-width:18px}
+.tsub-title{font-size:13.5px;font-weight:500;flex:1}
+.tsub-chevron{font-size:11px;color:var(--txt3);transition:transform 0.25s;margin-left:auto}
+.tsub.open .tsub-chevron{transform:rotate(180deg)}
+.tsub-body{display:none;padding:0 24px 18px 54px}
+.tsub.open .tsub-body{display:block}
+
+/* border colors */
+.b-gst{border-color:var(--gst)}.b-dt{border-color:var(--dt)}.b-mca{border-color:var(--mca)}.b-sebi{border-color:var(--sebi)}.b-icai{border-color:var(--icai)}
+
+/* technical content */
+.titem{display:flex;gap:10px;margin-bottom:12px;align-items:start}
+.titem:last-child{margin-bottom:0}
+.tbullet{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.5;flex-shrink:0;margin-top:8px}
+.ttext{font-size:13px;color:rgba(255,255,255,0.76);line-height:1.68}
+.ttext strong{color:var(--txt);font-weight:500}
+.ttext em{color:var(--gold-l);font-style:normal}
+.ttext .cite{font-family:'DM Mono',monospace;font-size:11.5px;color:rgba(110,207,190,0.8);background:rgba(110,207,190,0.07);border:1px solid rgba(110,207,190,0.15);border-radius:4px;padding:1px 5px;white-space:nowrap}
+.ttext .stat{font-family:'DM Mono',monospace;font-size:11.5px;color:rgba(212,174,90,0.85);background:rgba(212,174,90,0.07);border:1px solid rgba(212,174,90,0.18);border-radius:4px;padding:1px 5px;white-space:nowrap}
+.ttext .date{color:var(--red);font-weight:500}
+
+/* sub-sub heading */
+.tsubsub{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--txt3);margin:14px 0 8px;font-weight:500}
+
+/* note box */
+.tnote{background:rgba(184,150,62,0.07);border:1px solid rgba(184,150,62,0.2);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:12px;color:rgba(255,255,255,0.6);line-height:1.55}
+.tnote strong{color:var(--gold-l)}
+
+/* footer */
+.footer{margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;opacity:0;animation:fadeUp 0.7s ease forwards 1.1s}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400}
+.ft-firm{font-size:12px;color:var(--gold);letter-spacing:0.09em;margin-top:3px}
+.ft-note{font-size:11px;color:var(--txt3);max-width:300px;text-align:right;line-height:1.5}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── theme toggle ── */
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.10);background:transparent;cursor:pointer;color:var(--txt2);transition:all 0.2s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:rgba(184,150,62,0.45);color:var(--gold-l);background:rgba(184,150,62,0.06)}
+.theme-toggle svg{width:15px;height:15px}
+[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.14)}
+[data-theme="light"] .theme-toggle:hover{border-color:rgba(140,109,26,0.45);color:var(--gold-l);background:rgba(140,109,26,0.08)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(184,150,62,0.2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(184,150,62,0.4)}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+</div>
+
+<!-- sticky nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html" style="text-decoration:none">YouWe Quest <span>LLP</span></a>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('summary',this)">Summary</button>
+      <button class="tab" onclick="switchTab('technical',this)">Technical Reference</button>
+      <button class="tab" onclick="switchTab('actions',this)">Action Items</button>
+    </div>
+    <div class="nav-right">
+      <div class="nav-meta">W22–W24 · Jun 2026</div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ════════════════════════════════
+     MASTHEAD
+════════════════════════════════ -->
+<div class="masthead">
+  <div class="mast-eyebrow">Weekly Regulatory Update &nbsp;·&nbsp; W22–W24-2026 · Consolidated</div>
+  <h1 class="mast-title">Tax &amp; Regulatory<br><em>Digest</em></h1>
+  <div class="mast-row">
+    <div class="mast-pill"><span class="dot"></span>24 May 2026 to 13 June 2026 · 3-week catch-up</div>
+    <div class="mast-pill"><span class="dot"></span>GST · Direct Tax · MCA · RBI/FEMA · ICAI</div>
+    <div class="mast-pill"><span class="dot"></span>Dear Reader,</div>
+  </div>
+</div>
+<div class="rule"></div>
+
+<!-- ════════════════════════════════
+     TAB 1 — SUMMARY
+════════════════════════════════ -->
+<div id="view-summary" class="view active">
+
+  <div class="chips">
+    <div class="chip" onclick="scrollToSection('sec-gst')"><div class="chip-n" style="color:var(--gst)">3</div><div class="chip-l">GST</div></div>
+    <div class="chip" onclick="scrollToSection('sec-dt')"><div class="chip-n" style="color:var(--dt)">5</div><div class="chip-l">Direct Tax</div></div>
+    <div class="chip" onclick="scrollToSection('sec-mca')"><div class="chip-n" style="color:var(--mca)">4</div><div class="chip-l">MCA</div></div>
+    <div class="chip" onclick="scrollToSection('sec-sebi')"><div class="chip-n" style="color:var(--sebi)">5</div><div class="chip-l">RBI / FEMA</div></div>
+    <div class="chip" onclick="scrollToSection('sec-icai')"><div class="chip-n" style="color:var(--icai)">2</div><div class="chip-l">ICAI</div></div>
+    <div class="chip" onclick="switchTab('actions', document.querySelector('.tab:nth-child(3)'))"><div class="chip-n" style="color:var(--gold)">8</div><div class="chip-l">Actions</div></div>
+  </div>
+
+  <!-- GST Summary -->
+  <div id="sec-gst" class="sec s1">
+    <div class="sec-hd"><span class="dpill p-gst">GST</span><h2 class="sec-title">Goods &amp; Services Tax — e-Way Bill Reforms Deferred to 1 Aug, WB Threshold Cut, No Central Notification</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>GSTN defers two e-Way Bill enhancements to 1 August 2026.</strong> Per GSTN advisory dated <span class="date">9 June 2026</span>, the mandatory capture of <em>"Ship To GSTIN"</em> in Bill-To/Ship-To transactions and the <em>Voluntary Closure of EWB</em> facility — originally slated for 15 June — are pushed to 1 August 2026 after representations from trade, GSPs and ERP vendors. Use the window to correct ship-to GSTINs in masters and complete API/ERP testing. <a href="https://www.gst.gov.in/newsandupdates/read/663" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>West Bengal cuts intra-State e-way bill threshold to above Rs.50,000, effective 1 June 2026.</strong> <span class="cite">WB Trade Circular No. 01/2026</span> dated <span class="date">25 May 2026</span> (read with WB Notification No. 02/2026-C.T./GST dated 22 May 2026) lowers the threshold from Rs.1,00,000; intra-State movement of goods for <em>job work within WB stays exempt</em> regardless of value. Brief WB clients and transporters — other states retain their own thresholds. <a href="https://comtax.wb.gov.in/GST/GST_Trade_Circulars/WBGST_TC_01_2026_20260525.pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-live">Live</span><div class="et"><strong>May 2026 GST collections: Gross Rs.1,94,184 crore (+3.2% YoY), Net Rs.1,66,904 crore (+3.3%).</strong> Components — CGST Rs.37,397 cr, SGST Rs.45,143 cr, IGST Rs.1,11,644 cr; refunds Rs.27,281 cr. Macro data point — no compliance action. <em>Note: no central CBIC notification or circular was issued in this period, and the 57th GST Council meeting was not held.</em> <a href="https://www.gst.gov.in/newsandupdates/read/662" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- Direct Tax Summary -->
+  <div id="sec-dt" class="sec s2">
+    <div class="sec-hd"><span class="dpill p-dt">Direct Tax</span><h2 class="sec-title">Income Tax — Compulsory Scrutiny Guidelines FY 2026-27, FPI G-Sec Exemption Ordinance, ITR-2 Utilities Live</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>CBDT issues Guidelines for Compulsory Selection for Complete Scrutiny, FY 2026-27.</strong> <span class="cite">F.No. 225/56/2026/ITA-II</span> dated <span class="date">4 June 2026</span> lists categories compulsorily selected — survey u/s 133A on/after 1 Apr 2024, search/seizure, cancelled registrations, recurring additions, and specific tax-evasion information. Cases route through NaFAC (except International Taxation and Central Circle). <strong>Section 143(2) notices to be served on or before 30 June 2026.</strong> Review at-risk clients and start assembling scrutiny documentation. <a href="https://www.incometaxindia.gov.in/documents/d/guest/csg-guidelines-2026-04-06-2026-pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>Income-tax (Amendment) Ordinance, 2026 — full exemption for FPIs and BIS on Government securities.</strong> Promulgated <span class="date">5 June 2026</span>, amending Schedule IV of the <em>Income-tax Act, 2025</em> to exempt interest income and capital gains on G-Secs accruing to Foreign Portfolio Investors and the Bank for International Settlements, retrospectively from <span class="date">1 April 2026</span>, subject to prescribed disclosure. Advise FPI / foreign-investor clients to revisit withholding positions and file the disclosure forms. <a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jun/doc202665883801.pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>CBDT notification on infrastructure investment for the Section 10(23FE) sovereign-wealth / pension-fund exemption.</strong> <span class="cite">Notification No. 70/2026</span> (S.O. 2768(E), F.No. 500/Misc./S10(23FE)/FT&amp;TR-II) dated <span class="date">1 June 2026</span> is issued under <span class="stat">Section 10(23FE)</span> — the exemption available to notified sovereign wealth funds and pension funds on income from eligible infrastructure investments in India (referenced to the Updated Harmonised Master List of Infrastructure Sub-sectors). Relevant when advising on or structuring SWF / pension-fund investment into Indian infrastructure. <a href="https://www.incometaxindia.gov.in/documents/d/guest/notification-no-70-2026-pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>ITR-2 for AY 2026-27 enabled — online filing + Excel Utility.</strong> e-Filing portal advisory dated <span class="date">26 May 2026</span>. For clients with capital gains, multiple house property, or no business income. Best filed after Form 16 / AIS / TIS / 26AS are fully reflected. <a href="https://www.incometax.gov.in/iec/foportal/latest-news" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>ITR-2 Offline Utility released; Common Offline Utility updated to v1.1.0 (ITR-1/2/4).</strong> e-Filing portal advisory dated <span class="date">29 May 2026</span> (Windows &amp; Mac). Ensure the latest version before generating JSON to avoid validation errors. <em>ITR-3 utility not yet released as of mid-June.</em> <a href="https://www.incometax.gov.in/iec/foportal/downloads/income-tax-returns" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- MCA Summary -->
+  <div id="sec-mca" class="sec s3">
+    <div class="sec-hd"><span class="dpill p-mca">MCA</span><h2 class="sec-title">Corporate Affairs — CSR via Social Stock Exchange, Registered Valuer Capital Norms, DPT-3 Due</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>CSR via Social Stock Exchange: subscription to ZCZP instruments now a permissible CSR mode.</strong> <span class="cite">Companies (CSR Policy) Amendment Rules, 2026 — G.S.R. 415(E)</span> dated <span class="date">27 May 2026</span> inserts Rule 4A recognising subscription to <em>Zero Coupon Zero Principal (ZCZP)</em> instruments issued by Social Stock Exchange-registered NPOs as CSR. Capped at 10% of annual CSR, exempt from impact assessment; NPO projects must conclude within three succeeding FYs. Update CSR policy docs, committee notes and CSR-2; confirm the NPO is SSE-registered. <a href="https://www.mca.gov.in/bin/ebook/dms/getdocument?doc=NjUzNDkxNDEy&docCategory=Notifications&type=open" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>Schedule VII amended to add SSE/ZCZP subscription as an eligible CSR activity.</strong> <span class="cite">G.S.R. 416(E)</span> dated <span class="date">27 May 2026</span> inserts new item <em>(xiii)</em> into Schedule VII of the Companies Act, 2013 — the statutory companion to G.S.R. 415(E). Cite item (xiii) as the basis for SSE/ZCZP-based CSR spend in project lists and board approvals. <a href="https://www.mca.gov.in/bin/ebook/dms/getdocument?doc=NjUzNDkwNjk2&docCategory=Notifications&type=open" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>Registered Valuers Organisations must hold minimum paid-up capital of Rs.25 lakh.</strong> <span class="cite">Companies (Registered Valuers and Valuation) Amendment Rules, 2026 — G.S.R. 432(E)</span> dated <span class="date">1 June 2026</span> amends Rule 12(1)(i); existing non-compliant RVOs get transition time to <span class="date">31 March 2028</span>. Relevant for registered valuers, RVOs and CAs in M&amp;A / fundraising / statutory valuations — confirm your RVO's continued eligibility. <a href="https://www.mca.gov.in/bin/ebook/dms/getdocument?doc=NjU1NzY4ODMx&docCategory=Notifications&type=open" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>Form DPT-3 (Return of Deposits) for FY 2025-26 due 30 June 2026.</strong> Position as on 31 Mar 2026, filed on the MCA V3 portal. Flag to all corporate clients holding deposits or outstanding loans/receipts. Path: <span class="cite">MCA Services &gt; Company e-Filing &gt; Deposits &amp; Nidhi Services &gt; DPT-3</span>; ready the auditor's figures. <a href="https://www.mca.gov.in/" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- RBI / FEMA Summary -->
+  <div id="sec-sebi" class="sec s4">
+    <div class="sec-hd"><span class="dpill p-sebi">RBI / FEMA</span><h2 class="sec-title">RBI / FEMA — Export Realisation Cut to 9 Months, NRO/CIMS Reporting, FCNR(B) &amp; ECB Swap Windows</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>Export-proceeds realisation period cut from 15 months to 9 months.</strong> <span class="cite">FEMA (Export of Goods and Services) (First Amendment) Regulations, 2026 — Notification No. FEMA 23(R)/(8)/2026-RB</span> dated <span class="date">5 June 2026</span> amends Regulation 9. Advise exporter clients to review outstanding export bills and EDPMS positions and tighten follow-up to avoid FEMA contraventions. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13467&Mode=0" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>Cross-border mergers: "NCLT" replaced by "Competent Authority" across the FEMA framework.</strong> <span class="cite">FEMA (Cross Border Merger) (Amendment) Regulations, 2026 — Notification No. FEMA 389(1)/2026-RB</span> (dated 29 May, listed 5 Jun 2026) recognises approval by any authority empowered under the Companies Act, 2013 (e.g. fast-track CAA mergers), not only the NCLT. Relevant when structuring inbound/outbound merger scheme approvals and FEMA deemed-approval timelines. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13466&Mode=0" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>NRO remittance reporting moves to RBI's CIMS portal from 30 June 2026.</strong> <span class="cite">A.P. (DIR Series) Circular No. 12</span> dated <span class="date">5 June 2026</span> directs AD Category-I banks to migrate specified FEMA returns to CIMS — including <em>NRO Account remittance reports (Return Code R006)</em> and branch activity reports (R343). Directly affects NRI clients with NRO accounts: ensure NRO repatriation paperwork (Form 15CA / 15CB, CA certificates) is consistent with bank reporting. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13465&Mode=0" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-live">Live</span><div class="et"><strong>RBI opens a USD-INR swap facility for fresh FCNR(B) deposits.</strong> <span class="cite">RBI/2026-27/99</span> dated <span class="date">8 June 2026</span> — for 3–5 year FCNR(B) deposits (weekly access, one-year lock-in, open to 16 Oct 2026 for deposits mobilised by 30 Sep 2026, CRR/SLR-exempt). A companion circular (A.P. DIR No. 13) excludes these positions from banks' NOP-INR. Banks may push fresh FCNR(B) offerings — advise NRI deposit clients on the lock-in and the mobilisation window. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13468&Mode=0" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-live">Live</span><div class="et"><strong>USD-INR swap facility for ECB and Overseas Foreign Currency Borrowings.</strong> <span class="cite">RBI/2026-27/100</span> dated <span class="date">8 June 2026</span> — for ECBs (minimum 3-year maturity) and OFCBs through eligible banks, at a fixed 1.5% p.a., operative to 15 Jan 2027 for drawdowns completed by <span class="date">31 December 2026</span>. Improves hedging economics — watch the drawdown deadline when planning ECB timelines. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13469&Mode=0" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- ICAI Summary -->
+  <div id="sec-icai" class="sec s5">
+    <div class="sec-hd"><span class="dpill p-icai">ICAI</span><h2 class="sec-title">ICAI — Revised Code of Ethics (13th Edition) &amp; UDIN Portal Category Update</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-icai">Standards</span><div class="et"><strong>ICAI releases the Revised Code of Ethics, 13th Edition (Volumes I–III).</strong> Ethical Standards Board announcement dated <span class="date">30 May 2026</span>, effective <span class="date">1 April 2026</span>. Vol I — domestic provisions (CA Act 1949, Regulations, Council Guidelines); Vol II — operative Code <em>converged with the IESBA Code of Ethics 2024 edition</em>; Vol III — new <em>Ethics Standards for Sustainability Assurance</em> including independence requirements. Apply the 13th edition to all FY 2026-27 engagements — non-compliance is a disciplinary matter. <a href="https://www.icai.org/post/revised-code-of-ethics-13th-edition" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-udin">UDIN</span><div class="et"><strong>ICAI revises UDIN portal generation categories — effective 8 June 2026.</strong> The UDIN Directorate (446th Council approval) renamed two categories on <span class="cite">udin.icai.org</span>: <em>"Certificates" → "Certificates and Other Reports"</em> and <em>"GST &amp; Tax Audit" → "Tax Audit"</em>. Members must select the revised categories when generating UDINs for audit reports, certificates and tax-audit reports; update internal checklists referencing the old names. ("Audit &amp; Assurance Functions" is unchanged.) <a href="https://udin.icai.org/ICAI/announcement/6/204/UDIN_08-06-2026" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+</div><!-- /view-summary -->
+
+
+<!-- ════════════════════════════════
+     TAB 2 — TECHNICAL REFERENCE
+════════════════════════════════ -->
+<div id="view-technical" class="view">
+
+  <div class="tech-divider">
+    <div class="tdiv-line"></div>
+    <div class="tdiv-text">Technical Reference</div>
+    <div class="tdiv-line"></div>
+  </div>
+
+  <!-- I. GST Technical -->
+  <div class="tsec s1">
+    <div class="tsec-hd">
+      <div class="tsec-num">I.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-gst" style="display:inline-flex;width:fit-content">GST</span>
+        <div class="tsec-name">Goods &amp; Services Tax</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">e-Way Bill 2.0 Enhancements Deferred from 15 June to 1 August 2026</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> GSTN advisory dated <span class="date">9 June 2026</span> (deferring functionalities originally announced in the GSTN advisory of 20 May 2026).
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What is deferred:</strong> (a) <em>Mandatory capture of "Ship To GSTIN"</em> in Bill-To/Ship-To transactions on the e-Way Bill portal; (b) the <em>Voluntary Closure of E-Way Bill</em> facility (allowing a generator to close an EWB where movement is complete or abandoned). Both were to go live on <span class="date">15 June 2026</span> and are now pushed to <span class="date">1 August 2026</span> following representations from trade, GSPs and ERP vendors needing time for API/ERP changes and master-data correction.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Why it matters:</strong> Once live, an incorrect or missing Ship-To GSTIN will block EWB generation in Bill-To/Ship-To (drop-shipment / bill-to-ship-to) scenarios — a common pattern in distribution and e-commerce supply chains.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Use the extended window to (1) audit and correct ship-to GSTINs in customer/consignee masters; (2) coordinate with ERP/GSP teams to test the Ship-To GSTIN field and the voluntary-closure API before 1 August; (3) brief logistics teams on the new closure facility so completed/abandoned EWBs are closed rather than left to auto-expire.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">West Bengal — Intra-State e-Way Bill Threshold Cut to Above Rs.50,000 (eff. 1 June 2026)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">WB Trade Circular No. 01/2026</span> dated <span class="date">25 May 2026</span> (Directorate of Commercial Taxes, West Bengal), read with <span class="cite">WB Notification No. 02/2026-C.T./GST</span> dated <span class="date">22 May 2026</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Change:</strong> The threshold for generating an e-way bill for <em>intra-State</em> movement within West Bengal is reduced from consignment value above Rs.1,00,000 to <em>above Rs.50,000</em>, effective <span class="date">1 June 2026</span>, aligning WB with the general inter-State threshold.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Job-work carve-out:</strong> The circular clarifies that intra-State movement of goods for <em>job work within WB</em> remains exempt from e-way bill generation irrespective of consignment value. This is a state-specific clarification — do not extend it to inter-State job-work movement (which follows <span class="stat">Rule 138</span> generally).
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Applies only to West Bengal-registered clients / WB intra-State movement; other states retain their own intra-State thresholds (many still at Rs.1,00,000 or higher). Brief transporters and dispatch teams of WB clients to switch the threshold logic from 1 June to avoid both under-compliance (penalty/detention) and needless EWBs on job-work moves.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">Period Context — No Central CBIC Notification, May Collections &amp; Live Deadlines</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>No central CBIC action in the window:</strong> No CBIC Central Tax / IGST / UT Tax / Compensation Cess <em>circular or notification</em> was issued between 24 May and 13 June 2026 (latest central notification remains <span class="cite">02/2026-CT</span> dated 7 May 2026). The <em>57th GST Council meeting</em> was also not convened in the window.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>May 2026 collections (data release, 1 June):</strong> Gross GST Rs.1,94,184 crore (+3.2% YoY); Net Rs.1,66,904 crore after refunds (+3.3%). Components — CGST Rs.37,397 cr, SGST Rs.45,143 cr, IGST Rs.1,11,644 cr; refunds Rs.27,281 cr.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Live June deadline — GSTAT appeals:</strong> Per the GSTAT Principal Bench office order of 14 May 2026, the last date to file appeals before GSTAT for orders communicated <em>before 1 April 2026</em> is <span class="date">30 June 2026</span>. Identify clients with pending pre-April 2026 orders and file within time.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Routine monthly compliance continues — GSTR-1/IFF and GSTR-3B (incl. the TLB hard-lock and Table 3.2 auto-population) remain live from earlier periods, and @cbic_india reminded non-QRMP (monthly) filers of their June filing dates. No new advisory changed these mechanics in the window.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- II. Direct Tax Technical -->
+  <div class="tsec s2">
+    <div class="tsec-hd">
+      <div class="tsec-num">II.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-dt" style="display:inline-flex;width:fit-content">Direct Tax</span>
+        <div class="tsec-name">Direct Tax</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">CBDT Guidelines for Compulsory Selection for Complete Scrutiny — FY 2026-27</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> CBDT <span class="cite">F.No. 225/56/2026/ITA-II</span> dated <span class="date">4 June 2026</span> — annual guidelines specifying parameters for compulsory selection of returns for complete scrutiny during FY 2026-27.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Compulsory-selection categories:</strong> (a) cases where a <em>survey u/s 133A</em> was conducted on or after 1 Apr 2024; (b) <em>search &amp; seizure</em> / requisition cases; (c) cases where registration/approval (e.g. u/s 12A, 35, 80G) was cancelled/withdrawn yet exemption claimed; (d) <em>recurring additions</em> in earlier years sustained on a question of law/fact above the monetary threshold; (e) specific information on <em>tax evasion</em> from law-enforcement / regulatory authorities.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Procedure &amp; timeline:</strong> Selected cases are transferred to the <em>National Faceless Assessment Centre (NaFAC)</em>, except those with International Taxation and Central Circle charges. <strong>Notices under <span class="stat">s.143(2)</span> must be served on or before <span class="date">30 June 2026</span></strong> (the statutory limitation for AY 2025-26 returns).
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> (1) Map each client's AY 2025-26 return against the trigger list — particularly survey/search cases and exemption-claiming trusts with cancelled registrations; (2) expect s.143(2) notices up to 30 June; (3) pre-assemble documentation (survey statements, registration history, basis of recurring additions) so faceless responses can be filed within the short windows NaFAC allows.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">Income-tax (Amendment) Ordinance, 2026 — FPI/BIS Exemption on Government Securities</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <em>Income-tax (Amendment) Ordinance, 2026</em>, promulgated <span class="date">5 June 2026</span>, amending Schedule IV of the <em>Income-tax Act, 2025</em>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Change:</strong> Full exemption of <em>interest income and capital gains on Government securities</em> accruing to <em>Foreign Portfolio Investors (FPIs)</em> and the <em>Bank for International Settlements (BIS)</em>. Effective retrospectively from <span class="date">1 April 2026</span>, subject to prescribed disclosure filings.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Context:</strong> Mirrors RBI's parallel move easing FPI access to G-Secs (see RBI/FEMA Section A note) and supports India's inclusion in global bond indices by removing the tax drag on sovereign-bond returns for foreign investors.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> For FPI / foreign-investor clients and their custodians, revisit withholding-tax positions on G-Sec interest and capital gains from 1 Apr 2026, ensure the prescribed disclosure forms are filed to claim the exemption, and flag refund opportunities where tax was already withheld between April and the Ordinance date.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">CBDT Notification No. 70/2026 — Section 10(23FE) Sovereign-Wealth / Pension-Fund Infrastructure Exemption</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> CBDT <span class="cite">Notification No. 70/2026</span> — S.O. 2768(E), F.No. 500/Misc./S10(23FE)/FT&amp;TR-II — dated <span class="date">1 June 2026</span>, issued under <span class="stat">Section 10(23FE)</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Context:</strong> Section 10(23FE) exempts specified income (dividend, interest, long-term capital gains) of notified <em>sovereign wealth funds</em> and <em>pension funds</em> arising from their eligible investments in Indian infrastructure. The notification operates within this exemption framework, referenced to the <em>Updated Harmonised Master List of Infrastructure Sub-sectors</em> (DEA F.No. 13/1/2025-IPP dated 19 Sep 2025) that delineates qualifying infrastructure.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Relevant when advising notified SWFs / pension funds investing into Indian infrastructure, or entities (InvITs, infrastructure SPVs) receiving such investment — confirm the qualifying infrastructure and that the prescribed fund/investment conditions for the s.10(23FE) exemption are met. Read the operative clause against the official notification text.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">D</span>
+          <span class="tsub-title">ITR Utilities for AY 2026-27 — ITR-2 Online/Excel &amp; Common Offline Utility v1.1.0</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>26 May 2026:</strong> <em>ITR-2</em> for AY 2026-27 enabled for <em>online filing</em> and via the <em>Excel Utility</em>. ITR-2 covers individuals/HUFs with capital gains, more than one house property, foreign assets/income (Schedule FA), or other no-business-income situations.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>29 May 2026:</strong> <em>ITR-2 Offline Utility</em> released, and the <em>Common Offline (JSON) Utility</em> updated to <span class="cite">v1.1.0</span> covering ITR-1, ITR-2 and ITR-4 (Windows &amp; Mac).
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Still pending (as of mid-June):</strong> ITR-3 utility not yet released; the Cost Inflation Index (CII) for FY 2026-27 not yet notified — both required for capital-gains and business cases. Filing deadline for non-audit cases: <span class="date">31 July 2026</span>.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> (1) Use Common Offline Utility v1.1.0 (not older drafts) before generating JSON to avoid validation rejections; (2) begin ITR-2 (capital-gains / NRI / Schedule FA) clients now, but reconcile against AIS / TIS / 26AS first; (3) hold ITR-3 (business/profession) clients until the utility and CII are released. For NRI clients, ITR-2 enables Schedule FA and FTC/Form 67 workings for the season.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- III. MCA Technical -->
+  <div class="tsec s3">
+    <div class="tsec-hd">
+      <div class="tsec-num">III.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-mca" style="display:inline-flex;width:fit-content">MCA</span>
+        <div class="tsec-name">Ministry of Corporate Affairs</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub">
+        <div class="tsub-hd b-mca" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">CSR via Social Stock Exchange — CSR Policy Rules &amp; Schedule VII Amended (27 May 2026)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">Companies (CSR Policy) Amendment Rules, 2026 — G.S.R. 415(E)</span> and the companion <span class="cite">Schedule VII amendment — G.S.R. 416(E)</span>, both dated <span class="date">27 May 2026</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What changed:</strong> A new <em>Rule 4A</em> in the CSR Policy Rules, 2014 recognises <em>subscription to Zero Coupon Zero Principal (ZCZP) instruments</em> issued by Social Stock Exchange (SSE)-registered Not-for-Profit Organisations as a valid CSR mode, and Schedule VII gains a new <em>item (xiii)</em> as the enabling head. ZCZP instruments are the SSE fundraising instrument under the SEBI framework for NPOs.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Conditions:</strong> (a) such ZCZP/SSE expenditure is <em>capped at 10% of the company's annual CSR obligation</em>; (b) these projects are <em>exempt from CSR impact assessment</em>; (c) the NPO project must conclude within <em>three succeeding financial years</em>.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> For corporate CSR clients, (1) update the Board-approved CSR policy and annual action plan to list SSE/ZCZP subscription, citing Schedule VII item (xiii); (2) verify the issuing NPO is SSE-registered and the instrument is a listed ZCZP before treating spend as compliant; (3) keep the 10% sub-cap in view and reflect the spend correctly in Form CSR-2 and the Board's Report CSR annexure.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-mca" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">Companies (Registered Valuers and Valuation) Amendment Rules, 2026 — RVO Capital Norm</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">Companies (Registered Valuers and Valuation) Amendment Rules, 2026 — G.S.R. 432(E)</span> dated <span class="date">1 June 2026</span>, amending <span class="stat">Rule 12(1)(i)</span> of the Registered Valuers and Valuation Rules, 2017.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Change:</strong> Mandates a minimum <em>paid-up share capital of Rs.25 lakh</em> for a Registered Valuers Organisation (RVO). Existing RVOs that do not meet the threshold get transition time up to <span class="date">31 March 2028</span> to comply.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Relevant for CAs who are registered valuers (asset classes: Securities/Financial Assets, Land &amp; Building, Plant &amp; Machinery) and for the RVOs they are enrolled with — registered valuations are required for s.247 valuations, mergers/demergers, ESOP perquisite valuation, FEMA pricing, and IBC resolution. RVOs should review paid-up capital and plan infusion before 31 Mar 2028; members should confirm their RVO's continued eligibility so their valuation work remains valid.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-mca" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">Form DPT-3 (Return of Deposits) for FY 2025-26 — Due 30 June 2026</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Obligation:</strong> Every company (other than a Government company) must file <em>Form DPT-3</em> — the annual return of deposits and of particulars of transactions <em>not</em> treated as deposits — capturing the position as on <span class="date">31 March 2026</span>, by <span class="date">30 June 2026</span> on the MCA V3 portal. Statutory basis: <span class="stat">Rule 16 of the Companies (Acceptance of Deposits) Rules, 2014</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Coverage:</strong> Includes outstanding loans/receipts not treated as deposits (e.g. from directors, holding/subsidiary companies, inter-corporate loans, advances). An <em>auditor's certificate</em> is required for the return of deposits (not for the exempt-transactions-only filing).
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Identify all corporate clients with deposits or outstanding loan/advance balances as on 31 Mar 2026; file via <span class="cite">MCA Services &gt; Company e-Filing &gt; Deposits &amp; Nidhi Services &gt; DPT-3</span> using V3 Business User credentials; ready the auditor's figures and certificate well before 30 June to avoid the per-day additional fee and s.73/76 non-compliance exposure.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IV. RBI / FEMA Technical -->
+  <div class="tsec s4">
+    <div class="tsec-hd">
+      <div class="tsec-num">IV.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-sebi" style="display:inline-flex;width:fit-content">RBI / FEMA</span>
+        <div class="tsec-name">RBI &amp; FEMA</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub">
+        <div class="tsub-hd b-sebi" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">FEMA — Export-Proceeds Realisation Period Cut from 15 to 9 Months</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">FEMA (Export of Goods and Services) (First Amendment) Regulations, 2026 — Notification No. FEMA 23(R)/(8)/2026-RB</span> dated <span class="date">5 June 2026</span>, amending Regulation 9. Effective on Gazette publication.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Change:</strong> The period within which export proceeds must be <em>realised and repatriated</em> to India is reduced from <em>fifteen months to nine months</em> from the date of export (sub-regulation (1) and clause (a) of sub-regulation (2) of Regulation 9).
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Why it matters:</strong> Tighter realisation directly affects exporter clients' EDPMS positions and the risk of FEMA contravention / caution-listing for overdue export bills. Inter-related context: RBI also eased FPI access to G-Secs (A.P. DIR No. 11, 5 Jun, excluded here as capital-market) — the companion tax exemption is in Direct Tax Section B.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> For all exporter clients, (1) pull the EDPMS / outstanding export-bill register and re-age it against the 9-month clock; (2) tighten follow-up on collections and ensure timely BRC/eBRC closure; (3) for genuine delays, initiate AD-bank extension requests early. Update internal FEMA compliance calendars and client advisories with the new 9-month benchmark.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-sebi" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">FEMA — Cross Border Merger Regulations: "NCLT" Replaced by "Competent Authority"</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">FEMA (Cross Border Merger) (Amendment) Regulations, 2026 — Notification No. FEMA 389(1)/2026-RB</span> (dated 29 May 2026, listed on the RBI site 5 Jun 2026), amending the FEMA (Cross Border Merger) Regulations, 2018.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Change:</strong> Introduces a definition of <em>"Competent Authority"</em> — any authority empowered under the Companies Act, 2013 to sanction a scheme of merger/amalgamation — and replaces references to the <em>NCLT</em> with "Competent Authority" across Regulations 4, 5, 7 and 9 (and omits clause (vii) of Regulation 2).
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Significance:</strong> Aligns the FEMA framework with non-NCLT merger routes — notably <em>fast-track mergers under s.233 (CAA route)</em>, which are approved by the Central Government (Regional Director), not the NCLT. The FEMA deemed-approval/compliance machinery now follows whichever competent authority sanctions the scheme.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> For clients structuring inbound/outbound cross-border mergers (especially fast-track CAA mergers with foreign holding/subsidiary companies), the FEMA approval pathway and deemed-RBI-approval condition now key off the relevant competent authority. Factor this into scheme drafting, the s.233 vs s.230-232 route decision, and the FEMA compliance certificate.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-sebi" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">RBI CIMS — NRO Remittance &amp; Branch Returns Move to CIMS Portal (eff. 30 June 2026)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">A.P. (DIR Series) Circular No. 12</span> dated <span class="date">5 June 2026</span> — submission of specified FEMA statements/returns on the RBI <em>Centralised Information Management System (CIMS)</em> portal, effective <span class="date">30 June 2026</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Returns migrating to CIMS:</strong> (a) <em>NRO Account remittance reports (Return Code R006)</em> — monthly data on applicants and amounts remitted from NRO accounts; (b) <em>Branch/Office activity reports (R343)</em> — with NIL filing required where there is no activity. AD Category-I banks file these through CIMS from 30 June.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>NRI relevance:</strong> NRO-account remittance data (USD 1 million scheme repatriations, current-income remittances) now flows to RBI via CIMS — increasing the visibility and consistency-checking of NRO outward remittances against the supporting tax documentation.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> For NRI clients repatriating from NRO accounts, ensure the <em>Form 15CA / 15CB</em> and CA certificates (and the USD-1-million-scheme declarations) are internally consistent with what the AD bank will report under R006 from 30 June. Flag the changed reporting channel to clients' relationship banks so remittance processing is not delayed during the transition.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-sebi" onclick="toggleSub(this)">
+          <span class="tsub-letter">D</span>
+          <span class="tsub-title">RBI Swap Facilities — FCNR(B) Deposits &amp; ECB/OFCB (with NOP-INR Relief)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>FCNR(B) swap — <span class="cite">RBI/2026-27/99</span> dated <span class="date">8 June 2026</span>:</strong> A USD-INR swap facility for <em>fresh FCNR(B) deposits of 3-5 year tenor</em> mobilised by AD Category-I banks. Banks may access once weekly; deposits carry a <em>one-year lock-in</em> before premature withdrawal; the facility is open until <span class="date">16 October 2026</span> for deposits mobilised by <span class="date">30 September 2026</span>; such deposits are <em>exempt from CRR/SLR</em>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>ECB/OFCB swap — <span class="cite">RBI/2026-27/100</span> dated <span class="date">8 June 2026</span>:</strong> A USD-INR swap facility for <em>ECBs (minimum 3-year maturity)</em> and Overseas Foreign Currency Borrowings raised through eligible banks, at a <em>fixed 1.5% p.a.</em>, operative to 15 Jan 2027 for eligible drawdowns completed by <span class="date">31 December 2026</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Enabling measure — NOP-INR:</strong> <span class="cite">A.P. (DIR Series) Circular No. 13</span> (RBI/2026-27/101, 8 Jun) permits banks to <em>exclude swap positions</em> arising from these facilities from their net overnight open position in rupee (NOP-INR), removing a balance-sheet constraint so banks can scale the offerings.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Expect banks to actively solicit fresh 3-5 year FCNR(B) deposits with improved rates — advise NRI deposit clients on the one-year lock-in and the limited mobilisation window (to 30 Sep 2026). For clients raising ECB/OFCB through banks, the swap improves hedging economics; build the 31 Dec 2026 drawdown deadline into ECB timelines.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- V. ICAI Technical -->
+  <div class="tsec s5">
+    <div class="tsec-hd">
+      <div class="tsec-num">V.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-icai" style="display:inline-flex;width:fit-content">ICAI</span>
+        <div class="tsec-name">ICAI</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsubsub">STANDARDS &amp; COMPLIANCE UPDATES</div>
+
+      <div class="tsub open">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">Revised Code of Ethics, 13th Edition · Ethical Standards Board · 30 May 2026</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> ICAI Ethical Standards Board (ESB) announcement dated <span class="date">30 May 2026</span> releasing the <em>Revised Code of Ethics, 13th Edition</em> in three volumes. Applicable with effect from <span class="date">1 April 2026</span> (the provision on social/CSR/BRSR impact-assessment engagements applies from 11 Dec 2025).
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Structure:</strong> (a) <em>Volume I</em> — domestic provisions under the Chartered Accountants Act, 1949, the Regulations and Council Guidelines; (b) <em>Volume II</em> — the operative Code, <em>converged with the IESBA Code of Ethics 2024 edition</em>; (c) <em>Volume III</em> — new <em>Ethics Standards for Sustainability Assurance</em>, including independence requirements for sustainability-assurance engagements.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What changed:</strong> Convergence with IESBA 2024 brings revised independence, fee-dependency, technology and group-audit provisions, and Volume III introduces a first-of-its-kind ethics framework for sustainability assurance — relevant as BRSR-assurance mandates expand.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Adopt the 13th edition across all FY 2026-27 engagements — refresh the firm's independence-confirmation templates, engagement-acceptance and fee-dependency checks, and (for any sustainability-assurance work) the Volume III independence requirements. Non-compliance is a disciplinary matter under the CA Act. Download Vols I/II/III from <span class="cite">icai.org</span>.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">UDIN Portal — Revised Generation Categories (effective 8 June 2026)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> ICAI UDIN Directorate update operative from <span class="date">8 June 2026</span> (approved at the 446th Council meeting). The UDIN generation categories on <span class="cite">udin.icai.org</span> have been restructured.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Category changes:</strong> (a) <em>"Certificates"</em> renamed to <em>"Certificates and Other Reports"</em>; (b) <em>"GST &amp; Tax Audit"</em> renamed to <em>"Tax Audit"</em>. The restructuring streamlines how attest functions are classified at the point of UDIN generation.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> When generating UDINs from 8 June 2026, members must select from the revised category list — brief staff who generate UDINs for audit reports, certificates and tax-audit reports so the correct (renamed) category is chosen, and update any internal SOP / checklist referencing the old category names. <em>(The five committee publication pages — AASB, DTC, IDTC, Corporate Laws, International Taxation — carried no new final publication in-window; nearest IDTC items dated 11–18 May, in W21.)</em></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /view-technical -->
+
+
+<!-- ════════════════════════════════
+     TAB 3 — ACTION ITEMS
+════════════════════════════════ -->
+<div id="view-actions" class="view">
+
+  <div class="tech-divider">
+    <div class="tdiv-line"></div>
+    <div class="tdiv-text">Action Items</div>
+    <div class="tdiv-line"></div>
+  </div>
+
+  <div class="sec s1">
+    <div class="gc" style="padding:20px 24px">
+      <p style="font-size:12px;color:var(--txt3);letter-spacing:0.05em;margin-bottom:14px;line-height:1.65">Forward-looking deadlines and ongoing action items consolidated across W22–W24. Dates that fell within 24 May – 13 June 2026 are NOT listed here — review client-by-client offline.</p>
+      <table class="atbl">
+        <thead>
+          <tr>
+            <th>Due Date</th>
+            <th>Domain</th>
+            <th>Action Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dred">30 Jun</span></td><td><span class="dbadge p-dt">Direct Tax</span></td><td>Compulsory-scrutiny s.143(2) notices for FY 2026-27 selected cases must be served by today (CBDT Guidelines, F.No. 225/56/2026/ITA-II). Map at-risk clients (survey/search, cancelled registrations, recurring additions) and pre-assemble documentation.</td></tr>
+          <tr><td><span class="dred">30 Jun</span></td><td><span class="dbadge p-gst">GST</span></td><td>GSTAT appeals — last date to file for orders communicated before 1 April 2026 (GSTAT Principal Bench order, 14 May 2026). Identify clients with pending pre-April 2026 orders and file within time.</td></tr>
+          <tr><td><span class="dred">30 Jun</span></td><td><span class="dbadge p-mca">MCA</span></td><td>Form DPT-3 (Return of Deposits, position as on 31 Mar 2026) due on MCA V3. File for all corporate clients with deposits or outstanding loans/advances; ready the auditor's certificate.</td></tr>
+          <tr><td><span class="dred">30 Jun</span></td><td><span class="dbadge p-sebi">RBI/FEMA</span></td><td>CIMS reporting of NRO remittances (R006) and branch activity (R343) goes live for AD Cat-I banks (A.P. DIR Circular No. 12). Reconcile NRO repatriation paperwork (Form 15CA/15CB) with bank reporting for NRI clients.</td></tr>
+          <tr><td><span class="dred">1 Aug</span></td><td><span class="dbadge p-gst">GST</span></td><td>e-Way Bill: mandatory Ship-To GSTIN capture (Bill-To/Ship-To) + Voluntary Closure facility go-live (deferred from 15 Jun, GSTN advisory 9 Jun). Correct ship-to GSTINs in masters and complete API/ERP testing before this date.</td></tr>
+          <tr><td><span class="dred">30 Sep</span></td><td><span class="dbadge p-sebi">RBI/FEMA</span></td><td>FCNR(B) swap window — banks may mobilise eligible fresh 3-5 year FCNR(B) deposits until 30 Sep 2026 (facility open to 16 Oct). Advise NRI deposit clients on improved rates and the one-year lock-in.</td></tr>
+          <tr><td><span class="dgray">Ongoing</span></td><td><span class="dbadge p-sebi">RBI/FEMA</span></td><td>Export-proceeds realisation period now 9 months (was 15) — FEMA 23(R)/(8)/2026-RB, 5 Jun. Re-age the EDPMS / outstanding export-bill register for all exporter clients against the shorter clock.</td></tr>
+          <tr><td><span class="dgray">Ongoing</span></td><td><span class="dbadge p-icai">ICAI</span></td><td>Apply the Revised Code of Ethics, 13th Edition (effective 1 Apr 2026) to all FY 2026-27 engagements — refresh independence/fee templates; and select the revised UDIN portal categories ("Certificates and Other Reports", "Tax Audit") when generating UDINs from 8 Jun 2026.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /view-actions -->
+
+
+<!-- footer -->
+<div class="footer">
+  <div>
+    <div class="ft-name">S. Triyambaka Patro, CA</div>
+    <div class="ft-firm">YouWe Quest LLP</div>
+  </div>
+  <div class="ft-note">Compiled 14 June 2026 · W22–W24-2026 consolidated catch-up covering 24 May – 13 June 2026. For informational purposes only — does not constitute legal or tax advice.</div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+(function(){
+  var html = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  var sun = document.getElementById('icon-sun');
+  var moon = document.getElementById('icon-moon');
+  function applyTheme(t){
+    html.setAttribute('data-theme', t);
+    sun.style.display = t === 'dark' ? '' : 'none';
+    moon.style.display = t === 'light' ? '' : 'none';
+  }
+  applyTheme(localStorage.getItem('theme') || 'dark');
+  btn.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+})();
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var navH = document.querySelector('.nav').offsetHeight;
+  var top = el.getBoundingClientRect().top + window.scrollY - navH - 16;
+  window.scrollTo({top: top, behavior: 'smooth'});
+}
+function toggleSub(hd) {
+  var sub = hd.parentElement;
+  sub.classList.toggle('open');
+}
+(function sortEntries(){
+  var order={
+    't-dead':0,'t-new':1,'t-court':2,'t-portal':3,
+    't-budget':4,'t-live':5,
+    't-udin':6,'t-peer':7,'t-icai':8,'t-pub':9
+  };
+  document.querySelectorAll('.entries').forEach(function(container){
+    var entries=Array.from(container.querySelectorAll(':scope>.entry'));
+    entries.sort(function(a,b){
+      var ta=a.querySelector('.tag')||{},tb=b.querySelector('.tag')||{};
+      var ca=[].find.call(ta.classList||[],function(c){return c in order});
+      var cb=[].find.call(tb.classList||[],function(c){return c in order});
+      return (order[ca]??99)-(order[cb]??99);
+    });
+    entries.forEach(function(e){container.appendChild(e);});
+  });
+})();
+</script>
+</body>
+</html>
