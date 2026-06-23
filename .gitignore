@@ -11,3 +11,7 @@ claude-docs/
 *.py
 *.pyc
 __pycache__/
+
+# Local-only AI agent instructions (kept on disk, never uploaded to GitHub)
+CLAUDE.md
+AGENTS.md
