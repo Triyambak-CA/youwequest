@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Macro &amp; Market Reports — YouWe Quest LLP</title>
-<meta name="description" content="In-depth macro and market event reports — published by YouWe Quest LLP.">
+<title>RBI Bulletin Digest - YouWe Quest LLP</title>
+<meta name="description" content="Visual monthly digests of the RBI Bulletin - monetary policy, inflation, growth, banking and the external sector - by YouWe Quest LLP.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
 <style>
@@ -125,7 +125,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 }
 .update-card:hover::before{opacity:1}
 
-.card-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.card-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
 .card-date{
   font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
   color:var(--macro);font-weight:500;
@@ -161,20 +161,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 .divider-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);white-space:nowrap}
 .divider-line{flex:1;height:1px;background:rgba(255,255,255,0.06)}
 
-/* empty state */
-.empty-state{
-  text-align:center;padding:64px 24px;
-  opacity:0;animation:fadeUp 0.6s ease forwards 0.2s;
-}
-.empty-icon{
-  width:48px;height:48px;border-radius:50%;
-  background:rgba(94,191,140,0.08);border:1px solid rgba(94,191,140,0.18);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 20px;color:var(--macro);
-}
-.empty-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--txt);margin-bottom:8px}
-.empty-sub{font-size:13px;color:var(--txt3);line-height:1.7;max-width:320px;margin:0 auto}
-
 /* footer */
 .footer{
   position:relative;z-index:1;
@@ -188,7 +174,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── theme toggle ── */
+/* theme toggle */
 .theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.10);background:transparent;cursor:pointer;color:var(--txt2);transition:all 0.2s;flex-shrink:0;padding:0}
 .theme-toggle:hover{border-color:rgba(94,191,140,0.45);color:var(--macro-l);background:rgba(94,191,140,0.06)}
 .theme-toggle svg{width:15px;height:15px}
@@ -213,7 +199,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
       Back to home
     </a>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
   </div>
@@ -223,23 +209,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 
   <div class="pg-header">
     <div class="pg-eyebrow">YouWe Quest LLP</div>
-    <h1 class="pg-title">Macro &amp; Market Reports</h1>
-    <p class="pg-sub">In-depth analysis of macroeconomic events, market developments, and policy shifts. This series has been discontinued; the archive below remains available for reference.</p>
-  </div>
-
-  <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(184,150,62,0.07);border:1px solid rgba(184,150,62,0.28);border-radius:12px;padding:14px 18px;margin-bottom:36px;opacity:0;animation:fadeUp 0.6s ease forwards 0.08s">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 8v13H3V8"/><path d="M1 3h22v5H1z"/><path d="M10 12h4"/></svg>
-    <div style="font-size:12.5px;color:var(--txt2);line-height:1.6">
-      <strong style="color:var(--txt)">Archived series.</strong> These monthly macro reports are no longer being produced. Our current monthly publication is the <a href="../rbi/" style="color:var(--macro);text-decoration:none;border-bottom:1px solid rgba(94,191,140,0.35)">RBI Bulletin Digest</a>.
-    </div>
+    <h1 class="pg-title">RBI Bulletin Digest</h1>
+    <p class="pg-sub">Visual monthly digests of the Reserve Bank of India Bulletin - monetary policy, inflation, growth, banking and the external sector, distilled for business owners and professionals.</p>
   </div>
 
   <div class="legend">
-    <span class="badge b-macro">Macro Economy</span>
-    <span class="badge b-macro">Markets</span>
-    <span class="badge b-macro">Policy</span>
-    <span class="badge b-macro">India</span>
-    <span class="badge b-macro">Global</span>
+    <span class="badge b-macro">Monetary Policy</span>
+    <span class="badge b-macro">Inflation</span>
+    <span class="badge b-macro">Growth</span>
+    <span class="badge b-macro">Banking</span>
+    <span class="badge b-macro">External Sector</span>
   </div>
 
   <div class="update-list">
@@ -249,29 +228,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
       <span class="divider-line"></span>
     </div>
 
-    <!-- ── Add new report cards above this comment ── -->
+    <!-- ── Add new digest cards above this comment ── -->
 
-    <a href="MacroReport_30Apr2026.html" class="update-card" style="animation-delay:0.20s">
-      <span class="latest-chip" style="background:rgba(184,150,62,0.14);color:var(--gold);border-color:rgba(184,150,62,0.30)">Final issue</span>
+    <a href="RBIBulletin_Jun2026.html" class="update-card" style="animation-delay:0.20s">
+      <span class="latest-chip">Latest</span>
       <div class="card-meta">
-        <span class="card-date">30 Apr 2026</span>
-        <span class="card-tag macro-tag">Macro</span>
+        <span class="card-date">June 2026</span>
+        <span class="card-tag macro-tag">RBI Bulletin</span>
       </div>
-      <h3 class="card-title">India Macro Intelligence &mdash; April 2026</h3>
+      <h3 class="card-title">RBI Bulletin Digest - June 2026</h3>
       <p class="card-desc">
-        Iran shock enters month two: Brent at $109, Strait of Hormuz near-halt, INR at &#8377;93.21 (4-year low), and RBI April 8 MPC holding at 5.25%. Oil deep-dive triggered; sectoral matrix not triggered.
+        A visual read of the June 2026 Bulletin: the MPC holds the repo at 5.25% (neutral) as the West Asia conflict lifts the inflation outlook to 5.1% for FY27; growth resilient at 7.7%, banks healthy with NPAs at multi-decade lows, and five new measures to attract foreign capital.
       </p>
-    </a>
-
-    <a href="MacroReport_31Mar2026.html" class="update-card" style="animation-delay:0.25s">
-      <div class="card-meta">
-        <span class="card-date">31 Mar 2026</span>
-        <span class="card-tag macro-tag">Macro</span>
-        <span class="card-tag macro-tag">Oil</span>
-        <span class="card-tag macro-tag">Geopolitics</span>
-      </div>
-      <h3 class="card-title">India Macro Intelligence — March 2026</h3>
-      <p class="card-desc">Monthly tracker: US-Israel strikes on Iran spike Brent to $119/bbl — Fed on hold at 3.50–3.75%, RBI paused at 5.25%, with all six macro variables repricing around the oil shock. Includes triggered Oil deep-dive and Q1 Sectoral matrix.</p>
     </a>
 
   </div>
@@ -281,7 +249,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-
 <footer class="footer">
   <div class="ft-name">S. Triyambaka Patro, CA</div>
   <div class="ft-firm">YouWe Quest LLP</div>
-  <div class="ft-note">For informational purposes only — does not constitute investment or financial advice.</div>
+  <div class="ft-note">Educational summary of the RBI Bulletin - does not constitute investment, tax or financial advice.</div>
 </footer>
 
 <script>

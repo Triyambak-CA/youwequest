@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBI Bulletin June 2026 - Visual Digest | YouWe Quest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",t);})()</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+--bg:#070c12;--bg2:#0d1520;--bg3:#111d2b;
+--text:#e8dfc8;--text2:#9aabb8;--text3:#5c7080;
+--border:rgba(184,150,62,0.15);
+--gold:#B8963E;
+--blue:#378ADD;
+--red:#d45050;
+--macro:#5EBF8C;--macro-dim:rgba(94,191,140,0.12);--macro-border:rgba(94,191,140,0.25);
+--grid:rgba(154,171,184,0.10);--tick:rgba(154,171,184,0.7);
+}
+[data-theme="light"]{
+--bg:#f4f1eb;--bg2:#ede9e0;--bg3:#e6e1d6;
+--text:#1a1410;--text2:#4a4030;--text3:#8a7a60;
+--border:rgba(140,109,26,0.18);
+--gold:#8C6D1A;
+--blue:#2166B0;
+--red:#B23B3B;
+--macro:#1E7A50;--macro-dim:rgba(30,122,80,0.08);--macro-border:rgba(30,122,80,0.2);
+--grid:rgba(60,60,60,0.10);--tick:rgba(74,64,48,0.7);
+}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;font-size:15px;line-height:1.65;min-height:100vh;overflow-x:hidden}
+
+.orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.18;z-index:0;pointer-events:none}
+.orb1{width:600px;height:600px;background:var(--macro);top:-200px;right:-100px}
+.orb2{width:400px;height:400px;background:var(--gold);bottom:10%;left:-150px;opacity:.10}
+.orb3{width:300px;height:300px;background:var(--blue);top:50%;left:40%;opacity:.06}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.75rem 2rem;background:rgba(7,12,18,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+[data-theme="light"] nav{background:rgba(244,241,235,.88)}
+.nav-brand{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-brand span{color:var(--macro)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-tag{font-size:.72rem;color:var(--text2);letter-spacing:.03em;text-decoration:none;border:1px solid var(--border);padding:.3rem .75rem;border-radius:20px;transition:color .2s,border-color .2s}
+.nav-tag:hover{color:var(--macro);border-color:var(--macro-border)}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--text2);transition:all .2s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:var(--macro-border);color:var(--macro);background:var(--macro-dim)}
+.theme-toggle svg{width:15px;height:15px}
+[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.14)}
+
+.page{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+.cover{margin-bottom:1.75rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.cover-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--macro);margin-bottom:.5rem}
+.cover-title{font-family:"Cormorant Garamond",serif;font-size:2.15rem;font-weight:500;line-height:1.15;color:var(--text);margin-bottom:.45rem}
+.cover-sub{font-size:.85rem;color:var(--text2);margin-bottom:1rem}
+.cover-badges{display:flex;flex-wrap:wrap;gap:.5rem}
+.badge{font-size:.7rem;font-weight:500;padding:.2rem .65rem;border-radius:20px;border:1px solid var(--border);color:var(--text3)}
+.badge-g{border-color:var(--macro-border);background:var(--macro-dim);color:var(--macro)}
+
+.hero{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:.6rem}
+.kpi{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;position:relative;overflow:hidden}
+.kpi::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent,var(--gold))}
+.kpi-v{font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:600;color:var(--text);line-height:1}
+.kpi-l{font-size:.72rem;color:var(--text2);margin-top:5px}
+.kpi-s{font-size:.66rem;color:var(--text3);margin-top:3px}
+.read{font-size:.8rem;color:var(--text2);margin:.9rem 0 1.5rem;padding:.7rem .95rem;border-left:3px solid var(--macro);background:var(--macro-dim);border-radius:0 8px 8px 0;line-height:1.55}
+.read b{color:var(--text)}
+
+.tabs-wrap{margin-bottom:1.6rem;position:sticky;top:52px;z-index:90;background:var(--bg);padding:.5rem 0;border-bottom:1px solid var(--border)}
+.tab-group{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.tab{padding:.3rem .85rem;border-radius:20px;font-size:.76rem;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text2);font-family:"DM Sans",sans-serif;transition:all .15s}
+.tab:hover{border-color:var(--macro-border);color:var(--macro)}
+.tab.active{background:var(--bg3);color:var(--text);border-color:rgba(184,150,62,.35);font-weight:500}
+
+.sec{display:none;animation:fadeUp .3s ease both}
+.sec.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.sec-head{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem}
+.sec-num{font-size:.7rem;color:var(--text3)}
+.sec-title{font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:500;color:var(--text);margin:0}
+.sec-pill{font-size:.68rem;font-weight:500;padding:.15rem .6rem;border-radius:10px}
+.pill-amber{background:rgba(184,150,62,.12);border:1px solid rgba(184,150,62,.3);color:var(--gold)}
+.pill-green{background:var(--macro-dim);border:1px solid var(--macro-border);color:var(--macro)}
+.pill-red{background:rgba(212,80,80,.08);border:1px solid rgba(212,80,80,.25);color:var(--red)}
+.pill-blue{background:rgba(55,138,221,.08);border:1px solid rgba(55,138,221,.25);color:var(--blue)}
+.sec-desc{font-size:.85rem;color:var(--text2);line-height:1.6;margin:.5rem 0 1.1rem}
+
+.block-title{font-size:.82rem;font-weight:500;color:var(--text);text-transform:uppercase;letter-spacing:.05em;margin:1.4rem 0 .7rem;display:flex;align-items:center;gap:.5rem}
+.block-title::before{content:"";width:14px;height:2px;background:var(--gold);border-radius:1px}
+
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:.9rem 0}
+.metrics-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.metrics-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.metric{background:var(--bg2);border-radius:8px;padding:.8rem .85rem;border:1px solid var(--border)}
+.metric-label{font-size:.68rem;color:var(--text2);margin-bottom:4px;line-height:1.3}
+.metric-value{font-size:1.15rem;font-weight:600;color:var(--text);font-family:"Cormorant Garamond",serif}
+.metric-sub{font-size:.66rem;color:var(--text3);margin-top:3px;line-height:1.35}
+.mv-red{color:var(--red)}
+.mv-green{color:var(--macro)}
+.mv-amber{color:var(--gold)}
+.mv-blue{color:var(--blue)}
+
+.chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem 1.1rem 1.1rem;margin:.9rem 0}
+.chart-hd{font-size:.82rem;font-weight:500;color:var(--text);margin-bottom:2px}
+.chart-sub{font-size:.7rem;color:var(--text3);margin-bottom:.7rem}
+.chart-legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.chart-legend span{display:flex;align-items:center;gap:5px;font-size:.7rem;color:var(--text2)}
+.chart-legend i{display:inline-block;width:14px;height:3px;border-radius:2px}
+.chart-legend i.dash{width:14px;height:0;border-top:2px dashed currentColor;background:none}
+.chart-wrap{position:relative;height:240px}
+.chart-note{font-size:.66rem;color:var(--text3);margin-top:.6rem;line-height:1.45}
+
+.blist{list-style:none;padding:0;margin:.5rem 0 1rem}
+.blist li{display:flex;gap:9px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--border);font-size:.83rem;color:var(--text2);line-height:1.5}
+.blist li:last-child{border-bottom:none}
+.dot{width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0}
+.dot-r{background:var(--red)}
+.dot-g{background:var(--macro)}
+.dot-a{background:var(--gold)}
+.dot-b{background:var(--blue)}
+
+.callout{border-left:3px solid var(--macro);border-radius:0 8px 8px 0;background:var(--macro-dim);border-top:1px solid var(--macro-border);border-bottom:1px solid var(--macro-border);border-right:1px solid var(--macro-border);padding:.8rem 1rem;margin:1rem 0}
+.callout-label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--macro);margin-bottom:6px}
+.callout p{font-size:.82rem;color:var(--text);line-height:1.55;margin:0}
+.callout.amber{border-color:rgba(184,150,62,.35);background:rgba(184,150,62,.07)}
+.callout.amber .callout-label{color:var(--gold)}
+.callout.red{border-left-color:var(--red);border-color:rgba(212,80,80,.25);background:rgba(212,80,80,.06)}
+.callout.red .callout-label{color:var(--red)}
+
+.corridor{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.4rem 1.5rem;margin:1rem 0}
+.corridor-scale{position:relative;height:52px;margin:2.6rem 1.2rem 1.2rem}
+.corridor-bar{position:absolute;top:22px;left:0;right:0;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--macro),var(--gold),var(--red))}
+.corridor-dot{width:14px;height:14px;border-radius:50%;border:3px solid var(--bg2);position:absolute;top:19px;transform:translateX(-50%)}
+.corridor-lab{position:absolute;transform:translateX(-50%);font-size:.7rem;white-space:nowrap;text-align:center}
+.corridor-lab .v{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:600;display:block;line-height:1}
+.corridor-lab .n{font-size:.64rem;color:var(--text3)}
+
+.tbl{width:100%;border-collapse:collapse;font-size:.8rem;margin:.9rem 0}
+.tbl th{text-align:left;padding:7px 11px;font-size:.68rem;font-weight:500;color:var(--text3);border-bottom:1px solid var(--border);background:var(--bg2)}
+.tbl td{padding:8px 11px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td b,.tbl td strong{color:var(--text);font-weight:600}
+.tag{font-size:.64rem;font-weight:500;padding:2px 7px;border-radius:6px;white-space:nowrap;display:inline-block}
+.tag-g{background:var(--macro-dim);color:var(--macro);border:1px solid var(--macro-border)}
+.tag-a{background:rgba(184,150,62,.1);color:var(--gold);border:1px solid rgba(184,150,62,.25)}
+.tag-r{background:rgba(212,80,80,.08);color:var(--red);border:1px solid rgba(212,80,80,.2)}
+.tag-b{background:rgba(55,138,221,.08);color:var(--blue);border:1px solid rgba(55,138,221,.2)}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:.6rem 0 1rem}
+.pchip{font-size:.74rem;padding:.3rem .7rem;border-radius:8px;border:1px solid var(--macro-border);background:var(--macro-dim);color:var(--macro)}
+
+.mlist{list-style:none;padding:0;margin:.7rem 0}
+.mitem{display:flex;gap:12px;padding:.7rem 0;border-bottom:1px solid var(--border)}
+.mitem:last-child{border-bottom:none}
+.mnum{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--macro-dim);border:1px solid var(--macro-border);color:var(--macro);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;font-family:"Cormorant Garamond",serif}
+.mtext{font-size:.82rem;color:var(--text2);line-height:1.5}
+.mtext b{color:var(--text)}
+
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:1rem 0}
+.aud-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem}
+.aud-card h4{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:600;color:var(--text);margin-bottom:.2rem}
+.aud-verdict{font-size:.7rem;padding:.15rem .55rem;border-radius:8px;display:inline-block;margin-bottom:.6rem}
+.aud-card ul{list-style:none;padding:0;margin:0}
+.aud-card li{display:flex;gap:7px;align-items:flex-start;font-size:.78rem;color:var(--text2);padding:3px 0;line-height:1.4}
+.aud-card li .d{width:4px;height:4px;border-radius:50%;margin-top:7px;flex-shrink:0}
+
+.speech{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.3rem;margin:1rem 0}
+.dim{display:flex;gap:13px;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.dim:last-child{border-bottom:none}
+.dim-n{flex-shrink:0;font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;color:var(--gold);width:26px;line-height:1.2}
+.dim-b h5{font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.dim-b p{font-size:.78rem;color:var(--text2);line-height:1.5;margin:0}
+.quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;color:var(--text);line-height:1.4;padding:.6rem 0 .2rem;border-top:1px solid var(--border);margin-top:.6rem}
+.quote span{color:var(--text3);font-size:.75rem;font-style:normal;font-family:"DM Sans",sans-serif;display:block;margin-top:.3rem}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:.5rem 0}
+
+.footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.72rem;color:var(--text3);line-height:1.6}
+.footer b{color:var(--text2)}
+
+@media (max-width:720px){
+.hero{grid-template-columns:repeat(2,1fr)}
+.metrics{grid-template-columns:repeat(2,1fr)}
+.metrics-3{grid-template-columns:repeat(2,1fr)}
+.aud{grid-template-columns:1fr}
+.two{grid-template-columns:1fr}
+.cover-title{font-size:1.6rem}
+nav{padding:.6rem 1rem}
+.page{padding:1.25rem 1rem 3rem}
+.tabs-wrap{top:49px}
+}
+</style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">YouWe Quest<span>.</span></a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-tag">&larr; All RBI digests</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">Reserve Bank of India &middot; Monthly Bulletin</div>
+    <h1 class="cover-title">RBI Bulletin - June 2026</h1>
+    <div class="cover-sub">Volume LXXX, Number 6 &middot; A visual digest of the monetary policy, banking and macro-economic outlook &middot; YouWe Quest LLP</div>
+    <div class="cover-badges">
+      <span class="badge badge-g">Repo held at 5.25%</span>
+      <span class="badge">Neutral stance</span>
+      <span class="badge">61st MPC meeting</span>
+      <span class="badge">Next review: 3-5 Aug 2026</span>
+    </div>
+  </div>
+
+  <!-- KPI HERO -->
+  <div class="hero">
+    <div class="kpi" style="--accent:var(--gold)">
+      <div class="kpi-v">5.25%</div>
+      <div class="kpi-l">Policy repo rate</div>
+      <div class="kpi-s">Unchanged &middot; neutral stance</div>
+    </div>
+    <div class="kpi" style="--accent:var(--blue)">
+      <div class="kpi-v">6.6%</div>
+      <div class="kpi-l">Real GDP forecast, FY27</div>
+      <div class="kpi-s">FY26 actual: 7.7%</div>
+    </div>
+    <div class="kpi" style="--accent:var(--red)">
+      <div class="kpi-v">5.1%</div>
+      <div class="kpi-l">CPI inflation forecast, FY27</div>
+      <div class="kpi-s">Q3 peak: 5.9%</div>
+    </div>
+    <div class="kpi" style="--accent:var(--macro)">
+      <div class="kpi-v">$682B</div>
+      <div class="kpi-l">Forex reserves (29 May)</div>
+      <div class="kpi-s">Import cover: ~11 months</div>
+    </div>
+  </div>
+  <div class="read"><b>Overall read: cautiously optimistic.</b> The Indian economy entered this bout of global turbulence with strong fundamentals. Growth stays resilient (FY26 closed at 7.7%) and banks are healthy, but a lingering West Asia conflict, higher energy prices and a sub-normal monsoon forecast have pushed the inflation outlook up and trimmed growth versus the April policy. The RBI has chosen to wait and watch. Message for businesses and households: plan for growth, but protect margins, pricing and working capital.</div>
+
+  <!-- TABS -->
+  <div class="tabs-wrap">
+    <div class="tab-group">
+      <button class="tab active" onclick="sw('overview',this)">Overview</button>
+      <button class="tab" onclick="sw('policy',this)">Monetary policy</button>
+      <button class="tab" onclick="sw('growth',this)">Growth</button>
+      <button class="tab" onclick="sw('inflation',this)">Inflation</button>
+      <button class="tab" onclick="sw('external',this)">External &amp; fiscal</button>
+      <button class="tab" onclick="sw('banking',this)">Banking &amp; finance</button>
+      <button class="tab" onclick="sw('you',this)">What it means for you</button>
+    </div>
+  </div>
+
+  <!-- ============ OVERVIEW ============ -->
+  <div class="sec active" id="s-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">The June 2026 Bulletin at a glance</h2><span class="sec-pill pill-green">Steady policy</span></div>
+    <p class="sec-desc">The June Bulletin carries the bi-monthly monetary policy (Governor's Statement and the MPC resolution), a Deputy Governor's speech on banking resilience, and the flagship "State of the Economy" article. The through-line: India is strong enough to absorb the current shocks, but the cost pressure from energy and supply chains is becoming visible and warrants a close watch.</p>
+
+    <div class="block-title">What changed since the April policy</div>
+    <table class="tbl">
+      <thead><tr><th>Driver</th><th>Direction</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td><b>West Asia conflict</b></td><td><span class="tag tag-r">Deteriorated</span></td><td>Lingers amidst a fragile truce; supply-chain and energy spillovers have amplified</td></tr>
+        <tr><td><b>Crude oil</b></td><td><span class="tag tag-r">Higher</span></td><td>Indian basket averaged ~$110/bbl in Apr-May (peak $114.5 in April); FY27 assumption raised</td></tr>
+        <tr><td><b>Inflation</b></td><td><span class="tag tag-a">Firming</span></td><td>CPI rose to 3.9% in May; FY27 projection raised to 5.1%, with a Q3 peak of 5.9%</td></tr>
+        <tr><td><b>Growth projection</b></td><td><span class="tag tag-a">Trimmed</span></td><td>FY27 GDP held at 6.6% but with incipient signs of moderation in some sectors</td></tr>
+        <tr><td><b>Monsoon</b></td><td><span class="tag tag-r">Below normal</span></td><td>IMD forecast 90% of LPA; El Nino risk flagged for the season</td></tr>
+        <tr><td><b>Banking system</b></td><td><span class="tag tag-g">Healthy</span></td><td>NPAs at multi-decade lows, strong capital; profitability easing modestly</td></tr>
+      </tbody>
+    </table>
+
+    <div class="block-title">The four things to know</div>
+    <ul class="blist">
+      <li><span class="dot dot-a"></span><b style="color:var(--text)">Rates on hold, stance neutral.</b>&nbsp; The MPC voted unanimously to keep the repo at 5.25% after a cumulative 125 bps of easing since Feb 2025. It wants greater clarity before its next move.</li>
+      <li><span class="dot dot-g"></span><b style="color:var(--text)">Growth is resilient, not immune.</b>&nbsp; FY26 closed at 7.7% (Q4 at 7.8%); FY27 is projected at 6.6%. Consumption and investment are holding, but cost pressures are starting to show.</li>
+      <li><span class="dot dot-r"></span><b style="color:var(--text)">Inflation risk has moved to H2.</b>&nbsp; Headline CPI is still below target (3.9% in May) but is expected to firm towards the upper tolerance band by Q3 FY27 as energy pass-through builds.</li>
+      <li><span class="dot dot-b"></span><b style="color:var(--text)">Buffers are strong, deficits contained.</b>&nbsp; Record FDI, $682bn reserves, a 0.6%-of-GDP current-account deficit and a 4.4% central fiscal deficit cushion the economy against volatility.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Bottom line for decision-makers</div>
+      <p>Borrowing-cost assumptions can stay stable for near-term planning and demand conditions support sales and capacity use. But input-cost, fuel, food and logistics pressure should now be monitored more actively. Invest selectively, protect margins, and stress-test working capital. Global growth was itself downgraded (World Bank now sees 2.9% for 2026), with India still the fastest-growing large economy.</p>
+    </div>
+  </div>
+
+  <!-- ============ MONETARY POLICY ============ -->
+  <div class="sec" id="s-policy">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Monetary policy snapshot</h2><span class="sec-pill pill-green">Repo 5.25% &middot; neutral</span></div>
+    <p class="sec-desc">At its 61st meeting (3-5 June 2026), the Monetary Policy Committee voted <b>unanimously</b> to keep the policy repo rate unchanged and to retain the neutral stance. With risks to both inflation and growth having risen, the committee judged it prudent to wait for greater clarity rather than act. The next meeting is scheduled for 3-5 August 2026.</p>
+
+    <div class="block-title">The liquidity corridor</div>
+    <div class="corridor">
+      <div class="chart-hd">Policy rate corridor (%)</div>
+      <div class="chart-sub">The repo sits at the centre; SDF is the floor and MSF / Bank Rate the ceiling</div>
+      <div class="corridor-scale">
+        <div class="corridor-bar"></div>
+        <div class="corridor-dot" style="left:0%;background:var(--macro)"></div>
+        <div class="corridor-dot" style="left:50%;background:var(--gold);width:18px;height:18px;top:17px"></div>
+        <div class="corridor-dot" style="left:100%;background:var(--red)"></div>
+        <div class="corridor-lab" style="left:0%;top:-18px"><span class="v" style="color:var(--macro)">5.00%</span><span class="n">SDF (floor)</span></div>
+        <div class="corridor-lab" style="left:50%;top:-24px"><span class="v" style="color:var(--gold)">5.25%</span><span class="n">Repo rate</span></div>
+        <div class="corridor-lab" style="left:100%;top:-18px"><span class="v" style="color:var(--red)">5.50%</span><span class="n">MSF / Bank Rate</span></div>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">Repo rate</div><div class="metric-value">5.25%</div><div class="metric-sub">No change</div></div>
+      <div class="metric"><div class="metric-label">Cumulative easing</div><div class="metric-value mv-green">125 bps</div><div class="metric-sub">Feb 2025 to Apr 2026</div></div>
+      <div class="metric"><div class="metric-label">MPC vote</div><div class="metric-value">6-0</div><div class="metric-sub">Unanimous, hold</div></div>
+      <div class="metric"><div class="metric-label">Stance</div><div class="metric-value">Neutral</div><div class="metric-sub">Data dependent</div></div>
+    </div>
+
+    <div class="block-title">Rationale for holding</div>
+    <ul class="blist">
+      <li><span class="dot dot-r"></span>The global environment has deteriorated since April; the West Asia conflict lingers amidst a fragile truce, with adverse spillovers via supply chains and energy prices.</li>
+      <li><span class="dot dot-a"></span>Headline inflation is projected to firm towards the upper tolerance level in Q3 FY27, but the supply shock is expected to wane from Q4; underlying pressures remain benign.</li>
+      <li><span class="dot dot-a"></span>Second-round effects on expectations and wages are a distinct possibility, warranting a close vigil before any policy action.</li>
+      <li><span class="dot dot-g"></span>Domestic demand is resilient and manufacturing and services keep expanding, though high-frequency indicators show incipient moderation in some sectors.</li>
+      <li><span class="dot dot-b"></span>With risks amplified but the outlook uncertain, the MPC chose to remain data-dependent and monitor whether supply pressures embed into the general price level.</li>
+    </ul>
+
+    <div class="block-title">Liquidity and transmission</div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">Avg LAF surplus</div><div class="metric-value">&#8377;2.63L cr</div><div class="metric-sub">Since April MPC</div></div>
+      <div class="metric"><div class="metric-label">Credit (all sources)</div><div class="metric-value mv-green">15.4%</div><div class="metric-sub">FY26, up from 12.1%</div></div>
+      <div class="metric"><div class="metric-label">Bank credit growth</div><div class="metric-value mv-green">16.2%</div><div class="metric-sub">as on 15 May 2026</div></div>
+      <div class="metric"><div class="metric-label">Fresh-loan WALR</div><div class="metric-value mv-green">-83 bps</div><div class="metric-sub">Feb 2025-Apr 2026 easing</div></div>
+    </div>
+    <div class="callout">
+      <div class="callout-label">In plain terms</div>
+      <p>Banks are flush with liquidity and are lending actively, and past rate cuts have transmitted into cheaper loans (fresh lending rate down 83 bps, fresh deposit rate down 85 bps over the easing cycle). Borrowers benefit from a stable, well-supplied credit environment, though some deposit and lending rates hardened in March-April as market funding turned costlier.</p>
+    </div>
+  </div>
+
+  <!-- ============ GROWTH ============ -->
+  <div class="sec" id="s-growth">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Growth remains resilient</h2><span class="sec-pill pill-green">FY26: 7.7%</span></div>
+    <p class="sec-desc">Provisional Estimates place FY26 real GDP growth at 7.7% (up from 7.1% in FY25), with Q4 at 7.8%, driven by strong private consumption and double-digit fixed investment, and led by industry and services on the supply side. For FY27, the MPC projects growth at 6.6%, with a gentle profile through the year. Prolonged supply-chain disruption, financial-market volatility and weather remain the downside risks.</p>
+
+    <div class="chart-card">
+      <div class="chart-hd">Real GDP growth: actual and RBI projection (y-o-y, %)</div>
+      <div class="chart-sub">Quarterly actuals (Provisional Estimates) through Q4 FY26, then the MPC's FY27 projection</div>
+      <div class="chart-legend">
+        <span><i style="background:var(--gold)"></i>Actual</span>
+        <span style="color:var(--gold)"><i class="dash"></i>RBI projection (FY27)</span>
+      </div>
+      <div class="chart-wrap"><canvas id="gdpChart"></canvas></div>
+      <div class="chart-note">Source: State of the Economy, Annex Table 1 (actuals) and the June 2026 MPC resolution (FY27 projection: Q1 6.6%, Q2 6.3%, Q3 6.5%, Q4 6.8%). The MPC's own commentary referenced the earlier Second Advance Estimate of 7.6% for FY26.</div>
+    </div>
+
+    <div class="block-title">High-frequency activity: still expanding</div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">Services PMI (May)</div><div class="metric-value mv-green">59.8</div><div class="metric-sub">Up from 58.8 in April</div></div>
+      <div class="metric"><div class="metric-label">Manufacturing PMI (May)</div><div class="metric-value mv-green">55.0</div><div class="metric-sub">Up from 54.7 in April</div></div>
+      <div class="metric"><div class="metric-label">Capacity utilisation</div><div class="metric-value">75.2%</div><div class="metric-sub">Q4 FY26, above 74.0% avg</div></div>
+      <div class="metric"><div class="metric-label">Unemployment (Apr)</div><div class="metric-value">5.2%</div><div class="metric-sub">PLFS, remains low</div></div>
+      <div class="metric"><div class="metric-label">GST e-way bills (May)</div><div class="metric-value mv-green">+10.9%</div><div class="metric-sub">Freight momentum</div></div>
+      <div class="metric"><div class="metric-label">Retail PV sales (May)</div><div class="metric-value mv-green">+23.2%</div><div class="metric-sub">Urban demand strong</div></div>
+      <div class="metric"><div class="metric-label">Rural tractor sales (Feb)</div><div class="metric-value mv-green">double digit</div><div class="metric-sub">Rural demand holding</div></div>
+      <div class="metric"><div class="metric-label">Urban consumer confidence</div><div class="metric-value mv-green">118.7</div><div class="metric-sub">Future expectations index</div></div>
+    </div>
+
+    <div class="two">
+      <div>
+        <div class="block-title">Growth drivers</div>
+        <ul class="blist">
+          <li><span class="dot dot-g"></span>Resilient private consumption, aided by discretionary spending</li>
+          <li><span class="dot dot-g"></span>Fixed investment holding momentum (Q4 FY26 +10.8%)</li>
+          <li><span class="dot dot-g"></span>Robust manufacturing and services activity (each ~9% GVA)</li>
+          <li><span class="dot dot-g"></span>Government capex budgeted to grow 11.5% in FY27</li>
+          <li><span class="dot dot-g"></span>Continuing impact of GST rationalisation</li>
+          <li><span class="dot dot-g"></span>Strong merchandise and services exports</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Downside risks</div>
+        <ul class="blist">
+          <li><span class="dot dot-r"></span>Rising energy and input prices weighing on activity</li>
+          <li><span class="dot dot-r"></span>Prolonged global supply-chain disruption</li>
+          <li><span class="dot dot-r"></span>Volatility in global financial markets</li>
+          <li><span class="dot dot-r"></span>Sub-normal monsoon hitting agriculture and rural demand</li>
+          <li><span class="dot dot-r"></span>Weak global demand and high logistics costs for exporters</li>
+          <li><span class="dot dot-r"></span>Some moderation in consumer confidence and toll volumes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ INFLATION ============ -->
+  <div class="sec" id="s-inflation">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Inflation risk shifts to the second half</h2><span class="sec-pill pill-amber">FY27: 5.1%</span></div>
+    <p class="sec-desc">Headline CPI stayed below the 4% target in early 2026 as the pass-through to domestic prices was limited, but it edged up to 3.9% in May on a broad-based rise across food, fuel and core. With crude near $110/bbl, a WPI spike to 9.7% and retail fuel-price hikes from May, CPI is projected to climb towards the upper tolerance band by Q3 FY27 before easing. Core inflation stays contained, so the risk is supply-side, not demand-side.</p>
+
+    <div class="chart-card">
+      <div class="chart-hd">CPI inflation: recent trend and RBI projection (y-o-y, %)</div>
+      <div class="chart-sub">Monthly actuals Jan-May 2026, then the MPC's FY27 quarterly projection; RBI target 4% (+/- 2%)</div>
+      <div class="chart-legend">
+        <span><i style="background:var(--gold)"></i>Headline CPI (actual)</span>
+        <span style="color:var(--gold)"><i class="dash"></i>Projection (FY27, quarterly)</span>
+        <span style="color:var(--macro)"><i class="dash"></i>Target 4%</span>
+        <span style="color:var(--red)"><i class="dash"></i>Upper tolerance 6%</span>
+      </div>
+      <div class="chart-wrap"><canvas id="cpiChart"></canvas></div>
+      <div class="chart-note">Source: State of the Economy (monthly actuals) and June 2026 MPC resolution. FY27 projection: Q1 4.2%, Q2 5.1%, Q3 5.9% (peak), Q4 5.4%. Core inflation projected at 4.7% for FY27.</div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-hd">Inflation by measure, May 2026 (y-o-y, %)</div>
+      <div class="chart-sub">The gap between a still-muted CPI and a spiking WPI shows input-cost pressure not yet passed to consumers</div>
+      <div class="chart-wrap" style="height:210px"><canvas id="inflCompChart"></canvas></div>
+      <div class="chart-note">WPI jumped to 9.7% in May (from 8.3% in April), its highest in the 2022-23 base series since April 2024, led by a 30.3% fuel-and-power group. Core CPI excluding precious metals was much lower at 2.3%, confirming contained demand pressure.</div>
+    </div>
+
+    <div class="two">
+      <div>
+        <div class="block-title">Primary risk channels</div>
+        <ul class="blist">
+          <li><span class="dot dot-r"></span>Higher crude oil prices (Indian basket ~$110/bbl in Apr-May)</li>
+          <li><span class="dot dot-r"></span>West Asia conflict and shipping / logistics disruption</li>
+          <li><span class="dot dot-r"></span>Global commodity price shock (World Bank index +40.6% y-o-y in May)</li>
+          <li><span class="dot dot-r"></span>Sub-normal monsoon and El Nino conditions</li>
+          <li><span class="dot dot-r"></span>Fuel and food price pass-through to retail (vegetables rose sharply in June)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Comforting signals</div>
+        <ul class="blist">
+          <li><span class="dot dot-g"></span>Core inflation still contained; demand pressures muted</li>
+          <li><span class="dot dot-g"></span>Supply shock expected to wane from Q4 FY27</li>
+          <li><span class="dot dot-g"></span>Record foodgrain output (376.6 mt) and ample buffer stocks</li>
+          <li><span class="dot dot-g"></span>Satisfactory reservoir levels</li>
+          <li><span class="dot dot-g"></span>Crude eased below $80 after the mid-June peace deal</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout amber">
+      <div class="callout-label">The pass-through has begun</div>
+      <p>Petrol and diesel prices were raised cumulatively by 7.4% and 8.4% in May, contributing about 36 basis points directly to headline CPI, with further hikes in June. Prices of commercial LPG, industrial raw materials, chemicals, base metals, rubber and plastics have also risen. As firms pass on these input costs, expect upward pressure on CPI in the coming months.</p>
+    </div>
+  </div>
+
+  <!-- ============ EXTERNAL & FISCAL ============ -->
+  <div class="sec" id="s-external">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">External buffers strong, deficits contained</h2><span class="sec-pill pill-green">Reserves $682B</span></div>
+    <p class="sec-desc">India's external position navigated elevated tariff and trade uncertainty in FY26. Record gross FDI and rising net FDI underscore continued global interest, reserves cover about 11 months of imports, and both the current-account deficit (0.6% of GDP) and the central fiscal deficit (4.4%) are contained. Temporary FPI equity outflows and rupee pressure are being watched, but had begun to reverse by mid-June. The Governor announced five new measures to attract foreign capital.</p>
+
+    <div class="chart-card">
+      <div class="chart-hd">Foreign direct investment: FY26 vs FY25 (US$ billion)</div>
+      <div class="chart-sub">Gross FDI reached a historical peak; net FDI multiplied off a low base</div>
+      <div class="chart-legend">
+        <span><i style="background:var(--blue)"></i>FY 2024-25</span>
+        <span><i style="background:var(--gold)"></i>FY 2025-26</span>
+      </div>
+      <div class="chart-wrap" style="height:200px"><canvas id="fdiChart"></canvas></div>
+      <div class="chart-note">Source: Governor's Statement, June 2026. Gross FDI +17.3% to a record $94.5bn; net FDI rose to $7.7bn from $1.0bn.</div>
+    </div>
+
+    <div class="block-title">Macro balances scorecard</div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">Forex reserves</div><div class="metric-value">$682B</div><div class="metric-sub">29 May; ~11 months cover</div></div>
+      <div class="metric"><div class="metric-label">Current-account deficit</div><div class="metric-value mv-green">0.6%</div><div class="metric-sub">of GDP, FY26</div></div>
+      <div class="metric"><div class="metric-label">Centre fiscal deficit</div><div class="metric-value mv-green">4.4%</div><div class="metric-sub">of GDP, FY26 (from 4.9%)</div></div>
+      <div class="metric"><div class="metric-label">Net FDI (April)</div><div class="metric-value mv-green">$6.6B</div><div class="metric-sub">vs $1.6B a year ago</div></div>
+      <div class="metric"><div class="metric-label">Net FPI (FY27 so far)</div><div class="metric-value mv-red">-$12.5B</div><div class="metric-sub">Mainly equity; turned +ve mid-June</div></div>
+      <div class="metric"><div class="metric-label">Merch. trade deficit (May)</div><div class="metric-value">$28.2B</div><div class="metric-sub">Exports +18%, imports +21%</div></div>
+      <div class="metric"><div class="metric-label">USD / INR</div><div class="metric-value">~94.4</div><div class="metric-sub">vs ~85.6 a year ago</div></div>
+      <div class="metric"><div class="metric-label">Net services exports (Apr)</div><div class="metric-value mv-green">$18.6B</div><div class="metric-sub">+16.8% y-o-y</div></div>
+    </div>
+
+    <div class="two">
+      <div>
+        <div class="block-title">Trade agreements in play</div>
+        <ul class="blist">
+          <li><span class="dot dot-g"></span>Signed: United Kingdom, New Zealand</li>
+          <li><span class="dot dot-g"></span>In effect: EFTA (Oct 2025), Oman (Jun 2026)</li>
+          <li><span class="dot dot-g"></span>Concluded: European Union</li>
+          <li><span class="dot dot-a"></span>Interim US deal (Feb 2026); re-negotiations ongoing</li>
+          <li><span class="dot dot-b"></span>In pipeline: Canada, Peru, Mexico, Bahrain, Qatar, South Korea</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Structural positives</div>
+        <ul class="blist">
+          <li><span class="dot dot-g"></span>Insurance sector opened to 100% FDI</li>
+          <li><span class="dot dot-g"></span>Liberalised ECB framework</li>
+          <li><span class="dot dot-g"></span>Ethanol blending and energy-transition push</li>
+          <li><span class="dot dot-g"></span>Services trade surplus and remittances</li>
+          <li><span class="dot dot-g"></span>Credible fiscal consolidation by the Centre</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block-title">Five new measures to attract foreign capital</div>
+    <ul class="mlist">
+      <li class="mitem"><span class="mnum">1</span><span class="mtext"><b>Wider FAR universe.</b> All new 15-, 30- and 40-year G-Secs added as "specified securities" under the Fully Accessible Route; short-term, concentration and individual-security limits for FPIs under the General Route removed. FPIs are also exempted from LTCG and withholding tax on G-Sec interest.</span></li>
+      <li class="mitem"><span class="mnum">2</span><span class="mtext"><b>Higher NRI / OCI equity limits.</b> Investment limits for NRIs and OCIs in stock-market equity (without SEBI registration) raised, and the facility extended to all individual Persons Resident Outside India at par.</span></li>
+      <li class="mitem"><span class="mnum">3</span><span class="mtext"><b>Concessional forex swap for PSU ECBs.</b> A concessional foreign-exchange swap facility offered till 30 September 2026 to incentivise external commercial borrowings by public-sector undertakings.</span></li>
+      <li class="mitem"><span class="mnum">4</span><span class="mtext"><b>Hedging support on FCNR(B).</b> RBI to bear the full hedging cost till 30 September 2026 for AD banks raising fresh 3-5 year FCNR(B) deposits.</span></li>
+      <li class="mitem"><span class="mnum">5</span><span class="mtext"><b>Export realisation window restored.</b> The time to realise export proceeds restored to nine months, easing exporter cash flows.</span></li>
+    </ul>
+  </div>
+
+  <!-- ============ BANKING & FINANCE ============ -->
+  <div class="sec" id="s-banking">
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Banking &amp; financial stability</h2><span class="sec-pill pill-green">NPAs at multi-decade lows</span></div>
+    <p class="sec-desc">System-level parameters for banks and NBFCs remain healthy on capital, liquidity and asset quality, with only a modest easing in profitability. Credit growth is broad-based and outpacing deposits. This strength is the theme of the Bulletin's featured speech, which argues that resilience is not automatic but must be deliberately designed before it is tested.</p>
+
+    <div class="two">
+      <div class="chart-card">
+        <div class="chart-hd">Bank asset quality: improving (%)</div>
+        <div class="chart-sub">Scheduled Commercial Banks, March</div>
+        <div class="chart-legend">
+          <span><i style="background:var(--blue)"></i>Mar 2025</span>
+          <span><i style="background:var(--gold)"></i>Mar 2026</span>
+        </div>
+        <div class="chart-wrap" style="height:190px"><canvas id="assetChart"></canvas></div>
+        <div class="chart-note">GNPA fell to 1.73% (from 2.22%); NNPA to 0.40% (from 0.50%).</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-hd">Credit growth: accelerating (y-o-y, %)</div>
+        <div class="chart-sub">Year-ago vs latest</div>
+        <div class="chart-legend">
+          <span><i style="background:var(--blue)"></i>Year ago</span>
+          <span><i style="background:var(--gold)"></i>Latest</span>
+        </div>
+        <div class="chart-wrap" style="height:190px"><canvas id="creditChart"></canvas></div>
+        <div class="chart-note">Credit from all sources 15.4% (from 12.1%); bank credit 16.2% (from 9.8%).</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-hd">Where bank credit is flowing (y-o-y, %, April 2026)</div>
+      <div class="chart-sub">Sectoral deployment of non-food bank credit; services and personal loans lead</div>
+      <div class="chart-wrap" style="height:190px"><canvas id="sectorCreditChart"></canvas></div>
+      <div class="chart-note">Source: State of the Economy, Chart IV.6. Industrial credit is strengthening on MSMEs and large industry; agricultural credit growing steadily.</div>
+    </div>
+
+    <div class="block-title">System-health scorecard</div>
+    <table class="tbl">
+      <thead><tr><th>Metric</th><th>Scheduled Commercial Banks</th><th>NBFCs</th></tr></thead>
+      <tbody>
+        <tr><td><b>Capital adequacy (CRAR)</b></td><td>17.68% <span class="tag tag-g">well above minimum</span></td><td>24.70% (Tier I 22.86%)</td></tr>
+        <tr><td><b>Gross NPA ratio</b></td><td>1.73% <span class="tag tag-g">from 2.22%</span></td><td>1.83% <span class="tag tag-g">from 2.25%</span></td></tr>
+        <tr><td><b>Net NPA ratio</b></td><td>0.40% (from 0.50%)</td><td>0.81% (from 0.98%)</td></tr>
+        <tr><td><b>Return on assets</b></td><td>1.33%</td><td>2.56% (from 2.90%)</td></tr>
+        <tr><td><b>Net interest margin</b></td><td>3.26% <span class="tag tag-a">from 3.46%</span></td><td>4.56%</td></tr>
+        <tr><td><b>Liquidity coverage (LCR)</b></td><td>123.70%</td><td>-</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber">
+      <div class="callout-label">One watch item</div>
+      <p>Profitability is easing. SCB net-profit growth slowed from 14.67% in FY25 to 6.0% in FY26, with net interest margin compressing 20 bps to 3.26%. Balance sheets are strong, but the earnings tailwind is fading.</p>
+    </div>
+
+    <div class="block-title">Featured speech: "Resilience by Design"</div>
+    <div class="speech">
+      <div class="chart-hd" style="margin-bottom:2px">Lessons from India's Banking Sector</div>
+      <div class="chart-sub">Shri Swaminathan J., Deputy Governor, RBI &middot; Columbia University (SIPA), 1 June 2026</div>
+      <p style="font-size:.82rem;color:var(--text2);line-height:1.55;margin:.6rem 0 .3rem">Central thesis: resilience does not arise automatically from good times; it must be deliberately built <i>before</i> it is tested. India's current banking strength reflects years of policy learning, supervisory vigilance and transparent stress recognition, designed across five dimensions.</p>
+      <div class="dim"><span class="dim-n">1</span><div class="dim-b"><h5>Transparent recognition of stress</h5><p>Risk builds quietly in good times. Recognising it early is unpopular but far cheaper than delay. Timely asset-quality recognition is itself part of the architecture of stability.</p></div></div>
+      <div class="dim"><span class="dim-n">2</span><div class="dim-b"><h5>Balance-sheet strengthening</h5><p>Recognition needs a credible chain of action: better provisioning, recoveries, capital raising and diversification, backed by coordinated public-policy support (IBC, recapitalisation, PSB consolidation).</p></div></div>
+      <div class="dim"><span class="dim-n">3</span><div class="dim-b"><h5>Stronger supervision</h5><p>RBI supervision shifted from point-in-time compliance to a holistic, risk-based, forward-looking assessment, with deeper engagement at Board level to fix root causes, not symptoms.</p></div></div>
+      <div class="dim"><span class="dim-n">4</span><div class="dim-b"><h5>Calibrated, adaptive regulation</h5><p>Modern intermediation crosses banks, NBFCs and fintechs, so regulation must be both entity-aware and activity-aware: where similar activities create similar risks, oversight must stay aligned to the risk.</p></div></div>
+      <div class="dim"><span class="dim-n">5</span><div class="dim-b"><h5>Resilience within banks themselves</h5><p>Frameworks are set by policy, but resilience is embedded in everyday decisions: how banks originate assets, price risk, manage liabilities, govern technology and treat customers.</p></div></div>
+      <div class="quote">"Resilience is not only about withstanding the last shock, but about building the capacity to respond well to the next one."<span>The next phase is less about known balance-sheet stress and more about managing complexity: AI, cyber, third-party and climate risk.</span></div>
+    </div>
+  </div>
+
+  <!-- ============ WHAT IT MEANS FOR YOU ============ -->
+  <div class="sec" id="s-you">
+    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">What it means for you</h2><span class="sec-pill pill-amber">Plan, but protect margins</span></div>
+    <p class="sec-desc">Translating the policy into practical implications for the people who act on it: MSMEs, larger businesses and households. The common thread is a supportive demand and rate environment paired with rising cost discipline.</p>
+
+    <div class="aud">
+      <div class="aud-card">
+        <h4>MSMEs</h4>
+        <span class="aud-verdict tag-g tag">Positive, watch costs</span>
+        <ul>
+          <li><span class="d" style="background:var(--macro)"></span>Stable rates improve planning visibility</li>
+          <li><span class="d" style="background:var(--macro)"></span>Strong consumption supports sales</li>
+          <li><span class="d" style="background:var(--macro)"></span>Investment momentum opens supplier opportunities</li>
+          <li><span class="d" style="background:var(--macro)"></span>Favourable, well-supplied credit conditions</li>
+          <li><span class="d" style="background:var(--red)"></span>Higher raw-material and transport costs</li>
+          <li><span class="d" style="background:var(--red)"></span>Pressure on margins and working capital</li>
+        </ul>
+      </div>
+      <div class="aud-card">
+        <h4>Businesses</h4>
+        <span class="aud-verdict tag-b tag">Selective expansion</span>
+        <ul>
+          <li><span class="d" style="background:var(--macro)"></span>Stable borrowing costs for capex planning</li>
+          <li><span class="d" style="background:var(--macro)"></span>Infrastructure and private investment cycle intact</li>
+          <li><span class="d" style="background:var(--macro)"></span>Resilient export demand for services</li>
+          <li><span class="d" style="background:var(--red)"></span>Input-cost and logistics inflation</li>
+          <li><span class="d" style="background:var(--red)"></span>Currency and commodity volatility</li>
+          <li><span class="d" style="background:var(--gold)"></span>Stress-test working capital against a Q3 inflation peak</li>
+        </ul>
+      </div>
+      <div class="aud-card">
+        <h4>Households</h4>
+        <span class="aud-verdict tag-a tag">Stable, mild squeeze</span>
+        <ul>
+          <li><span class="d" style="background:var(--macro)"></span>Stable employment and income outlook</li>
+          <li><span class="d" style="background:var(--macro)"></span>Lending rates steady for EMIs</li>
+          <li><span class="d" style="background:var(--macro)"></span>Fixed-deposit returns remain attractive</li>
+          <li><span class="d" style="background:var(--red)"></span>Higher food and fuel prices</li>
+          <li><span class="d" style="background:var(--red)"></span>Pressure on discretionary spending</li>
+          <li><span class="d" style="background:var(--gold)"></span>Budget for rising costs into H2 FY27</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block-title">Beneficiary sectors in this environment</div>
+    <div class="chips">
+      <span class="pchip">Manufacturing</span>
+      <span class="pchip">Construction &amp; infrastructure</span>
+      <span class="pchip">Engineering</span>
+      <span class="pchip">Consumer goods &amp; retail</span>
+      <span class="pchip">Hospitality</span>
+      <span class="pchip">IT &amp; business services</span>
+      <span class="pchip">Logistics</span>
+    </div>
+
+    <div class="block-title">Risk map for FY27 planning</div>
+    <table class="tbl">
+      <thead><tr><th>Risk</th><th>Transmits through</th><th>Watch</th></tr></thead>
+      <tbody>
+        <tr><td><b>West Asia conflict</b></td><td>Higher oil and logistics costs</td><td><span class="tag tag-r">High</span></td></tr>
+        <tr><td><b>Supply-chain disruption</b></td><td>Rising input costs</td><td><span class="tag tag-r">High</span></td></tr>
+        <tr><td><b>Weak monsoon / El Nino</b></td><td>Food inflation, rural demand</td><td><span class="tag tag-a">Medium</span></td></tr>
+        <tr><td><b>Elevated energy prices</b></td><td>Margin pressure</td><td><span class="tag tag-a">Medium</span></td></tr>
+        <tr><td><b>Rising inflation</b></td><td>Lower household purchasing power</td><td><span class="tag tag-a">Medium</span></td></tr>
+        <tr><td><b>FPI equity outflows</b></td><td>Rupee and market volatility</td><td><span class="tag tag-b">Monitor</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="callout-label">Decision posture</div>
+      <p>India's macro fundamentals remain strong: stable rates, sustained demand, investment momentum and strong external buffers provide a solid base for expansion. The practical watch-list is inflation, energy prices, geopolitics and weather. Invest selectively, protect margins and pricing power, and stress-test working capital.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><b>Source:</b> Reserve Bank of India Bulletin, June 2026 (Volume LXXX, Number 6) - Governor's Statement and MPC Resolution (3-5 June 2026), the speech "Resilience by Design" by Shri Swaminathan J., and the "State of the Economy" article. Prepared by YouWe Quest LLP as an educational summary.</p>
+    <p style="margin-top:.6rem">This digest is a simplified interpretation for general understanding and does not constitute investment, tax or financial advice. Figures are as reported in the Bulletin and are subject to revision by the RBI. GDP for FY26 is shown at the Provisional Estimate of 7.7%; the MPC's commentary referenced the earlier Second Advance Estimate of 7.6%. For decisions, refer to the original Bulletin at bulletin.rbi.org.in.</p>
+  </div>
+
+</div><!-- .page -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+/* theme toggle */
+(function(){
+  var html=document.documentElement;
+  var btn=document.getElementById('theme-toggle');
+  var sun=document.getElementById('icon-sun');
+  var moon=document.getElementById('icon-moon');
+  function apply(t){html.setAttribute('data-theme',t);sun.style.display=t==='dark'?'':'none';moon.style.display=t==='light'?'':'none';}
+  apply(localStorage.getItem('theme')||'dark');
+  btn.addEventListener('click',function(){
+    var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    localStorage.setItem('theme',next);apply(next);
+    rebuildCharts();
+  });
+})();
+
+function cssv(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
+function C(){return {gold:cssv('--gold'),blue:cssv('--blue'),red:cssv('--red'),macro:cssv('--macro'),text2:cssv('--text2'),text3:cssv('--text3'),grid:cssv('--grid'),tick:cssv('--tick'),bg2:cssv('--bg2')};}
+
+const charts={};
+function baseOpts(){
+  const c=C();
+  return {
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false,backgroundColor:c.bg2,titleColor:cssv('--text'),bodyColor:c.text2,borderColor:cssv('--border'),borderWidth:1,padding:9}},
+    scales:{
+      x:{grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},maxRotation:0,autoSkip:true,maxTicksLimit:12},border:{display:false}},
+      y:{grid:{color:c.grid},ticks:{color:c.tick,font:{size:10}},border:{display:false}}
+    }
+  };
+}
+
+/* value-label plugin for bar charts */
+const barLabels={
+  id:'barLabels',
+  afterDatasetsDraw(chart){
+    const {ctx}=chart;
+    const horiz=chart.options.indexAxis==='y';
+    chart.data.datasets.forEach((ds,di)=>{
+      const meta=chart.getDatasetMeta(di);
+      meta.data.forEach((el,i)=>{
+        const v=ds.data[i];if(v==null)return;
+        ctx.save();
+        ctx.fillStyle=cssv('--text');
+        ctx.font='600 10px "DM Sans"';
+        if(horiz){ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(v,el.x+5,el.y);}
+        else{ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText(v,el.x,el.y-3);}
+        ctx.restore();
+      });
+    });
+  }
+};
+
+const chartInits={
+  growth:buildGDP,
+  inflation:function(){buildCPI();buildInflComp();},
+  external:buildFDI,
+  banking:function(){buildAsset();buildCredit();buildSectorCredit();}
+};
+
+function destroy(k){if(charts[k]){charts[k].destroy();delete charts[k];}}
+
+function buildGDP(){
+  destroy('gdp');const c=C();const el=document.getElementById('gdpChart');if(!el)return;
+  const labels=['Q1 FY25','Q2','Q3','Q4','Q1 FY26','Q2','Q3','Q4','Q1 FY27','Q2','Q3','Q4'];
+  const actual=[7.5,6.6,7.4,7.0,6.8,8.3,8.0,7.8,null,null,null,null];
+  const proj=[null,null,null,null,null,null,null,7.8,6.6,6.3,6.5,6.8];
+  charts.gdp=new Chart(el,{type:'line',
+    data:{labels,datasets:[
+      {label:'Actual',data:actual,borderColor:c.gold,backgroundColor:c.gold,borderWidth:2.5,pointRadius:3.5,pointBackgroundColor:c.gold,tension:.25},
+      {label:'RBI projection',data:proj,borderColor:c.gold,borderDash:[5,4],borderWidth:2,pointRadius:3.5,pointBackgroundColor:c.gold,tension:.25,spanGaps:true}
+    ]},
+    options:Object.assign(baseOpts(),{scales:Object.assign({},baseOpts().scales,{y:{min:5,max:9,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>v+'%'},border:{display:false}}})})
+  });
+}
+
+function buildCPI(){
+  destroy('cpi');const c=C();const el=document.getElementById('cpiChart');if(!el)return;
+  const labels=['Jan 26','Feb','Mar','Apr','May','Q1 FY27','Q2','Q3','Q4'];
+  const actual=[2.7,3.2,3.4,3.5,3.9,null,null,null,null];
+  const proj=[null,null,null,null,3.9,4.2,5.1,5.9,5.4];
+  const target=labels.map(()=>4.0);
+  const upper=labels.map(()=>6.0);
+  charts.cpi=new Chart(el,{type:'line',
+    data:{labels,datasets:[
+      {label:'CPI actual',data:actual,borderColor:c.gold,backgroundColor:c.gold,borderWidth:2.5,pointRadius:3.5,pointBackgroundColor:c.gold,tension:.2},
+      {label:'Projection',data:proj,borderColor:c.gold,borderDash:[5,4],borderWidth:2,pointRadius:3.5,pointBackgroundColor:c.gold,tension:.2,spanGaps:true},
+      {label:'Target 4%',data:target,borderColor:c.macro,borderDash:[3,3],borderWidth:1.2,pointRadius:0,tension:0},
+      {label:'Upper tolerance 6%',data:upper,borderColor:c.red,borderDash:[3,3],borderWidth:1.2,pointRadius:0,tension:0}
+    ]},
+    options:Object.assign(baseOpts(),{scales:Object.assign({},baseOpts().scales,{y:{min:2,max:7,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>v+'%'},border:{display:false}}})})
+  });
+}
+
+function buildInflComp(){
+  destroy('inflComp');const c=C();const el=document.getElementById('inflCompChart');if(!el)return;
+  charts.inflComp=new Chart(el,{type:'bar',
+    data:{labels:['Fuel','Core CPI','Headline CPI','Food','WPI'],
+      datasets:[{data:[1.9,3.9,3.9,4.5,9.7],backgroundColor:c.gold,borderColor:c.gold,borderWidth:1,borderRadius:4,barThickness:24}]},
+    options:Object.assign(baseOpts(),{indexAxis:'y',plugins:{legend:{display:false},tooltip:baseOpts().plugins.tooltip},scales:{x:{min:0,max:11,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>v+'%'},border:{display:false}},y:{grid:{display:false},ticks:{color:c.tick,font:{size:11}},border:{display:false}}}}),
+    plugins:[barLabels]
+  });
+}
+
+function buildFDI(){
+  destroy('fdi');const c=C();const el=document.getElementById('fdiChart');if(!el)return;
+  charts.fdi=new Chart(el,{type:'bar',
+    data:{labels:['Gross FDI','Net FDI'],datasets:[
+      {label:'FY 2024-25',data:[80.6,1.0],backgroundColor:c.blue,borderRadius:4,barPercentage:.7,categoryPercentage:.7},
+      {label:'FY 2025-26',data:[94.5,7.7],backgroundColor:c.gold,borderRadius:4,barPercentage:.7,categoryPercentage:.7}
+    ]},
+    options:Object.assign(baseOpts(),{scales:{x:{grid:{display:false},ticks:{color:c.tick,font:{size:11}},border:{display:false}},y:{min:0,max:105,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>'$'+v+'B'},border:{display:false}}}}),
+    plugins:[barLabels]
+  });
+}
+
+function buildAsset(){
+  destroy('asset');const c=C();const el=document.getElementById('assetChart');if(!el)return;
+  charts.asset=new Chart(el,{type:'bar',
+    data:{labels:['Gross NPA','Net NPA'],datasets:[
+      {label:'Mar 2025',data:[2.22,0.50],backgroundColor:c.blue,borderRadius:4,barPercentage:.7,categoryPercentage:.7},
+      {label:'Mar 2026',data:[1.73,0.40],backgroundColor:c.gold,borderRadius:4,barPercentage:.7,categoryPercentage:.7}
+    ]},
+    options:Object.assign(baseOpts(),{scales:{x:{grid:{display:false},ticks:{color:c.tick,font:{size:11}},border:{display:false}},y:{min:0,max:2.6,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>v+'%'},border:{display:false}}}}),
+    plugins:[barLabels]
+  });
+}
+
+function buildCredit(){
+  destroy('credit');const c=C();const el=document.getElementById('creditChart');if(!el)return;
+  charts.credit=new Chart(el,{type:'bar',
+    data:{labels:['All sources','Bank credit'],datasets:[
+      {label:'Year ago',data:[12.1,9.8],backgroundColor:c.blue,borderRadius:4,barPercentage:.7,categoryPercentage:.7},
+      {label:'Latest',data:[15.4,16.2],backgroundColor:c.gold,borderRadius:4,barPercentage:.7,categoryPercentage:.7}
+    ]},
+    options:Object.assign(baseOpts(),{scales:{x:{grid:{display:false},ticks:{color:c.tick,font:{size:11}},border:{display:false}},y:{min:0,max:19,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>v+'%'},border:{display:false}}}}),
+    plugins:[barLabels]
+  });
+}
+
+function buildSectorCredit(){
+  destroy('sectorCredit');const c=C();const el=document.getElementById('sectorCreditChart');if(!el)return;
+  charts.sectorCredit=new Chart(el,{type:'bar',
+    data:{labels:['Agriculture','Industry','Personal loans','Services'],
+      datasets:[{data:[13.7,15.1,16.0,18.6],backgroundColor:c.gold,borderColor:c.gold,borderWidth:1,borderRadius:4,barThickness:30}]},
+    options:Object.assign(baseOpts(),{indexAxis:'y',plugins:{legend:{display:false},tooltip:baseOpts().plugins.tooltip},scales:{x:{min:0,max:21,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>v+'%'},border:{display:false}},y:{grid:{display:false},ticks:{color:c.tick,font:{size:11}},border:{display:false}}}}),
+    plugins:[barLabels]
+  });
+}
+
+/* tab switching */
+function sw(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('s-'+id).classList.add('active');
+  btn.classList.add('active');
+  if(chartInits[id])setTimeout(chartInits[id],60);
+}
+
+function rebuildCharts(){
+  const active=document.querySelector('.sec.active');
+  if(!active)return;
+  const id=active.id.replace('s-','');
+  if(chartInits[id])setTimeout(chartInits[id],60);
+}
+</script>
+
+</body>
+</html>
