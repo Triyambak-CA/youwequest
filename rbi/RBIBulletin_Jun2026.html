@@ -758,7 +758,7 @@ function buildCPI(){
 function buildInflComp(){
   destroy('inflComp');const c=C();const el=document.getElementById('inflCompChart');if(!el)return;
   charts.inflComp=new Chart(el,{type:'bar',
-    data:{labels:['Fuel','Core CPI','Headline CPI','Food','WPI'],
+    data:{labels:['Fuel','Core (ex food & fuel)','Headline CPI','Food','WPI'],
       datasets:[{data:[1.9,3.9,3.9,4.5,9.7],backgroundColor:c.gold,borderColor:c.gold,borderWidth:1,borderRadius:4,barThickness:24}]},
     options:Object.assign(baseOpts(),{indexAxis:'y',plugins:{legend:{display:false},tooltip:baseOpts().plugins.tooltip},scales:{x:{min:0,max:11,grid:{color:c.grid},ticks:{color:c.tick,font:{size:10},callback:v=>v+'%'},border:{display:false}},y:{grid:{display:false},ticks:{color:c.tick,font:{size:11}},border:{display:false}}}}),
     plugins:[barLabels]
