@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Regulatory Update — YouWe Quest LLP</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8963E;--gold-l:#D4AE5A;--gold-glow:rgba(184,150,62,0.15);
+  --glass:rgba(255,255,255,0.04);--glass-b:rgba(255,255,255,0.08);
+  --glass-h:rgba(255,255,255,0.07);
+  --txt:rgba(255,255,255,0.90);--txt2:rgba(255,255,255,0.52);--txt3:rgba(255,255,255,0.30);
+  --bg:#070c12;--bg2:#0b1018;
+  --gst:#D4AE5A;--dt:#7EB8F7;--mca:#C49FE6;--sebi:#F7916A;--icai:#6ECFBE;
+  --red:#F87171;
+}
+[data-theme="light"]{
+  --glass:rgba(0,0,0,0.04);
+  --glass-b:rgba(0,0,0,0.08);
+  --glass-h:rgba(0,0,0,0.06);
+  --txt:rgba(15,12,5,0.94);
+  --txt2:rgba(15,12,5,0.68);
+  --txt3:rgba(15,12,5,0.52);
+  --bg:#f4f1eb;--bg2:#ece9e0;
+  --gold:#8C6D1A;--gold-l:#AA8420;--gold-glow:rgba(140,109,26,0.14);
+  --gst:#8C6D1A;--dt:#2A72C0;--mca:#7A4FAE;--sebi:#C05020;--icai:#1A9080;
+  --red:#C03030;
+}
+[data-theme="light"] .nav{background:rgba(244,241,235,0.90);border-bottom-color:rgba(0,0,0,0.10)}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(184,150,62,0.12),transparent)}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(200,190,170,0.22),transparent)}
+[data-theme="light"] .orb3{background:radial-gradient(circle,rgba(220,210,190,0.15),transparent)}
+[data-theme="light"] .tabs{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.10)}
+[data-theme="light"] .tab:hover{color:var(--txt)}
+[data-theme="light"] .tab.active{background:rgba(140,109,26,0.15);color:var(--gold-l);border-color:rgba(140,109,26,0.30)}
+[data-theme="light"] .rule{background:linear-gradient(90deg,var(--gold) 0%,rgba(140,109,26,0.15) 65%,transparent 100%)}
+[data-theme="light"] .entry{border-bottom-color:rgba(0,0,0,0.07)}
+[data-theme="light"] .et{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .et strong{color:var(--txt)}
+[data-theme="light"] .et em{color:var(--gold-l)}
+[data-theme="light"] .ttext{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .ttext strong{color:var(--txt)}
+[data-theme="light"] .ttext em{color:var(--gold-l)}
+[data-theme="light"] .ttext .cite{color:rgba(20,110,95,0.9);background:rgba(20,110,95,0.08);border-color:rgba(20,110,95,0.18)}
+[data-theme="light"] .ttext .stat{color:rgba(120,90,20,0.9);background:rgba(120,90,20,0.08);border-color:rgba(120,90,20,0.18)}
+[data-theme="light"] .ttext .date{color:var(--red)}
+[data-theme="light"] .tsub{border-bottom-color:rgba(0,0,0,0.07)}
+[data-theme="light"] .tsub-hd:hover{background:rgba(0,0,0,0.03)}
+[data-theme="light"] .tsub-letter{color:var(--txt3)}
+[data-theme="light"] .tsub-chevron{color:var(--txt3)}
+[data-theme="light"] .tsubsub{color:var(--txt3)}
+[data-theme="light"] .tnote{background:rgba(140,109,26,0.07);border-color:rgba(140,109,26,0.22);color:rgba(15,12,5,0.74)}
+[data-theme="light"] .tnote strong{color:var(--gold-l)}
+[data-theme="light"] .tdiv-line{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+[data-theme="light"] .atbl thead tr{border-bottom-color:rgba(140,109,26,0.30)}
+[data-theme="light"] .atbl tbody tr{border-bottom-color:rgba(0,0,0,0.06)}
+[data-theme="light"] .atbl tbody tr:hover{background:rgba(0,0,0,0.025)}
+[data-theme="light"] .atbl td{color:rgba(15,12,5,0.84)}
+[data-theme="light"] .p-act{color:rgba(15,12,5,0.68);border-color:rgba(0,0,0,0.14);background:rgba(0,0,0,0.04)}
+[data-theme="light"] .footer{border-top-color:rgba(0,0,0,0.08)}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.65}
+
+/* orbs */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.14;animation:drift 20s ease-in-out infinite}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,#B8963E,transparent);top:-200px;left:-150px;animation-delay:0s}
+.orb2{width:550px;height:550px;background:radial-gradient(circle,#0f2a4a,transparent);bottom:-100px;right:-100px;animation-delay:-7s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,#1a0a00,transparent);top:45%;left:55%;animation-delay:-14s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-18px) scale(1.04)}66%{transform:translate(-18px,25px) scale(0.96)}}
+
+/* sticky nav */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,12,18,0.82);
+  backdrop-filter:blur(28px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:0 24px;
+}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--txt2);letter-spacing:0.02em;white-space:nowrap;flex-shrink:0}
+.nav-brand span{color:var(--gold)}
+.tabs{display:flex;gap:4px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:3px;flex-shrink:1;min-width:0}
+.tab{font-size:12px;font-weight:500;letter-spacing:0.06em;padding:5px 16px;border-radius:7px;cursor:pointer;color:var(--txt2);border:none;background:transparent;transition:all 0.2s;white-space:nowrap}
+.tab:hover{color:var(--txt)}
+.tab.active{background:rgba(184,150,62,0.18);color:var(--gold-l);border:1px solid rgba(184,150,62,0.25)}
+.nav-meta{font-size:11px;color:var(--txt3);white-space:nowrap;letter-spacing:0.05em}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+@media(max-width:680px){.nav-meta{display:none}}
+
+/* wrap */
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:52px 24px 100px}
+
+/* view panels */
+.view{display:none}.view.active{display:block}
+
+/* masthead */
+.masthead{margin-bottom:48px;opacity:0;animation:fadeUp 0.7s ease forwards 0.1s}
+.mast-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.mast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,54px);font-weight:300;line-height:1.08;letter-spacing:-0.01em}
+.mast-title em{color:var(--gold-l);font-style:normal}
+.mast-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:14px}
+.mast-pill{font-size:11px;color:var(--txt2);display:flex;align-items:center;gap:6px}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:0.5;flex-shrink:0}
+
+/* rule */
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0%,rgba(184,150,62,0.15) 65%,transparent 100%);margin:22px 0 36px}
+
+/* chips */
+.chips{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px;opacity:0;animation:fadeUp 0.7s ease forwards 0.22s}
+@media(max-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
+.chip{background:var(--glass);border:1px solid var(--glass-b);border-radius:12px;padding:14px 12px;backdrop-filter:blur(20px);transition:all 0.2s;cursor:pointer}
+.chip:hover{background:var(--glass-h);border-color:rgba(184,150,62,0.28);transform:translateY(-2px)}
+.chip-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;line-height:1;margin-bottom:3px}
+.chip-l{font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:var(--txt2)}
+
+/* section */
+.sec{margin-bottom:28px;opacity:0;animation:fadeUp 0.7s ease forwards}
+.s1{animation-delay:0.32s}.s2{animation-delay:0.42s}.s3{animation-delay:0.52s}
+.s4{animation-delay:0.62s}.s5{animation-delay:0.72s}.s6{animation-delay:0.82s}
+.s7{animation-delay:0.92s}
+
+.sec-hd{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+.dpill{font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;padding:3px 10px;border-radius:100px;border:1px solid;flex-shrink:0}
+.p-gst{color:var(--gst);border-color:rgba(212,174,90,0.35);background:rgba(212,174,90,0.07)}
+.p-dt{color:var(--dt);border-color:rgba(126,184,247,0.35);background:rgba(126,184,247,0.07)}
+.p-mca{color:var(--mca);border-color:rgba(196,159,230,0.35);background:rgba(196,159,230,0.07)}
+.p-sebi{color:var(--sebi);border-color:rgba(247,145,106,0.35);background:rgba(247,145,106,0.07)}
+.p-icai{color:var(--icai);border-color:rgba(110,207,190,0.35);background:rgba(110,207,190,0.07)}
+.p-act{color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.13);background:rgba(255,255,255,0.04)}
+
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em}
+
+/* glass card */
+.gc{background:var(--glass);border:1px solid var(--glass-b);border-radius:16px;padding:22px 26px;backdrop-filter:blur(24px);transition:all 0.2s}
+.gc:hover{background:var(--glass-h);border-color:rgba(255,255,255,0.13)}
+
+/* summary entries */
+.entries{display:flex;flex-direction:column}
+.entry{padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start}
+.entry:last-child{border-bottom:none;padding-bottom:0}
+.entry:first-child{padding-top:0}
+.tag{font-size:9.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:3px 7px;border-radius:5px;border:1px solid;margin-top:2px;white-space:nowrap;display:block;text-align:center}
+.t-court{color:#7EB8F7;border-color:rgba(126,184,247,0.3);background:rgba(126,184,247,0.07)}
+.t-dead{color:#F87171;border-color:rgba(248,113,113,0.3);background:rgba(248,113,113,0.07)}
+.t-portal{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+.t-budget{color:#D4AE5A;border-color:rgba(212,174,90,0.3);background:rgba(212,174,90,0.07)}
+.t-new{color:#C49FE6;border-color:rgba(196,159,230,0.3);background:rgba(196,159,230,0.07)}
+.t-icai{color:#6ECFBE;border-color:rgba(110,207,190,0.3);background:rgba(110,207,190,0.07)}
+.t-udin{color:#F5A04A;border-color:rgba(245,160,74,0.3);background:rgba(245,160,74,0.07)}
+.t-peer{color:#64C4E8;border-color:rgba(100,196,232,0.3);background:rgba(100,196,232,0.07)}
+.t-pub{color:#A89FD8;border-color:rgba(168,159,216,0.3);background:rgba(168,159,216,0.07)}
+.t-live{color:#A8E890;border-color:rgba(168,232,144,0.3);background:rgba(168,232,144,0.07)}
+.et{font-size:13.5px;color:rgba(255,255,255,0.78);line-height:1.6}
+.et strong{color:var(--txt);font-weight:500}
+.et em{color:var(--gold-l);font-style:normal}
+.no-entries{font-size:13.5px;color:var(--txt3);line-height:1.6;font-style:italic;padding:4px 0;margin:0}
+.src-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--gold-l);text-decoration:none;opacity:0.75;margin-left:6px;white-space:nowrap;transition:opacity 0.15s}
+.src-link:hover{opacity:1;text-decoration:underline}
+.src-link::after{content:'↗';font-size:10px}
+[data-theme="light"] .src-link{color:var(--gold)}
+
+/* action table */
+.atbl{width:100%;border-collapse:collapse}
+.atbl thead tr{border-bottom:1px solid rgba(184,150,62,0.28)}
+.atbl th{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;padding:0 12px 11px 0;text-align:left}
+.atbl tbody tr{border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.15s}
+.atbl tbody tr:hover{background:rgba(255,255,255,0.025)}
+.atbl tbody tr:last-child{border-bottom:none}
+.atbl td{padding:11px 12px 11px 0;font-size:13px;color:rgba(255,255,255,0.76);vertical-align:top}
+.atbl td:first-child{width:86px}.atbl td:nth-child(2){width:96px}
+.dred{color:var(--red);font-weight:500;font-size:12px}
+.dgray{color:var(--txt2)}
+.dbadge{font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid;display:inline-block}
+
+/* ── TECHNICAL SECTION STYLES ── */
+.tech-divider{
+  margin:48px 0 44px;
+  display:flex;align-items:center;gap:20px;
+  opacity:0;animation:fadeUp 0.7s ease forwards 0.15s;
+}
+.tdiv-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.tdiv-text{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+
+/* tech section */
+.tsec{margin-bottom:36px;opacity:0;animation:fadeUp 0.7s ease forwards}
+
+/* roman numeral header */
+.tsec-hd{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.tsec-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;min-width:28px;margin-top:2px}
+.tsec-meta{display:flex;flex-direction:column;gap:5px}
+.tsec-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:-0.01em;line-height:1.1}
+
+/* subsections inside tech card */
+.tgc{background:var(--glass);border:1px solid var(--glass-b);border-radius:16px;overflow:hidden;backdrop-filter:blur(24px)}
+.tsub{border-bottom:1px solid rgba(255,255,255,0.05)}
+.tsub:last-child{border-bottom:none}
+.tsub-hd{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 24px 12px;
+  border-left:2px solid;
+  cursor:pointer;
+  user-select:none;
+  transition:background 0.15s;
+}
+.tsub-hd:hover{background:rgba(255,255,255,0.03)}
+.tsub-letter{font-family:'DM Mono',monospace;font-size:11px;color:var(--txt3);flex-shrink:0;min-width:18px}
+.tsub-title{font-size:13.5px;font-weight:500;flex:1}
+.tsub-chevron{font-size:11px;color:var(--txt3);transition:transform 0.25s;margin-left:auto}
+.tsub.open .tsub-chevron{transform:rotate(180deg)}
+.tsub-body{display:none;padding:0 24px 18px 54px}
+.tsub.open .tsub-body{display:block}
+
+/* border colors */
+.b-gst{border-color:var(--gst)}.b-dt{border-color:var(--dt)}.b-mca{border-color:var(--mca)}.b-sebi{border-color:var(--sebi)}.b-icai{border-color:var(--icai)}
+
+/* technical content */
+.titem{display:flex;gap:10px;margin-bottom:12px;align-items:start}
+.titem:last-child{margin-bottom:0}
+.tbullet{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.5;flex-shrink:0;margin-top:8px}
+.ttext{font-size:13px;color:rgba(255,255,255,0.76);line-height:1.68}
+.ttext strong{color:var(--txt);font-weight:500}
+.ttext em{color:var(--gold-l);font-style:normal}
+.ttext .cite{font-family:'DM Mono',monospace;font-size:11.5px;color:rgba(110,207,190,0.8);background:rgba(110,207,190,0.07);border:1px solid rgba(110,207,190,0.15);border-radius:4px;padding:1px 5px;white-space:nowrap}
+.ttext .stat{font-family:'DM Mono',monospace;font-size:11.5px;color:rgba(212,174,90,0.85);background:rgba(212,174,90,0.07);border:1px solid rgba(212,174,90,0.18);border-radius:4px;padding:1px 5px;white-space:nowrap}
+.ttext .date{color:var(--red);font-weight:500}
+
+/* sub-sub heading */
+.tsubsub{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--txt3);margin:14px 0 8px;font-weight:500}
+
+/* note box */
+.tnote{background:rgba(184,150,62,0.07);border:1px solid rgba(184,150,62,0.2);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:12px;color:rgba(255,255,255,0.6);line-height:1.55}
+.tnote strong{color:var(--gold-l)}
+
+/* footer */
+.footer{margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;opacity:0;animation:fadeUp 0.7s ease forwards 1.1s}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400}
+.ft-firm{font-size:12px;color:var(--gold);letter-spacing:0.09em;margin-top:3px}
+.ft-note{font-size:11px;color:var(--txt3);max-width:300px;text-align:right;line-height:1.5}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── theme toggle ── */
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.10);background:transparent;cursor:pointer;color:var(--txt2);transition:all 0.2s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:rgba(184,150,62,0.45);color:var(--gold-l);background:rgba(184,150,62,0.06)}
+.theme-toggle svg{width:15px;height:15px}
+[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.14)}
+[data-theme="light"] .theme-toggle:hover{border-color:rgba(140,109,26,0.45);color:var(--gold-l);background:rgba(140,109,26,0.08)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(184,150,62,0.2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(184,150,62,0.4)}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+</div>
+
+<!-- sticky nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html" style="text-decoration:none">YouWe Quest <span>LLP</span></a>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('summary',this)">Summary</button>
+      <button class="tab" onclick="switchTab('technical',this)">Technical Reference</button>
+      <button class="tab" onclick="switchTab('actions',this)">Action Items</button>
+    </div>
+    <div class="nav-right">
+      <div class="nav-meta">W27 · Jul 2026</div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ════════════════════════════════
+     MASTHEAD
+════════════════════════════════ -->
+<div class="masthead">
+  <div class="mast-eyebrow">Weekly Regulatory Update &nbsp;·&nbsp; W27-2026</div>
+  <h1 class="mast-title">Tax &amp; Regulatory<br><em>Digest</em></h1>
+  <div class="mast-row">
+    <div class="mast-pill"><span class="dot"></span>27 June 2026 to 03 July 2026 · W27</div>
+    <div class="mast-pill"><span class="dot"></span>GST · Direct Tax · MCA · RBI/FEMA · ICAI</div>
+    <div class="mast-pill"><span class="dot"></span>Dear Reader,</div>
+  </div>
+</div>
+<div class="rule"></div>
+
+<!-- ════════════════════════════════
+     TAB 1 — SUMMARY
+════════════════════════════════ -->
+<div id="view-summary" class="view active">
+
+  <div class="chips">
+    <div class="chip" onclick="scrollToSection('sec-gst')"><div class="chip-n" style="color:var(--gst)">3</div><div class="chip-l">GST</div></div>
+    <div class="chip" onclick="scrollToSection('sec-dt')"><div class="chip-n" style="color:var(--dt)">5</div><div class="chip-l">Direct Tax</div></div>
+    <div class="chip" onclick="scrollToSection('sec-mca')"><div class="chip-n" style="color:var(--mca)">0</div><div class="chip-l">MCA</div></div>
+    <div class="chip" onclick="scrollToSection('sec-sebi')"><div class="chip-n" style="color:var(--sebi)">1</div><div class="chip-l">RBI / FEMA</div></div>
+    <div class="chip" onclick="scrollToSection('sec-icai')"><div class="chip-n" style="color:var(--icai)">2</div><div class="chip-l">ICAI</div></div>
+    <div class="chip" onclick="switchTab('actions', document.querySelector('.tab:nth-child(3)'))"><div class="chip-n" style="color:var(--gold)">9</div><div class="chip-l">Actions</div></div>
+  </div>
+
+  <!-- GST Summary -->
+  <div id="sec-gst" class="sec s1">
+    <div class="sec-hd"><span class="dpill p-gst">GST</span><h2 class="sec-title">Goods &amp; Services Tax - GSTAT Appeal Window Extended to 31 July; AATO Amendment and e-Way Bill API Changes Go Live</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-dead">Deadline</span><div class="et"><strong>GST Appellate Tribunal - the last date to file appeals under s.112 CGST is extended to 31 July 2026.</strong> A GSTAT due-date notification dated <em>30 June 2026</em> extends the window for filing appeals before the GSTAT. For orders communicated <em>before 1 May 2026</em>, the last date (earlier 30 June) is now <em>31 July 2026</em>; orders communicated on or after 1 May 2026 follow the normal three-month limitation, and departmental applications for orders passed before 1 Feb 2026 also get 31 July 2026. Every client with a pre-1-May-2026 appellate or revisional order still un-appealed now has a hard 31 July window (with the 20% pre-deposit - 10% CGST + 10% SGST). Diarise and file this month. <a href="https://gstat.gov.in/uploads/announcements/178282271818GSTAT%20Due%20date%20Notification.pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>AATO amendment window for FY 2025-26 is open on the GST portal from 1 to 31 July 2026.</strong> A GSTN advisory dated <em>1 July 2026</em> deploys an upgraded Aggregate Annual Turnover (AATO) functionality that auto-updates the AATO as subsequent returns are filed, and revises the amendment timeline: taxpayers may amend their FY 2025-26 AATO from <em>1 to 31 July 2026</em>, with jurisdictional officers reviewing amended figures from 1 to 15 August. This replaces the earlier "amend in May" facility. Since AATO drives QRMP eligibility, HSN-digit reporting in GSTR-1 Table 12, e-invoicing applicability and the GSTR-9 / 9C thresholds, verify and correct each client's system-computed AATO this month. <a href="https://www.gst.gov.in/newsandupdates/read/666" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>Mandatory Ship-to GSTIN capture and voluntary e-Way Bill closure - FAQs issued (2 Jul); API changes go live 1 August 2026.</strong> GSTN issued FAQs on <em>2 July 2026</em> on the mandatory capture of the "Ship-to" GSTIN field in the e-Invoice and e-Way Bill (IRN) APIs and the new voluntary e-Way Bill closure functionality. These API and portal changes go live on <em>1 August 2026</em> (a sandbox is available now). Businesses and their ERP / ASP / GSP teams must update integrations to capture Ship-to GSTIN and support voluntary e-Way Bill closure, and complete sandbox testing before 1 August. <a href="https://www.gst.gov.in/newsandupdates/read/667" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- Direct Tax Summary -->
+  <div id="sec-dt" class="sec s2">
+    <div class="sec-hd"><span class="dpill p-dt">Direct Tax</span><h2 class="sec-title">Income Tax - IFSC Ship and Aircraft Leasing TDS Exemptions; 80G Form 10AB Delay Condoned; New IT Rules 2026 Forms Live</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>No TDS on lease rentals paid to IFSC ship-leasing units - Notification No. 75/2026 (3 July 2026).</strong> Under s.400(1) read with s.147 and s.393(1) of the Income-tax Act, 2025, no tax is to be deducted under s.393(1) [Table Sl. No. 2] on lease rent or supplemental lease rent paid by a lessee to a Unit of an <em>International Financial Services Centre (IFSC / GIFT City)</em> for the <em>lease of a ship</em>, provided the IFSC lessor furnishes a statement-cum-declaration in <em>Form No. 1(N)</em> covering the 20 consecutive tax years for which it opts for the s.147 deduction. Advise IFSC ship lessors to file Form 1(N); lessees to stop deducting on receipt of the declaration. <a href="https://www.incometaxindia.gov.in/documents/d/guest/ennotification-no-75-2026-pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>No TDS on lease rentals paid to IFSC aircraft-leasing units - Notification No. 74/2026 (3 July 2026).</strong> An identical mechanism applies to <em>aircraft</em> - no TDS under s.393(1) on aircraft lease rent or supplemental lease rent paid to an IFSC Unit lessor, subject to the same Form No. 1(N) / s.147 conditions. This is the new-Act re-issuance of the earlier IFSC aircraft-leasing TDS exemption, relevant to GIFT-City aviation-leasing structures. <a href="https://www.incometaxindia.gov.in/documents/d/guest/ennotification-no-74-2026-pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">Circular</span><div class="et"><strong>CBDT condones delay in filing Form 10AB for 80G(5) final approval - Circular No. 6/2026.</strong> Under s.119(2)(b) of the 1961 Act read with s.536(2) of the Income-tax Act, 2025, the CBDT condones the delay in filing <em>Form No. 10AB</em> (for final approval under clause (ii) of the first proviso to <em>s.80G(5)</em>) where the application was furnished electronically between <em>1 Oct 2025 and 31 Mar 2026</em>; the jurisdictional PCIT / CIT is to dispose such applications on merits by <em>31 Dec 2026</em>. Applications rejected solely on the ground of late filing (beyond 30 Sep 2025) are deemed condoned. Flag charitable-trust clients whose 80G Form 10AB was filed late in that window or rejected only for delay. <a href="https://www.incometaxindia.gov.in/circulars" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>Section 10(46) exemption for the Mussoorie Dehradun Development Authority - Notification No. 73/2026 (2 July 2026).</strong> A s.10(46) exemption (issued under the 1961 Act via the savings clause s.536(2) of the Income-tax Act, 2025) notifies the specified income - Uttarakhand Government grants, statutory fees and charges, income from disposal of lands / buildings, lease / rent, and bank interest - of the <em>Mussoorie Dehradun Development Authority</em> (PAN AAAAM4651Q). It is retrospective, deemed to apply for AY 2022-23 and AY 2023-24; a routine, entity-specific exemption of limited general impact. <a href="https://www.incometaxindia.gov.in/documents/d/guest/notification-no-73-2026-pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-portal">Portal</span><div class="et"><strong>Second set of statutory forms under the Income-tax Rules, 2026 rolled out on the e-Filing portal (30 June 2026).</strong> The Income-tax Department rolled out the second set of statutory forms under the new <em>Income-tax Rules, 2026</em> - Quarterly Forms <em>121, 138, 140, 143, 144, 147 and 148</em> are now live on the e-Filing portal. (Separately, the ITR Common Offline Utility v1.2.1 for ITR-1 / 2 / 3 / 4, AY 2026-27, was released on 1 July 2026 as a bug-fix patch over v1.2.0.) Check which forms are live before filing under the new Rules. <a href="https://www.incometax.gov.in/iec/foportal/latest-news" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- MCA Summary -->
+  <div id="sec-mca" class="sec s3">
+    <div class="sec-hd"><span class="dpill p-mca">MCA</span><h2 class="sec-title">Corporate Affairs - A Quiet Window: No Circular, Notification or Public Notice</h2></div>
+    <div class="gc"><div class="entries">
+      <p class="no-entries">No MCA General Circular, notification (GSR / SO), or public notice was issued in the 27 June to 3 July 2026 window. (Verified against the MCA "What's New" feed, the Circulars listing and the Gazette Notifications e-book - the most recent notification remains S.O. 3140(E) of 16 June 2026, covered previously.) The Form DPT-3 deadline of 31 July 2026 (additional-fee relaxation under General Circular No. 02/2026) continues to run - see Action Items.</p>
+    </div></div>
+  </div>
+
+  <!-- RBI / FEMA Summary -->
+  <div id="sec-sebi" class="sec s4">
+    <div class="sec-hd"><span class="dpill p-sebi">RBI / FEMA</span><h2 class="sec-title">RBI / FEMA - FEMA Deposit Regulations Amended: Special Non-Resident Rupee (SNRR) Account Use Widened</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-new">New Law</span><div class="et"><strong>FEMA (Deposit) (Sixth Amendment) Regulations, 2026 - Special Non-Resident Rupee (SNRR) account provisions widened.</strong> <span class="cite">Notification No. FEMA 5(R)(6)/2026-RB</span> (gazetted 18 June 2026, published on the RBI website on <em>29 June 2026</em>) amends the FEMA Deposit Regulations to widen the <em>SNRR account</em> framework - permitting SNRR operation within IFSCs, allowing SNRR holders to receive transfers from <em>NRO accounts</em> and to transact with other non-residents, and easing certain earlier operating and transfer restrictions. Advise NRI / non-resident clients and AD banks on the expanded SNRR use-cases and update FEMA compliance checklists and SNRR account-opening / KYC notes. <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13553&Mode=0" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <!-- ICAI Summary -->
+  <div id="sec-icai" class="sec s5">
+    <div class="sec-hd"><span class="dpill p-icai">ICAI</span><h2 class="sec-title">ICAI - Peer Review Goes Fully Online via New PRB Portal; Council Acts on Abnormally Low Tender Fees</h2></div>
+    <div class="gc"><div class="entries">
+      <div class="entry"><span class="tag t-peer">Peer Review</span><div class="et"><strong>Peer Review Board launches the PRB Web Portal - new Form 1 applications processed exclusively online from 2 July 2026.</strong> ICAI's <em>Peer Review Board</em> has launched a fully integrated PRB Web Portal (<em>prb.icai.org</em>) covering the peer-review lifecycle from application to certificate. With effect from <em>2 July 2026</em>, all new peer review applications (<em>Form 1</em>) are processed exclusively through the portal; physical or email applications will not be accepted. Practice Units and reviewers must route new applications and reports only through the portal from the effective date. <a href="https://resource.cdn.icai.org/92971prb-aps5709-web-portal.pdf" target="_blank" class="src-link">Source</a></div></div>
+      <div class="entry"><span class="tag t-icai">Council</span><div class="et"><strong>ICAI Council: abnormally low tender fees may be referred to the Director (Discipline).</strong> An ICAI announcement (Professional Development Committee) dated <em>2 July 2026</em> records the Council's decision that wherever the fee quoted by a member or firm is <em>extremely low and not commensurate</em> with the size, value, volume, manpower requirement and nature of the work, the matter can be referred to the <em>Director (Discipline)</em> for appropriate action - whether or not the tender is in an area of service exclusively reserved for chartered accountants. Members and firms should ensure tender bids are commensurate with the work; "lowball" bids now carry a disciplinary risk. <a href="https://www.icai.org/post/pdc-announcement-02072027" target="_blank" class="src-link">Source</a></div></div>
+    </div></div>
+  </div>
+
+  <div class="footer" style="margin-top:40px">
+    <div>
+      <div class="ft-name">S. Triyambaka Patro, CA</div>
+      <div class="ft-firm">YouWe Quest LLP</div>
+    </div>
+  </div>
+
+</div><!-- /view-summary -->
+
+
+<!-- ════════════════════════════════
+     TAB 2 — TECHNICAL REFERENCE
+════════════════════════════════ -->
+<div id="view-technical" class="view">
+
+  <div class="tech-divider">
+    <div class="tdiv-line"></div>
+    <div class="tdiv-text">Technical Reference</div>
+    <div class="tdiv-line"></div>
+  </div>
+
+  <!-- I. GST Technical -->
+  <div class="tsec s1">
+    <div class="tsec-hd">
+      <div class="tsec-num">I.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-gst" style="display:inline-flex;width:fit-content">GST</span>
+        <div class="tsec-name">Goods &amp; Services Tax</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">GSTAT Appeal Deadline Extended to 31 July 2026 (s.112 CGST)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> GSTAT due-date notification dated <span class="date">30 June 2026</span> under <span class="stat">s.112(1) r/w s.112(3) of the CGST Act, 2017</span> (F.No. A-50/7/2025-GSTAT-DoR), on the GST Council's recommendation. It supersedes S.O. 4220(E) dated 17 Sep 2025, which had originally set the 30 June 2026 date.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> For appeals where the order was communicated <em>before 1 May 2026</em>, the last date to file before the GST Appellate Tribunal is extended from 30 June to <span class="date">31 July 2026</span>. Orders communicated on or after 1 May 2026 follow the normal three-month limitation under s.112. Departmental applications in respect of orders passed before 1 Feb 2026 also get 31 July 2026.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Context:</strong> The extension follows congestion on the newly operational GSTAT e-filing portal. Filing before the GSTAT requires the <em>20% pre-deposit</em> of the disputed tax (10% CGST + 10% SGST), over and above the pre-deposit already made at the first-appeal stage.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Map every client with a pre-1-May-2026 appellate / revisional order that is still un-appealed and diarise a hard <span class="date">31 July 2026</span> filing date. Arrange the 20% pre-deposit and assemble grounds well ahead of the last day given portal load. (The exact S.O. number is reported as S.O. 3502(E); confirm from the official GSTAT PDF.)</div>
+        </div>
+      </div>
+
+      <div class="tsub open">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">AATO Amendment Window for FY 2025-26 (GSTN Advisory, 1 July 2026)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> GSTN Advisory dated <span class="date">1 July 2026</span> - "Revision of Timeline for Amendment of Aggregate Annual Turnover (AATO), 2026", superseding the advisory dated 2 May 2022.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> An upgraded AATO functionality (which auto-updates the AATO as subsequent returns are filed) is deployed from 1 July 2026. For FY 2025-26, the taxpayer <em>amendment window</em> is <span class="date">1 to 31 July 2026</span>; jurisdictional officers review amended figures from <em>1 to 15 August 2026</em>. The earlier facility (amend during May) no longer applies.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> AATO drives <em>QRMP eligibility</em>, <span class="stat">HSN-digit reporting in GSTR-1 Table 12</span>, e-invoicing applicability and the GSTR-9 / 9C thresholds. Review each client's system-computed AATO for FY 2025-26 now and file an amendment application by 31 July 2026 if it is incorrect.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-gst" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">Mandatory Ship-to GSTIN and Voluntary e-Way Bill Closure - FAQs (2 Jul); Go-Live 1 Aug 2026</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> GSTN "FAQs on Mandatory Capture of Ship-to Field and Voluntary Closure of e-Way Bill, 2026" dated <span class="date">2 July 2026</span>, read with the advisory dated 17 June 2026 on the e-Invoice / e-Way Bill (IRN) API changes.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> The e-Invoice and e-Way Bill (IRN) APIs will <em>mandatorily capture the Ship-to GSTIN</em> field, and a new <em>voluntary e-Way Bill closure</em> functionality is introduced. These changes go live in Production on <span class="date">1 August 2026</span>; a sandbox is available now for testing.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Businesses and their ERP / ASP / GSP teams should update e-invoice and e-way-bill integrations and master data (buyer / ship-to GSTINs), and complete sandbox testing before 1 August 2026 to avoid IRN / e-way-bill generation failures.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- II. Direct Tax Technical -->
+  <div class="tsec s2">
+    <div class="tsec-hd">
+      <div class="tsec-num">II.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-dt" style="display:inline-flex;width:fit-content">Direct Tax</span>
+        <div class="tsec-name">Direct Tax</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">IFSC Leasing - No TDS on Ship (Notif. 75/2026) and Aircraft (Notif. 74/2026) Lease Rentals</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">Notification No. 75/2026</span> (S.O. 3610(E); F.No. 275/18/2026-IT(B)) and <span class="cite">Notification No. 74/2026</span> (S.O. 3609(E); F.No. 275/16/2026-IT(B)), both dated <span class="date">3 July 2026</span>, under <span class="stat">s.400(1) r/w s.147 and s.393(1) of the Income-tax Act, 2025</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What they do:</strong> No tax is to be deducted under <span class="stat">s.393(1) [Table Sl. No. 2]</span> on lease rent or supplemental lease rent paid by a lessee to a <em>Unit of an IFSC</em> (GIFT City) for the lease of a <em>ship</em> (75/2026) or an <em>aircraft</em> (74/2026), where the IFSC lessor furnishes a statement-cum-declaration in <em>Form No. 1(N)</em> for the 20 consecutive tax years for which it opts for the s.147 deduction.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Advise IFSC ship / aircraft leasing units to file <span class="cite">Form No. 1(N)</span> to secure the no-TDS benefit; advise lessees to stop deducting on receipt of a valid declaration. This is the new-Act (s.393 / 400 / 147) re-issuance of the pre-existing IFSC leasing TDS exemptions.</div>
+        </div>
+      </div>
+
+      <div class="tsub open">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">CBDT Circular No. 6/2026 - Condonation of Delay in Filing Form 10AB for 80G(5) Approval</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">CBDT Circular No. 6/2026</span> under <span class="stat">s.119(2)(b) of the 1961 Act r/w s.536(2) of the Income-tax Act, 2025</span> - condonation of delay in filing <em>Form No. 10AB</em> for approval under clause (ii) of the first proviso to <span class="stat">s.80G(5)</span>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> Condones the delay in filing Form 10AB where the application was furnished electronically between <span class="date">1 Oct 2025 and 31 Mar 2026</span> (i.e., beyond the earlier 30 Sep 2025 limit); the jurisdictional PCIT / CIT is to dispose such applications on merits by <span class="date">31 Dec 2026</span>. Applications rejected solely on the ground of late filing are deemed condoned, to be disposed on merits by the same date.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Flag charitable-trust / institution clients whose 80G <em>final-approval</em> Form 10AB was filed late in the Oct 2025 - Mar 2026 window, or was rejected only for delay - their applications are now alive for disposal by 31 Dec 2026. Confirm the exact circular date and pull the official PDF from the Income-tax "Circulars" page before citing to a client.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">e-Filing Portal - New Statutory Forms under the Income-tax Rules, 2026 (30 Jun 2026)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> Income-tax e-Filing portal advisory dated <span class="date">30 June 2026</span> - "Second set of Statutory forms as per Income Tax Rules, 2026 have been rolled out on the e-Filing portal."
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What is live:</strong> Quarterly Forms <span class="cite">121, 138, 140, 143, 144, 147 and 148</span> are now available for e-filing under the new <em>Income-tax Rules, 2026</em>.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>ITR utility update:</strong> Separately, the ITR Common Offline Utility <em>v1.2.1</em> for ITR-1 / 2 / 3 / 4 (AY 2026-27) was released on <span class="date">1 July 2026</span> as a bug-fix patch over v1.2.0 (23 June 2026) - a maintenance update, not a form change. Update to v1.2.1 if a filing is already in progress.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Check which specific forms / quarterly statements are live under the new Rules before filing, and update to the latest ITR utility if a filing is already in progress (it is a bug-fix, not a form change).</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-dt" onclick="toggleSub(this)">
+          <span class="tsub-letter">D</span>
+          <span class="tsub-title">Notification No. 73/2026 - s.10(46) Exemption, Mussoorie Dehradun Development Authority</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">Notification No. 73/2026</span> (S.O. 3596(E); F.No. 300196/32/2021-ITA-I) dated <span class="date">2 July 2026</span>, under <span class="stat">s.10(46)</span> of the 1961 Act preserved through the savings clause s.536(2) of the Income-tax Act, 2025.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> Notifies the specified income - Uttarakhand Government grants / loans / advances, statutory fees and charges under the Uttarakhand Urban and Country Planning and Development Act 1973, income from disposal of lands and buildings, lease / rent, and bank interest - of the <em>Mussoorie Dehradun Development Authority</em> (PAN AAAAM4651Q) as exempt, subject to non-commercial-activity conditions. It is retrospective, deemed to apply for AY 2022-23 and AY 2023-24.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> A routine, entity-specific and retrospective exemption of limited general impact - relevant only to the notified authority and its payers.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- III. MCA Technical -->
+  <div class="tsec s3">
+    <div class="tsec-hd">
+      <div class="tsec-num">III.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-mca" style="display:inline-flex;width:fit-content">MCA</span>
+        <div class="tsec-name">Ministry of Corporate Affairs</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-mca" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">Period Context - No New Circular, Notification or Public Notice</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>No new MCA action in the window:</strong> No MCA General Circular, GSR / SO notification, or public notice was issued between 27 June and 3 July 2026. Verified against the MCA <em>"What's New"</em> feed, the <em>Circulars</em> listing and the <em>Gazette Notifications</em> e-book.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Ceiling:</strong> The most recent Gazette notification remains <span class="cite">S.O. 3140(E)</span> of 16 June 2026 (Companies Act 2013, New Development Bank) - covered in a prior issue.
+          </div></div>
+          <div class="tnote"><strong>Carry-forward:</strong> The <span class="cite">Form DPT-3</span> deadline of <span class="date">31 July 2026</span> (Return of Deposits as on 31 Mar 2026, with the additional-fee relaxation under MCA General Circular No. 02/2026) continues to run. Do not defer to the last day given recent V3 portal instability.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IV. RBI / FEMA Technical -->
+  <div class="tsec s4">
+    <div class="tsec-hd">
+      <div class="tsec-num">IV.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-sebi" style="display:inline-flex;width:fit-content">RBI / FEMA</span>
+        <div class="tsec-name">RBI &amp; FEMA</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsub open">
+        <div class="tsub-hd b-sebi" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">FEMA (Deposit) (Sixth Amendment) Regulations, 2026 - SNRR Account Provisions Widened</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> <span class="cite">Foreign Exchange Management (Deposit) (Sixth Amendment) Regulations, 2026</span> - Notification No. <span class="cite">FEMA 5(R)(6)/2026-RB</span>, gazetted 18 June 2026 and published on the RBI website on <span class="date">29 June 2026</span> (which places it in this week's window).
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> Widens the <em>Special Non-Resident Rupee (SNRR)</em> account framework - permitting SNRR operation within <em>IFSCs</em>, allowing SNRR account holders to receive transfers from <em>NRO accounts</em> and to transact with other non-residents, and easing certain earlier operating and transfer restrictions.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Advise NRI / non-resident clients and AD banks on the expanded SNRR use-cases (IFSC operations, NRO-to-SNRR transfers, non-resident-to-non-resident transactions). Update FEMA compliance checklists and SNRR account-opening / KYC notes. Confirm the exact scope against the notification text before client advice.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- V. ICAI Technical -->
+  <div class="tsec s5">
+    <div class="tsec-hd">
+      <div class="tsec-num">V.</div>
+      <div class="tsec-meta">
+        <span class="dpill p-icai" style="display:inline-flex;width:fit-content">ICAI</span>
+        <div class="tsec-name">ICAI</div>
+      </div>
+    </div>
+    <div class="tgc">
+
+      <div class="tsubsub" style="padding:14px 24px 0">Compliance &amp; Announcements</div>
+
+      <div class="tsub open">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">A</span>
+          <span class="tsub-title">Peer Review - Launch of the PRB Web Portal (Effective 2 July 2026)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> ICAI Peer Review Board announcement dated <span class="date">1 July 2026</span> - launch of the integrated PRB Web Portal (<em>prb.icai.org</em>).
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> The portal digitises the entire peer-review lifecycle (application, panel allotment, submission of reports, and generation of the Peer Review certificate). With effect from <span class="date">2 July 2026</span>, all new peer review applications (<em>Form 1</em>) are processed <em>exclusively</em> through the portal; applications received by physical document or email will not be accepted from the effective date.
+          </div></div>
+          <div class="tnote"><strong>Practice action:</strong> Practice Units due for peer review and empanelled reviewers must register / log in at prb.icai.org and route all new Form 1 applications and peer-review reports through the portal. Update internal peer-review compliance processes accordingly.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">B</span>
+          <span class="tsub-title">Council Decision on Tenders - Abnormally Low Fees May Be Referred to Director (Discipline)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Reference:</strong> ICAI announcement (Professional Development Committee) dated <span class="date">2 July 2026</span> - "Decision taken by the Council regarding tenders".
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>What it does:</strong> The Council has decided that wherever the fee quoted by a member or firm is <em>extremely low and not commensurate</em> with the size, value, volume, manpower requirement and nature of the work, the matter can be referred to the <em>Director (Discipline)</em> for appropriate action. This applies <em>whether or not</em> the tender is in an area of service exclusively reserved for chartered accountants.
+          </div></div>
+          <div class="tnote"><strong>Practice note:</strong> Review tender-bidding and fee-fixation practices - abnormally low ("lowball") quotes now carry an express disciplinary risk. Ensure quoted fees are defensibly commensurate with the scope, effort and manpower of the engagement.</div>
+        </div>
+      </div>
+
+      <div class="tsub">
+        <div class="tsub-hd b-icai" onclick="toggleSub(this)">
+          <span class="tsub-letter">C</span>
+          <span class="tsub-title">UDIN Portal - Validation Aligned to the s.44AB(a) Proviso (Practitioner Observation)</span>
+          <span class="tsub-chevron">&#9662;</span>
+        </div>
+        <div class="tsub-body">
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Observation:</strong> The UDIN portal has begun enforcing the tax-audit logic of <span class="stat">s.44AB(a)</span> and its proviso at the point of generating a tax-audit UDIN. Where a member declares that cash receipts and cash payments are each within the <em>5% threshold</em>, the system now checks that turnover <em>exceeds</em> <span class="stat">Rs 10 crore</span> before accepting the declaration.
+          </div></div>
+          <div class="titem"><div class="tbullet"></div><div class="ttext">
+            <strong>Statutory basis (the validation rule):</strong> Under the proviso to <span class="stat">s.44AB(a)</span>, a person carrying on business is <em>not</em> required to get a tax audit where turnover does not exceed Rs 10 crore <em>and</em> aggregate cash receipts and cash payments are each within 5%. A tax-audit UDIN raised under s.44AB(a) while flagging the 5%-cash condition is therefore internally consistent only where turnover is <em>above</em> Rs 10 crore - which is precisely the condition the portal now checks.
+          </div></div>
+          <div class="tnote"><strong>Practice note (observation - portal behaviour, no formal circular):</strong> This is a UDIN <em>portal behaviour</em> observed inside the logged-in system; ICAI has not issued a separate announcement or permalink for it. When raising a tax-audit UDIN on the 5%-cash proviso to s.44AB(a), keep turnover above Rs 10 crore or the declaration will be rejected. Verify the live validation on the portal before wider reliance.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /view-technical -->
+
+
+<!-- ════════════════════════════════
+     TAB 3 — ACTION ITEMS
+════════════════════════════════ -->
+<div id="view-actions" class="view">
+
+  <div class="tech-divider">
+    <div class="tdiv-line"></div>
+    <div class="tdiv-text">Action Items</div>
+    <div class="tdiv-line"></div>
+  </div>
+
+  <div class="sec s1">
+    <div class="gc" style="padding:20px 24px">
+      <p style="font-size:12px;color:var(--txt3);letter-spacing:0.05em;margin-bottom:14px;line-height:1.65">Forward-looking deadlines and action items arising from, or live during, the 27 June to 3 July 2026 window (W27).</p>
+      <table class="atbl">
+        <thead>
+          <tr>
+            <th>Due Date</th>
+            <th>Domain</th>
+            <th>Action Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dred">15 Jul</span></td><td><span class="dbadge p-dt">Direct Tax</span></td><td>TCS return in Form 27EQ for Q1 FY 2026-27 (Apr-Jun 2026) due.</td></tr>
+          <tr><td><span class="dred">31 Jul</span></td><td><span class="dbadge p-dt">Direct Tax</span></td><td>TDS returns (Form 24Q / 26Q / 27Q) for Q1 FY 2026-27 due; and ITR (non-audit) for AY 2026-27 due (subject to any CBDT extension). File only after Form 16 / AIS / 26AS are reconciled.</td></tr>
+          <tr><td><span class="dred">31 Jul</span></td><td><span class="dbadge p-gst">GST</span></td><td>File pending GST Appellate Tribunal appeals (s.112 CGST) for orders communicated before 1 May 2026 - deadline extended to 31 July 2026 (20% pre-deposit required).</td></tr>
+          <tr><td><span class="dred">31 Jul</span></td><td><span class="dbadge p-gst">GST</span></td><td>AATO amendment window for FY 2025-26 closes - verify / correct each client's system-computed Aggregate Annual Turnover on the GST portal.</td></tr>
+          <tr><td><span class="dred">31 Jul</span></td><td><span class="dbadge p-mca">MCA</span></td><td>File Form DPT-3 (Return of Deposits, position as on 31 Mar 2026) to avail the additional-fee relaxation under MCA General Circular No. 02/2026. Do not defer to the last day given recent V3 instability.</td></tr>
+          <tr><td><span class="dred">1 Aug</span></td><td><span class="dbadge p-gst">GST</span></td><td>Mandatory Ship-to GSTIN capture in the e-Invoice / e-Way Bill (IRN) APIs and voluntary e-Way Bill closure go live. Update ERP / ASP / GSP integrations and master data, and finish sandbox testing before this date.</td></tr>
+          <tr><td><span class="dred">31 Dec</span></td><td><span class="dbadge p-dt">Direct Tax</span></td><td>Charitable trusts: ensure Form 10AB (80G final approval) applications filed 1 Oct 2025 - 31 Mar 2026 (or rejected only for delay) are alive for disposal by 31 Dec 2026 (CBDT Circular No. 6/2026).</td></tr>
+          <tr><td><span class="dgray">Ongoing</span></td><td><span class="dbadge p-dt">Direct Tax</span></td><td>IFSC (GIFT City) ship and aircraft lessors: file Form No. 1(N) to opt for the s.147 deduction and secure the no-TDS benefit under Notifications 74 &amp; 75/2026.</td></tr>
+          <tr><td><span class="dgray">Ongoing</span></td><td><span class="dbadge p-icai">ICAI</span></td><td>Peer Review: submit all new Form 1 applications and reports exclusively via the PRB Web Portal (prb.icai.org) from 2 July 2026; physical / email applications are not accepted.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /view-actions -->
+
+
+<!-- footer -->
+<div class="footer">
+  <div>
+    <div class="ft-name">S. Triyambaka Patro, CA</div>
+    <div class="ft-firm">YouWe Quest LLP</div>
+  </div>
+  <div class="ft-note">Compiled 4 July 2026 · W27-2026 covering 27 June - 3 July 2026. For informational purposes only - does not constitute legal or tax advice.</div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+(function(){
+  var html = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  var sun = document.getElementById('icon-sun');
+  var moon = document.getElementById('icon-moon');
+  function applyTheme(t){
+    html.setAttribute('data-theme', t);
+    sun.style.display = t === 'dark' ? '' : 'none';
+    moon.style.display = t === 'light' ? '' : 'none';
+  }
+  applyTheme(localStorage.getItem('theme') || 'dark');
+  btn.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+})();
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var navH = document.querySelector('.nav').offsetHeight;
+  var top = el.getBoundingClientRect().top + window.scrollY - navH - 16;
+  window.scrollTo({top: top, behavior: 'smooth'});
+}
+function toggleSub(hd) {
+  var sub = hd.parentElement;
+  sub.classList.toggle('open');
+}
+(function sortEntries(){
+  var order={
+    't-dead':0,'t-new':1,'t-court':2,'t-portal':3,
+    't-budget':4,'t-live':5,
+    't-udin':6,'t-peer':7,'t-icai':8,'t-pub':9
+  };
+  document.querySelectorAll('.entries').forEach(function(container){
+    var entries=Array.from(container.querySelectorAll(':scope>.entry'));
+    entries.sort(function(a,b){
+      var ta=a.querySelector('.tag')||{},tb=b.querySelector('.tag')||{};
+      var ca=[].find.call(ta.classList||[],function(c){return c in order});
+      var cb=[].find.call(tb.classList||[],function(c){return c in order});
+      return (order[ca]??99)-(order[cb]??99);
+    });
+    entries.forEach(function(e){container.appendChild(e);});
+  });
+})();
+</script>
+</body>
+</html>
