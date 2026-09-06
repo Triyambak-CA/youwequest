@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulatory Brief W31-W36 - YouWe Quest LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;400;500;600;800&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#FBFAF7; --ink:#141412; --txt:#45443E; --mut:#8A867C; --faint:#C9C5B8;
+  --line:#E4E1D8; --line2:#EDEBE3; --red:#D6301C; --gold:#B8963E;
+  --hover:rgba(0,0,0,0.025);
+}
+[data-theme="dark"]{
+  --bg:#111110; --ink:#ECEAE4; --txt:#B9B6AC; --mut:#8F8C82; --faint:#3F3D37;
+  --line:#2E2C28; --line2:#26241F; --red:#FF5A40;
+  --hover:rgba(255,255,255,0.03);
+}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Archivo',Helvetica,Arial,sans-serif;
+  font-size:14px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  transition:background .25s,color .25s;
+}
+
+/* ── sticky nav ── */
+.nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--line);transition:background .25s}
+.nav-in{max-width:880px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px}
+.nav-brand{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav-brand::before{content:'';display:inline-block;width:8px;height:8px;background:var(--gold);margin-right:9px;vertical-align:baseline}
+.nav-back{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mut);text-decoration:none;transition:color .15s}
+.nav-back:hover{color:var(--ink)}
+.nav-meta{margin-left:auto;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mut);white-space:nowrap}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;border:1px solid var(--line);background:transparent;cursor:pointer;color:var(--mut);transition:all .2s;flex-shrink:0;padding:0}
+.theme-toggle:hover{border-color:var(--red);color:var(--red)}
+.theme-toggle svg{width:14px;height:14px}
+@media(max-width:560px){.nav-meta{display:none}}
+
+/* ── page ── */
+.page{max-width:880px;margin:0 auto;padding:44px 24px 90px}
+
+/* masthead */
+.mast-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+.mast-id{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mut)}
+.mast-id b{color:var(--ink);font-weight:600}
+.h1{font-weight:200;font-size:clamp(38px,6vw,54px);letter-spacing:-0.03em;line-height:0.98;margin-top:26px}
+.h1 b{font-weight:800}
+.meta{display:flex;gap:36px;flex-wrap:wrap;margin-top:22px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.m{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mut)}
+.m b{display:block;font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--ink);text-transform:none;margin-top:3px}
+.m b.red{color:var(--red)}
+
+/* tabs */
+.tabs{display:flex;gap:26px;margin-top:18px;padding-bottom:14px;border-bottom:1px solid var(--line);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600}
+.tab{cursor:pointer;color:var(--mut);padding-bottom:4px;background:none;border:none;font:inherit;letter-spacing:inherit;text-transform:inherit;transition:color .15s}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-bottom:2px solid var(--red)}
+
+/* views */
+.view{display:none;padding-top:8px}
+.view.on{display:block;animation:fadeUp .3s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── summary: numbered index ── */
+.item{display:grid;grid-template-columns:88px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:none}
+.num{font-weight:200;font-size:44px;letter-spacing:-0.03em;line-height:1;color:var(--faint)}
+.num.lead{color:var(--ink)}
+.kick{font-size:9.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--mut);margin-bottom:7px}
+.kick span{color:var(--red)}
+.it{font-size:17.5px;font-weight:600;letter-spacing:-0.015em;line-height:1.3;margin-bottom:7px}
+.ib{font-size:13px;line-height:1.62;color:var(--txt);max-width:600px}
+.ib b{font-weight:600;color:var(--ink)}
+.src{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mut);text-decoration:none;border-bottom:1px solid var(--line);margin-top:9px;padding-bottom:1px;transition:color .15s,border-color .15s}
+.src:hover{color:var(--red);border-color:var(--red)}
+@media(max-width:600px){.item{grid-template-columns:56px 1fr;gap:14px}.num{font-size:30px}}
+
+/* ── clauses ── */
+.secline{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin:30px 0 4px;display:flex;gap:12px;align-items:center;color:var(--ink)}
+.secline::after{content:'';flex:1;height:1px;background:var(--ink)}
+.secline .mut{color:var(--mut)}
+.secline .red{color:var(--red)}
+.cl{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line2)}
+.cl.last{border-bottom:none}
+.cl-n{font-size:11.5px;font-weight:600;color:var(--mut)}
+.cl-lab{font-size:8.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--mut);margin-top:3px}
+.cl-lab.red{color:var(--red)}
+.cl-t{font-size:13px;line-height:1.62;color:var(--txt);max-width:620px}
+.cl-t b{font-weight:600;color:var(--ink)}
+.cl-t .red{color:var(--red);font-weight:600}
+.cl-li{position:relative;padding-left:14px;margin-bottom:6px}
+.cl-li:last-child{margin-bottom:0}
+.cl-li::before{content:'-';position:absolute;left:0;color:var(--mut)}
+@media(max-width:600px){.cl{grid-template-columns:70px 1fr;gap:12px}}
+
+/* ── action register: countdown board ── */
+.cd-hd{display:grid;grid-template-columns:96px 1fr 150px 52px;gap:16px;border-bottom:2px solid var(--ink);padding:18px 0 9px}
+.cd-hd span{font-size:9px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--mut)}
+.cd-hd span:last-child{text-align:right}
+.cd{display:grid;grid-template-columns:96px 1fr 150px 52px;gap:16px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
+.cd:hover{background:var(--hover)}
+.cd-date{font-size:15px;font-weight:600;letter-spacing:-0.01em}
+.cd-what{font-size:12.5px;line-height:1.5;color:var(--txt)}
+.cd-bar{height:4px;background:var(--line2);position:relative}
+.cd-bar i{position:absolute;inset:0 auto 0 0;background:var(--mut)}
+.cd-bar i.hot{background:var(--red)}
+.cd-t{font-size:11.5px;font-weight:600;color:var(--mut);text-align:right}
+.cd-t.hot{color:var(--red)}
+.cd-note{margin-top:22px;font-size:12px;color:var(--mut);line-height:1.6;max-width:640px}
+.cd-note b{font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--mut)}
+@media(max-width:640px){
+  .cd-hd{grid-template-columns:82px 1fr 52px}
+  .cd-hd span:nth-child(3){display:none}
+  .cd{grid-template-columns:82px 1fr 52px}
+  .cd-bar{display:none}
+}
+
+/* footer */
+.foot{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--mut)}
+.foot b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="../../index.html">YouWe Quest LLP</a>
+    <a class="nav-back" href="../../updates/index.html">← All updates</a>
+    <div class="nav-meta">W31-W36 · 21 Jul - 06 Sep 2026</div>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="page">
+
+<div class="mast-top">
+  <div class="mast-id"><b>YouWe Quest LLP</b> · Chartered Accountants</div>
+  <div class="mast-id">Ref <b>YWQ/2026/W31-W36</b> · 06 September 2026 · Dear Reader,</div>
+</div>
+<h1 class="h1">Catch-up<br><b>Regulatory Brief</b></h1>
+<div class="meta">
+  <div class="m">Window<b>21 Jul - 06 Sep 2026</b></div>
+  <div class="m">Items<b>20</b></div>
+  <div class="m">Material<b>5</b></div>
+  <div class="m">Deadlines<b class="red">6</b></div>
+  <div class="m">Quiet<b>GST law · SEBI</b></div>
+</div>
+
+<div class="tabs">
+  <button class="tab on" data-v="brief">Brief</button>
+  <button class="tab" data-v="clauses">Technical Reference</button>
+  <button class="tab" data-v="actions">Action Register</button>
+</div>
+
+<!-- ══════════ PART 1 · BRIEF ══════════ -->
+<div class="view on" id="v-brief">
+
+  <div class="item">
+    <div class="num lead">01</div>
+    <div>
+      <div class="kick">Direct Tax · Notification 114/2026, 14 August 2026 · <span>Material</span></div>
+      <div class="it">A one-time window to declare undisclosed foreign assets, open until 31 December</div>
+      <div class="ib">CBDT notified the rules and Forms 1 to 4 for the <b>Foreign Assets of Small Taxpayers Disclosure Scheme, 2026</b> (G.S.R. 732(E); the Scheme itself sits in <b>Chapter IV, ss.130-144 of the Finance Act, 2026</b>). The window opened <b>16 August 2026</b> and the declaration in Form 1 is due by <b>31 December 2026</b>. Two categories: foreign assets never taxed, aggregate value up to <b>Rs 1 crore</b>, at 30% tax plus an additional amount equal to the tax, so <b>60% effective</b>; and assets already taxed or from a non-resident source but simply unreported, up to <b>Rs 5 crore</b>, at a flat <b>Rs 1 lakh</b>. Value is taken at fair market value on 31 March 2026, and the test runs on asset value, not income. <b>Read the immunity narrowly:</b> it covers the Black Money (UFIA) Act, 2015 and nothing else - not FEMA, not PMLA, and not general prosecution under the Income-tax Act. Schedule FA reporting continues to apply from FY 2026-27 regardless.</div>
+      <a class="src" href="https://www.incometaxindia.gov.in/documents/d/guest/notification-no-114-2026-pdf" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num lead">02</div>
+    <div>
+      <div class="kick">Direct Tax · CBDT press release, 18 August 2026 · <span>Material</span></div>
+      <div class="it">Foreign-remittance verification drive puts Form 15CB certifiers in scope</div>
+      <div class="ib">The Department opened a nationwide verification exercise into suspicious outward foreign remittances, covering <b>394 entities and 36 professionals</b>. It followed data analysis and ground intelligence on large overseas remittances by entities with little or no reported business activity, and <b>Form 15CB</b> certification is squarely in scope. This one lands on the profession, not only on clients. Pull your 15CB file and check, for each certificate, that the underlying documents, the purpose code and the treaty position on record actually support what was certified.</div>
+      <a class="src" href="https://www.incometaxindia.gov.in/documents/d/guest/18-08-2026-press-release-income_tax_department_undertakes_verification_of_suspicious_foreign_remittances-pdf" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num lead">03</div>
+    <div>
+      <div class="kick">MCA · General Circular 04/2026, 31 August 2026 · <span>Deadline live</span></div>
+      <div class="it">CCFS-2026 amnesty extended again, now closing 15 September 2026</div>
+      <div class="ib">The Companies Compliance Facilitation Scheme window moves from 31 August to <b>15 September 2026</b> - its second extension, after General Circular 03/2026. Terms are unchanged: overdue forms (AOC-4, MGT-7/7A, ADT-1, FC-3, FC-4 and the like) at <b>10% of normal additional fees</b> with immunity from prosecution for the covered defaults, plus the dormant-status (MSC-1) and strike-off (STK-2) concessions. Run a portfolio-wide ROC pendency scan now, particularly private companies carrying multi-year unfiled annual returns. Full additional fees, penalties and officer-disqualification exposure resume once <b>15 September</b> passes.</div>
+      <a class="src" href="https://www.mca.gov.in/content/mca/global/en/notifications-tender/circulars.html" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num lead">04</div>
+    <div>
+      <div class="kick">ICAI · Professional Development Committee, 28 August 2026 · <span>Deadline live</span></div>
+      <div class="it">MEF 2026-27 closes 9 September, and ICAI says no further extension</div>
+      <div class="ib">The Multipurpose Empanelment Form for 2026-27 was hosted on meficai.org on 7 August and the last date extended from 29 August to <b>9 September 2026</b>. ICAI has stated expressly that <b>no further extension will be granted</b>. MEF drives empanelment for bank branch audits and for RBI, NABARD and CRCS assignments, so a missed filing costs the firm a year of allotments. The operative date is <b>9 September 2026</b>.</div>
+      <a class="src" href="https://www.icai.org/post/mef280826" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num lead">05</div>
+    <div>
+      <div class="kick">ICAI · Direct Taxes Committee · <span>Material</span></div>
+      <div class="it">The tax audit Guidance Note has been finalised as a Revised 2026 edition</div>
+      <div class="ib">ICAI has issued the <b>Guidance Note on Tax Audit under Section 44AB of the Income-tax Act, 1961 (Revised 2026)</b> - 605 pages, Direct Taxes Committee - now live on the ICAI Publication Portal. It follows the exposure draft circulated on 9 July 2026 and supersedes the Revised 2025 edition. With tax audit reports for <b>AY 2026-27 due 30 September</b>, this is the edition your audit team should be working from, and the reporting positions in it should be settled before the file is signed rather than after. ICAI has not stamped a release date on the portal entry, so treat the edition label, not a date, as the identifier.</div>
+      <a class="src" href="https://publication.icai.org/publication/968" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">06</div>
+    <div>
+      <div class="kick">RBI / FEMA · Third Amendment Directions, 25 August 2026 · <span>Material</span></div>
+      <div class="it">The higher-rate window on FCNR(B) and NRE deposits has closed early</div>
+      <div class="ib">RBI brought the sunset of the temporary withdrawal of interest-rate ceilings forward from 30 September to <b>31 August 2026</b>, for FCNR(B) deposits of 3 to 5 year tenors and NRE term deposits of 3 years and above [RBI/2026-27/243]. Deposits contracted from 1 September revert to ceiling-linked rates. Reset NRI clients' expectations on renewals and on any planned FCNR(B) or NRE placement - the elevated-rate window they may have been counting on is gone a month early.</div>
+      <a class="src" href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13685&amp;Mode=0" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">07</div>
+    <div>
+      <div class="kick">Direct Tax · Notification 97/2026, 24 July 2026</div>
+      <div class="it">New Form ITR-BN for block assessments in search and requisition cases</div>
+      <div class="ib">The <b>Income-tax (Third Amendment) Rules, 2026</b> (G.S.R. 656(E)) introduced <b>Form ITR-BN</b>, the return form for block assessments arising from search proceedings under s.247 or requisition under s.248 of the Income-tax Act, 2025, and amended <b>Rule 332</b> by inserting Appendix IV. Effective from 1 April 2026. Any client under search or requisition now files the block return on ITR-BN - brief the assessment and litigation team.</div>
+      <a class="src" href="https://www.incometaxindia.gov.in/documents/d/guest/notification-97-2026-pdf" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">08</div>
+    <div>
+      <div class="kick">Direct Tax · Notification 94/2026, 21 July 2026</div>
+      <div class="it">Category I and II AIFs brought into the 'specified fund' definition</div>
+      <div class="ib">The <b>Income-tax (Second Amendment) Rules, 2026</b> (G.S.R. 646(E)) amended <b>Rule 157(5)(c)</b> to widen 'specified fund' to include Category I and Category II Alternative Investment Funds registered in India. No new form was introduced. Re-check the classification of Cat I and Cat II AIF clients, and any structuring that turns on the specified-fund route, against the amended rule.</div>
+      <a class="src" href="https://www.incometaxindia.gov.in/documents/d/guest/notification-94-2026-pdf" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">09</div>
+    <div>
+      <div class="kick">Direct Tax · CBDT Guidance Note, 24 July 2026</div>
+      <div class="it">FATCA and CRS guidance rewritten, now covering crypto assets and CBDC</div>
+      <div class="ib">CBDT issued a revised and consolidated Guidance Note with FAQs on FATCA and CRS reporting by Reporting Financial Institutions, aligned to the Income-tax Act, 2025 and the Income-tax Rules, 2026, and extended to <b>Form 166</b> and to crypto-asset and CBDC reporting. Any client that is a Reporting Financial Institution must re-map its due-diligence and reporting workflow to the revised Note, including the new digital-asset categories, before the next reporting cycle.</div>
+      <a class="src" href="https://www.incometaxindia.gov.in/what-s-new" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">10</div>
+    <div>
+      <div class="kick">MCA · Notified 12 August 2026</div>
+      <div class="it">Companies (Indian Accounting Standards) Amendment Rules, 2026 notified</div>
+      <div class="ib">MCA notified amendments to the Companies (Indian Accounting Standards) Rules, 2015. Confirm which standards are amended, and from what date, against the notification itself before settling accounting policies or the audit plan for FY 2026-27 for any Ind AS preparer on your books.</div>
+      <a class="src" href="https://www.mca.gov.in/content/mca/global/en/notifications-tender/whats-new.html" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">11</div>
+    <div>
+      <div class="kick">GST · GSTN advisory, 29 July 2026</div>
+      <div class="it">e-Way Bill and e-Invoice API changes put on hold indefinitely</div>
+      <div class="ib">GSTN placed the proposed changes on hold until further notice - the mandatory capture of <b>'Ship To GSTIN'</b> in Bill-To / Ship-To transactions, and the new voluntary e-Way Bill closure facility. Both had been scheduled to go live on <b>1 August 2026</b>. Tell clients and their ERP or GSP teams to stand down on the cutover, but keep the ship-to GSTIN master clean-up running: the requirement is deferred, not withdrawn.</div>
+      <a class="src" href="https://www.gst.gov.in/newsandupdates/read/668" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">12</div>
+    <div>
+      <div class="kick">ICAI · GST &amp; Indirect Taxes Committee</div>
+      <div class="it">Background Material on GST refreshed, plus a new FMCG sectoral guide</div>
+      <div class="ib">The Committee re-issued its flagship <b>Background Material on GST</b> in two volumes on <b>31 August 2026</b>, and published a <b>GST Sectoral Guide on Fast-Moving Consumer Goods</b> on <b>11 August 2026</b>. Worth noting the contrast: no CBIC notification, circular or instruction was issued in this entire window, yet the Institute's GST material moved twice. If your GST desk is still working from an older Background Material, replace it. <a class="src" style="display:inline;border:0;padding:0" href="https://d348t3gez84jj8.cloudfront.net/download/pdf26/Volume%20I.pdf" target="_blank">Volume I ↗</a> · <a class="src" style="display:inline;border:0;padding:0" href="https://d348t3gez84jj8.cloudfront.net/download/pdf26/Volume%20II.pdf" target="_blank">Volume II ↗</a> · <a class="src" style="display:inline;border:0;padding:0" href="https://d348t3gez84jj8.cloudfront.net/download/pdf26/GST%20Sectoral%20Guide%20on%20Fast-Moving%20Consumer%20Goods%20-%2011.08.2026.pdf" target="_blank">FMCG guide ↗</a></div>
+      <a class="src" href="https://idtc.icai.org/publications.php" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">13</div>
+    <div>
+      <div class="kick">Direct Tax · e-Filing portal, August 2026</div>
+      <div class="it">The AY 2026-27 return utilities are now complete</div>
+      <div class="ib">The remaining utilities went live through August: <b>ITR-5</b> online 5 August and offline 7 August; <b>ITR-7</b> online 11 August and offline 14 August; <b>ITR-6</b> online 18 August and offline 20 August. Firm, LLP, trust, institution and company returns can all now be prepared. Update to the latest build before filing, and re-verify the Schedule FA, exempt-income and audit-report linkage schedules.</div>
+      <a class="src" href="https://www.incometax.gov.in/iec/foportal/downloads/income-tax-returns" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">14</div>
+    <div>
+      <div class="kick">Direct Tax · Due date passed 31 August 2026</div>
+      <div class="it">Non-audit returns closed on 31 August with no extension granted</div>
+      <div class="ib">The due date for non-audit returns carrying business or professional income (ITR-3, 4, 5 and 7) for AY 2026-27 was <b>31 August 2026</b>. No extension order was issued - the Department instead ran a sustained filing push through August and reported over <b>6.5 crore</b> returns filed as at 20 August. Clients who missed the date are into belated-return territory, with the fee under the belated-filing provision and the loss of carry-forward for most losses. Identify them now, not at the audit deadline.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">15</div>
+    <div>
+      <div class="kick">MCA · Published 24 August 2026</div>
+      <div class="it">FAQs issued for foreign companies and their Indian subsidiaries</div>
+      <div class="ib">MCA published a consolidated set of FAQs on the obligations of foreign companies and of Indian subsidiaries of foreign body corporates. Worth a pass for any inbound structure on your books - re-check the FC-1, FC-3 and FC-4 filing positions and the registered-place-of-business analysis against them.</div>
+      <a class="src" href="https://www.mca.gov.in/content/mca/global/en/notifications-tender/whats-new.html" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">16</div>
+    <div>
+      <div class="kick">ICAI · Ethical Standards Board, 25 July 2026</div>
+      <div class="it">Goodwill of a deceased proprietor's firm may now be transferred within three years</div>
+      <div class="ib">The Council increased the permissible period for transfer of the goodwill of a deceased member's proprietary firm from <b>one year to three years</b> from the date of death, amending the Code of Ethics 2026, Volume I. This materially eases succession for sole proprietors. Where a proprietor died within the last three years and the firm name has not yet been transferred, the window may still be open - check before treating the name as lapsed.</div>
+      <a class="src" href="https://www.icai.org/post/esb-announcement-250726" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">17</div>
+    <div>
+      <div class="kick">RBI / FEMA · A.P. (DIR Series) Circular 20, 2 September 2026</div>
+      <div class="it">Vostro account reporting requirements rescinded for AD banks</div>
+      <div class="ib">RBI withdrew two long-standing reporting requirements for AD Category-I banks on non-resident bank Vostro accounts: the annual 15 January submission of an updated list of bank offices and branches, and the reporting of overdrawals [RBI/2026-27/251]. Compliance relief at the bank end, with no direct client action - note it only if you advise an authorised dealer on FEMA reporting.</div>
+      <a class="src" href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13693&amp;Mode=0" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">18</div>
+    <div>
+      <div class="kick">Direct Tax · e-Filing portal, 20 July 2026 · <span>Carried over</span></div>
+      <div class="it">Foreign asset information is now visible to taxpayers inside the AIS</div>
+      <div class="ib">CBDT enabled taxpayers to view their <b>Foreign Asset Information</b> through the Annual Information Statement. This landed on 20 July, the closing day of the last published issue, so it is carried into this one. Read it with ITEM 01 and ITEM 02: the department is surfacing foreign-asset data to the taxpayer, opening a disclosure window, and running a remittance verification drive at the same time. <b>Use it as a working tool</b> - have clients pull the AIS foreign-asset view and reconcile it against Schedule FA before deciding whether a declaration under the Scheme is needed.</div>
+      <a class="src" href="https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-07/Annexure.pdf" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">19</div>
+    <div>
+      <div class="kick">Direct Tax · TDS / TCS · Portal</div>
+      <div class="it">Correction statements for the renumbered TDS forms are now live</div>
+      <div class="ib">Under the Income-tax Act, 2025 the quarterly TDS and TCS statements were renumbered for Tax Year 2026-27 onwards: <b>Form 138</b> replaces 24Q (salary), <b>Form 140</b> replaces 26Q (non-salary resident), <b>Form 144</b> replaces 27Q (payments to non-residents) and <b>Form 143</b> replaces 27EQ (TCS). The correction track for these forms is now published and validates through <b>FVU version 1.2</b>. Corrections for FY 2010-11 to FY 2025-26 continue on the separate <b>FVU 9.5</b> line, so the two eras do not mix. One gap to plan around: the <b>Q4 file format for Form 138 is still awaited</b>.</div>
+      <a class="src" href="https://tinpan.proteantech.in/downloads/e-tds/eTDS-download-corr.html" target="_blank">Source ↗</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">20</div>
+    <div>
+      <div class="kick">Direct Tax · GST · SEBI · Record only</div>
+      <div class="it">Entity-specific notifications, and two domains that stayed quiet</div>
+      <div class="ib">The balance of CBDT notifications in the window (<b>92 to 117 of 2026</b>, other than 94, 97 and 114) are entity-specific exemptions and approvals - District Legal Service Authorities, the Kerala Headload Workers Welfare Board, Noida SEZ Authority, Sir Ganga Ram Trust, and the Maharashtra Electricity Regulatory Commission (Notifications 116 and 117 of 25 August). No general applicability; check the conditions in the notification before relying on any approval. <b>No CBDT circular</b> was issued in the window at all. On the quiet side: <b>GST</b> saw no legislative change reaching our clients beyond the 29 July advisory, and no <b>SEBI</b> circular met the audit or corporate-compliance scope - the in-window circulars were entirely capital-markets and operational.</div>
+      <a class="src" href="https://www.incometaxindia.gov.in/notifications" target="_blank">Source ↗</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════ PART 2 · CLAUSES ══════════ -->
+<div class="view" id="v-clauses">
+
+  <div class="secline">ITEM 01 · FOREIGN ASSETS DISCLOSURE SCHEME · <span>Material</span></div>
+  <div class="cl"><div><div class="cl-n">01.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">CBDT Notification No. <b>114/2026</b>, G.S.R. 732(E), F.No. 370142/18/2026-TPL, dated <b>14 August 2026</b>, notifying the rules and forms. The Scheme itself is <b>Chapter IV, ss.130-144 of the Finance Act, 2026</b> - s.131 eligibility, s.133 charge, s.135 procedure, s.140 exclusions. The rules were made under the s.143 rule-making power.</div></div>
+  <div class="cl"><div><div class="cl-n">01.2</div><div class="cl-lab">Window</div></div><div class="cl-t">Opened <b>16 August 2026</b>. The declaration in <b>Form 1</b> is due by <span class="red">31 December 2026</span>. Payment runs on a separate clock into 2027, with <b>1% per month</b> on delay.</div></div>
+  <div class="cl"><div><div class="cl-n">01.3</div><div class="cl-lab">Forms</div></div><div class="cl-t"><div class="cl-li"><b>Form 1</b> - the declaration</div><div class="cl-li"><b>Form 2</b> - the authority's order determining the amount payable</div><div class="cl-li"><b>Form 3</b> - intimation of payment, with proof</div><div class="cl-li"><b>Form 4</b> - the certificate of validity and immunity</div></div></div>
+  <div class="cl"><div><div class="cl-n">01.4</div><div class="cl-lab">Eligibility and cost</div></div><div class="cl-t"><div class="cl-li"><b>Category 1</b> - foreign assets never subjected to tax, aggregate value up to <b>Rs 1 crore</b>: tax at 30% plus an additional amount equal to the tax, an effective <b>60%</b></div><div class="cl-li"><b>Category 2</b> - assets already taxed, or from a non-resident source, but not reported, aggregate value up to <b>Rs 5 crore</b>: a flat <b>Rs 1 lakh</b></div><div class="cl-li">Both tested on <b>fair market value at 31 March 2026</b>, and on asset value rather than income</div></div></div>
+  <div class="cl"><div><div class="cl-n">01.5</div><div class="cl-lab">Limits of the immunity</div></div><div class="cl-t">This is the part clients will get wrong. The immunity runs to the <b>Black Money (UFIA) Act, 2015</b> only. It does <b>not</b> extend to FEMA, to PMLA, or to general prosecution under the Income-tax Act, and <b>Schedule FA</b> reporting continues to apply from FY 2026-27 in the ordinary way. Describe the 100% addition as an additional amount equal to the tax, not as a penalty - the distinction matters if the charge is ever litigated.</div></div>
+  <div class="cl"><div><div class="cl-n">01.6</div><div class="cl-lab">Confirm on the notification</div></div><div class="cl-t"><div class="cl-li"><b>How a foreign bank account is valued.</b> One reading takes the sum of all deposits since the account was opened, another the higher of cost or market value. The difference is decisive: on the deposits reading, a modest account can breach the Rs 1 crore ceiling.</div><div class="cl-li"><b>Whether a search, survey or existing notice bars a declaration.</b> The reported exclusions under s.140 are only PMLA proceeds of crime and years already assessed under the 2015 Act. Every prior Indian amnesty carried a detection bar, so treat its apparent absence with caution.</div></div></div>
+  <div class="cl last"><div><div class="cl-n">01.7</div><div class="cl-lab red">Action</div></div><div class="cl-t">Screen the client base now - overseas bank and brokerage accounts, ESOPs and RSUs in foreign parents, foreign pension entitlements and immovable property abroad - against Schedule FA history, then settle the two open points above. Read this alongside ITEM 02: the disclosure window and the Department's detection capability are moving together, and the window shuts <span class="red">31 December 2026</span>.</div></div>
+
+  <div class="secline">ITEM 02 · FOREIGN REMITTANCE VERIFICATION DRIVE · <span>Material</span></div>
+  <div class="cl"><div><div class="cl-n">02.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">Income Tax Department press release <b>"Income Tax Department undertakes verification of suspicious foreign remittances"</b>, dated <b>18 August 2026</b>.</div></div>
+  <div class="cl"><div><div class="cl-n">02.2</div><div class="cl-lab">Scope</div></div><div class="cl-t">A nationwide verification exercise into suspicious outward foreign remittances covering <b>394 entities and 36 professionals</b>, following data analysis and ground intelligence on significant remittances by entities with little or no reported business activity.</div></div>
+  <div class="cl"><div><div class="cl-n">02.3</div><div class="cl-lab">Why it reaches the profession</div></div><div class="cl-t"><b>Form 15CB</b> is an accountant's certificate. Where a remittance is challenged, the certificate and the file behind it are examined alongside the remitter. The inclusion of 36 professionals in the announced scope is the point of the announcement.</div></div>
+  <div class="cl last"><div><div class="cl-n">02.4</div><div class="cl-lab red">Action</div></div><div class="cl-t">Review the 15CB file. For each certificate confirm the invoice or agreement relied on, the purpose code, the treaty article and rate applied, and the beneficiary KYC held. Where the underlying documentation is thin, record the position now rather than reconstructing it under enquiry.</div></div>
+
+  <div class="secline">ITEM 03 · CCFS-2026 EXTENDED · <span>Deadline live</span></div>
+  <div class="cl"><div><div class="cl-n">03.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">MCA <b>General Circular No. 04/2026</b> dated <b>31 August 2026</b>, extending the Companies Compliance Facilitation Scheme, 2026 (introduced by General Circular 01/2026 of 24 February 2026 and earlier extended by General Circular 03/2026).</div></div>
+  <div class="cl"><div><div class="cl-n">03.2</div><div class="cl-lab">Window</div></div><div class="cl-t">The operative window moves from 31 August 2026 to <span class="red">15 September 2026</span>.</div></div>
+  <div class="cl"><div><div class="cl-n">03.3</div><div class="cl-lab">Terms</div></div><div class="cl-t">Unchanged: overdue forms (AOC-4, MGT-7/7A, ADT-1, FC-3, FC-4 and the like) at <b>10% of normal additional fees</b>, with immunity from prosecution for the covered defaults, together with the dormant-status (MSC-1) and strike-off (STK-2) concessions.</div></div>
+  <div class="cl"><div><div class="cl-n">03.4</div><div class="cl-lab">Retrieval</div></div><div class="cl-t">MCA per-item circular PDFs have no stable shareable URL on the V3 portal. Retrieve General Circular 04/2026 from the MCA Circulars listing, where it is indexed under 31-08-2026.</div></div>
+  <div class="cl last"><div><div class="cl-n">03.5</div><div class="cl-lab red">Action</div></div><div class="cl-t">Clear every overdue ROC filing <span class="red">before 15 September 2026</span>. Prioritise private companies with multi-year unfiled annual returns, where the additional-fee saving is largest and the officer-disqualification exposure most real.</div></div>
+
+  <div class="secline">ITEM 04 · ICAI MEF 2026-27 · <span>Deadline live</span></div>
+  <div class="cl"><div><div class="cl-n">04.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">ICAI Professional Development Committee announcements dated <b>7 August 2026</b> (hosting of the form on meficai.org) and <b>28 August 2026</b> (extension of the last date).</div></div>
+  <div class="cl"><div><div class="cl-n">04.2</div><div class="cl-lab">Window</div></div><div class="cl-t">Last date moves from 29 August 2026 to <span class="red">9 September 2026</span>. ICAI has stated that <b>no further extension will be granted</b>.</div></div>
+  <div class="cl"><div><div class="cl-n">04.3</div><div class="cl-lab">Why it matters</div></div><div class="cl-t">MEF is the gateway to bank branch audit allotment and to RBI, NABARD and CRCS empanelment. A missed filing costs the firm a full year of allotments; there is no condonation route.</div></div>
+  <div class="cl last"><div><div class="cl-n">04.4</div><div class="cl-lab red">Action</div></div><div class="cl-t">If the firm has not filed, file now. Confirm the declaration and the partner and staff particulars before submission - corrections after the last date are not entertained.</div></div>
+
+  <div class="secline">ITEM 05 · TAX AUDIT GUIDANCE NOTE · <span>Material</span></div>
+  <div class="cl"><div><div class="cl-n">05.1</div><div class="cl-lab">Reference</div></div><div class="cl-t"><b>Guidance Note on Tax Audit under Section 44AB of the Income-tax Act, 1961 (Revised 2026)</b>, Direct Taxes Committee, ICAI. 605 pages, hosted on the ICAI Publication Portal (publication 968). Download requires an ICAI login.</div></div>
+  <div class="cl"><div><div class="cl-n">05.2</div><div class="cl-lab">Status</div></div><div class="cl-t">Final, not a draft. It is listed on the Direct Taxes Committee page as a separate entry from the <b>exposure draft</b> circulated for public comments on <b>9 July 2026</b>, and it supersedes the <b>Revised 2025</b> edition.</div></div>
+  <div class="cl"><div><div class="cl-n">05.3</div><div class="cl-lab">Which year</div></div><div class="cl-t">The Act referred to is the Income-tax Act, <b>1961</b>, which is correct: AY 2026-27 corresponds to FY 2025-26 and is governed by the 1961 Act. The Income-tax Act, 2025 applies from Tax Year 2026-27 onward.</div></div>
+  <div class="cl"><div><div class="cl-n">05.4</div><div class="cl-lab">Dating caveat</div></div><div class="cl-t">The Publication Portal entry carries <b>no release date</b>. Identify the publication by its edition label (Revised 2026), not by a date. We have not published a release date because ICAI has not stated one.</div></div>
+  <div class="cl last"><div><div class="cl-n">05.5</div><div class="cl-lab red">Action</div></div><div class="cl-t">Move the audit team onto the Revised 2026 edition now, before the <span class="red">30 September</span> tax audit deadline. Re-check the clauses where reporting has widened in recent years, and settle contested positions against this edition rather than the 2025 one - a Guidance Note change mid-season is exactly what gets missed on a signed 3CD.</div></div>
+
+  <div class="secline">ITEM 06 · FCNR(B) AND NRE RATE CEILINGS · <span>Material</span></div>
+  <div class="cl"><div><div class="cl-n">06.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) <b>Third Amendment Directions, 2026</b> [RBI/2026-27/243], dated <b>25 August 2026</b>.</div></div>
+  <div class="cl"><div><div class="cl-n">06.2</div><div class="cl-lab">What changed</div></div><div class="cl-t">The sunset of the temporary withdrawal of interest-rate ceilings is brought forward from 30 September 2026 to <span class="red">31 August 2026</span>.</div></div>
+  <div class="cl"><div><div class="cl-n">06.3</div><div class="cl-lab">Which deposits</div></div><div class="cl-t">FCNR(B) deposits of <b>3 to 5 year</b> tenors and NRE term deposits of <b>3 years and above</b>. Deposits contracted from 1 September 2026 revert to ceiling-linked rates.</div></div>
+  <div class="cl last"><div><div class="cl-n">06.4</div><div class="cl-lab red">Action</div></div><div class="cl-t">Tell NRI clients the elevated-rate window closed a month earlier than announced. Re-run the arithmetic on any renewal or fresh placement decided on the earlier 30 September assumption.</div></div>
+
+  <div class="secline">ITEM 07 · FORM ITR-BN FOR BLOCK ASSESSMENTS</div>
+  <div class="cl"><div><div class="cl-n">07.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">Notification No. <b>97/2026</b>, G.S.R. 656(E), F.No. 370142/11/2026-TPL, dated <b>24 July 2026</b> - the Income-tax (Third Amendment) Rules, 2026.</div></div>
+  <div class="cl"><div><div class="cl-n">07.2</div><div class="cl-lab">What it does</div></div><div class="cl-t">Introduces <b>Form ITR-BN</b> as the return of income for block assessments, and amends <b>Rule 332</b> by inserting Appendix IV.</div></div>
+  <div class="cl"><div><div class="cl-n">07.3</div><div class="cl-lab">Which proceedings</div></div><div class="cl-t">Block assessments arising from <b>search under s.247</b> or <b>requisition under s.248</b> of the Income-tax Act, 2025. Effective from 1 April 2026.</div></div>
+  <div class="cl last"><div><div class="cl-n">07.4</div><div class="cl-lab red">Action</div></div><div class="cl-t">Any client under search or requisition files the block return on ITR-BN. Brief the assessment and litigation team, and check the form against any block-period return currently in preparation.</div></div>
+
+  <div class="secline">ITEM 08 · SPECIFIED FUND DEFINITION WIDENED</div>
+  <div class="cl"><div><div class="cl-n">08.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">Notification No. <b>94/2026</b>, G.S.R. 646(E), F.No. 370142/24/2026-TPL, dated <b>21 July 2026</b> - the Income-tax (Second Amendment) Rules, 2026.</div></div>
+  <div class="cl"><div><div class="cl-n">08.2</div><div class="cl-lab">What it does</div></div><div class="cl-t">Amends <b>Rule 157(5)(c)</b> to widen the meaning of 'specified fund' to include <b>Category I and Category II Alternative Investment Funds</b> registered in India. No new or substituted form.</div></div>
+  <div class="cl last"><div><div class="cl-n">08.3</div><div class="cl-lab red">Action</div></div><div class="cl-t">Re-check the classification of Cat I and Cat II AIF clients, and any structuring or withholding position that turns on the specified-fund route, against the amended rule.</div></div>
+
+  <div class="secline">ITEM 09 · FATCA AND CRS GUIDANCE NOTE REVISED</div>
+  <div class="cl"><div><div class="cl-n">09.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">CBDT revised Guidance Note on FATCA and CRS, dated <b>24 July 2026</b>, with FAQs.</div></div>
+  <div class="cl"><div><div class="cl-n">09.2</div><div class="cl-lab">What changed</div></div><div class="cl-t">Consolidated and re-aligned to the Income-tax Act, 2025 and the Income-tax Rules, 2026, extended to <b>Form 166</b> and to <b>crypto-asset and CBDC</b> reporting by Reporting Financial Institutions.</div></div>
+  <div class="cl last"><div><div class="cl-n">09.3</div><div class="cl-lab red">Action</div></div><div class="cl-t">Any client that is a Reporting Financial Institution should re-map due diligence and reporting to the revised Note, with particular attention to the new digital-asset categories, before the next reporting cycle.</div></div>
+
+  <div class="secline">ITEM 10 · IND AS AMENDMENT RULES, 2026</div>
+  <div class="cl"><div><div class="cl-n">10.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">The <b>Companies (Indian Accounting Standards) Amendment Rules, 2026</b>, listed on the MCA What's New feed under <b>12 August 2026</b> and announced on MCA's official channel on 19 August 2026.</div></div>
+  <div class="cl"><div><div class="cl-n">10.2</div><div class="cl-lab">Verify before applying</div></div><div class="cl-t">The specific standards amended, and the effective date, were not confirmable from the listing. Read the notification before settling accounting policies or the audit plan.</div></div>
+  <div class="cl last"><div><div class="cl-n">10.3</div><div class="cl-lab red">Action</div></div><div class="cl-t">Flag every Ind AS preparer on the client base and schedule a policy review for FY 2026-27 once the amended standards are confirmed.</div></div>
+
+  <div class="secline">ITEM 11 · E-WAY BILL ENHANCEMENTS ON HOLD</div>
+  <div class="cl"><div><div class="cl-n">11.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">GSTN advisory dated <b>29 July 2026</b> - Keeping on Hold the Proposed e-Way Bill Enhancements.</div></div>
+  <div class="cl"><div><div class="cl-n">11.2</div><div class="cl-lab">What changed</div></div><div class="cl-t"><div class="cl-li">mandatory capture of <b>'Ship To GSTIN'</b> in Bill-To / Ship-To transactions</div><div class="cl-li">the new <b>voluntary e-Way Bill closure</b> facility</div></div></div>
+  <div class="cl last"><div><div class="cl-n">11.3</div><div class="cl-lab red">Action</div></div><div class="cl-t">Tell clients and their ERP or GSP teams to stand down on the 1 August cutover. Continue the ship-to GSTIN master clean-up regardless - the requirement is deferred, not withdrawn, and the clean-up is the long pole.</div></div>
+
+  <div class="secline">ITEM 12 · ICAI GST PUBLICATIONS</div>
+  <div class="cl"><div><div class="cl-n">12.1</div><div class="cl-lab">Reference</div></div><div class="cl-t"><div class="cl-li"><b>Background Material on GST</b>, Volumes I and II - hosted <b>31 August 2026</b></div><div class="cl-li"><b>GST Sectoral Guide on Fast-Moving Consumer Goods</b> - hosted <b>11 August 2026</b></div></div></div>
+  <div class="cl"><div><div class="cl-n">12.2</div><div class="cl-lab">Context</div></div><div class="cl-t">Both fall inside this window. A third guide, on Charitable Trusts and NPOs (14 July 2026), sits just outside it.</div></div>
+  <div class="cl"><div><div class="cl-n">12.3</div><div class="cl-lab">Why it is worth noting</div></div><div class="cl-t">No CBIC notification, circular, instruction or order was issued in the entire 21 July to 6 September window, yet the Institute's GST material was refreshed twice. The law was still; the guidance was not.</div></div>
+  <div class="cl last"><div><div class="cl-n">12.4</div><div class="cl-lab red">Action</div></div><div class="cl-t">Replace any older Background Material on the GST desk with the 31 August volumes. Use the FMCG sectoral guide where you act for consumer-goods clients - sectoral guides are the fastest route to the classification and valuation positions the department actually argues.</div></div>
+
+  <div class="secline">ITEM 13 · AY 2026-27 RETURN UTILITIES COMPLETE</div>
+  <div class="cl"><div><div class="cl-n">13.1</div><div class="cl-lab">What changed</div></div><div class="cl-t"><div class="cl-li"><b>ITR-5</b> - online 5 August, offline 7 August</div><div class="cl-li"><b>ITR-7</b> - online 11 August, offline 14 August</div><div class="cl-li"><b>ITR-6</b> - excel utility 4 August, online 18 August, offline 20 August</div></div></div>
+  <div class="cl last"><div><div class="cl-n">13.2</div><div class="cl-lab red">Action</div></div><div class="cl-t">Firm, LLP, trust, institution and company returns can all now be prepared. Update to the latest build before filing and re-verify the Schedule FA, exempt-income and audit-report linkage schedules.</div></div>
+
+  <div class="secline">ITEM 14 · NON-AUDIT DUE DATE PASSED</div>
+  <div class="cl"><div><div class="cl-n">14.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">Due date for non-audit returns with business or professional income (ITR-3, 4, 5 and 7) for AY 2026-27 - <b>31 August 2026</b>.</div></div>
+  <div class="cl"><div><div class="cl-n">14.2</div><div class="cl-lab">No extension</div></div><div class="cl-t">No extension order was issued. The CBDT Orders feed was read directly for the window and carries no s.239 or comparable extension. The Department instead ran a filing push through August, reporting over <b>6.5 crore</b> returns filed as at 20 August 2026.</div></div>
+  <div class="cl last"><div><div class="cl-n">14.3</div><div class="cl-lab red">Action</div></div><div class="cl-t">Identify clients who missed the date now. They are into belated-return territory, with the belated-filing fee and the loss of carry-forward for most losses. Do not leave this to surface at the audit deadline.</div></div>
+
+  <div class="secline">ITEM 15 · MCA FAQs - FOREIGN COMPANIES</div>
+  <div class="cl"><div><div class="cl-n">15.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">MCA FAQs on Foreign Companies / Indian Subsidiaries of Foreign Body Corporates, published <b>24 August 2026</b>.</div></div>
+  <div class="cl last"><div><div class="cl-n">15.2</div><div class="cl-lab red">Action</div></div><div class="cl-t">Re-check FC-1, FC-3 and FC-4 filing positions and the registered-place-of-business analysis for every inbound structure on the client base against the FAQs.</div></div>
+
+  <div class="secline">ITEM 16 · GOODWILL TRANSFER PERIOD EXTENDED</div>
+  <div class="cl"><div><div class="cl-n">16.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">ICAI Ethical Standards Board announcement dated <b>25 July 2026</b>, amending the Code of Ethics 2026, Volume I.</div></div>
+  <div class="cl"><div><div class="cl-n">16.2</div><div class="cl-lab">What changed</div></div><div class="cl-t">The permissible period for transfer of the goodwill of a <b>deceased member's proprietary firm</b> is increased from <b>one year to three years</b> from the date of death.</div></div>
+  <div class="cl last"><div><div class="cl-n">16.3</div><div class="cl-lab red">Action</div></div><div class="cl-t">Where a proprietor has died within the last three years and the firm name has not been transferred, the window may still be open. Check before treating the firm name as lapsed - this is a real recovery for affected families.</div></div>
+
+  <div class="secline">ITEM 17 · VOSTRO ACCOUNT REPORTING RELIEF</div>
+  <div class="cl"><div><div class="cl-n">17.1</div><div class="cl-lab">Reference</div></div><div class="cl-t"><b>A.P. (DIR Series) Circular No. 20</b> [RBI/2026-27/251], dated <b>2 September 2026</b>.</div></div>
+  <div class="cl"><div><div class="cl-n">17.2</div><div class="cl-lab">What changed</div></div><div class="cl-t">Two reporting requirements for AD Category-I banks on non-resident bank Vostro accounts are rescinded - the annual 15 January submission of an updated list of bank offices and branches, and the reporting of overdrawals.</div></div>
+  <div class="cl last"><div><div class="cl-n">17.3</div><div class="cl-lab">Note</div></div><div class="cl-t">Relief at the authorised-dealer end. No client action; relevant only where you advise an AD bank on FEMA reporting.</div></div>
+
+  <div class="secline">ITEM 18 · FOREIGN ASSET DATA IN THE AIS</div>
+  <div class="cl"><div><div class="cl-n">18.1</div><div class="cl-lab">Reference</div></div><div class="cl-t">Income-tax e-Filing portal announcement dated <b>20 July 2026</b> - CBDT enhances taxpayer services by enabling taxpayers to view their Foreign Asset Information through the Annual Information Statement.</div></div>
+  <div class="cl"><div><div class="cl-n">18.2</div><div class="cl-lab">Why it is here</div></div><div class="cl-t">20 July was the closing day of the last published issue, which went out the same day. The item is carried into this catch-up rather than dropped in the gap.</div></div>
+  <div class="cl last"><div><div class="cl-n">18.3</div><div class="cl-lab red">Action</div></div><div class="cl-t">Have clients with any offshore exposure open the AIS foreign-asset view and reconcile it line by line against Schedule FA. Do this <b>before</b> deciding whether to declare under the Scheme at ITEM 01 - the reconciliation tells you whether the department already holds the data.</div></div>
+
+  <div class="secline">ITEM 19 · TDS CORRECTION STATEMENTS</div>
+  <div class="cl"><div><div class="cl-n">19.1</div><div class="cl-lab">Form mapping</div></div><div class="cl-t"><div class="cl-li"><b>Form 138</b> - was Form 24Q (salary TDS)</div><div class="cl-li"><b>Form 140</b> - was Form 26Q (non-salary, resident)</div><div class="cl-li"><b>Form 144</b> - was Form 27Q (payments to non-residents)</div><div class="cl-li"><b>Form 143</b> - was Form 27EQ (TCS)</div></div></div>
+  <div class="cl"><div><div class="cl-n">19.2</div><div class="cl-lab">What changed</div></div><div class="cl-t">The correction-statement track for the new forms is now published. Correction statements for TY 2026-27 onwards validate through <b>FVU version 1.2</b>; corrections for FY 2010-11 to FY 2025-26 continue on <b>FVU 9.5</b>, and periods up to FY 2009-10 on FVU 2.191.</div></div>
+  <div class="cl"><div><div class="cl-n">19.3</div><div class="cl-lab">Still awaited</div></div><div class="cl-t">The file format for <b>Form 138, Quarter 4</b> has not been released. Plan the year-end salary-TDS statement around that.</div></div>
+  <div class="cl last"><div><div class="cl-n">19.4</div><div class="cl-lab red">Action</div></div><div class="cl-t">Make sure the TDS team is on the correct utility line before filing any correction: the new forms will not validate on the old FVU, and vice versa. Re-check any correction prepared for a TY 2026-27 quarter on FVU 1.2 before submission.</div></div>
+
+  <div class="secline">ITEM 20 · RECORD ONLY, AND THE QUIET DOMAINS</div>
+  <div class="cl"><div><div class="cl-n">20.1</div><div class="cl-lab">Entity-specific</div></div><div class="cl-t">CBDT Notifications <b>92 to 117 of 2026</b>, other than 94, 97 and 114, are entity-specific exemptions and approvals - District Legal Service Authorities (Jind, Panchkula), Kerala Headload Workers Welfare Board, Fees Regulating Authority, Noida SEZ Authority, Odisha and Maharashtra bodies, Sir Ganga Ram Trust, the International Institute of Bio Technology and Toxicology, and the Maharashtra Electricity Regulatory Commission (116 and 117 of 25 August). No general applicability.</div></div>
+  <div class="cl"><div><div class="cl-n">20.2</div><div class="cl-lab">CBDT circulars</div></div><div class="cl-t"><b>None issued in the window.</b> The most recent circular remains 6/2026 dated 2 July 2026, covered in an earlier issue.</div></div>
+  <div class="cl"><div><div class="cl-n">20.3</div><div class="cl-lab">GST</div></div><div class="cl-t"><b>No CBIC notification, circular, instruction or order</b> was issued between 21 July and 6 September 2026, across any series. The only GST developments reaching clients are the 29 July GSTN advisory at ITEM 11 and the two ICAI publications at ITEM 12 - the statute stood still, the guidance did not.</div></div>
+  <div class="cl"><div><div class="cl-n">20.4</div><div class="cl-lab">SEBI</div></div><div class="cl-t">No in-window circular met the audit or corporate-compliance scope. The circulars issued were capital-markets and operational - ETF timelines, cyber and IT resilience, FPI power of attorney, mutual fund registration, the OBPP framework, InvIT NDCF, commodity derivatives stress testing, municipal debt, AIF mechanisms and promoter-holding freeze. Excluded per scope.</div></div>
+  <div class="cl last"><div><div class="cl-n">20.5</div><div class="cl-lab">Not swept</div></div><div class="cl-t">The UDIN announcements listing is a JavaScript-only shell and could not be read; it is recorded as unswept rather than clear. The ICAI IDTC publications page was reached on a second pass and is fully swept (see ITEM 12). The TRACES / CPC-TDS advisory feed was also unreachable, but the TDS position for the window was closed independently through the TIN utility track at ITEM 19.</div></div>
+
+</div>
+
+<!-- ══════════ PART 3 · ACTION REGISTER ══════════ -->
+<div class="view" id="v-actions">
+
+  <div class="cd-hd"><span>Due</span><span>Action</span><span>Runway</span><span>T-minus</span></div>
+  <div class="cd">
+    <div><div class="cd-date">09 Sep</div><div class="cl-lab">ICAI</div></div>
+    <div class="cd-what">Submit the Multipurpose Empanelment Form 2026-27 on meficai.org - ICAI has stated there will be no further extension</div>
+    <div class="cd-bar"><i class="hot" style="width:94%"></i></div>
+    <div class="cd-t hot">T-3</div>
+  </div>
+  <div class="cd">
+    <div><div class="cd-date">15 Sep</div><div class="cl-lab">MCA</div></div>
+    <div class="cd-what">Clear every overdue ROC filing under CCFS-2026 before the amnesty window closes (General Circular 04/2026)</div>
+    <div class="cd-bar"><i class="hot" style="width:87%"></i></div>
+    <div class="cd-t hot">T-9</div>
+  </div>
+  <div class="cd">
+    <div><div class="cd-date">15 Sep</div><div class="cl-lab">Direct Tax</div></div>
+    <div class="cd-what">Pay the second advance-tax instalment for Tax Year 2026-27 - the ordinary date; no relaxation was notified in this window</div>
+    <div class="cd-bar"><i class="hot" style="width:87%"></i></div>
+    <div class="cd-t hot">T-9</div>
+  </div>
+  <div class="cd">
+    <div><div class="cd-date">30 Sep</div><div class="cl-lab">Direct Tax</div></div>
+    <div class="cd-what">File tax audit reports for AY 2026-27 (Form 3CA / 3CB-3CD) using the ICAI Guidance Note Revised 2026 - no extension has been notified</div>
+    <div class="cd-bar"><i class="" style="width:71%"></i></div>
+    <div class="cd-t">T-24</div>
+  </div>
+  <div class="cd">
+    <div><div class="cd-date">31 Oct</div><div class="cl-lab">Direct Tax</div></div>
+    <div class="cd-what">File returns for audit cases, AY 2026-27, and Form 3CEB where a transfer-pricing report is due</div>
+    <div class="cd-bar"><i class="" style="width:37%"></i></div>
+    <div class="cd-t">T-55</div>
+  </div>
+  <div class="cd" style="border-bottom:none">
+    <div><div class="cd-date">31 Dec</div><div class="cl-lab">Direct Tax</div></div>
+    <div class="cd-what">Foreign Assets of Small Taxpayers Disclosure Scheme - confirm the exact closing date against Notification 114/2026 before relying on it</div>
+    <div class="cd-bar"><i class="" style="width:10%"></i></div>
+    <div class="cd-t">T-116</div>
+  </div>
+
+  <div class="cd-note"><b>How to read this</b>T-minus counts are as at <b>6 September 2026</b>, the compile date of this catch-up brief. Only deadlines still open today are listed. Dates that fell inside the 21 July to 6 September gap - the 31 July DPT-3 relief date, the 31 August non-audit return date and the original 31 August CCFS date - are dealt with in the Brief as events, not carried here as live actions. The two hottest rows both arise from extensions granted in the last fortnight of the window.</div>
+
+</div>
+
+<div class="foot">
+  <span><b>S. Triyambaka Patro, CA</b> · YouWe Quest LLP</span>
+  <span>Prepared for clients · Not for circulation</span>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var btn=document.getElementById('theme-toggle');
+  var sun=document.getElementById('icon-sun');
+  var moon=document.getElementById('icon-moon');
+  function apply(t){
+    html.setAttribute('data-theme',t);
+    sun.style.display=t==='dark'?'':'none';
+    moon.style.display=t==='light'?'':'none';
+  }
+  apply(localStorage.getItem('theme')||'dark');
+  btn.addEventListener('click',function(){
+    var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    localStorage.setItem('theme',next);
+    apply(next);
+  });
+
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      document.querySelectorAll('.view').forEach(function(v){v.classList.remove('on')});
+      t.classList.add('on');
+      document.getElementById('v-'+t.dataset.v).classList.add('on');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
