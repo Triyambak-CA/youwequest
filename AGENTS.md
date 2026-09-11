@@ -2,6 +2,7 @@
 
 Contributor and AI-agent guide for the YouWe Quest LLP website.
 Harness-neutral: Claude Code, Codex, opencode and any other agent should read this file first.
+Codex and opencode read `AGENTS.md` natively. Claude Code reads `CLAUDE.md`, so the tracked `CLAUDE.md` is a stub that imports this file with `@AGENTS.md`. Keep it a stub and put the content here.
 
 ## What this repo is
 
@@ -23,7 +24,7 @@ In that case, do not hand-create, regenerate, restyle or "fix" any of these:
 
 Those pages are produced by a local, human-supervised workflow that is not part of this repository. Editing one by hand puts it out of step with its source template, and the next run will overwrite your change.
 
-**If you change shared CSS or anything in the design system below, say so explicitly in the pull request description.** The maintainer has to mirror that change into the local page template by hand, or the next generated page silently reverts it.
+**If you change shared CSS or anything in the design system below, say so explicitly in the pull request description.** The maintainer has to mirror that change into the local page templates by hand, or the next generated page silently reverts it. There are two of them, described under Design system.
 
 ## Layout
 
@@ -43,20 +44,38 @@ Each index page lists issues as cards in `.update-list`, newest first. Exactly o
 
 ## Design system
 
-Shared across every page. Do not deviate without being asked.
+These hold across the site. Do not deviate without being asked:
 
-- **Fonts:** Cormorant Garamond (serif, headings and brand), DM Sans (body), DM Mono (code). Loaded from Google Fonts.
 - **Theme:** dark by default, with a light mode. Toggled by a button and stored in `localStorage` under the key `theme`, applied as a `data-theme` attribute on `<html>`. A small blocking script at the top of `<head>` reads that value before first paint so the page does not flash.
+- **Gold accent:** `--gold:#B8963E` on every page. The classic template darkens it to `#8C6D1A` in light mode; the newspaper template keeps the one value in both.
+- **Entry motion:** a `fadeUp` keyframe on cards and sections, staggered with `animation-delay`. Present on every page except the home page, which instead uses `.reveal` classes driven by an `IntersectionObserver`, staggered with `.reveal-d1` to `.reveal-d6`.
+
+Everything else belongs to one of two templates.
+
+### Classic template
+
+The home page, all three index pages, every RBI digest, every macro report, and weekly issues up to 10 Jul 2026.
+
+- **Fonts:** Cormorant Garamond (serif, headings and brand) and DM Sans (body), plus DM Mono (code) everywhere except the macro reports. Loaded from Google Fonts.
 - **Backgrounds:** dark `#070c12`, light `#f4f1eb`.
-- **Gold accent:** `--gold:#B8963E` dark, `#8C6D1A` light. Used site-wide, including the `rbi/` pages.
-- **Macro accent:** `--macro:#5EBF8C` dark, `#1E7A50` light. Used only inside `macro/`.
-- **Domain colours** on update pages: GST gold, Direct Tax blue, MCA purple, SEBI orange-red, ICAI teal.
-- **Background motion:** three blurred `.orb` divs, fixed at `z-index:0`, with content above at `z-index:1`.
-- **Entry motion:** a `fadeUp` keyframe on cards and sections, staggered with `animation-delay`.
+- **Macro accent:** `--macro:#5EBF8C` dark, `#1E7A50` light. Used throughout `macro/` and `rbi/`.
+- **Domain colours** on `updates/index.html` and the classic weekly issues: GST gold, Direct Tax blue, MCA purple, SEBI orange-red, ICAI teal.
+- **Background motion:** blurred `.orb` divs inside an `.orbs` wrapper. The wrapper is `position:fixed` at `z-index:0`, each orb is `position:absolute` within it, and content sits above at `z-index:1`. Four orbs on the home page, three on every other classic page.
+
+### Newspaper template
+
+Weekly issues from 20 Jul 2026 onwards. These are not broken and are not a style drift to be corrected.
+
+- **Fonts:** Archivo only.
+- **Backgrounds:** light `#FBFAF7` as the `:root` default, dark `#111110` under `[data-theme="dark"]`.
+- **Markup:** a masthead and column layout using `.mast-id`, `.kick` and the `.cd-*` classes.
+- No domain colour variables and no orbs. Ink, rule and muted tones carry the structure instead.
 
 ## Rules
 
 **Only files needed to serve the website belong in git.** Everything else stays on the maintainer's machine and is listed in `.gitignore`: workflow instructions, automation scripts, generation scripts, and all DOCX, PDF and message files.
+
+**`AGENTS.md` and `CLAUDE.md` are tracked and published.** Anything written into either one is live on a public site. Local-only agent instructions belong in `AGENTS.local.md` or `CLAUDE.local.md`, both of which `.gitignore` keeps off GitHub. Never move private content into the tracked pair.
 
 **Stage files by name.** Never `git add -A` and never `git add .`. Before staging anything, check it belongs to the site.
 
@@ -70,4 +89,4 @@ Shared across every page. Do not deviate without being asked.
 
 ## Full workflow
 
-The complete operational workflow, including how issues are researched and generated, is local to the maintainer's machine and deliberately absent from this repository. If `claude-docs/` and `AGENTS.local.md` are present in your working copy, read them. If they are not, everything you need is in this file.
+The complete operational workflow, including how issues are researched and generated, is local to the maintainer's machine and deliberately absent from this repository. If `claude-docs/`, `AGENTS.local.md` or `CLAUDE.local.md` are present in your working copy, read them. If they are not, everything you need is in this file.

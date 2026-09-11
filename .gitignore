@@ -5,6 +5,7 @@
 *.md
 !README.md
 !AGENTS.md
+!CLAUDE.md
 Professional update - weekly/
 RBI-Monetary Policy/
 _outputs/
@@ -16,8 +17,9 @@ claude-docs/
 __pycache__/
 
 # Local-only AI agent instructions (kept on disk, never uploaded to GitHub)
-CLAUDE.md
+# AGENTS.md and CLAUDE.md are tracked and public; the .local.md pair is not.
 AGENTS.local.md
+CLAUDE.local.md
 
 # Local-only design scratch / experiments (never served)
 docx-redesign-playground.html
