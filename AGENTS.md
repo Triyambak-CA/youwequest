@@ -2,7 +2,7 @@
 
 Contributor and AI-agent guide for the YouWe Quest LLP website.
 Harness-neutral: Claude Code, Codex, opencode and any other agent should read this file first.
-Codex and opencode read `AGENTS.md` natively. Claude Code reads `CLAUDE.md`, so the tracked `CLAUDE.md` is a stub that imports this file with `@AGENTS.md`. Keep it a stub and put the content here.
+Codex and opencode read `AGENTS.md` natively. Claude Code reads `CLAUDE.md`, so the tracked `CLAUDE.md` is a stub that imports this file and, when present, `AGENTS.local.md`. Keep it a stub and put the content here.
 
 ## What this repo is
 
@@ -48,9 +48,8 @@ These hold across the site. Do not deviate without being asked:
 
 - **Theme:** dark by default, with a light mode. Toggled by a button and stored in `localStorage` under the key `theme`, applied as a `data-theme` attribute on `<html>`. A small blocking script at the top of `<head>` reads that value before first paint so the page does not flash.
 - **Gold accent:** `--gold:#B8963E` on every page. The classic template darkens it to `#8C6D1A` in light mode; the newspaper template keeps the one value in both.
-- **Entry motion:** a `fadeUp` keyframe on cards and sections, staggered with `animation-delay`. Present on every page except the home page, which instead uses `.reveal` classes driven by an `IntersectionObserver`, staggered with `.reveal-d1` to `.reveal-d6`.
 
-Everything else belongs to one of two templates.
+Everything else belongs to one of two templates. Motion is the exception: background orbs and entry animation differ by page family, so read the file you are editing rather than assuming a pattern holds.
 
 ### Classic template
 
@@ -60,7 +59,6 @@ The home page, all three index pages, every RBI digest, every macro report, and 
 - **Backgrounds:** dark `#070c12`, light `#f4f1eb`.
 - **Macro accent:** `--macro:#5EBF8C` dark, `#1E7A50` light. Used throughout `macro/` and `rbi/`.
 - **Domain colours** on `updates/index.html` and the classic weekly issues: GST gold, Direct Tax blue, MCA purple, SEBI orange-red, ICAI teal.
-- **Background motion:** blurred `.orb` divs inside an `.orbs` wrapper. The wrapper is `position:fixed` at `z-index:0`, each orb is `position:absolute` within it, and content sits above at `z-index:1`. Four orbs on the home page, three on every other classic page.
 
 ### Newspaper template
 
