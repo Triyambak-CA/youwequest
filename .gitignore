@@ -4,6 +4,7 @@
 *_Messages.txt
 *.md
 !README.md
+!AGENTS.md
 Professional update - weekly/
 RBI-Monetary Policy/
 _outputs/
@@ -16,7 +17,7 @@ __pycache__/
 
 # Local-only AI agent instructions (kept on disk, never uploaded to GitHub)
 CLAUDE.md
-AGENTS.md
+AGENTS.local.md
 
 # Local-only design scratch / experiments (never served)
 docx-redesign-playground.html
