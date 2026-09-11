@@ -40,7 +40,9 @@ Those pages are produced by a local, human-supervised workflow that is not part 
 | `macro/MacroReport_<DD><Mon><YYYY>.html` | One macro report (generated) |
 | `CNAME` | Custom domain. Never edit or delete it. |
 
-Each index page lists issues as cards in `.update-list`, newest first. Exactly one card carries the `latest-chip` span, so when a new issue is added that chip moves to it.
+Each index page lists issues as cards in `.update-list`, newest first. On `updates/` and `rbi/`, exactly one card carries the `latest-chip` span, so when a new issue is added that chip moves to it.
+
+`macro/` is an archived series: its chip reads "Final issue", the page carries an archived banner, and no new macro reports are produced now that the RBI Bulletin Digest in `rbi/` is the monthly publication. Never add a new card to `macro/index.html`.
 
 ## Design system
 
