@@ -4,8 +4,8 @@
 *_Messages.txt
 *.md
 !README.md
-!AGENTS.md
-!CLAUDE.md
+!/AGENTS.md
+!/CLAUDE.md
 Professional update - weekly/
 RBI-Monetary Policy/
 _outputs/
